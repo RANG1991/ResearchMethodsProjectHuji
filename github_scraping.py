@@ -7,6 +7,12 @@ import pandas as pd
 
 
 def read_local_config_file(filename):
+    """
+    read the local configuration file containing the credentials and the
+    path of the selenium driver
+    :param filename: path of the local configuration file
+    :return: credentials and path of the selenium driver
+    """
     with open(filename, "r") as f:
         json_file = json.load(f)
         username = json_file["username"]
@@ -16,6 +22,14 @@ def read_local_config_file(filename):
 
 
 def login(login_url, driver, username, password):
+    """
+    login to GitHub using the given credentials
+    :param login_url: the URL to log in to
+    :param driver: the instance of the selenium driver
+    :param username:
+    :param password:
+    :return:
+    """
     driver.get(login_url)
     print("Opened github")
     sleep(1)
@@ -31,8 +45,21 @@ def login(login_url, driver, username, password):
     sleep(3)
 
 
-def get_forks_props_from_repo(driver, repo_link):
-    driver.get(repo_link)
+def get_python_lang_percentage(driver):
+    perc = driver.find_element_by_xpath('//*[contains(@data-ga-click,"Repository, language stats search click, '
+                                        'location:repo overview")]//*[text()[contains(.,"Python")]] '
+                                        '/following-sibling::span[1]').text
+    return perc
+
+
+def get_forks_props_from_repo(driver):
+    """
+    provide the number of forks from the repository and whether the repository
+    is a fork of another repository
+    :param driver: instance of the driver
+    :param repo_link: URL of the repository
+    :return: number of forks and if it's a fork of another repository
+    """
     num_forks = driver.find_element_by_xpath('//li//*[text()[contains(.,"Fork")]]').text.replace("Fork ", "")
     is_forked = True
     try:
@@ -43,6 +70,17 @@ def get_forks_props_from_repo(driver, repo_link):
 
 
 def get_all_repositories_props_in_page(driver):
+    """
+    given one result page of the search in GitHub, parse the page to
+    get all the properties of the repositories in this page:
+    1. the repository's URL
+    2. the number of start the repository has
+    3. the number of forks from the repository
+    4. whether this repository is a fork of another one
+    :param driver: the instance of the selenium driver
+    :return: dictionary with the name of the repository as key and the properties
+    as a list of values
+    """
     curr_page_repos_props = {}
     repos_elements = driver.find_elements_by_xpath('//li[@class="repo-list-item hx_hit-repo d-flex '
                                                    'flex-justify-start py-4 public source"]')
@@ -54,25 +92,33 @@ def get_all_repositories_props_in_page(driver):
         sleep(1)
     for repo_name in curr_page_repos_props.keys():
         repo_link = curr_page_repos_props[repo_name][0]
-        num_forks, is_forked = get_forks_props_from_repo(driver, repo_link)
+        driver.get(repo_link)
+        num_forks, is_forked = get_forks_props_from_repo(driver)
+        perc = get_python_lang_percentage(driver)
         curr_page_repos_props[repo_name].append(num_forks)
         curr_page_repos_props[repo_name].append(is_forked)
+        curr_page_repos_props[repo_name].append(perc)
         sleep(1)
     return curr_page_repos_props
 
 
 def main():
+    # selenium configuration
     repos_props = {}
     options = Options()
     options.add_argument("--disable-notifications")
     options.headless = True
+    # get the credentials from the configuration file
     username, password, driver_path = read_local_config_file("./config.json")
     driver = webdriver.Chrome(driver_path, chrome_options=options)
     login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
-    num_pages = 100
+    # number of results' pages crawl (each page contains 10 repositories)
+    num_pages = 1
     try:
         for page_index in range(num_pages):
+            # this is our query for GitHub's search - python a primary language,
+            # the repositories with most stars (path parameters)
             driver.get(main_url + 'search?l=Python&o=desc&p=' + str(page_index + 1) +
                        '&q=Python&s=stars&type=Repositories')
             sleep(3)
@@ -81,13 +127,15 @@ def main():
             repos_props.update(curr_page_repos_props)
     finally:
         dict_for_df = {"repo_name": [], "repo_link": [], "repo_number_of_stars": [],
-                       "repo_number_of_forks": [], "repo_is_forked": []}
+                       "repo_number_of_forks": [], "repo_is_forked": [],
+                       "percentage_python_lang": []}
         for key in repos_props.keys():
             dict_for_df["repo_name"].append(key)
             dict_for_df["repo_link"].append(repos_props[key][0])
             dict_for_df["repo_number_of_stars"].append(repos_props[key][1])
             dict_for_df["repo_number_of_forks"].append(repos_props[key][2])
             dict_for_df["repo_is_forked"].append(repos_props[key][3])
+            dict_for_df["percentage_python_lang"].append(repos_props[key][4])
         df = pd.DataFrame.from_dict(dict_for_df).set_index("repo_name")
         df.to_csv("repos_props.csv")
 
