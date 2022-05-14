@@ -15,6 +15,7 @@ def count_lambda_exp_single_file(python_filename):
     with open(python_filename, "r") as f:
         python_file_text = f.read()
         num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
+        dict_types = {}
         if num_lambda_in_file > 0:
             dict_types = count_types_of_lambda_expressions(python_file_text)
         return dict_types, num_lambda_in_file
@@ -30,7 +31,9 @@ def count_types_of_lambda_expressions(python_file_text):
 
 
 def main():
+    all_files_dict_types = {}
     files = [f for f in glob.glob(r'./pythonReposForMethods/**/*.py', recursive=True)]
+    lambdas_counts_in_files = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         future_to_filename = {executor.submit(count_lambda_exp_single_file, filename): filename for filename in
                               files}
@@ -38,11 +41,23 @@ def main():
             filename = future_to_filename[future]
             try:
                 dict_types, num_lambda_in_file = future.result()
+                if not len(all_files_dict_types):
+                    all_files_dict_types.update(dict_types)
+                else:
+                    for key in dict_types.keys():
+                        all_files_dict_types[key] += dict_types[key]
             except Exception as exc:
                 print('%r generated an exception: %s' % (filename, exc))
             else:
                 if num_lambda_in_file > 0:
-                    print('%r file contains %s lambda expressions' % (filename, dict_types))
+                    print('done counting lambdas for file %r ' % (filename,))
+                    lambdas_counts_in_files += 1
+                    if lambdas_counts_in_files > 500:
+                        break
+        print(all_files_dict_types)
+        for future in future_to_filename:
+            future.cancel()
+        executor.shutdown()
 
 
 if __name__ == '__main__':
