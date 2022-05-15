@@ -115,7 +115,7 @@ def main():
     login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 10
+    num_pages = 100
     try:
         for page_index in range(num_pages):
             # this is our query for GitHub's search - python a primary language,

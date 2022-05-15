@@ -52,7 +52,7 @@ def main():
                 if num_lambda_in_file > 0:
                     print('done counting lambdas for file %r ' % (filename,))
                     lambdas_counts_in_files += 1
-                    if lambdas_counts_in_files > 500:
+                    if lambdas_counts_in_files > 1000:
                         break
         print(all_files_dict_types)
         for future in future_to_filename:
