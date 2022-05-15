@@ -1,6 +1,7 @@
 import json
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 import pandas as pd
@@ -33,22 +34,23 @@ def login(login_url, driver, username, password):
     driver.get(login_url)
     print("Opened github")
     sleep(1)
-    username_box = driver.find_element_by_id('login_field')
+    username_box = driver.find_element(by=By.ID, value='login_field')
     username_box.send_keys(username)
     print("Email Id entered")
     sleep(1)
-    password_box = driver.find_element_by_id('password')
+    password_box = driver.find_element(by=By.ID, value='password')
     password_box.send_keys(password)
     print("Password entered")
-    login_box = driver.find_element_by_class_name('btn-block')
+    login_box = driver.find_element(by=By.CLASS_NAME, value='btn-block')
     login_box.click()
     sleep(3)
 
 
 def get_python_lang_percentage(driver):
-    perc = driver.find_element_by_xpath('//*[contains(@data-ga-click,"Repository, language stats search click, '
-                                        'location:repo overview")]//*[text()[contains(.,"Python")]] '
-                                        '/following-sibling::span[1]').text
+    perc = driver.find_element(by=By.XPATH,
+                               value='//*[contains(@data-ga-click,"Repository, language stats search click, '
+                                     'location:repo overview")]//*[text()[contains(.,"Python")]] '
+                                     '/following-sibling::span[1]').text
     return perc
 
 
@@ -57,13 +59,12 @@ def get_forks_props_from_repo(driver):
     provide the number of forks from the repository and whether the repository
     is a fork of another repository
     :param driver: instance of the driver
-    :param repo_link: URL of the repository
     :return: number of forks and if it's a fork of another repository
     """
-    num_forks = driver.find_element_by_xpath('//li//*[text()[contains(.,"Fork")]]').text.replace("Fork ", "")
+    num_forks = driver.find_element(by=By.XPATH, value='//li//*[text()[contains(.,"Fork")]]').text.replace("Fork ", "")
     is_forked = True
     try:
-        driver.find_element_by_xpath('//*[text()[contains(.,"forked from")]]')
+        driver.find_element(by=By.XPATH, value='//*[text()[contains(.,"forked from")]]')
     except NoSuchElementException:
         is_forked = False
     return num_forks, is_forked
@@ -82,12 +83,12 @@ def get_all_repositories_props_in_page(driver):
     as a list of values
     """
     curr_page_repos_props = {}
-    repos_elements = driver.find_elements_by_xpath('//li[@class="repo-list-item hx_hit-repo d-flex '
-                                                   'flex-justify-start py-4 public source"]')
+    repos_elements = driver.find_elements(by=By.XPATH, value='//li[@class="repo-list-item hx_hit-repo d-flex '
+                                                             'flex-justify-start py-4 public source"]')
     for element in repos_elements:
-        repo_full_name = element.find_element_by_xpath('.//a[@class="v-align-middle"]').text
-        repo_link = element.find_element_by_xpath('.//a[@class="v-align-middle"]').get_attribute("href")
-        repo_num_stars = element.find_element_by_xpath('.//a[@class="Link--muted"]').text
+        repo_full_name = element.find_element(by=By.XPATH, value='.//a[@class="v-align-middle"]').text
+        repo_link = element.find_element(by=By.XPATH, value='.//a[@class="v-align-middle"]').get_attribute("href")
+        repo_num_stars = element.find_element(by=By.XPATH, value='.//a[@class="Link--muted"]').text
         curr_page_repos_props[repo_full_name] = [repo_link, repo_num_stars]
         sleep(1)
     for repo_name in curr_page_repos_props.keys():
@@ -114,7 +115,7 @@ def main():
     login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 1
+    num_pages = 10
     try:
         for page_index in range(num_pages):
             # this is our query for GitHub's search - python a primary language,
