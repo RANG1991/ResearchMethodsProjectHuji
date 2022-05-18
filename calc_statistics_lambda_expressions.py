@@ -5,10 +5,10 @@ import glob
 MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
 FUNC_ARG_PATTERN = r"\((.*?)=lambda (.*?):(.*?)\)"
 RET_VALUE_PATTERN = r"return lambda (.*?):"
-ITER_PATTERN = ""
+ITER_PATTERN = r"lambda (.*?):(.*?)list|tuple|string|dict"
 UNICODE_PATTERN = r"lambda (.*?):(.*?).encode"
 EXCEPTION_PATTERN = r"lambda (.*?): future.set_exception"
-ASYNC_TASKS_PATTERN = ""
+ASYNC_TASKS_PATTERN = r"lambda (.*?):(.*?)async"
 
 
 def count_lambda_exp_single_file(python_filename):
