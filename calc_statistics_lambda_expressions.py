@@ -26,7 +26,9 @@ def count_types_of_lambda_expressions(python_file_text):
                   "func_arg": len(re.findall(FUNC_ARG_PATTERN, python_file_text)),
                   "ret_value": len(re.findall(RET_VALUE_PATTERN, python_file_text)),
                   "unicode": len(re.findall(UNICODE_PATTERN, python_file_text)),
-                  "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text))}
+                  "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
+                  "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
+                  "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
     return dict_types
 
 
