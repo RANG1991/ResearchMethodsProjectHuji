@@ -1,6 +1,7 @@
 import re
 import concurrent.futures
 import glob
+import os
 
 MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
 FUNC_ARG_PATTERN = r"\((.*?)=lambda (.*?):(.*?)\)"
@@ -32,15 +33,24 @@ def count_types_of_lambda_expressions(python_file_text):
     return dict_types
 
 
+def get_repository_dir_name(path):
+    path = os.path.normpath(path)
+    split_path = path.split(os.sep)
+    return split_path[1]
+
+
 def main():
     all_files_dict_types = {}
     files = [f for f in glob.glob(r'./pythonReposForMethods/**/*.py', recursive=True)]
     lambdas_counts_in_files = 0
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
-        future_to_filename = {executor.submit(count_lambda_exp_single_file, filename): filename for filename in
-                              files}
+        future_to_filename = \
+        {
+            executor.submit(count_lambda_exp_single_file, filename):
+                (filename, get_repository_dir_name(filename)) for filename in files
+        }
         for future in concurrent.futures.as_completed(future_to_filename):
-            filename = future_to_filename[future]
+            filename, repository_name = future_to_filename[future]
             try:
                 dict_types, num_lambda_in_file = future.result()
                 if not len(all_files_dict_types):
@@ -52,7 +62,7 @@ def main():
                 print('%r generated an exception: %s' % (filename, exc))
             else:
                 if num_lambda_in_file > 0:
-                    print('done counting lambdas for file %r ' % (filename,))
+                    print('done counting lambdas for file %r in repository %r ' % (filename, repository_name))
                     lambdas_counts_in_files += 1
                     if lambdas_counts_in_files > 1000:
                         break
