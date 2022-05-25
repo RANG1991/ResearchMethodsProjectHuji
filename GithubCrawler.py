@@ -5,6 +5,8 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 import pandas as pd
+import os
+from subprocess import Popen
 
 
 def read_local_config_file(filename):
@@ -22,14 +24,11 @@ def read_local_config_file(filename):
         return username, password, driver_path
 
 
-def login(login_url, driver, username, password):
+def github_login(login_url, driver, username, password):
     """
     login to GitHub using the given credentials
     :param login_url: the URL to log in to
     :param driver: the instance of the selenium driver
-    :param username:
-    :param password:
-    :return:
     """
     driver.get(login_url)
     print("Opened github")
@@ -85,12 +84,15 @@ def get_all_repositories_props_in_page(driver):
     curr_page_repos_props = {}
     repos_elements = driver.find_elements(by=By.XPATH, value='//li[@class="repo-list-item hx_hit-repo d-flex '
                                                              'flex-justify-start py-4 public source"]')
+    # Iterates over the result repositories that appear on the current result-page
     for element in repos_elements:
         repo_full_name = element.find_element(by=By.XPATH, value='.//a[@class="v-align-middle"]').text
         repo_link = element.find_element(by=By.XPATH, value='.//a[@class="v-align-middle"]').get_attribute("href")
         repo_num_stars = element.find_element(by=By.XPATH, value='.//a[@class="Link--muted"]').text
         curr_page_repos_props[repo_full_name] = [repo_link, repo_num_stars]
         sleep(1)
+
+    # Extract details from each repository
     for repo_name in curr_page_repos_props.keys():
         repo_link = curr_page_repos_props[repo_name][0]
         driver.get(repo_link)
@@ -103,20 +105,23 @@ def get_all_repositories_props_in_page(driver):
     return curr_page_repos_props
 
 
-def main():
+def github_crawling():
     # selenium configuration
     repos_props = {}
     options = Options()
     options.add_argument("--disable-notifications")
     options.headless = True
+
     # get the credentials from the configuration file
     username, password, driver_path = read_local_config_file("./config.json")
     driver = webdriver.Chrome(driver_path, chrome_options=options)
-    login("https://github.com/login", driver, username, password)
+    github_login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
+
     # number of results' pages crawl (each page contains 10 repositories)
     num_pages = 100
     try:
+        # Iterates over all the result-pages
         for page_index in range(num_pages):
             # this is our query for GitHub's search - python a primary language,
             # the repositories with most stars (path parameters)
@@ -127,6 +132,7 @@ def main():
             curr_page_repos_props = get_all_repositories_props_in_page(driver)
             repos_props.update(curr_page_repos_props)
     finally:
+        # Organizes the data in a dictionary which is exported to a repos_props.csv file
         dict_for_df = {"repo_name": [], "repo_link": [], "repo_number_of_stars": [],
                        "repo_number_of_forks": [], "repo_is_forked": [],
                        "percentage_python_lang": []}
@@ -141,5 +147,34 @@ def main():
         df.to_csv("repos_props.csv")
 
 
+def create_cloning_script():
+    df_repos = pd.read_csv("./repos_props.csv")
+    df_repos = df_repos[df_repos["repo_is_forked"] == False]
+    df_repos = df_repos[df_repos["percentage_python_lang"] >= 60]
+    df_repos_links = df_repos["repo_link"].tolist()
+    with open("../pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
+        for i in range(100):
+            f.write("git clone {}\n".format(df_repos_links[i]))
+
+
+def remove_all_non_python_files():
+    for path, subdirs, files in os.walk(r"C:\Users\Admin\PycharmProjects\pythonReposForMethods"):
+        for name in files:
+            try:
+                file_ext = os.path.splitext(os.path.join(path, name))[1]
+                # if file_ext != ".py":
+                # os.remove(os.path.join(path, name))
+            except PermissionError as e:
+                print(e)
+
+
 if __name__ == "__main__":
-    main()
+    github_crawling()
+    create_cloning_script()
+
+    # Runs the scripts using subprocess module
+    p = Popen("../pythonReposForMethods/clone_all_python_repos.bat")
+    stdout, stderr = p.communicate()
+    p.wait()
+
+    remove_all_non_python_files()

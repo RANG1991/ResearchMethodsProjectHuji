@@ -3,6 +3,7 @@ import concurrent.futures
 import glob
 import os
 
+# regexes for lambda usages patterns
 MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
 FUNC_ARG_PATTERN = r"\((.*?)=lambda (.*?):(.*?)\)"
 RET_VALUE_PATTERN = r"return lambda (.*?):"
@@ -12,9 +13,9 @@ EXCEPTION_PATTERN = r"lambda (.*?): future.set_exception"
 ASYNC_TASKS_PATTERN = r"lambda (.*?):(.*?)async"
 
 
-def count_lambda_exp_single_file(python_filename):
+def process_lambda_exp_single_file(python_filename):
     """
-    count the lambda expressions statistics in a single python file
+    count the lambda expressions: appearances and usages in a single python file
     :param python_filename: the path of the file to be calculated
     :return: dict_types - a dictionary containing the types of the lambda expressions
     to the count of them
@@ -25,13 +26,13 @@ def count_lambda_exp_single_file(python_filename):
         num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
         dict_types = {}
         if num_lambda_in_file > 0:
-            dict_types = count_types_of_lambda_expressions(python_file_text)
+            dict_types = count_usages_of_lambda_expressions(python_file_text)
         return dict_types, num_lambda_in_file
 
 
-def count_types_of_lambda_expressions(python_file_text):
+def count_usages_of_lambda_expressions(python_file_text):
     """
-    count the types of lambdas expressions per single python file
+    count the usages of lambda expressions per single python file
     :param python_file_text: the python file as string (text)
     :return: dict_type - the type of each lambda expression to its number in this
     specific file
@@ -47,15 +48,26 @@ def count_types_of_lambda_expressions(python_file_text):
 
 
 def calc_average_num_lambda_per_file(all_files_dict_types):
+    """
+    calculates the average number of lambda usages per file over all the repositories
+    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
+                                 expression in that file, number of lambda appearances)
+    :return: average number of lambda usages per file
+    """
     lambda_count = 0
     for key in all_files_dict_types.keys():
-        # the second element of the value of each key is the number
-        # of lambdas in a specific python file
+        # the second element of the value of each key is the number of lambdas in a specific python file
         lambda_count += all_files_dict_types[key][1]
     return lambda_count / len(all_files_dict_types)
 
 
 def calc_average_num_lambdas_per_repository(all_files_dict_types):
+    """
+    calculates the average number of lambda usages per repository
+    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
+                                 expression in that file, number of lambda appearances)
+    :return: average number of lambda usages per repository
+    """
     dict_lambda_count_per_repo = {}
     for key in all_files_dict_types.keys():
         # the second element of each key is the repository name
@@ -87,13 +99,12 @@ def calculate_statistics_in_all_repositories():
     # get all the python files from all the repositories downloaded
     files = [f for f in glob.glob(r'./pythonReposForMethods/**/*.py', recursive=True)]
     lambdas_counts_in_files = 0
-    # initialize thread pool to do the calculation of the lambdas statistics
-    # in each of the files in parallel
+    # initialize thread pool to do the calculation of the lambda statistics, in each of the files in parallel
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         # construct a dictionary of future to filename and repository name
         future_to_filename = \
             {
-                executor.submit(count_lambda_exp_single_file, filename):
+                executor.submit(process_lambda_exp_single_file, filename):
                     (filename, get_repository_dir_name(filename)) for filename in files
             }
         # for each of the futures, check if it finished and then take
@@ -105,12 +116,7 @@ def calculate_statistics_in_all_repositories():
                 all_files_dict_types[(filename, repository_name)] = (dict_types, num_lambda_in_file)
             except Exception as exc:
                 print('%r generated an exception: %s' % (filename, exc))
-            else:
-                if num_lambda_in_file > 0:
-                    # print('done counting lambdas for file %r in repository %r ' % (filename, repository_name))
-                    lambdas_counts_in_files += 1
-                    if lambdas_counts_in_files > 1000:
-                        break
+
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
             future.cancel()
