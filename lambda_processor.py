@@ -2,6 +2,9 @@ import re
 import concurrent.futures
 import glob
 import os
+import pandas as pd
+from matplotlib import pyplot as plt
+from pathlib import Path
 
 # regexes for lambda usages patterns
 MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
@@ -83,21 +86,22 @@ def calc_average_num_lambdas_per_repository(all_files_dict_types):
     return dict_lambda_count_per_repo
 
 
-def get_repository_dir_name(path):
+def get_repository_dir_name(path, dir_name_loc_in_path):
     """
     get the repository name (directory name) based on the full path of the python file
+    :param dir_name_loc_in_path:
     :param path: full path of the python file
     :return: the directory (repository) name
     """
     path = os.path.normpath(path)
     split_path = path.split(os.sep)
-    return split_path[1]
+    return split_path[dir_name_loc_in_path]
 
 
-def calculate_statistics_in_all_repositories():
+def calculate_statistics_in_all_repositories(repos_parent_folder):
     all_files_dict_types = {}
     # get all the python files from all the repositories downloaded
-    files = [f for f in glob.glob(r'./pythonReposForMethods/**/*.py', recursive=True)]
+    files = [f for f in glob.glob(r'{}/**/*.py'.format(repos_parent_folder), recursive=True)]
     lambdas_counts_in_files = 0
     # initialize thread pool to do the calculation of the lambda statistics, in each of the files in parallel
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
@@ -105,7 +109,7 @@ def calculate_statistics_in_all_repositories():
         future_to_filename = \
             {
                 executor.submit(process_lambda_exp_single_file, filename):
-                    (filename, get_repository_dir_name(filename)) for filename in files
+                    (filename, get_repository_dir_name(filename, 1)) for filename in files
             }
         # for each of the futures, check if it finished and then take
         # the dictionary of lambdas statistics and merge it into the large dictionary
@@ -116,7 +120,6 @@ def calculate_statistics_in_all_repositories():
                 all_files_dict_types[(filename, repository_name)] = (dict_types, num_lambda_in_file)
             except Exception as exc:
                 print('%r generated an exception: %s' % (filename, exc))
-
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
             future.cancel()
@@ -124,10 +127,59 @@ def calculate_statistics_in_all_repositories():
     return all_files_dict_types
 
 
+def calc_ratio_lambdas_repo_size(repos_parent_folder, all_files_dict_types):
+    num_bytes = sum(f.stat().st_size for f in Path(repos_parent_folder).glob('**/*.py'))
+    num_lambdas_in_all_files = 0
+    for key in all_files_dict_types.keys():
+        num_lambdas_in_all_files += all_files_dict_types[key][1]
+    return num_lambdas_in_all_files / num_bytes
+
+
+def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types):
+    df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(func=get_repository_dir_name, args=(1,))
+    df_repos_props["percentage_python_lang"] = df_repos_props["percentage_python_lang"].apply(lambda x:
+                                                                                              float(x.replace("%", "")))
+    df_repos_props["repo_number_of_stars"] = df_repos_props["repo_number_of_stars"].apply(lambda x:
+                                                                                          int(x.replace(".", "")
+                                                                                              .replace("k", "000")))
+    df_repos_props["repo_number_of_forks"] = df_repos_props["repo_number_of_forks"].apply(lambda x:
+                                                                                          int(x.replace(".", "")
+                                                                                              .replace("k", "000")))
+    dict_lambda_count_per_repo = {}
+    for key in all_files_dict_types.keys():
+        # the second element of each key is the repository name
+        # if the repository name is not in the keys of the dictionary, add it with a count of zero
+        if key[1] not in dict_lambda_count_per_repo.keys():
+            dict_lambda_count_per_repo[key[1]] = 0
+            # the second element of the value of each key is the number
+            # of lambdas in a specific python file
+        dict_lambda_count_per_repo[key[1]] += all_files_dict_types[key][1]
+    dict_lambda_count_per_repo_to_df = {"lambdas_number": [], "repo_name": []}
+    for key in dict_lambda_count_per_repo.keys():
+        dict_lambda_count_per_repo_to_df["repo_name"].append(key)
+        dict_lambda_count_per_repo_to_df["lambdas_number"].append(int(dict_lambda_count_per_repo[key]))
+    df_lambdas = pd.DataFrame.from_dict(dict_lambda_count_per_repo_to_df)
+    df_repos_props = df_repos_props.sort_values(by=["repo_name"])
+    df_lambdas = df_lambdas.sort_values(by=["repo_name"])
+    df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(lambda x: x.lower())
+    df_lambdas["repo_name"] = df_lambdas["repo_name"].apply(lambda x: x.lower())
+    df_repos_props = df_repos_props.merge(df_lambdas, on="repo_name")
+    df_repos_props.to_csv("df_repo_props_with_lambda_stat.csv")
+    print(df_repos_props[["repo_number_of_stars", "lambdas_number"]].corr())
+    print(df_repos_props[["repo_number_of_forks", "lambdas_number"]].corr())
+    print(df_repos_props[["percentage_python_lang", "lambdas_number"]].corr())
+
+
 def main():
-    all_files_dict_types = calculate_statistics_in_all_repositories()
-    print(calc_average_num_lambda_per_file(all_files_dict_types))
-    print(calc_average_num_lambdas_per_repository(all_files_dict_types))
+    df_repos_props = pd.read_csv("./repos_props.csv")
+    all_files_dict_types = calculate_statistics_in_all_repositories("./pythonReposForMethods")
+    check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types)
+    num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
+    num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
+    ratio_lambdas_repo_size = calc_ratio_lambdas_repo_size("./pythonReposForMethods", all_files_dict_types)
+    print(num_lambda_per_file)
+    print(num_lambda_per_repository)
+    print(ratio_lambdas_repo_size)
 
 
 if __name__ == '__main__':
