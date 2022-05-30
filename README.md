@@ -73,5 +73,5 @@ Analyzes the usages of Lambda-expressions in the mined repositories. Produces St
 python3 //TO-DO: Complete
 ```
 
-** Demo Recording:** 
-Zoom:<br>
+**Demo Recording:**
+https://drive.google.com/file/d/1sIXnxwydKS2LCG59CEegkbuSL2_laCZZ/view?usp=sharing
