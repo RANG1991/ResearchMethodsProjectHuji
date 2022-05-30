@@ -183,10 +183,14 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_fil
     df_lambdas["repo_name"] = df_lambdas["repo_name"].apply(lambda x: x.lower())
     df_repos_props = df_repos_props.merge(df_lambdas, on="repo_name")
     df_repos_props.to_csv("df_repo_props_with_lambda_stat.csv")
-    print(df_repos_props[["repo_number_of_stars", "lambdas_number"]].corr())
-    print(df_repos_props[["repo_number_of_forks", "lambdas_number"]].corr())
-    print(df_repos_props[["percentage_python_lang", "lambdas_number"]].corr())
-    print(df_repos_props[["ratio_lambdas_size", "lambdas_number"]].corr())
+    print("the correlation between the number of stars and the number of lambdas is:\n"
+          "{}".format(df_repos_props[["repo_number_of_stars", "lambdas_number"]].corr()))
+    print("the correlation between the number of forks and the number of lambdas is:\n"
+          "{}".format(df_repos_props[["repo_number_of_forks", "lambdas_number"]].corr()))
+    print("the correlation between the percentage of the python language and the number of lambdas is:\n"
+          "{}".format(df_repos_props[["percentage_python_lang", "lambdas_number"]].corr()))
+    print("the correlation between the ratio of the repository size and the number of lambdas is:\n"
+          "{}".format(df_repos_props[["ratio_lambdas_size", "lambdas_number"]].corr()))
 
 
 def process_all_python_files_in_parallel(repos_parent_folder):
@@ -221,8 +225,9 @@ def process_all_python_files_in_parallel(repos_parent_folder):
             try:
                 dict_types, num_lambda_in_file = future.result()
                 all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file)
-            except Exception as exc:
-                print('%r generated an exception: %s' % (filename, exc))
+            except Exception:
+                pass
+                # print('%r generated an exception: %s' % (filename, exc))
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
             future.cancel()
@@ -235,11 +240,11 @@ def main():
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
     ratio_lambdas_repo_size = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
     check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types, ratio_lambdas_repo_size)
-    num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
-    num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
-    print(num_lambda_per_file)
-    print(num_lambda_per_repository)
-    print(ratio_lambdas_repo_size)
+    avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
+    avg_num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
+    print("the average number of lambdas per file: {}".format(avg_num_lambda_per_file))
+    print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
+    print("the ratio of lambdas and the repository size: {}".format(ratio_lambdas_repo_size))
 
 
 if __name__ == '__main__':
