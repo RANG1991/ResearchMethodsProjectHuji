@@ -3,16 +3,16 @@
 This project crawls Python projects from github and analyze the usages of Lambda expressions among them: 
 Statistics, Types of usages and correlations with the repositories meta-data
 The project is composed of 2 components:
-    1) Github Crawler - Scrapes github top Python projects.
-                        a) **Python** projects, meaning projects which Python is the majority programming language of them. 
-                        The major language is determined according to the largest total size of files with the 
-                        corresponding extension - in our case .py
-                        [Reference] (https://stackoverflow.com/questions/5318580/how-does-github-figure-out-a-projects-language)
-                        The minimum rate of the Python programming language as a part of the project as well as the 
-                        number of the repositories are configured in file: config.json
-                        **_Note_:** The Crawler won't scrape a repository which was forked from other repository
-                        b) **Top** projects, meaning projects with highest rank of github-stars
-    2) Lambda-expressions Processor - Produces statistics about the frequency of Lambda-expressions appearance,
+  1. Github Crawler - Scrapes github top Python projects:<br/> 
+      a. **Python** projects, meaning projects which Python is the majority programming language of them. 
+        The major language is determined according to the largest total size of files with the 
+        corresponding extension - in our case
+        [Reference] (https://stackoverflow.com/questions/5318580/how-does-github-figure-out-a-projects-language)  
+        The minimum rate of the Python programming language as a part of the project as well as the 
+        number of the repositories are configured in file: config.json
+        **_Note_:** The Crawler won't scrape a repository which was forked from other repository.<br/>
+      b. **Top** projects, meaning projects with highest rank of github-stars.<br/><br/>
+   2. Lambda-expressions Processor - Produces statistics about the frequency of Lambda-expressions appearance,
                                       The different usages of them and the correlation to the repository's meta-data 
                                       such as size, number of github stars, number of forks, the percentage of Python 
                                       programming language etc.
@@ -33,14 +33,28 @@ Background, The Research Question, Methodologies, Results, Discussion and Threat
 >Selenium github repository: [https://github.com/SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium)
 
 
-**Requirements**
+**Installation:**
 
-Detailed in the file: requirements.txt
+**Creating and activating a virtual anaconda environment:**
+```
+Run the following two commands in the anaconda prompt (after installing anaconda):
 
-For installation-
+1. conda create -n <env_name> python=3.7
+(wait until the environment will be created successfully)
+
+2. conda activate <env_name>
 ```
-pip install -r <path_to>requirements.txt
+
+**Python packages requirements**
+
+
+Detailed in the file: requirements.txt.<br>
+To install the required packages use the following command inside the environment you created:
+
 ```
+pip install -r <path_to_requirements>
+```
+
 **Code Segments and Arguments** 
 ```
 > github_crawler.py
@@ -54,16 +68,10 @@ Analyzes the usages of Lambda-expressions in the mined repositories. Produces St
 
 ```
 
-**Activating the virtual env.**
-```
-//TO-DO: Complete
-```
-
 **Run the code**
 ```
 python3 //TO-DO: Complete
 ```
 
 ** Demo Recording:** 
-Zoom:
-//TO-DO: Add link
+Zoom:<br>
