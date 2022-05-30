@@ -3,10 +3,9 @@ import concurrent.futures
 import glob
 import os
 import pandas as pd
-from matplotlib import pyplot as plt
 from pathlib import Path
 
-# regexes for lambda usages patterns
+# regular expressions for lambda usages patterns
 MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
 FUNC_ARG_PATTERN = r"\((.*?)=lambda (.*?):(.*?)\)"
 RET_VALUE_PATTERN = r"return lambda (.*?):"
@@ -18,10 +17,10 @@ ASYNC_TASKS_PATTERN = r"lambda (.*?):(.*?)async"
 
 def process_lambda_exp_single_file(python_filename):
     """
-    count the lambda expressions: appearances and usages in a single python file
-    :param python_filename: the path of the file to be calculated
+    count the lambda expressions' number of appearances and usages in a single python file
+    :param python_filename: the path of the python file to be processed
     :return: dict_types - a dictionary containing the types of the lambda expressions
-    to the count of them
+    as keys and their counts as values
     num_lambdas_in_file - the total number of the lambda expressions in this file
     """
     with open(python_filename, "r", encoding="utf-8") as f:
@@ -35,10 +34,10 @@ def process_lambda_exp_single_file(python_filename):
 
 def count_usages_of_lambda_expressions(python_file_text):
     """
-    count the usages of lambda expressions per single python file
+    count the number of the various usages of lambda expressions in a single python file
     :param python_file_text: the python file as string (text)
-    :return: dict_type - the type of each lambda expression to its number in this
-    specific file
+    :return: dict_type - a dictionary containing the type of each lambda expression as key and its number in this
+    python file as value
     """
     dict_types = {"map_reduce_filter": len(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)),
                   "func_arg": len(re.findall(FUNC_ARG_PATTERN, python_file_text)),
@@ -52,126 +51,126 @@ def count_usages_of_lambda_expressions(python_file_text):
 
 def calc_average_num_lambda_per_file(all_files_dict_types):
     """
-    calculates the average number of lambda usages per file over all the repositories
-    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
-                                 expression in that file, number of lambda appearances)
-    :return: average number of lambda usages per file
+    calculates the average number of lambda usages in a single file file over all the repositories
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (file_name, repository_name)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    :return: average number of lambda usages in a single file
     """
     lambda_count = 0
     for key in all_files_dict_types.keys():
-        # the second element of the value of each key is the number of lambdas in a specific python file
+        # the second element of each value is the number of lambdas in a specific python file
         lambda_count += all_files_dict_types[key][1]
     return lambda_count / len(all_files_dict_types)
 
 
 def calc_average_num_lambdas_per_repository(all_files_dict_types):
     """
-    calculates the average number of lambda usages per repository
-    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
-                                 expression in that file, number of lambda appearances)
-    :return: average number of lambda usages per repository
+    calculates the average number of lambda usages in a repository
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    :return: average number of lambda usages in a repository
     """
     dict_lambda_count_per_repo = {}
-    for key in all_files_dict_types.keys():
-        # the second element of each key is the repository name
-        # if the repository name is not in the keys of the dictionary, add it with a count of zero
-        if key[1] not in dict_lambda_count_per_repo.keys():
-            dict_lambda_count_per_repo[key[1]] = 0
-            # the second element of the value of each key is the number
-            # of lambdas in a specific python file
-        dict_lambda_count_per_repo[key[1]] += all_files_dict_types[key][1]
-    for key in dict_lambda_count_per_repo.keys():
-        dict_lambda_count_per_repo[key] = dict_lambda_count_per_repo[key] \
-                                          / len(dict_lambda_count_per_repo)
+    for filename, repo_name, repo_path in all_files_dict_types.keys():
+        # if the repository name is not a key - add it with a count of zero
+        if repo_name not in dict_lambda_count_per_repo.keys():
+            dict_lambda_count_per_repo[repo_name] = 0
+        num_lambdas_in_file = all_files_dict_types[(filename, repo_name, repo_path)][1]
+        dict_lambda_count_per_repo[repo_name] += num_lambdas_in_file
+        # divide the number of lambdas in each repository by the total number of repositories
+    for repo_name in dict_lambda_count_per_repo.keys():
+        dict_lambda_count_per_repo[repo_name] /= len(dict_lambda_count_per_repo)
     return dict_lambda_count_per_repo
 
 
 def get_repository_dir_name(path, start_loc_path, end_loc_path):
     """
-    get the repository name (directory name) based on the full path of the python file
-    :param end_loc_path:
-    :param start_loc_path:
-    :param path: full path of the python file
+    get the repository name (directory name) based on the full path of a python file inside it
+    :param start_loc_path: the start index of the repository name in the path
+    :param end_loc_path: the end index of the repository name in the path
+    :param path: full path of a python file
     :return: the directory (repository) name
     """
     path = os.path.normpath(path)
     split_path = path.split(os.sep)
+    # add 1 to get the full name
     return "/".join(split_path[start_loc_path: end_loc_path + 1])
 
 
-def calc_ratio_lambdas_repo_size(repos_parent_folder, all_files_dict_types):
+def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
     """
     calculate the lambdas ratio to the repository size in bytes
-    :param repos_parent_folder: the parent folder of all the repositories folders
-    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
-                                 expression in that file, number of lambda appearances)
-    :return:
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    :return: dict_lambdas_size_ratio_per_repo
     """
     dict_number_of_lambdas_per_repo = {}
     # make a dictionary with the number of lambdas in each repository
-    for key in all_files_dict_types.keys():
-        # the second element of each key is the repository name
-        # if the repository name is not in the keys of the dictionary, add it with a count of zero
-        repository_name = key[1]
-        repository_path = key[2]
+    for filename, repository_name, repository_path in all_files_dict_types.keys():
+        # if the repository name is not in the keys of the dictionary - add it with a count of zero
         if (repository_name, repository_path) not in dict_number_of_lambdas_per_repo.keys():
             dict_number_of_lambdas_per_repo[(repository_name, repository_path)] = 0
-            # the second element of the value of each key is the number
-            # of lambdas in a specific python file
-        number_of_lambdas_in_file = all_files_dict_types[key][1]
+            # the second element of the value is the number of lambdas in a specific python file
+        number_of_lambdas_in_file = all_files_dict_types[(filename, repository_name, repository_path)][1]
         dict_number_of_lambdas_per_repo[(repository_name, repository_path)] += number_of_lambdas_in_file
     dict_lambdas_size_ratio_per_repo = {}
-    for key in dict_number_of_lambdas_per_repo.keys():
-        repository_name = key[0]
-        repository_path = key[1]
+    for repository_name, repository_path in dict_number_of_lambdas_per_repo.keys():
+        # get the total size (in bytes) of all the python files in the repository
         size_of_repo_bytes = sum(Path(f).stat().st_size for f in glob.glob("./{}/**/*.py".format(repository_path)))
         if size_of_repo_bytes == 0:
-            print("the size of python files in bytes in this repository is zero. the repository path is:{}"
+            print("the size of python files in bytes in this repository is zero. the repository path is: {}"
                   .format(repository_path))
             dict_lambdas_size_ratio_per_repo[repository_name] = (0, 0)
         else:
-            dict_lambdas_size_ratio_per_repo[repository_name] = (dict_number_of_lambdas_per_repo[key]
-                                                                 / size_of_repo_bytes, size_of_repo_bytes)
+            dict_lambdas_size_ratio_per_repo[repository_name] = \
+                (dict_number_of_lambdas_per_repo[(repository_name, repository_path)] /
+                 size_of_repo_bytes, size_of_repo_bytes)
     return dict_lambdas_size_ratio_per_repo
 
 
-def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types, dict_ratio_lambdas_repo_size):
+def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types,
+                                                         dict_ratio_lambdas_repo_size):
     """
     calculate correlation measurements with respect to the lambdas number in each repository
-    :param dict_ratio_lambdas_repo_size:
+    :param dict_ratio_lambdas_repo_size: dictionary containing the following:
+    key = (repository name)
+    value = (ratio of the number of lambdas and the repository size, size of the repository in bytes)
     :param df_repos_props: the data frame containing all the repositories properties extracted from the github
     crawling
-    :param all_files_dict_types: key=(file_name, repository_name), value = (dict. counts the different usages of lambda
-                                 expression in that file, number of lambda appearances)
-    :return:
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
     """
-    # extract from the repository name in the data frame only the name (the name before this action is
-    # all the path with slashes)
+    # extract from the repository path in the data frame only the repository name
     df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(func=get_repository_dir_name, args=(1, 1))
-    # remove the percentage sign from the percentage and remain only with the number as float
+    # remove the percentage sign and remain only with the number as float
     df_repos_props["percentage_python_lang"] = df_repos_props["percentage_python_lang"].apply(lambda x:
                                                                                               float(x.replace("%", "")))
-    # if the letter 'k' exists (the number is in thousands), replace it with '000' and remove the dot
-    # if exists
+    # if the letter 'k' exists (the number is in thousands), replace it with '000' and remove the decimal point
     df_repos_props["repo_number_of_stars"] = df_repos_props["repo_number_of_stars"].apply(lambda x:
                                                                                           float(x.replace(".", "")
                                                                                                 .replace("k", "000")
                                                                                                 if "k" in x else x))
-    # if the letter 'k' exists (the number is in thousands), replace it with '000' and remove the dot
-    # if exists
+    # if the letter 'k' exists (the number is in thousands), replace it with '000' and remove the decimal point
     df_repos_props["repo_number_of_forks"] = df_repos_props["repo_number_of_forks"].apply(lambda x:
                                                                                           float(x.replace(".", "")
                                                                                                 .replace("k", "000")
                                                                                                 if "k" in x else x))
     dict_lambda_count_per_repo = {}
-    for key in all_files_dict_types.keys():
-        # the second element of each key is the repository name
-        # if the repository name is not in the keys of the dictionary, add it with a count of zero
-        if key[1] not in dict_lambda_count_per_repo.keys():
-            dict_lambda_count_per_repo[key[1]] = 0
-            # the second element of the value of each key is the number
-            # of lambdas in a specific python file
-        dict_lambda_count_per_repo[key[1]] += all_files_dict_types[key][1]
+    for filename, repository_name, repository_path in all_files_dict_types.keys():
+        # if the repository name is not in the keys of the dictionary - add it with a count of zero
+        if repository_name not in dict_lambda_count_per_repo.keys():
+            dict_lambda_count_per_repo[repository_name] = 0
+            # the second element of the value is the number of lambdas in a specific python file
+        number_of_lambdas = all_files_dict_types[(filename, repository_name, repository_path)][1]
+        dict_lambda_count_per_repo[repository_name] += number_of_lambdas
     dict_lambda_count_per_repo_to_df = {"ratio_lambdas_size": [], "lambdas_number": [], "repo_name": []}
     for key in dict_lambda_count_per_repo.keys():
         dict_lambda_count_per_repo_to_df["repo_name"].append(key)
@@ -190,12 +189,22 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_fil
     print(df_repos_props[["ratio_lambdas_size", "lambdas_number"]].corr())
 
 
-def count_lambdas_in_all_repositories(repos_parent_folder):
+def process_all_python_files_in_parallel(repos_parent_folder):
+    """
+    process all the python files in all the repositories in parallel to get the number of lambdas in each
+    python file. save the results into dictionary
+    :param repos_parent_folder: the parent folder of all the repositories downloaded after the scraping
+    :return: all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    """
     all_files_dict_types = {}
-    # get all the python files from all the repositories downloaded
+    # get all the python files from all the repositories
     files = [f for f in glob.glob(r'{}/**/*.py'.format(repos_parent_folder), recursive=True)]
     lambdas_counts_in_files = 0
-    # initialize thread pool to do the calculation of the lambda statistics, in each of the files in parallel
+    # initialize a thread pool to do the calculation of the lambda statistics in each of the python
+    # files in parallel
     with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         # construct a dictionary of future to filename and repository name
         future_to_filename = \
@@ -223,8 +232,8 @@ def count_lambdas_in_all_repositories(repos_parent_folder):
 
 def main():
     df_repos_props = pd.read_csv("./repos_props.csv")
-    all_files_dict_types = count_lambdas_in_all_repositories("./pythonReposForMethods")
-    ratio_lambdas_repo_size = calc_ratio_lambdas_repo_size("./pythonReposForMethods", all_files_dict_types)
+    all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
+    ratio_lambdas_repo_size = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
     check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_files_dict_types, ratio_lambdas_repo_size)
     num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
     num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
