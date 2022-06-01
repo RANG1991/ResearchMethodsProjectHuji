@@ -31,7 +31,8 @@ def process_lambda_exp_single_file(python_filename):
         dict_types = {}
         if num_lambda_in_file > 0:
             dict_types = count_usages_of_lambda_expressions(python_file_text)
-        return dict_types, num_lambda_in_file
+        num_of_code_lines = calc_number_of_code_line_python_file(python_file_text)
+        return dict_types, num_lambda_in_file, num_of_code_lines
 
 
 def count_usages_of_lambda_expressions(python_file_text):
@@ -48,8 +49,8 @@ def count_usages_of_lambda_expressions(python_file_text):
                   "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
                   "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
                   "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
-    if dict_types["map_reduce_filter"] > 0:
-        print("\n".join([finding[0] for finding in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]))
+    # if dict_types["map_reduce_filter"] > 0:
+    #     print("\n".join([finding[0] for finding in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]))
     return dict_types
 
 
@@ -105,6 +106,11 @@ def get_repository_dir_name(path, start_loc_path, end_loc_path):
     return "/".join(split_path[start_loc_path: end_loc_path + 1])
 
 
+def calc_number_of_code_line_python_file(python_file_text):
+    lines_of_code = re.findall(r"^[^#](.+?)\n", python_file_text)
+    return len(lines_of_code)
+
+
 def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
     """
     calculate the lambdas ratio to the repository size in bytes
@@ -119,22 +125,19 @@ def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
     for filename, repository_name, repository_path in all_files_dict_types.keys():
         # if the repository name is not in the keys of the dictionary - add it with a count of zero
         if (repository_name, repository_path) not in dict_number_of_lambdas_per_repo.keys():
-            dict_number_of_lambdas_per_repo[(repository_name, repository_path)] = 0
+            dict_number_of_lambdas_per_repo[(repository_name, repository_path)] = [0.0, 0.0]
             # the second element of the value is the number of lambdas in a specific python file
         number_of_lambdas_in_file = all_files_dict_types[(filename, repository_name, repository_path)][1]
-        dict_number_of_lambdas_per_repo[(repository_name, repository_path)] += number_of_lambdas_in_file
+        num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)][1]
+        dict_number_of_lambdas_per_repo[(repository_name, repository_path)][0] += number_of_lambdas_in_file
+        dict_number_of_lambdas_per_repo[(repository_name, repository_path)][1] += num_of_code_lines
     dict_lambdas_size_ratio_per_repo = {}
     for repository_name, repository_path in dict_number_of_lambdas_per_repo.keys():
-        # get the total size (in bytes) of all the python files in the repository
-        size_of_repo_bytes = sum(Path(f).stat().st_size for f in glob.glob("./{}/**/*.py".format(repository_path)))
-        if size_of_repo_bytes == 0:
-            print("the size of python files in bytes in this repository is zero. the repository path is: {}"
-                  .format(repository_path))
-            dict_lambdas_size_ratio_per_repo[repository_name] = (0, 0)
+        number_of_lambdas_in_file, num_of_code_lines = dict_number_of_lambdas_per_repo[(repository_name, repository_path)]
+        if num_of_code_lines == 0:
+            dict_lambdas_size_ratio_per_repo[repository_name] = 0.0
         else:
-            dict_lambdas_size_ratio_per_repo[repository_name] = \
-                (dict_number_of_lambdas_per_repo[(repository_name, repository_path)] /
-                 size_of_repo_bytes, size_of_repo_bytes)
+            dict_lambdas_size_ratio_per_repo[repository_name] = number_of_lambdas_in_file / num_of_code_lines
     return dict_lambdas_size_ratio_per_repo
 
 
@@ -179,7 +182,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props, all_fil
     for key in dict_lambda_count_per_repo.keys():
         dict_lambda_count_per_repo_to_df["repo_name"].append(key)
         dict_lambda_count_per_repo_to_df["lambdas_number"].append(int(dict_lambda_count_per_repo[key]))
-        dict_lambda_count_per_repo_to_df["ratio_lambdas_size"].append(dict_ratio_lambdas_repo_size[key][1])
+        dict_lambda_count_per_repo_to_df["ratio_lambdas_size"].append(dict_ratio_lambdas_repo_size[key])
     df_lambdas = pd.DataFrame.from_dict(dict_lambda_count_per_repo_to_df)
     df_repos_props = df_repos_props.sort_values(by=["repo_name"])
     df_lambdas = df_lambdas.sort_values(by=["repo_name"])
@@ -227,8 +230,9 @@ def process_all_python_files_in_parallel(repos_parent_folder):
         for future in concurrent.futures.as_completed(future_to_filename):
             filename, repository_name, repository_path = future_to_filename[future]
             try:
-                dict_types, num_lambda_in_file = future.result()
-                all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file)
+                dict_types, num_lambda_in_file, num_of_code_lines = future.result()
+                all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
+                                                                                      num_of_code_lines)
             except Exception:
                 pass
                 # print('%r generated an exception: %s' % (filename, exc))
@@ -240,9 +244,14 @@ def process_all_python_files_in_parallel(repos_parent_folder):
 
 
 def plot_bar_plots_lambdas_types(all_files_dict_types):
+    """
+
+    :param all_files_dict_types:
+    :return:
+    """
     dict_types_accumulated_sum = {}
     for filename, repository_name, repository_path in all_files_dict_types.keys():
-        dict_types, num_lambdas_in_file = all_files_dict_types[(filename, repository_name, repository_path)]
+        dict_types, num_lambdas_in_file, num_lines_of_code = all_files_dict_types[(filename, repository_name, repository_path)]
         for type_name in dict_types.keys():
             if type_name not in dict_types_accumulated_sum.keys():
                 dict_types_accumulated_sum[type_name] = 0
@@ -250,6 +259,21 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
     plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 100))
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=45)
+    plt.show()
+
+
+def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
+    num_lambdas_ratio_list = []
+    for repository_name in ratio_lambdas_repo_size.keys():
+        num_lambdas_ratio_repository = ratio_lambdas_repo_size[repository_name]
+        num_lambdas_ratio_list.append(num_lambdas_ratio_repository)
+    lambdas_ratio_np = np.array(num_lambdas_ratio_list)
+    lambdas_ratio_np_sorted = np.sort(lambdas_ratio_np)
+    p = 1. * np.arange(len(lambdas_ratio_np)) / (len(lambdas_ratio_np) - 1)
+    plt.plot(lambdas_ratio_np_sorted, p)
+    plt.title("CDF - ratio between number of lambdas and the repository size")
+    plt.xlabel('Ratio')
+    plt.ylabel('Proportion of <= repositories')
     plt.show()
 
 
@@ -264,6 +288,7 @@ def main():
     print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
     print("the ratio of lambdas and the repository size: {}".format(ratio_lambdas_repo_size))
     plot_bar_plots_lambdas_types(all_files_dict_types)
+    plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size)
 
 
 if __name__ == '__main__':
