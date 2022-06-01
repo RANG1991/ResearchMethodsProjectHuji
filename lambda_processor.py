@@ -4,15 +4,17 @@ import glob
 import os
 import pandas as pd
 from pathlib import Path
+from matplotlib import pyplot as plt
+import numpy as np
 
 # regular expressions for lambda usages patterns
-MAP_REDUCE_FILTER_PATTERN = r"(map|reduce|filter)(.*?)lambda (.*?):"
-FUNC_ARG_PATTERN = r"\((.*?)=lambda (.*?):(.*?)\)"
-RET_VALUE_PATTERN = r"return lambda (.*?):"
-ITER_PATTERN = r"lambda (.*?):(.*?)list|tuple|string|dict"
-UNICODE_PATTERN = r"lambda (.*?):(.*?).encode"
-EXCEPTION_PATTERN = r"lambda (.*?): future.set_exception"
-ASYNC_TASKS_PATTERN = r"lambda (.*?):(.*?)async"
+MAP_REDUCE_FILTER_PATTERN = r"((map|reduce|filter)(.*?)lambda (.*?):)"
+FUNC_ARG_PATTERN = r"(\((.*?)=lambda (.*?):(.*?)\))"
+RET_VALUE_PATTERN = r"(return lambda (.*?):)"
+ITER_PATTERN = r"(lambda (.*?):(.*?)(list|tuple|string|dict))"
+UNICODE_PATTERN = r"(lambda (.*?):(.*?).encode)"
+EXCEPTION_PATTERN = r"(lambda (.*?): future.set_exception)"
+ASYNC_TASKS_PATTERN = r"(lambda (.*?):(.*?)async)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -46,6 +48,8 @@ def count_usages_of_lambda_expressions(python_file_text):
                   "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
                   "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
                   "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
+    if dict_types["map_reduce_filter"] > 0:
+        print("\n".join([finding[0] for finding in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]))
     return dict_types
 
 
@@ -235,6 +239,20 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     return all_files_dict_types
 
 
+def plot_bar_plots_lambdas_types(all_files_dict_types):
+    dict_types_accumulated_sum = {}
+    for filename, repository_name, repository_path in all_files_dict_types.keys():
+        dict_types, num_lambdas_in_file = all_files_dict_types[(filename, repository_name, repository_path)]
+        for type_name in dict_types.keys():
+            if type_name not in dict_types_accumulated_sum.keys():
+                dict_types_accumulated_sum[type_name] = 0
+            dict_types_accumulated_sum[type_name] += dict_types[type_name]
+    plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
+    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 100))
+    plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=45)
+    plt.show()
+
+
 def main():
     df_repos_props = pd.read_csv("./repos_props.csv")
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
@@ -245,6 +263,7 @@ def main():
     print("the average number of lambdas per file: {}".format(avg_num_lambda_per_file))
     print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
     print("the ratio of lambdas and the repository size: {}".format(ratio_lambdas_repo_size))
+    plot_bar_plots_lambdas_types(all_files_dict_types)
 
 
 if __name__ == '__main__':
