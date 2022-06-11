@@ -171,10 +171,8 @@ def remove_all_non_python_files():
 if __name__ == "__main__":
     github_crawling()
     create_cloning_script()
-
     # Runs the scripts using subprocess module
     p = Popen("../pythonReposForMethods/clone_all_python_repos.bat")
     stdout, stderr = p.communicate()
     p.wait()
-
     remove_all_non_python_files()

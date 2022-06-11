@@ -8,13 +8,13 @@ from matplotlib import pyplot as plt
 import numpy as np
 
 # regular expressions for lambda usages patterns
-MAP_REDUCE_FILTER_PATTERN = r"((map|reduce|filter)(.*?)lambda (.*?):)"
-FUNC_ARG_PATTERN = r"(\((.*?)=lambda (.*?):(.*?)\))"
-RET_VALUE_PATTERN = r"(return lambda (.*?):)"
-ITER_PATTERN = r"(lambda (.*?):(.*?)(list|tuple|string|dict))"
-UNICODE_PATTERN = r"(lambda (.*?):(.*?).encode)"
-EXCEPTION_PATTERN = r"(lambda (.*?): future.set_exception)"
-ASYNC_TASKS_PATTERN = r"(lambda (.*?):(.*?)async)"
+MAP_REDUCE_FILTER_PATTERN = "((.*?)(map|reduce|filter)(.*?)lambda (.*?):(.*?)\n)"
+FUNC_ARG_PATTERN = "((.*?)\\((.*?)=lambda (.*?):(.*?)\\)(.*?)\n)"
+RET_VALUE_PATTERN = "((.*?)return lambda (.*?):(.*?)\n)"
+ITER_PATTERN = "((.*?)lambda (.*?):(.*?)(list|tuple|string|dict)(.*?)\n)"
+UNICODE_PATTERN = "((.*?)lambda (.*?):(.*?).encode(.*?)\n)"
+EXCEPTION_PATTERN = "((.*?)lambda (.*?): future.set_exception(.*?)\n)"
+ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -42,15 +42,15 @@ def count_usages_of_lambda_expressions(python_file_text):
     :return: dict_type - a dictionary containing the type of each lambda expression as key and its number in this
     python file as value
     """
-    dict_types = {"map_reduce_filter": len(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)),
-                  "func_arg": len(re.findall(FUNC_ARG_PATTERN, python_file_text)),
-                  "ret_value": len(re.findall(RET_VALUE_PATTERN, python_file_text)),
+    dict_types = {"map reduce filter": len(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)),
+                  "function arguments": len(re.findall(FUNC_ARG_PATTERN, python_file_text)),
+                  "return value": len(re.findall(RET_VALUE_PATTERN, python_file_text)),
                   "unicode": len(re.findall(UNICODE_PATTERN, python_file_text)),
                   "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
                   "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
                   "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
-    # if dict_types["map_reduce_filter"] > 0:
-    #     print("\n".join([finding[0] for finding in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]))
+    if dict_types["map reduce filter"] > 0:
+        print(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)[0])
     return dict_types
 
 
@@ -233,9 +233,8 @@ def process_all_python_files_in_parallel(repos_parent_folder):
                 dict_types, num_lambda_in_file, num_of_code_lines = future.result()
                 all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
                                                                                       num_of_code_lines)
-            except Exception:
-                pass
-                # print('%r generated an exception: %s' % (filename, exc))
+            except Exception as exc:
+                print('%r generated an exception: %s' % (filename, exc))
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
             future.cancel()
