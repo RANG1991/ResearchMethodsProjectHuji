@@ -49,8 +49,8 @@ def count_usages_of_lambda_expressions(python_file_text):
                   "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
                   "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
                   "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
-    if dict_types["map reduce filter"] > 0:
-        print(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)[0])
+    # if dict_types["map reduce filter"] > 0:
+    #     print(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)[0])
     return dict_types
 
 
@@ -107,7 +107,7 @@ def get_repository_dir_name(path, start_loc_path, end_loc_path):
 
 
 def calc_number_of_code_line_python_file(python_file_text):
-    lines_of_code = re.findall(r"^[^#](.+?)\n", python_file_text)
+    lines_of_code = re.findall(r"[^#](.+?)\n", python_file_text)
     return len(lines_of_code)
 
 
@@ -128,7 +128,7 @@ def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
             dict_number_of_lambdas_per_repo[(repository_name, repository_path)] = [0.0, 0.0]
             # the second element of the value is the number of lambdas in a specific python file
         number_of_lambdas_in_file = all_files_dict_types[(filename, repository_name, repository_path)][1]
-        num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)][1]
+        num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)][2]
         dict_number_of_lambdas_per_repo[(repository_name, repository_path)][0] += number_of_lambdas_in_file
         dict_number_of_lambdas_per_repo[(repository_name, repository_path)][1] += num_of_code_lines
     dict_lambdas_size_ratio_per_repo = {}
@@ -267,12 +267,16 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
         num_lambdas_ratio_repository = ratio_lambdas_repo_size[repository_name]
         num_lambdas_ratio_list.append(num_lambdas_ratio_repository)
     lambdas_ratio_np = np.array(num_lambdas_ratio_list)
-    lambdas_ratio_np_sorted = np.sort(lambdas_ratio_np)
-    p = 1. * np.arange(len(lambdas_ratio_np)) / (len(lambdas_ratio_np) - 1)
-    plt.plot(lambdas_ratio_np_sorted, p)
-    plt.title("CDF - ratio between number of lambdas and the repository size")
-    plt.xlabel('Ratio')
-    plt.ylabel('Proportion of <= repositories')
+    values, base = np.histogram(lambdas_ratio_np, bins=1000)
+    # evaluate the cumulative
+    cumulative = np.cumsum(values)
+    cumulative = (cumulative - np.min(cumulative)) / np.max(cumulative)
+    # plot the cumulative function
+    plt.plot(base[:-1], cumulative, c='blue')
+    plt.title("CDF of the ratio between number of lambdas and the repository size")
+    plt.xlabel('Ratio between number of lambdas and the repository size')
+    plt.ylabel('CDF')
+    plt.grid()
     plt.show()
 
 
