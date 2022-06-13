@@ -120,7 +120,7 @@ def github_crawling():
     main_url = 'https://github.com/'
 
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 100
+    num_pages = 10
     try:
         # Iterates over all the result-pages
         for page_index in range(num_pages):
@@ -151,7 +151,7 @@ def github_crawling():
 def create_cloning_script():
     df_repos = pd.read_csv("./repos_props.csv")
     df_repos = df_repos[df_repos["repo_is_forked"] == False]
-    df_repos = df_repos[df_repos["percentage_python_lang"] >= 60]
+    df_repos = df_repos[df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", ""))) >= 60.0]
     df_repos_links = df_repos["repo_link"].tolist()
     with open("../pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
         for i in range(100):
