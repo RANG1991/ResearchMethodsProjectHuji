@@ -69,8 +69,9 @@ Analyzes the usages of Lambda-expressions in the mined repositories. Produces St
 ```
 
 **Run the code**
+<br>after installing all the requirements using pip and putting your username, password and the correct path of the selenium driver in the config.json file, you can run the script as follows:
 ```
-python3 //TO-DO: Complete
+python github_crawler.py
 ```
 
 **Demo Recording:**

@@ -7,6 +7,7 @@ from time import sleep
 import pandas as pd
 import os
 from subprocess import Popen
+import lambda_processor
 
 
 def read_local_config_file(filename):
@@ -176,3 +177,4 @@ if __name__ == "__main__":
     stdout, stderr = p.communicate()
     p.wait()
     remove_all_non_python_files()
+    lambda_processor.main()
