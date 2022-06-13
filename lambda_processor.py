@@ -232,7 +232,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     all_files_dict_types = {}
     # get all the python files from all the repositories
     files = [f for f in glob.glob(r'{}/**/*.py'.format(repos_parent_folder), recursive=True)]
-    # files = files[:10]
+    # files = files[:50]
     lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
@@ -301,9 +301,20 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     plt.show()
 
 
+def count_number_of_repos_containing_lambdas(all_files_dict_types):
+    list_repos_containing_lambdas = []
+    for filename, repository_name, repository_path in all_files_dict_types:
+        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)]
+        if repository_name not in list_repos_containing_lambdas:
+            if num_lambda_in_file > 0:
+                list_repos_containing_lambdas.append(repository_name)
+    return len(list_repos_containing_lambdas)
+
+
 def main():
     df_repos_props = pd.read_csv("./repos_props.csv")
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
+    num_of_repos_containing_lambdas = count_number_of_repos_containing_lambdas(all_files_dict_types)
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
     check_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
     avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
@@ -311,6 +322,7 @@ def main():
     print("the average number of lambdas per file: {}".format(avg_num_lambda_per_file))
     print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
     print("the ratio of lambdas and the repository size: {}".format(dict_num_lambdas_num_code_lines_per_repo))
+    print("the number of repositories containing lambda is: {}".format(num_of_repos_containing_lambdas))
     plot_bar_plots_lambdas_types(all_files_dict_types)
     plot_CDF_number_of_lambdas_ratio(dict_num_lambdas_num_code_lines_per_repo)
 
