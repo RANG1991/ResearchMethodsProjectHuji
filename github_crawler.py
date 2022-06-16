@@ -5,9 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 import pandas as pd
-import os
 from subprocess import Popen
 import lambda_processor
+import os
 
 
 def read_local_config_file(filename):
@@ -120,7 +120,7 @@ def github_crawling():
     main_url = 'https://github.com/'
 
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 10
+    num_pages = 100
     try:
         # Iterates over all the result-pages
         for page_index in range(num_pages):
@@ -153,27 +153,27 @@ def create_cloning_script():
     df_repos = df_repos[df_repos["repo_is_forked"] == False]
     df_repos = df_repos[df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", ""))) >= 60.0]
     df_repos_links = df_repos["repo_link"].tolist()
-    with open("../pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
-        for i in range(100):
+    with open("./pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
+        for i in range(len(df_repos_links)):
             f.write("git clone {}\n".format(df_repos_links[i]))
 
 
 def remove_all_non_python_files():
-    for path, subdirs, files in os.walk(r"C:\Users\Admin\PycharmProjects\pythonReposForMethods"):
+    for path, subdirs, files in os.walk(r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods"):
         for name in files:
             try:
                 file_ext = os.path.splitext(os.path.join(path, name))[1]
-                # if file_ext != ".py":
-                # os.remove(os.path.join(path, name))
+                if file_ext != ".py":
+                    os.remove(os.path.join(path, name))
             except PermissionError as e:
                 print(e)
 
 
 if __name__ == "__main__":
-    github_crawling()
+    # github_crawling()
     create_cloning_script()
     # Runs the scripts using subprocess module
-    p = Popen("../pythonReposForMethods/clone_all_python_repos.bat")
+    p = Popen("clone_all_python_repos.bat", cwd=r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods")
     stdout, stderr = p.communicate()
     p.wait()
     remove_all_non_python_files()
