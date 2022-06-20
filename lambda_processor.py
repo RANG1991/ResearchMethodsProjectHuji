@@ -278,7 +278,8 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
                 dict_types_accumulated_sum[type_name] = 0
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
-    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 100))
+    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 10),
+               rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=45)
     plt.tight_layout()
     plt.show()
@@ -289,7 +290,10 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     for repository_name in ratio_lambdas_repo_size.keys():
         num_lambdas_in_repo = ratio_lambdas_repo_size[repository_name][0]
         num_lines_of_code_in_repo = ratio_lambdas_repo_size[repository_name][1]
-        num_lambdas_ratio_list.append(num_lambdas_in_repo / num_lines_of_code_in_repo)
+        if num_lines_of_code_in_repo == 0:
+            num_lambdas_ratio_list.append(0.0)
+        else:
+            num_lambdas_ratio_list.append(num_lambdas_in_repo / num_lines_of_code_in_repo)
     lambdas_ratio_np = np.array(num_lambdas_ratio_list)
     values, base = np.histogram(lambdas_ratio_np, bins=1000)
     # evaluate the cumulative

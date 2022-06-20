@@ -151,7 +151,7 @@ def github_crawling():
 def create_cloning_script():
     df_repos = pd.read_csv("./repos_props.csv")
     df_repos = df_repos[df_repos["repo_is_forked"] == False]
-    df_repos = df_repos[df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", ""))) >= 60.0]
+    df_repos["percentage_python_lang"] = df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", "")))
     df_repos_links = df_repos["repo_link"].tolist()
     with open("./pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
         for i in range(len(df_repos_links)):
@@ -171,10 +171,10 @@ def remove_all_non_python_files():
 
 if __name__ == "__main__":
     # github_crawling()
-    create_cloning_script()
+    # create_cloning_script()
     # Runs the scripts using subprocess module
-    p = Popen("clone_all_python_repos.bat", cwd=r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods")
-    stdout, stderr = p.communicate()
-    p.wait()
+    # p = Popen(["./clone_all_python_repos.bat"], cwd=r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods")
+    # stdout, stderr = p.communicate()
+    # p.wait()
     remove_all_non_python_files()
     lambda_processor.main()
