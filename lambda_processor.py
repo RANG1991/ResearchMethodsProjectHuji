@@ -16,6 +16,7 @@ ITER_PATTERN = "((.*?)lambda (.*?):(.*?)(list|tuple|string|dict)(.*?)\n)"
 UNICODE_PATTERN = "((.*?)lambda (.*?):(.*?).encode(.*?)\n)"
 EXCEPTION_PATTERN = "((.*?)lambda (.*?): future.set_exception(.*?)\n)"
 ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
+ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -51,8 +52,9 @@ def count_usages_of_lambda_expressions(python_file_text):
                   "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
                   "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
                   "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
-    if dict_types["exception"] > 0:
-        print((re.findall(EXCEPTION_PATTERN, python_file_text)[0])[0].replace(r" +", " "))
+    all_lambdas_count = len(re.findall(ALL_PATTERN, python_file_text))
+    all_lambdas_types_count = sum(dict_types.values())
+    dict_types["other"] = all_lambdas_count - all_lambdas_types_count
     return dict_types
 
 
@@ -172,7 +174,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
         num_lambdas_in_repository = int(dict_num_lambdas_num_code_lines_per_repo[(repository_name, repository_path)][0])
         num_lines_of_code_in_repository = int(
             dict_num_lambdas_num_code_lines_per_repo[(repository_name, repository_path)][1])
-        dict_lambda_count_per_repo_to_df["lambdas_number"].append(math.log(num_lambdas_in_repository) if
+        dict_lambda_count_per_repo_to_df["lambdas_number"].append(num_lambdas_in_repository if
                                                                   num_lambdas_in_repository > 0 else 0)
         dict_lambda_count_per_repo_to_df["number_of_code_lines_in_repo"].append(num_lines_of_code_in_repository)
     df_lambdas = pd.DataFrame.from_dict(dict_lambda_count_per_repo_to_df)
@@ -278,7 +280,7 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
                 dict_types_accumulated_sum[type_name] = 0
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
-    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 10),
+    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 10000),
                rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=45)
     plt.tight_layout()
