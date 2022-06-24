@@ -1,4 +1,3 @@
-import math
 import re
 import concurrent.futures
 import glob
@@ -6,6 +5,7 @@ import os
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
+import itertools
 
 
 # regular expressions for lambda usages patterns
@@ -33,28 +33,44 @@ def process_lambda_exp_single_file(python_filename):
         num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
         dict_types = {}
         if num_lambda_in_file > 0:
-            dict_types = count_usages_of_lambda_expressions(python_file_text)
+            dict_types = count_usages_of_lambda_expressions(python_file_text, os.path.basename(python_filename))
         num_of_code_lines = calc_number_of_code_line_python_file(python_file_text)
         return dict_types, num_lambda_in_file, num_of_code_lines
 
 
-def count_usages_of_lambda_expressions(python_file_text):
+def count_usages_of_lambda_expressions(python_file_text, python_file_name):
     """
     count the number of the various usages of lambda expressions in a single python file
+    :param python_file_name:
     :param python_file_text: the python file as string (text)
     :return: dict_type - a dictionary containing the type of each lambda expression as key, and it's number in this
     python file as value
     """
-    dict_types = {"map reduce filter": len(re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)),
-                  "function arguments": len(re.findall(FUNC_ARG_PATTERN, python_file_text)),
-                  "return value": len(re.findall(RET_VALUE_PATTERN, python_file_text)),
-                  "unicode": len(re.findall(UNICODE_PATTERN, python_file_text)),
-                  "exception": len(re.findall(EXCEPTION_PATTERN, python_file_text)),
-                  "async": len(re.findall(ASYNC_TASKS_PATTERN, python_file_text)),
-                  "iterators": len(re.findall(ITER_PATTERN, python_file_text))}
-    all_lambdas_count = len(re.findall(ALL_PATTERN, python_file_text))
+    map_filter_reduce_find_all = [x[0] for x in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]
+    function_arguments_find_all = [x[0] for x in re.findall(FUNC_ARG_PATTERN, python_file_text)]
+    return_value_find_all = [x[0] for x in re.findall(RET_VALUE_PATTERN, python_file_text)]
+    unicode_find_all = [x[0] for x in re.findall(UNICODE_PATTERN, python_file_text)]
+    exception_find_all = [x[0] for x in re.findall(EXCEPTION_PATTERN, python_file_text)]
+    async_find_all = [x[0] for x in re.findall(ASYNC_TASKS_PATTERN, python_file_text)]
+    iterators_find_all = [x[0] for x in re.findall(ITER_PATTERN, python_file_text)]
+    dict_types = {
+                  "map reduce filter": len(map_filter_reduce_find_all),
+                  "function arguments": len(function_arguments_find_all),
+                  "return value": len(return_value_find_all),
+                  "unicode": len(unicode_find_all),
+                  "exception": len(exception_find_all),
+                  "async": len(async_find_all),
+                  "iterators": len(iterators_find_all)
+                  }
+    all_lambdas_find_all = re.findall(ALL_PATTERN, python_file_text)[0]
+    all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
+                                                    return_value_find_all, unicode_find_all, exception_find_all,
+                                                    async_find_all, iterators_find_all)
+    all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
+    with open("./lambdas_other.txt", "a") as f:
+        f.writelines("\n".join(all_lambdas_other))
     all_lambdas_types_count = sum(dict_types.values())
-    dict_types["other"] = all_lambdas_count - all_lambdas_types_count
+    dict_types["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
     return dict_types
 
 
@@ -94,7 +110,7 @@ def calc_average_num_lambdas_per_repository(all_files_dict_types):
         # divide the number of lambdas in each repository by the total number of repositories
         if repo_name not in list_of_repositories:
             list_of_repositories.append(repo_name)
-    return total_number_of_lambdas / len(list_of_repositories)
+    return total_number_of_lambdas / len(list_of_repositories), total_number_of_lambdas
 
 
 def get_repository_dir_name(path, start_loc_path, end_loc_path):
@@ -348,13 +364,14 @@ def main():
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
     check_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
     avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
-    avg_num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
+    avg_num_lambda_per_repository, total_num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
     ration_total_lambdas_total_code_lines = calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types)
     print("the average number of lambdas per file: {}".format(avg_num_lambda_per_file))
     print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
     print("the ratio of lambdas and the repository size: {}".format(dict_num_lambdas_num_code_lines_per_repo))
     print("the number of repositories containing lambda is: {}".format(num_of_repos_containing_lambdas))
     print("the maximum number lambdas in a single file is: {}".format(max_num_lambdas_in_file))
+    print("the total number of lambdas in all the repositories: {}".format(total_num_lambda_per_repository))
     print("the ration between the number of lambdas and the number of code lines is: {}".format(ration_total_lambdas_total_code_lines))
     plot_bar_plots_lambdas_types(all_files_dict_types)
     plot_CDF_number_of_lambdas_ratio(dict_num_lambdas_num_code_lines_per_repo)
