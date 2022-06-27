@@ -7,7 +7,6 @@ from matplotlib import pyplot as plt
 import numpy as np
 import itertools
 
-
 # regular expressions for lambda usages patterns
 MAP_REDUCE_FILTER_PATTERN = "((.*?)(map|reduce|filter)(.*?)lambda (.*?):(.*?)\n)"
 FUNC_ARG_PATTERN = "((.*?)\\((.*?)=lambda (.*?):(.*?)\\)(.*?)\n)"
@@ -17,6 +16,15 @@ UNICODE_PATTERN = "((.*?)lambda (.*?):(.*?).encode(.*?)\n)"
 EXCEPTION_PATTERN = "((.*?)lambda (.*?): future.set_exception(.*?)\n)"
 ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
 ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
+CALLBACK_PATTERN = r"[c|C]allback(.*?)lambda"
+STRING_FORMATTING_PATTERN = r"lambda([^\(]*?)str\("
+ERROR_RAISING_PATTERN = r"lambda(.*?)error"
+IN_OPERATOR_PATTERN = r"lambda(.*?)in"
+INDEXING_PATTERN = r"lambda([^\(]*?)\["
+NONE_PATTERN = r"lambda(.*?):(.*?)None"
+ARITHMETIC_OPERATIONS_PATTERN = r"lambda([^\(]*?):([^\(]*?)[\+|\/|\*|\-]"
+NONAME_VAR_PATTERN = r"lambda _:"
+BOOL_COND_PATTERN = r"lambda([^\(]*?):([^\(,\)]*?)(<|==|!=|>|<=|=<|=>|>=)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -53,19 +61,46 @@ def count_usages_of_lambda_expressions(python_file_text, python_file_name):
     exception_find_all = [x[0] for x in re.findall(EXCEPTION_PATTERN, python_file_text)]
     async_find_all = [x[0] for x in re.findall(ASYNC_TASKS_PATTERN, python_file_text)]
     iterators_find_all = [x[0] for x in re.findall(ITER_PATTERN, python_file_text)]
+    callbacks = [x[0] for x in re.findall(CALLBACK_PATTERN, python_file_text)]
+    string_formatting = [x[0] for x in re.findall(STRING_FORMATTING_PATTERN, python_file_text)]
+    error_raising = [x[0] for x in re.findall(ERROR_RAISING_PATTERN, python_file_text)]
+    in_operator = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
+    indexing = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
+    none_ptrn = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
+    arithmetic_operators = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
+    noname_vars = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
+    boolean_conditions = [x[0] for x in re.findall(BOOL_COND_PATTERN, python_file_text)]
     dict_types = {
-                  "map reduce filter": len(map_filter_reduce_find_all),
-                  "function arguments": len(function_arguments_find_all),
-                  "return value": len(return_value_find_all),
-                  "unicode": len(unicode_find_all),
-                  "exception": len(exception_find_all),
-                  "async": len(async_find_all),
-                  "iterators": len(iterators_find_all)
-                  }
+        "map reduce filter": len(map_filter_reduce_find_all),
+        "function arguments": len(function_arguments_find_all),
+        "return value": len(return_value_find_all),
+        "unicode": len(unicode_find_all),
+        "exception": len(exception_find_all),
+        "async": len(async_find_all),
+        "iterators": len(iterators_find_all),
+        "callbacks": len(callbacks),
+        "string_formatting": len(string_formatting),
+        "error_raising": len(error_raising),
+        "in_operator": len(in_operator),
+        "indexing": len(indexing),
+        "none_ptrn": len(none_ptrn),
+        "arithmetic_operators": len(arithmetic_operators),
+        "noname_vars": len(noname_vars),
+        "boolean_conditions": len(boolean_conditions)
+    }
     all_lambdas_find_all = re.findall(ALL_PATTERN, python_file_text)[0]
     all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
                                                     return_value_find_all, unicode_find_all, exception_find_all,
-                                                    async_find_all, iterators_find_all)
+                                                    async_find_all, iterators_find_all,
+                                                    callbacks,
+                                                    string_formatting,
+                                                    error_raising,
+                                                    in_operator,
+                                                    indexing,
+                                                    none_ptrn,
+                                                    arithmetic_operators,
+                                                    noname_vars,
+                                                    boolean_conditions)
     all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
     with open("./lambdas_other.txt", "a") as f:
         f.writelines("\n".join(all_lambdas_other))
@@ -212,7 +247,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Stars of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Stars of repo")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("./stars_lambdas.png")
     # number of forks
     print("the correlation between the number of forks and the number of lambdas is:\n"
           "{}".format(
@@ -220,7 +255,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Forks of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Forks of repo")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("./forks_lambdas.png")
     # percentage
     print("the correlation between the Python percent and the number of lambdas is:\n"
           "{}".format(
@@ -228,7 +263,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["Python percent", "#lambdas"]].plot.scatter(
         x="#lambdas", y="Python percent")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("./python_perc_lambdas.png")
     # number of lines of code
     print("the correlation between the ratio of the repository size and the number of lambdas is:\n"
           "{}".format(
@@ -236,7 +271,8 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["# Code lines", "#lambdas"]].plot.scatter(
         x="#lambdas", y="# Code lines")
     plt.tight_layout()
-    plt.show()
+    plt.savefig("./code_lines_lambdas.png")
+    plt.clf()
 
 
 def process_all_python_files_in_parallel(repos_parent_folder):
@@ -256,7 +292,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
         # construct a dictionary of future to filename and repository name
         future_to_filename = \
             {
@@ -296,11 +332,13 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
                 dict_types_accumulated_sum[type_name] = 0
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
-    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 10000),
+    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 1000),
                rotation=45)
-    plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=45)
+    plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
+               fontsize=9)
     plt.tight_layout()
-    plt.show()
+    plt.savefig("./bar_plot.png")
+    plt.clf()
 
 
 def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
@@ -321,13 +359,14 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     plt.plot(base[:-1], cumulative, c='blue')
     plt.xlabel('Lambdas / Repo code lines')
     plt.grid()
-    plt.show()
+    plt.savefig("./CDF.png")
 
 
 def count_number_of_repos_containing_lambdas(all_files_dict_types):
     list_repos_containing_lambdas = []
     for filename, repository_name, repository_path in all_files_dict_types:
-        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)]
+        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[
+            (filename, repository_name, repository_path)]
         if repository_name not in list_repos_containing_lambdas:
             if num_lambda_in_file > 0:
                 list_repos_containing_lambdas.append(repository_name)
@@ -338,7 +377,8 @@ def count_maximum_number_of_lambdas_per_file(all_files_dict_types):
     max_num_lambdas = 0
     name_of_file_with_max = ""
     for filename, repository_name, repository_path in all_files_dict_types:
-        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)]
+        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[
+            (filename, repository_name, repository_path)]
         if max_num_lambdas < num_lambda_in_file:
             max_num_lambdas = num_lambda_in_file
             name_of_file_with_max = filename
@@ -350,7 +390,8 @@ def calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types):
     num_total_lambdas = 0
     num_total_lines_of_code = 0
     for filename, repository_name, repository_path in all_files_dict_types:
-        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[(filename, repository_name, repository_path)]
+        dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[
+            (filename, repository_name, repository_path)]
         num_total_lambdas += num_lambda_in_file
         num_total_lines_of_code += num_of_code_lines
     return num_total_lambdas / num_total_lines_of_code
@@ -364,7 +405,8 @@ def main():
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
     check_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
     avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
-    avg_num_lambda_per_repository, total_num_lambda_per_repository = calc_average_num_lambdas_per_repository(all_files_dict_types)
+    avg_num_lambda_per_repository, total_num_lambda_per_repository = calc_average_num_lambdas_per_repository(
+        all_files_dict_types)
     ration_total_lambdas_total_code_lines = calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types)
     print("the average number of lambdas per file: {}".format(avg_num_lambda_per_file))
     print("the average number of lambdas per repository: {}".format(avg_num_lambda_per_repository))
@@ -372,7 +414,8 @@ def main():
     print("the number of repositories containing lambda is: {}".format(num_of_repos_containing_lambdas))
     print("the maximum number lambdas in a single file is: {}".format(max_num_lambdas_in_file))
     print("the total number of lambdas in all the repositories: {}".format(total_num_lambda_per_repository))
-    print("the ration between the number of lambdas and the number of code lines is: {}".format(ration_total_lambdas_total_code_lines))
+    print("the ration between the number of lambdas and the number of code lines is: {}".format(
+        ration_total_lambdas_total_code_lines))
     plot_bar_plots_lambdas_types(all_files_dict_types)
     plot_CDF_number_of_lambdas_ratio(dict_num_lambdas_num_code_lines_per_repo)
 

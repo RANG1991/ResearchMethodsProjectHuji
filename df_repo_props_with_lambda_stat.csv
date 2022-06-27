@@ -103,7 +103,7 @@
 101,wechatsogou,https://github.com/chyroc/WechatSogou,53000.0,16000.0,False,99.3,1785,2
 102,weibospider,https://github.com/nghuyong/WeiboSpider,25000.0,670.0,False,100.0,1966,3
 103,weibospider,https://github.com/dataabc/weiboSpider,58000.0,16000.0,False,100.0,1966,3
-104,zappa,https://github.com/Miserlou/Zappa,119000.0,13000.0,False,99.9,10903,4
+104,zappa,https://github.com/Miserlou/Zappa,119000.0,13000.0,False,99.9,8101,2
 105,abu,https://github.com/bbfamily/abu,91000.0,32000.0,False,100.0,46733,130
 106,adminset,https://github.com/guohongze/adminset,3000.0,14000.0,False,99.3,13203,6
 107,adversarial-robustness-toolbox,https://github.com/Trusted-AI/adversarial-robustness-toolbox,3000.0,835.0,False,99.7,89077,87
@@ -237,7 +237,7 @@
 235,full-stack-fastapi-postgresql,https://github.com/tiangolo/full-stack-fastapi-postgresql,91000.0,16000.0,False,39.0,1481,0
 236,fuzzywuzzy,https://github.com/seatgeek/fuzzywuzzy,87000.0,885.0,False,91.7,1310,13
 237,gef,https://github.com/hugsy/gef,46000.0,593.0,False,96.1,10555,11
-238,gensim,https://github.com/RaRe-Technologies/gensim,132000.0,42000.0,False,92.0,52716,40
+238,gensim,https://github.com/RaRe-Technologies/gensim,132000.0,42000.0,False,92.0,51761,34
 239,gevent,https://github.com/gevent/gevent,58000.0,933.0,False,98.1,213827,216
 240,ggpy,https://github.com/yhat/ggpy,36000.0,587.0,False,99.8,7189,9
 241,gitfiti,https://github.com/gelstudios/gitfiti,7000.0,958.0,False,100.0,492,0
@@ -265,7 +265,7 @@
 263,hug,https://github.com/hugapi/hug,66000.0,378.0,False,98.6,10710,12
 264,hy,https://github.com/hylang/hy,43000.0,352.0,False,65.4,8219,41
 265,hyperopt,https://github.com/hyperopt/hyperopt,62000.0,975.0,False,78.1,13133,28
-266,hypothesis,https://github.com/HypothesisWorks/hypothesis,6000.0,516.0,False,87.6,55147,969
+266,hypothesis,https://github.com/HypothesisWorks/hypothesis,6000.0,516.0,False,87.6,54896,924
 267,icecream,https://github.com/gruns/icecream,59000.0,121.0,False,100.0,1032,0
 268,igbot,https://github.com/ohld/igbot,42000.0,15000.0,False,99.9,13137,7
 269,ignite,https://github.com/pytorch/ignite,4000.0,547.0,False,98.8,50458,535
@@ -509,7 +509,7 @@
 507,stock,https://github.com/pythonstock/stock,52000.0,18000.0,False,79.5,3158,4
 508,streamlink,https://github.com/streamlink/streamlink,76000.0,868.0,False,99.6,33725,160
 509,streamlit,https://github.com/streamlit/streamlit,196000.0,18000.0,False,47.1,48620,157
-510,sympy,https://github.com/sympy/sympy,93000.0,37000.0,False,98.8,602549,2228
+510,sympy,https://github.com/sympy/sympy,93000.0,37000.0,False,98.8,600033,2194
 511,synapse,https://github.com/matrix-org/synapse,96000.0,18000.0,False,98.1,221578,120
 512,system-design-primer,https://github.com/donnemartin/system-design-primer,184000.0,335000.0,False,98.0,766,0
 513,tablib,https://github.com/jazzband/tablib,41000.0,571.0,False,100.0,4587,16
