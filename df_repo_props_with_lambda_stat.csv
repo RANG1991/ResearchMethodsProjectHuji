@@ -10,7 +10,7 @@
 8,archivebox,https://github.com/ArchiveBox/ArchiveBox,136000.0,781.0,False,50.1,10516,127
 9,augmentor,https://github.com/mdbloice/Augmentor,47000.0,849.0,False,100.0,5687,3
 10,autosploit,https://github.com/NullArray/AutoSploit,46000.0,11000.0,False,93.0,2559,1
-11,baota,https://github.com/aaPanel/BaoTa,34000.0,853.0,False,45.5,63062,32
+11,baota,https://github.com/aaPanel/BaoTa,34000.0,853.0,False,45.5,62594,30
 12,bayesianoptimization,https://github.com/fmfn/BayesianOptimization,6000.0,13000.0,False,100.0,1849,5
 13,bottles,https://github.com/bottlesdevs/Bottles,3000.0,114.0,False,97.4,16317,7
 14,cactus,https://github.com/eudicots/Cactus,34000.0,318.0,False,96.5,6185,15
@@ -22,8 +22,8 @@
 20,ctci-6th-edition-python,https://github.com/careercup/CtCI-6th-Edition-Python,4000.0,16000.0,False,100.0,5234,2
 21,cura,https://github.com/Ultimaker/Cura,39000.0,16000.0,False,70.0,54996,113
 22,datasciencepython,https://github.com/ujjwalkarn/DataSciencePython,46000.0,14000.0,False,98.5,653,0
-23,deeplearning,https://github.com/MingchaoZhu/DeepLearning,45000.0,11000.0,False,100.0,3542,3
-24,djangoblog,https://github.com/liangliangyy/DjangoBlog,46000.0,22000.0,False,80.1,5662,18
+23,deeplearning,https://github.com/MingchaoZhu/DeepLearning,45000.0,11000.0,False,100.0,3798,4
+24,djangoblog,https://github.com/liangliangyy/DjangoBlog,46000.0,22000.0,False,80.1,5467,14
 25,ezfn-lobbybot,https://github.com/EZFNDEV/EZFN-Lobbybot,69000.0,395.0,False,100.0,6,0
 26,easyocr,https://github.com/JaidedAI/EasyOCR,15000.0,21000.0,False,98.6,3969,19
 27,eel,https://github.com/ChrisKnott/Eel,5000.0,515.0,False,75.2,858,5
@@ -44,7 +44,7 @@
 42,lihang,https://github.com/SmirkCao/Lihang,49000.0,15000.0,False,52.6,3652,12
 43,mitmf,https://github.com/byt3bl33d3r/MITMf,33000.0,11000.0,False,83.1,9843,7
 44,mlalgorithms,https://github.com/rushter/MLAlgorithms,89000.0,16000.0,False,99.9,3600,3
-45,machine-learning,https://github.com/Jack-Cherish/Machine-Learning,63000.0,45000.0,False,100.0,4641,2
+45,machine-learning,https://github.com/Jack-Cherish/Machine-Learning,63000.0,45000.0,False,100.0,4798,4
 46,machinelearning_python,https://github.com/lawlite19/MachineLearning_Python,48000.0,21000.0,False,100.0,1218,0
 47,minecraft,https://github.com/fogleman/Minecraft,49000.0,11000.0,False,100.0,749,0
 48,monkeytype,https://github.com/Instagram/MonkeyType,38000.0,141.0,False,100.0,6012,7
@@ -52,7 +52,7 @@
 50,nuitka,https://github.com/Nuitka/Nuitka,69000.0,396.0,False,58.8,283444,360
 51,ocrmypdf,https://github.com/ocrmypdf/OCRmyPDF,65000.0,580.0,False,96.1,12517,2
 52,octoprint,https://github.com/OctoPrint/OctoPrint,67000.0,15000.0,False,44.4,69980,396
-53,oneforall,https://github.com/shmilylty/OneForAll,5000.0,954.0,False,99.8,8122,13
+53,oneforall,https://github.com/shmilylty/OneForAll,5000.0,954.0,False,99.8,8301,14
 54,onlinejudge,https://github.com/QingdaoU/OnlineJudge,48000.0,13000.0,False,98.4,8344,8
 55,openbbterminal,https://github.com/OpenBB-finance/OpenBBTerminal,122000.0,13000.0,False,100.0,172544,457
 56,osintgram,https://github.com/Datalux/Osintgram,38000.0,833.0,False,96.4,1580,8
@@ -65,7 +65,7 @@
 63,pygithub,https://github.com/PyGithub/PyGithub,53000.0,15000.0,False,99.9,38323,230
 64,pymysql,https://github.com/PyMySQL/PyMySQL,69000.0,14000.0,False,100.0,7407,0
 65,pypdf2,https://github.com/py-pdf/PyPDF2,44000.0,11000.0,False,99.9,27190,6
-66,pyqt,https://github.com/PyQt5/PyQt,43000.0,16000.0,False,90.1,50207,17
+66,pyqt,https://github.com/PyQt5/PyQt,43000.0,16000.0,False,90.1,50326,18
 67,pysimplegui,https://github.com/PySimpleGUI/PySimpleGUI,102000.0,15000.0,False,99.7,91993,73
 68,pysnooper,https://github.com/cool-RR/PySnooper,151000.0,915.0,False,99.9,5298,13
 69,python,https://github.com/geekcomputers/Python,256000.0,109000.0,False,78.0,63379,92
@@ -100,18 +100,18 @@
 98,trumpscript,https://github.com/samshadwell/TrumpScript,74000.0,410.0,False,99.8,3224,0
 99,werobot,https://github.com/offu/WeRoBot,4000.0,967.0,False,99.4,8340,0
 100,weasyprint,https://github.com/Kozea/WeasyPrint,5000.0,564.0,False,96.4,48825,30
-101,wechatsogou,https://github.com/chyroc/WechatSogou,53000.0,16000.0,False,99.3,1785,2
+101,wechatsogou,https://github.com/chyroc/WechatSogou,53000.0,16000.0,False,99.3,2247,3
 102,weibospider,https://github.com/nghuyong/WeiboSpider,25000.0,670.0,False,100.0,1966,3
 103,weibospider,https://github.com/dataabc/weiboSpider,58000.0,16000.0,False,100.0,1966,3
-104,zappa,https://github.com/Miserlou/Zappa,119000.0,13000.0,False,99.9,8101,2
-105,abu,https://github.com/bbfamily/abu,91000.0,32000.0,False,100.0,46733,130
+104,zappa,https://github.com/Miserlou/Zappa,119000.0,13000.0,False,99.9,10903,4
+105,abu,https://github.com/bbfamily/abu,91000.0,32000.0,False,100.0,47472,133
 106,adminset,https://github.com/guohongze/adminset,3000.0,14000.0,False,99.3,13203,6
 107,adversarial-robustness-toolbox,https://github.com/Trusted-AI/adversarial-robustness-toolbox,3000.0,835.0,False,99.7,89077,87
 108,aiohttp,https://github.com/aio-libs/aiohttp,125000.0,18000.0,False,97.4,44470,13
 109,aiortc,https://github.com/aiortc/aiortc,29000.0,587.0,False,100.0,23352,30
 110,airflow,https://github.com/apache/airflow,263000.0,107000.0,False,94.0,447325,248
 111,ajenti,https://github.com/ajenti/ajenti,68000.0,792.0,False,46.0,9604,9
-112,akshare,https://github.com/akfamily/akshare,51000.0,11000.0,False,83.5,65565,53
+112,akshare,https://github.com/akfamily/akshare,51000.0,11000.0,False,83.5,68849,86
 113,albumentations,https://github.com/albumentations-team/albumentations,104000.0,13000.0,False,99.8,14732,48
 114,algorithms,https://github.com/keon/algorithms,211000.0,43000.0,False,100.0,19959,48
 115,alive-progress,https://github.com/rsalmei/alive-progress,35000.0,142.0,False,99.7,3425,12
@@ -177,7 +177,7 @@
 175,cupy,https://github.com/cupy/cupy,61000.0,599.0,False,55.0,112260,152
 176,cython,https://github.com/cython/cython,71000.0,13000.0,False,48.0,90765,93
 177,d2l-en,https://github.com/d2l-ai/d2l-en,137000.0,31000.0,False,61.7,7279,53
-178,d2l-zh,https://github.com/d2l-ai/d2l-zh,33000.0,77000.0,False,70.7,6590,40
+178,d2l-zh,https://github.com/d2l-ai/d2l-zh,33000.0,77000.0,False,70.7,924,2
 179,dagster,https://github.com/dagster-io/dagster,49000.0,612.0,False,86.0,358672,440
 180,darts,https://github.com/unit8co/darts,42000.0,426.0,False,100.0,36653,94
 181,dash,https://github.com/plotly/dash,166000.0,17000.0,False,45.8,30216,36
@@ -237,7 +237,7 @@
 235,full-stack-fastapi-postgresql,https://github.com/tiangolo/full-stack-fastapi-postgresql,91000.0,16000.0,False,39.0,1481,0
 236,fuzzywuzzy,https://github.com/seatgeek/fuzzywuzzy,87000.0,885.0,False,91.7,1310,13
 237,gef,https://github.com/hugsy/gef,46000.0,593.0,False,96.1,10555,11
-238,gensim,https://github.com/RaRe-Technologies/gensim,132000.0,42000.0,False,92.0,51761,34
+238,gensim,https://github.com/RaRe-Technologies/gensim,132000.0,42000.0,False,92.0,52716,40
 239,gevent,https://github.com/gevent/gevent,58000.0,933.0,False,98.1,213827,216
 240,ggpy,https://github.com/yhat/ggpy,36000.0,587.0,False,99.8,7189,9
 241,gitfiti,https://github.com/gelstudios/gitfiti,7000.0,958.0,False,100.0,492,0
@@ -265,7 +265,7 @@
 263,hug,https://github.com/hugapi/hug,66000.0,378.0,False,98.6,10710,12
 264,hy,https://github.com/hylang/hy,43000.0,352.0,False,65.4,8219,41
 265,hyperopt,https://github.com/hyperopt/hyperopt,62000.0,975.0,False,78.1,13133,28
-266,hypothesis,https://github.com/HypothesisWorks/hypothesis,6000.0,516.0,False,87.6,54896,924
+266,hypothesis,https://github.com/HypothesisWorks/hypothesis,6000.0,516.0,False,87.6,54581,946
 267,icecream,https://github.com/gruns/icecream,59000.0,121.0,False,100.0,1032,0
 268,igbot,https://github.com/ohld/igbot,42000.0,15000.0,False,99.9,13137,7
 269,ignite,https://github.com/pytorch/ignite,4000.0,547.0,False,98.8,50458,535
@@ -305,7 +305,7 @@
 303,lightfm,https://github.com/lyst/lightfm,4000.0,633.0,False,99.1,3575,0
 304,lightning,https://github.com/Lightning-AI/lightning,187000.0,24000.0,False,98.5,94455,66
 305,line_profiler,https://github.com/rkern/line_profiler,36000.0,255.0,False,97.7,815,0
-306,localstack,https://github.com/localstack/localstack,416000.0,31000.0,False,99.0,126884,87
+306,localstack,https://github.com/localstack/localstack,416000.0,31000.0,False,99.0,125159,86
 307,locust,https://github.com/locustio/locust,191000.0,25000.0,False,92.8,18872,17
 308,loguru,https://github.com/Delgan/loguru,12000.0,528.0,False,100.0,11972,87
 309,ludwig,https://github.com/ludwig-ai/ludwig,84000.0,989.0,False,99.8,60161,98
@@ -430,7 +430,7 @@
 428,python-pinyin,https://github.com/mozillazg/python-pinyin,39000.0,561.0,False,99.9,89325,10
 429,python-slack-sdk,https://github.com/slackapi/python-slack-sdk,34000.0,810.0,False,83.7,53877,9
 430,python-small-examples,https://github.com/jackzhenguo/python-small-examples,7000.0,17000.0,False,100.0,58,0
-431,python-spider,https://github.com/Jack-Cherish/python-spider,149000.0,56000.0,False,94.6,5687,7
+431,python-spider,https://github.com/Jack-Cherish/python-spider,149000.0,56000.0,False,94.6,5958,20
 432,python-telegram-bot,https://github.com/python-telegram-bot/python-telegram-bot,188000.0,41000.0,False,100.0,73327,14
 433,python-twitter,https://github.com/bear/python-twitter,33000.0,967.0,False,99.4,9671,2
 434,python_koans,https://github.com/gregmalcolm/python_koans,45000.0,27000.0,False,99.3,3937,7
@@ -509,7 +509,7 @@
 507,stock,https://github.com/pythonstock/stock,52000.0,18000.0,False,79.5,3158,4
 508,streamlink,https://github.com/streamlink/streamlink,76000.0,868.0,False,99.6,33725,160
 509,streamlit,https://github.com/streamlit/streamlit,196000.0,18000.0,False,47.1,48620,157
-510,sympy,https://github.com/sympy/sympy,93000.0,37000.0,False,98.8,600033,2194
+510,sympy,https://github.com/sympy/sympy,93000.0,37000.0,False,98.8,600141,2197
 511,synapse,https://github.com/matrix-org/synapse,96000.0,18000.0,False,98.1,221578,120
 512,system-design-primer,https://github.com/donnemartin/system-design-primer,184000.0,335000.0,False,98.0,766,0
 513,tablib,https://github.com/jazzband/tablib,41000.0,571.0,False,100.0,4587,16
@@ -533,7 +533,7 @@
 531,tribler,https://github.com/Tribler/tribler,41000.0,432.0,False,80.8,48268,281
 532,trio,https://github.com/python-trio/trio,47000.0,270.0,False,99.3,28631,30
 533,troposphere,https://github.com/cloudtools/troposphere,47000.0,14000.0,False,99.9,63305,2
-534,tushare,https://github.com/waditu/tushare,116000.0,42000.0,False,100.0,10831,77
+534,tushare,https://github.com/waditu/tushare,116000.0,42000.0,False,100.0,10795,84
 535,tutorials,https://github.com/MorvanZhou/tutorials,10000.0,56000.0,False,87.1,4478,1
 536,tweepy,https://github.com/tweepy/tweepy,89000.0,4000.0,False,100.0,14559,0
 537,twint,https://github.com/twintproject/twint,133000.0,22000.0,False,99.8,3066,0

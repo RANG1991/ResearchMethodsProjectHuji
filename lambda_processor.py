@@ -18,13 +18,13 @@ ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
 ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
 CALLBACK_PATTERN = r"[c|C]allback(.*?)lambda"
 STRING_FORMATTING_PATTERN = r"lambda([^\(]*?)str\("
-ERROR_RAISING_PATTERN = r"lambda(.*?)error"
-IN_OPERATOR_PATTERN = r"lambda(.*?)in"
-INDEXING_PATTERN = r"lambda([^\(]*?)\["
-NONE_PATTERN = r"lambda(.*?):(.*?)None"
-ARITHMETIC_OPERATIONS_PATTERN = r"lambda([^\(]*?):([^\(]*?)[\+|\/|\*|\-]"
-NONAME_VAR_PATTERN = r"lambda _:"
-BOOL_COND_PATTERN = r"lambda([^\(]*?):([^\(,\)]*?)(<|==|!=|>|<=|=<|=>|>=)"
+ERROR_RAISING_PATTERN = r"(lambda(.*?):(.*?)error)"
+IN_OPERATOR_PATTERN = r"(lambda(.*?):(.*?)in)"
+INDEXING_PATTERN = r"(lambda([^\(]*?)\[)"
+NONE_PATTERN = r"(lambda(.*?):(.*?)None)"
+ARITHMETIC_OPERATIONS_PATTERN = r"(lambda([^\(]*?):([^\(]*?)[\+|\/|\*|\-])"
+NONAME_VAR_PATTERN = r"(lambda _:)"
+BOOL_COND_PATTERN = r"(lambda([^\(]*?):([^\(,\)]*?)(<|==|!=|>|<=|=<|=>|>=))"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -102,8 +102,10 @@ def count_usages_of_lambda_expressions(python_file_text, python_file_name):
                                                     noname_vars,
                                                     boolean_conditions)
     all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
-    with open("./lambdas_other.txt", "a") as f:
-        f.writelines("\n".join(all_lambdas_other))
+    with open("./lambdas_in_operator.txt", "a") as f:
+        f.writelines("\n".join(in_operator))
+    with open("./lambdas_arithmetic_operators.txt", "a") as f:
+        f.writelines("\n".join(arithmetic_operators))
     all_lambdas_types_count = sum(dict_types.values())
     dict_types["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
     return dict_types
