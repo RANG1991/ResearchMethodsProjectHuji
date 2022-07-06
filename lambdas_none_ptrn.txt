@@ -1,0 +1,3214 @@
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+        self.__log_debug: Callable[..., None] = lambda *args: None
+        self.__log_debug: Callable[..., None] = lambda *args: None
+        self.__log_debug: Callable[..., None] = lambda *args: None
+            ENV.from_string(json.dumps(unstructure(obj), default=lambda o: None))
+    task_d = EmptyOperator(task_id="test_task_on_execute", on_execute_callback=lambda *args, **kwargs: None)
+
+    task_e = EmptyOperator(task_id="test_task_on_success", on_success_callback=lambda *args, **kwargs: None)
+    monkeypatch.setattr(plugins_manager, "initialize_timetables_plugins", lambda: None)
+    signal.signal(signal.SIGINT, lambda signum, frame: None)
+
+    signal.signal(signal.SIGTERM, lambda signum, frame: None)
+        gevent.signal_handler(signal.SIGINT, lambda: None)
+
+        gevent.signal_handler(signal.SIGTERM, lambda: None)
+                self.sendMail = lambda *args: None
+
+            self.sendMail = lambda *args: None
+    df = df.applymap(lambda x: None if x == '' else x)
+        monkeypatch.setattr(shutil, 'rmtree', lambda x: None)
+        monkeypatch.setattr('time.sleep', lambda x: None)
+
+        monkeypatch.setattr('time.sleep', lambda x: None)
+
+        monkeypatch.setattr('time.sleep', lambda x: None)
+
+        monkeypatch.setattr('time.sleep', lambda x: None)
+
+        monkeypatch.setattr('time.sleep', lambda x: None)
+
+        monkeypatch.setattr('time.sleep', lambda x: None)
+        password.makedirs_safe = lambda path, mode: None
+
+        password.os.chmod = lambda path, mode: None
+
+        password.os.open = lambda path, flag: None
+
+        password.os.close = lambda fd: None
+
+        password.os.remove = lambda path: None
+
+        password.makedirs_safe = lambda path, mode: None
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+    warnings.showwarning = lambda: None
+
+    sys.excepthook = lambda etype, evalue, tb: None
+    strip = lambda a: None if a is None else np.asarray(a)
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+            fetch_request_token=lambda: None,
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+    validate_func = lambda x: None
+    mocks = mocker.Mock(**{'order_by.return_value': mocker.Mock(**{'__iter__': lambda self: iter([]), 'first.return_value': None})})
+            report_violation = lambda message: None
+@mock.patch.object(Project, "update", lambda self, **kwargs: None)
+
+@mock.patch.object(Project, "update", lambda self, **kwargs: None)
+@mock.patch('awx.main.tasks.system.inspect_execution_nodes', lambda *args, **kwargs: None)
+    with mock.patch('awx.main.queue.CallbackQueueDispatcher.dispatch', lambda self, obj: None):
+        with mock.patch('awx.main.queue.CallbackQueueDispatcher.dispatch', lambda self, obj: None):
+    @mock.patch('awx.main.management.commands.replay_job_events.emit_event_detail', lambda *a, **kw: None)
+
+    @mock.patch('awx.main.management.commands.replay_job_events.emit_event_detail', lambda *a, **kw: None)
+        release = Bag(data={}, refresh=lambda *args: None)
+        test.func = lambda *args: None
+
+        plugin.func = lambda *args: None
+    monkeypatch.setattr(bigchaindb, 'run_configure', lambda *args, **kwargs: None)
+
+    monkeypatch.setattr(config_utils, 'write_config', lambda *args: None)
+
+    monkeypatch.setattr(bigchaindb, '_run_init', lambda: None)
+
+    monkeypatch.setattr(start, 'start', lambda *args: None)
+            method = lambda x: None  # noqa: E731
+lambda arg: None
+
+lambda arg: None
+slice[lambda: None : lambda: None]
+
+slice[lambda x, y, *args, really=2, **kwargs: None :, None::]
+        s1 = SessionCallback(lambda: None, callback_id=ID("1"))
+
+        s2 = SessionCallback(lambda: None, callback_id=ID("2"))
+
+        s1 = lambda x: None
+
+        s2 = lambda x: None
+
+        cm._change_callbacks["foo"] = lambda x: None
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    state_hook = state_hook or (lambda old_state, new_state, out: None)
+        self.chunks = LRUCache(capacity=10, dispose=lambda _: None)
+
+        self._inode_cache = LRUCache(capacity=FILES, dispose=lambda _: None)
+
+        self.data_cache = LRUCache(capacity=data_cache_capacity, dispose=lambda _: None)
+
+        self._last_pos = LRUCache(capacity=FILES, dispose=lambda _: None)
+            self.get_repo_free_nonce = lambda: None
+
+            self.commit_repo_nonce_reservation = lambda next_unreserved, start_nonce: None
+zero_chunk_ids = LRUCache(10, dispose=lambda _: None)
+
+        self.print_file_status = file_status_printer or (lambda *args: None)
+
+        self.print_file_status = file_status_printer or (lambda *args: None)
+
+        self.print_file_status = file_status_printer or (lambda *args: None)
+        monkeypatch.setattr(time, "sleep", lambda x: None)
+            archiver.prerun_checks = lambda *args: None
+        c = LRUCache(2, dispose=lambda _: None)
+        self.results.to_call(lambda keys: {'results': [], 'last_key': None})
+        self.callback = callback if callback else lambda r, e: None
+@wrap(lambda: None)
+            lambda x: None,
+            B.foo = lambda self: None
+
+                cls.foo = lambda self: None
+  "lambda:None",
+
+        s = 'lambda x, *y: None'
+        x = lambda: None
+        samples = [lambda: None,
+                stack.callback(lambda: None)
+        bar = lambda: None
+
+        bar = lambda: None
+        funct = self.ChangeDict.get(funct, (lambda *args: None))
+        A.__setitem__ = lambda *a: None # crash
+
+        f = lambda:None
+                self.__missing__ = lambda key: None
+            self.configure_func(foo, lambda: None)
+            fi = FileInput(inplace=1, openhook=lambda f, m: None)
+        eq('lambda: None')
+
+        eq('lambda arg: None')
+        cp = py_functools.cached_property(lambda s: None)
+        check_syntax_error(self, "lambda (None,): None")
+            client.authenticate('MYAUTH', lambda x: None)
+
+                code, data = client.authenticate('MYAUTH', lambda x: None)
+        f.flush = lambda: None  # break reference loop
+
+        R.flush = lambda self: None
+
+        raw.flush = lambda: None  # break reference loop
+
+        raw.close = lambda: None
+
+        b.flush = lambda: None
+
+        b.flush = lambda: None
+
+        raw.close = lambda: None
+
+        bufio.close = lambda: None
+
+        self.check_writes(lambda bufio: None)
+
+        bufio.close = lambda: None
+
+        reader.close = lambda: None
+
+        writer.close = lambda: None
+
+        reader.close = lambda: None
+
+        writer.close = lambda: None
+
+        txt.flush = lambda: None  # break reference loop
+
+        buffer.close = lambda: None
+
+        txt.flush = lambda: None
+
+        buffer.close = lambda: None
+
+        txt.flush = lambda: None
+        not_fut.__await__ = lambda: None
+
+        a_lambda = lambda: None
+
+        descriptor.__set__ = lambda s, i, v: None
+
+        Wrapped.__wrapped__ = lambda a: None
+
+        p1 = inspect.signature(lambda x, y: None).parameters
+
+        p2 = inspect.signature(lambda y, x: None).parameters
+        lambda *, k1=unittest: None
+
+            f = lambda v=a, x=b, *, y=c, z=d: None
+        mailbox.Mailbox.__init__(self, '', lambda file: None)
+        f = eval('lambda: None')
+
+        g = eval('lambda: None')
+
+        f = eval('lambda: None')
+
+        g = eval('lambda a: None')
+
+        f = eval('lambda a: None')
+
+        g = eval('lambda b: None')
+
+        f = eval('lambda a: None')
+
+        g = eval('lambda a=None: None')
+
+        f = eval('lambda a=0: None')
+
+        g = eval('lambda a=1: None')
+StaticMethodType = type(staticmethod(lambda: None))
+
+ClassMethodType = type(classmethod(lambda c: None))
+        pty.close = lambda _: None
+
+        pty._copy = lambda _1, _2, _3: None
+
+        pty.setraw = lambda _: None
+            (lambda: None < 42, r"'<' .* of 'NoneType' and 'int'"),
+
+            (lambda: None >= None, r"'>=' .* of 'NoneType' and 'NoneType'"),
+        sys.settrace(lambda a,b,c:None)
+        handler = lambda x, y: None
+                ('sendall', s.sendall, True, [], lambda x: None),
+        firstiter = lambda *a: None
+
+        finalizer = lambda *a: None
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+                self.__missing__ = lambda key: None
+        callback = lambda ref: None
+
+        callback = lambda ref: None
+
+            ref1.__callback__ = lambda ref: None
+            data = start = end = lambda *a: None
+        return lambda *args, **kwargs: None
+            first.find_spec = lambda self, fullname, path=None, parent=None: None
+        return lambda *args, **kwargs: None
+                                    object_hook=lambda x: None),
+                                    object_hook = lambda x: None),
+        unittest.TestProgram.parseArgs = lambda *args: None
+
+        self.program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+                lambda: None)
+
+                lambda: None)
+            mock.__setattr__ = lambda self, name: None
+                    return lambda x: None
+    debuglog = lambda m: None  # noqa
+        d.addCallback(lambda _: None)
+                self.checkLength = lambda col, value: None
+        self.patch(tryclient.Try, 'printStatus', lambda _: None)
+        self.master.data.updates.workerConfigured = lambda *a, **k: None
+        self.master.data.updates.workerConfigured = lambda *a, **k: None
+        self.patch(buildbot.buildbot_net_usage_data, '_sendWithRequests', lambda _, __: None)
+                   lambda self: None)
+
+        self.patch(monkeypatches, 'patch_all', lambda: None)
+
+        self.patch(signal, 'signal', lambda sig, hdlr: None)
+                               mock.Mock(side_effect=lambda: None))
+
+        callable = lambda: None
+
+        callable = lambda: None
+
+        callable = lambda: None
+        f = lambda: None
+        yield deferLater(reactor, 0, lambda: None)
+        gsp.processVersion(parse_version("2.6"), lambda: None)
+
+        gsp.processVersion(parse_version("2.4"), lambda: None)
+
+        gsp.processVersion(parse_version('2.6'), lambda: None)
+
+        gsp.processVersion(parse_version('2.4'), lambda: None)
+
+        gsp.processVersion(parse_version("2.13"), lambda: None)
+        bot.parent.master.db.state.getState = lambda *args, **kwargs: None
+
+        b.sendLine = lambda *args: None
+
+        b.sendLine = lambda *args: None
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+
+        self.contact.command_FOO = lambda: None
+            shell.SetPropertyFromCommand(property='foo', extract_fn=lambda: None)
+        self.patch(log, "err", lambda f: None)
+    case.addCleanup(sys.settrace, lambda _a, _b, _c: None)
+            yield self.do(uri, lambda: None)
+                child.stopService = lambda: None
+        d.addCallback(lambda res: None)
+
+            d.addCallback(lambda res: None)
+    signal.alarm = lambda t: None
+        self.patch(log, "err", lambda f: None)
+    CredentialsManagerClass = lambda self, engine: None  # We never use it here
+        test_runner = lambda *a: None
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+            progress_callback = lambda book_id, old_sz, new_sz: None
+
+    def move_library_to(self, all_paths, newloc, progress=(lambda item_name, item_count, total: None), abort=None):
+LibraryDatabase.clean = LibraryDatabase.clean_custom = lambda self:None
+
+LibraryDatabase.clean_standard_field = lambda self, field, commit=False:None
+
+LibraryDatabase.commit = lambda self:None
+            self._db = lambda : None
+        ans = lambda x: None if x in {None, 0} else min(10, max(0, adapt_number(int, x)))
+                           '$':lambda x:{tuple(y) for y in x}, '-':lambda x:None,
+        self.report_progress = lambda x, y: None
+def test_identify_plugin(name, tests, modify_plugin=lambda plugin:None,  # {{{
+              pre_load_callback=lambda x:None, path_is_html=False,
+        replace_links(container, link_sub, frag_map=lambda x, y:None)
+def download_external_resources(container, urls, timeout=60, progress_report=lambda url, done, total: None):
+def check_external_links(container, progress_callback=(lambda num, total:None), check_anchors=True):
+            signal.signal(sig, lambda x, y: None)
+
+def convert(opf_path, opts, metadata=None, output_path=None, log=default_log, cover_data=None, report_progress=lambda x, y: None):
+        self.options = defaultdict(lambda: None)
+            lambda p:None, None, 'ass2', 'ass2', 'testing2', 'testing2',
+        original_handlers[sig] = signal.signal(sig, lambda x, y: None)
+        self.parent_ref = lambda: None
+    def speak_marked_text(self, marked_text, callback=lambda ev: None):
+            self.failed = lambda *a: None
+    def get_valid(prompt, invalidq=lambda x: None):
+
+            3: lambda: None}[choice(
+def digest(un, pw, nonce=None, uri=None, method='GET', nc=1, qop='auth', realm=REALM, cnonce=None, algorithm='MD5', body=b'', modify=lambda x:None):
+        self.init_session = getattr(ctx, 'init_session', lambda ep, data:None)
+
+        self.finalize_session = getattr(ctx, 'finalize_session', lambda ep, data, output:None)
+        def makeroute(route, func=lambda c,d:None, **kwargs):
+
+        self.assertRaises(RouteError, makeroute, '/a/b', lambda c,d,b,a:None)
+            'if':       (lambda self:None, if_expression),
+
+            'for':      (lambda self:None, for_expression),
+
+            'def':      (lambda self: None, define_function_expression),
+            self._db = lambda : None
+        self.prepreprocess_html_ext = getattr(options, 'skip_ad_pages', lambda soup: None)
+    # For example, you can use ``autoexchange = lambda n: None`` to use the
+        install_worker_term_hard_handler = lambda *a, **kw: None
+        self.task_buckets = defaultdict(lambda: None)
+                    cert_selection=lambda _: None)
+        self.update_rule.update_core = lambda param: None
+
+        self.optimizer.add_hook(lambda s: None, 'h1', timing='pre')
+
+            self.optimizer.add_hook(lambda s: None, 'h1', timing='pre')
+
+            self.optimizer.add_hook(lambda s: None, 'h1')
+        self.f = lambda: None
+    puzzle_hash_created_callbacks: Dict = defaultdict(lambda *x: None)
+            lambda x: None,
+
+        lambda x: None,
+    after_exec: Callable[[ModuleType], None] = lambda m: None,
+    graph.add_edge((frozenset((e, f)), frozenset((c, d))), lambda _: None)
+    raw_types._validate_qid_shape = lambda *args: None
+    return CellMaker(identifier, size=0, maker=lambda _: None)
+                synthesizer=lambda *args: None, rewriter=lambda *args: None
+    assert cirq.decompose(no_method, keep=lambda _: False, on_stuck_raise=lambda _: None) == [
+    json_dict = getattr(obj, '_json_dict_', lambda: None)()
+
+    json_dict = getattr(obj, '_json_dict_', lambda: None)()
+    assert result.histogram(key='ab', fold_func=lambda e: None) == collections.Counter({None: 5})
+
+        keys=[], fold_func=lambda e: None
+
+        keys=['ab'], fold_func=lambda e: None
+
+        keys=['ab', 'c'], fold_func=lambda e: None
+        lambda _, __: None,
+            @alternative(requires='missing_alt', implementation=lambda self: None)
+
+        @alternative(requires='alt', implementation=lambda self: None)
+        self._gate_set_validator = gate_set_validator or (lambda a, b, c, d: None)
+                serialized_name='my_val', serialized_type=float, op_getter=lambda x: None
+        try_print = lambda *args, **kwargs: None
+
+        try_print = lambda *args, **kwargs: None
+                   run_on_edge=lambda prev, nxt: None):
+                executor.submit(lambda: None)
+        retval, newres = print_result(results, {}, 0, lambda *args: None,
+                return "(lambda {x}: None if {x} is None else {pipe})({subexpr})".format(
+
+                    return "(lambda {x}: None if {x} is None else {rest})({inp})".format(
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+            refresh_cb=lambda x: None,
+    attr_fn: Callable[[dict[str, Any]], Mapping[str, Any] | None] = lambda data: None
+        app["allow_configured_cors"] = lambda _: None
+        value_fn=lambda nl: None if nl.probability == -1 else nl.probability,
+
+        attributes_fn=lambda nl: None,
+            event_callback=lambda _: None,
+    extra_value: Callable[[Hole], dict[str, Any] | None] = lambda api: None
+    installed_version: Callable[[dict], str | None] = lambda api: None
+
+    latest_version: Callable[[dict], str | None] = lambda api: None
+    next_step: Callable[[dict[str, Any]], str | None] = lambda _: None
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+    manager._store._async_ensure_stop_listener = lambda: None
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        side_effect=lambda zc: None,
+    entity._cancel = lambda *args: None
+        mock_pair.pin = lambda pin: None
+            lambda *args, **kwargs: None,
+    request_id = configurator.async_request_config(hass, "Test Request", lambda _: None)
+
+            callback=lambda _: None,
+
+    request_id = configurator.async_request_config(hass, "Test Request", lambda _: None)
+
+    request_id = configurator.async_request_config(hass, "Test Request", lambda _: None)
+    app["allow_configured_cors"] = lambda _: None
+    toloclient().get_status_info.side_effect = lambda *args, **kwargs: None
+
+    toloclient().get_status_info.side_effect = lambda *args, **kwargs: None
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+            ha.callback(lambda event, updates: None),
+
+        [], ha.callback(lambda event: None)
+
+        [], ha.callback(lambda event: None)
+    test_thread = ThreadWithException(target=lambda *_: None)
+                        lambda session, href: None)
+
+                        lambda session, href: None)
+    d._prepare_cookies = lambda cmd, cv: None
+
+    d._add_cookies = lambda cmd, cookie_values: None
+
+    p.report_progress = lambda: None
+    Body.enum.converters['upperroman'] = lambda x: None
+        self.assertRaises(TypeError, prototype, lambda: None)
+
+        self.assertRaises(TypeError, prototype, lambda: None)
+
+        CFUNCTYPE(None)(lambda x=Nasty(): None)
+        with unittest.mock.patch("ctypes.util._findSoname_ldconfig", lambda *args: None):
+
+        with unittest.mock.patch("ctypes.util._findSoname_ldconfig", lambda *args: None), \
+
+             unittest.mock.patch("ctypes.util._findLib_gcc", lambda *args: None):
+                self.canvas.tag_bind(id, "<Double-1>", lambda x: None)
+                       new_callable=lambda: (lambda t, e: None))
+
+        sys.excepthook = lambda: None
+    wrapper.cache_clear = lambda: None
+        check_syntax_error(self, "lambda (None,): None")
+        check_syntax_error(self, "lambda (None,): None")
+        3: lambda _value: None,                   # None
+@wrap(lambda: None)
+            lambda x: None,
+            B.foo = lambda self: None
+
+                cls.foo = lambda self: None
+  "lambda:None",
+
+        s = 'lambda x, *y: None'
+    test.id = lambda : None
+        x = lambda: None
+        samples = [lambda: None,
+                stack.callback(lambda: None)
+        bar = lambda: None
+
+        bar = lambda: None
+        funct = self.ChangeDict.get(funct, (lambda *args: None))
+                self.__missing__ = lambda key: None
+        A.__setitem__ = lambda *a: None # crash
+
+        f = lambda:None
+            self.configure_func(foo, lambda: None)
+            fi = FileInput(inplace=1, openhook=lambda f, m: None)
+        cp = py_functools.cached_property(lambda s: None)
+        eq('lambda: None')
+
+        eq('lambda arg: None')
+        check_syntax_error(self, "lambda (None,): None")
+        f.flush = lambda: None  # break reference loop
+
+        R.flush = lambda self: None
+
+        raw.flush = lambda: None  # break reference loop
+
+        raw.close = lambda: None
+
+        b.flush = lambda: None
+
+        b.flush = lambda: None
+
+        raw.close = lambda: None
+
+        bufio.close = lambda: None
+
+        self.check_writes(lambda bufio: None)
+
+        bufio.close = lambda: None
+
+        reader.close = lambda: None
+
+        writer.close = lambda: None
+
+        reader.close = lambda: None
+
+        writer.close = lambda: None
+
+        txt.flush = lambda: None  # break reference loop
+
+        buffer.close = lambda: None
+
+        txt.flush = lambda: None
+
+        buffer.close = lambda: None
+
+        txt.flush = lambda: None
+        not_fut.__await__ = lambda: None
+
+        a_lambda = lambda: None
+
+        descriptor.__set__ = lambda s, i, v: None
+
+        Wrapped.__wrapped__ = lambda a: None
+
+        p1 = inspect.signature(lambda x, y: None).parameters
+
+        p2 = inspect.signature(lambda y, x: None).parameters
+            client.authenticate('MYAUTH', lambda x: None)
+
+                code, data = client.authenticate('MYAUTH', lambda x: None)
+        lambda *, k1=unittest: None
+
+            f = lambda v=a, x=b, *, y=c, z=d: None
+        mailbox.Mailbox.__init__(self, '', lambda file: None)
+        Descriptor.__set__ = lambda *args: None
+        f = eval('lambda: None')
+
+        g = eval('lambda: None')
+
+        f = eval('lambda: None')
+
+        g = eval('lambda a: None')
+
+        f = eval('lambda a: None')
+
+        g = eval('lambda b: None')
+
+        f = eval('lambda a: None')
+
+        g = eval('lambda a=None: None')
+
+        f = eval('lambda a=0: None')
+
+        g = eval('lambda a=1: None')
+        check_syntax_error(self, "lambda a, b = 5, /, c: None", "non-default argument follows default argument")
+
+        check_syntax_error(self, "lambda a = 5, b, /, c: None", "non-default argument follows default argument")
+
+        check_syntax_error(self, "lambda a = 5, b, /: None", "non-default argument follows default argument")
+
+        check_syntax_error(self, "lambda *args, /: None")
+
+        check_syntax_error(self, "lambda *args, a, /: None")
+
+        check_syntax_error(self, "lambda **kwargs, /: None")
+
+        check_syntax_error(self, "lambda /, a = 1: None")
+
+        check_syntax_error(self, "lambda /, a: None")
+
+        check_syntax_error(self, "lambda /: None")
+
+        check_syntax_error(self, "lambda *, a, /: None")
+
+        check_syntax_error(self, "lambda *, /, a: None")
+
+        check_syntax_error(self, "lambda a, /, a: None", "duplicate argument 'a' in function definition")
+
+        check_syntax_error(self, "lambda a, /, *, a: None", "duplicate argument 'a' in function definition")
+
+        check_syntax_error(self, "lambda a, /, b, /: None")
+
+        check_syntax_error(self, "lambda a, /, b, /, c: None")
+
+        check_syntax_error(self, "lambda a, /, b, /, c, *, d: None")
+
+        check_syntax_error(self, "lambda a, *, b, /, c: None")
+        pty.close = lambda _: None
+
+        pty._copy = lambda _1, _2, _3: None
+
+        pty.setraw = lambda _: None
+StaticMethodType = type(staticmethod(lambda: None))
+
+ClassMethodType = type(classmethod(lambda c: None))
+        sys.settrace(lambda a,b,c:None)
+            (lambda: None < 42, r"'<' .* of 'NoneType' and 'int'"),
+
+            (lambda: None >= None, r"'>=' .* of 'NoneType' and 'NoneType'"),
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+        handler = lambda x, y: None
+                ('sendall', s.sendall, True, [], lambda x: None),
+        firstiter = lambda *a: None
+
+        finalizer = lambda *a: None
+>>> lambda /,a,b,c: None
+
+>>> lambda a,/,/,b,c: None
+
+>>> lambda a,/,a1,/,b,c: None
+
+>>> lambda a=1,/,/,*b,/,c: None
+
+>>> lambda a,/,a1=1,/,b,c: None
+
+>>> lambda a,*b,c,/,d,e: None
+
+>>> lambda a=1,*b,c=3,/,d,e: None
+
+>>> lambda a=1,/*,b,c: None
+
+>>> lambda a,*b=3,c: None
+
+>>> lambda a,**b=3: None
+
+>>> lambda a, *a, b, **c, d: None
+
+>>> lambda a,*a, b, **c, d=4: None
+
+>>> lambda a,*a, b, **c, *d: None
+
+>>> lambda a,*a, b, **c, **d: None
+
+>>> lambda a=1,/,**b,/,c: None
+
+>>> lambda *b,*d: None
+
+>>> lambda a,*b,c,*d,*e,c: None
+
+>>> lambda a,b,/,c,*b,c,*d,*e,c: None
+
+>>> lambda a,b,/,c,*b,c,*d,**e: None
+
+>>> lambda a=1,d=,c: None
+
+>>> lambda a,d=,c: None
+
+   >>> lambda x, (y, z), w: None
+
+   >>> lambda (x, y, z, w): None
+
+   >>> lambda x, (y, z, w): None
+
+   >>> lambda (x, y, z), w: None
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+        self.check_src_roundtrip("lambda x, y, /, z, q, *, u: None")
+
+        self.check_src_roundtrip("lambda x, *y, **z: None")
+                self.__missing__ = lambda key: None
+        callback = lambda ref: None
+
+        callback = lambda ref: None
+
+            ref1.__callback__ = lambda ref: None
+            data = start = end = lambda *a: None
+        old_handler = signal.signal(signum, lambda *args: None)
+            coro = self.loop.create_server(lambda: None, sock=sock)
+
+            srv = await asyncio.start_server(lambda: None, '::1', 0)
+        self.loop.set_exception_handler(lambda loop, msg: None)
+            fut.add_done_callback(lambda f: None)
+
+            fut.remove_done_callback(lambda f: None)
+        self.loop.set_exception_handler(lambda *args: None)
+
+        self.loop.set_exception_handler(lambda *args: None)
+
+        self.loop.set_exception_handler(lambda loop, ctx: None)
+
+        self.loop.set_exception_handler(lambda loop, ctx: None)
+        self.loop.set_exception_handler(lambda loop, ctx: None)
+
+        self.loop.set_exception_handler(lambda loop, ctx: None)
+        cm.add_set_handler(str, lambda *args, **kw: None)
+        return lambda *args, **kwargs: None
+            first.find_spec = lambda self, fullname, path=None, parent=None: None
+                                    object_hook=lambda x: None),
+                                    object_hook = lambda x: None),
+        self.assertRaises(TypeError, self.con.cursor, lambda: None)
+
+        self.assertRaises(TypeError, self.con.cursor, lambda con: None)
+        unittest.TestProgram.parseArgs = lambda *args: None
+
+        self.program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+
+        program.createTests = lambda: None
+                lambda: None)
+
+                lambda: None)
+            mock.__setattr__ = lambda self, name: None
+                    return lambda x: None
+    def __call__(self, parser, *, _noop=(lambda a: None)):
+            old___del__ = (lambda s: None)
+    generate_gotref = generate_xgotref = generate_xgiveref = generate_giveref = lambda *args: None
+        code_line_at = lambda _: None
+        check_syntax_error(self, "lambda (None,): None")
+        monkeypatch.setattr(uvicorn, "run", lambda *args, **kwargs: None)
+            partitions_fn=check.opt_callable_param(partitions_fn, "partitions_fn", lambda _: None),
+    def reindex(self, print_fn=lambda _: None):
+    noop = lambda *a: None
+            run_event_handler=lambda x: None,
+    return ResourceDefinition(lambda _: None, config_field)
+    return ResourceDefinition(lambda _: None, config_schema=config_schema)
+            compute_fn=lambda _context, _inputs: None,
+
+            compute_fn=lambda _context, _inputs: None,
+
+        ResourceDefinition(resource_fn=lambda _: None, config_schema="wut")
+
+            resource_fn=lambda _: None, config_schema={"field": {"nested_field": "wut"}}
+                compute_fn=lambda *_args, **_kwargs: None,
+                        lambda _: None,
+
+                        resource_fn=lambda _: None,
+
+                        resource_fn=lambda _: None, config_schema=Any
+
+                compute_fn=lambda *args: None,
+
+                name="no_config_solid", input_defs=[], output_defs=[], compute_fn=lambda *args: None
+
+                compute_fn=lambda *_args: None,
+
+                compute_fn=lambda *_args: None,
+
+                        resource_fn=lambda _: None,
+
+                        resource_fn=lambda _: None,
+
+                        lambda _: None,
+
+                        lambda _: None,
+    foo = lambda: None
+                compute_fn=lambda *_args: None,
+            "foo", DataFrame({}), event_metadata_fn=lambda _: {"bad": None}
+            compute_fn=lambda *args, **kwargs: None,
+            rate :math:`\\lambda` of the prior Poisson distribution (default: None)
+
+            shape :math:`\\lambda` of the prior Continuous Bernoulli distribution (default: None)
+
+            rate :math:`\\lambda` of the prior exponential distribution (default: None).
+                        map_grouping(lambda x: None, progress) if progress else ()
+    return map_grouping(lambda _: None, grouping)
+    dummy = lambda *args, **kwargs: None
+    f = lambda: None
+    dsk[(final_name, 0)] = (lambda x: None, part_tasks)
+        dsk = {(final_name, 0): (lambda x: None, data_write.__dask_keys__())}
+        monkeypatch.setattr(pd.DataFrame, "value_counts", lambda x: None, raising=False)
+    dsk["y"] = (lambda *args: None, list(x_keys))
+        before=before, after=lambda outcome, hook_name, hook_impls, kwargs: None
+        out_map_creator = lambda nbits: None
+
+    out_map_creator = lambda nbits: None
+    TypeCode.NULL: lambda x: None,
+
+    TypeCode.NULL: lambda x: None,
+        self._dispatch: Callable[..., Any] = lambda *args: None
+    pinned: Any = property(None, lambda x, y: None)
+        key_func = lambda i: None
+
+        key_func = lambda i: None
+        password_changed = getattr(validator, "password_changed", lambda *a: None)
+                lambda value, expression, connection: None
+
+                lambda value, expression, connection: None
+
+                lambda value, expression, connection: None
+                else lambda x, y: None,
+    _active.value.to_language = lambda *args: None
+        self.assertIsNone(cache.get_or_set("null", lambda: None))
+@condition(etag_func=lambda r: None)
+    condition(lambda r: None, lambda r: None),
+
+            @method_decorator(lambda: None, name="prop")
+
+            @method_decorator(lambda: None, name="nonexistent_method")
+        response = WSGIHandler()(self.get_suspicious_environ(), lambda *a, **k: None)
+
+        response = WSGIHandler()(self.get_suspicious_environ(), lambda *a, **k: None)
+        response = handler(environ, lambda *a, **k: None)
+
+        response = handler(environ, lambda *a, **k: None)
+        gettext_module.find = lambda *args, **kw: None
+            request, lambda r: None, (), {}
+        self._rollback_atomics = lambda connection: None  # noop
+            path(r"hello/<int:1>/", lambda r: None)
+
+            path(r"b/<int:book.id>/", lambda r: None)
+
+        p = path("hello/<str:\u0394>/", lambda r: None)
+        cp = cached_property(lambda s: None)
+        autoreload.run_with_reloader(lambda: None)  # No exception
+
+            autoreload.run_with_reloader(lambda: None)
+
+        autoreload.start_django(fake_reloader, lambda: None)
+
+        autoreload.start_django(fake_reloader, lambda: None)
+        throttle.get_cache_key = lambda *args: None
+    return jsn.dumps(obj, default=lambda o: None)
+                                run_next=lambda x: None)
+                on_failure=lambda: None)
+
+            on_failure=lambda: None,
+        self._action_button_fn = lambda btn: None
+        if type(self.namespace.get(command)) == type(lambda:None):
+        btn = self.addButton(icon, lambda: None, _("Read QR code"))
+            trigger_callback = lambda *args: None
+
+            register_callback = lambda *args: None
+            p1.maybe_send_commitment = lambda x: None
+
+            p2.maybe_send_commitment = lambda x: None
+        super().__init__(lambda self: None, lambda self: None)
+
+        put = lambda self, x: None
+        return lambda *args: None
+        self.socket.readyRead.connect(lambda : None)
+                        lti = lti.apply(lambda x: None)
+            func = value if value else (lambda: None)
+        return lambda: None
+    sa.event.listen(db.session, "after_commit", lambda session: None)
+		frappe.query_builder.utils.get_type_hints = lambda x: {"return": None}
+    freqtrade.exchange.refresh_latest_ohlcv = lambda p: None
+    sleep_mock = mocker.patch('time.sleep', side_effect=lambda _: None)
+
+    freqtrade.strategy.custom_entry_price = lambda **kwargs: None
+         lambda **kwargs: None),
+locals()['greenlet_init'] = lambda: None
+            self.child_data = lambda *args, **kwargs: None
+        getattr(obj, '_on_fork', lambda: None)()
+            self._unregister_worker = lambda _: None
+        func = lambda *args: None
+                   after_import_hook=lambda module: None):
+    _callback = lambda: None
+                 _exc_clear=getattr(sys, 'exc_clear', lambda: None)):
+            io.start(lambda events=None: None)
+    watcher.callback = lambda: None
+            g = gevent.spawn(lambda: None)
+
+            g = gevent.spawn_later(1e-5, lambda: None)
+
+            g = gevent.Greenlet(lambda: None)
+
+            g = gevent.spawn(lambda: None)
+        self.assertRaises(ExpectedException, p.map, lambda x: None, error_iter())
+
+            return list(p.imap_unordered(lambda x: None, error_iter()))
+            self.init_server(lambda: None)
+        self.assertRaises(ValueError, self.pmt.add_monitoring_function, lambda: None, -1)
+
+        self.pmt._get_process = lambda: None
+        self.assertRaises(greentest.ExpectedException, self.pool.map, lambda x: None, error_iter())
+
+            return list(self.pool.imap_unordered(lambda x: None, error_iter()))
+        handler = lambda x, y: None
+
+        self.alrm = signal.signal(signal.SIGALRM, lambda x,y:None)
+
+        oldhandler = signal.signal(self.signum, lambda x,y: None)
+        handler = lambda x, y: None
+
+        self.alrm = signal.signal(signal.SIGALRM, lambda x,y:None)
+
+        oldhandler = signal.signal(self.signum, lambda x,y: None)
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+                ('sendall', s.sendall, True, [], lambda x: None),
+        handler = lambda x, y: None
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+        handler = lambda x, y: None
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+                    ('sendall', s.sendall, True, [], lambda x: None),
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+        handler = lambda x, y: None
+                ('sendall', s.sendall, True, [], lambda x: None),
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+        handler = lambda x, y: None
+                ('sendall', s.sendall, True, [], lambda x: None),
+        handler = lambda x, y: None
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+                ('sendall', s.sendall, True, [], lambda x: None),
+        handler = lambda x, y: None
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+            t = threading.Thread(target=lambda: None)
+
+                t = threading.Thread(target=lambda: None)
+
+            t = threading.Thread(target=lambda: None)
+        orig_alrm_handler = signal.signal(signal.SIGALRM, lambda *args: None)
+                ('sendall', s.sendall, True, [], lambda x: None),
+        fprogress: Callable = lambda *args: None,
+
+        fprogress: Callable = lambda *args: None,
+        self.noop = lambda *args, **kwargs: None
+    result = reduce(lambda acc, val: acc.get(val, {keynotfound: None}), path, m)
+                    setattr(msgRoot, "_write_headers", lambda self: None)
+        setattr(message, "_write_headers", lambda self: None)
+        io = Interface(lambda input: None, "textbox", "label")
+
+        interface = Interface(lambda input: None, "textbox", "label")
+    with mock.patch.object(sock.UnixSocket, '__init__', lambda *args: None):
+
+    with mock.patch.object(sock.UnixSocket, '__init__', lambda *args: None):
+            lambda: None
+        progress_callback: Callable[[int, bool], None] = lambda *_: None,
+    setup = setup or (lambda: None)
+
+    teardown = teardown or (lambda ex: None)
+    like: Callable[..., Any] = lambda: None,
+
+    """functions(*, like=lambda: None, returns=..., pure=False)
+    filter: st.builds(filter, st.just(lambda _: None), st.just(())),
+
+    map: st.builds(map, st.just(lambda _: None), st.just(())),
+
+        like=(lambda *a, **k: None) if args_types else (lambda: None),
+        lambda ix: None in ix,
+
+        lambda ix: None not in ix,
+        # `rule()(lambda self: None)` is a call with a positional argument, and
+
+                rule1 = rule()(lambda self: None)
+        runner.exit_with = lambda reason: None
+        s = s.map(lambda x: None)
+@given(functions(like=lambda: None, returns=booleans()))
+
+@given(functions(like=lambda a: None, returns=booleans()))
+
+        (lambda: None, "not a strategy", True),
+
+        (lambda: None, booleans(), None),
+    _ = rule()(lambda self: None)
+
+    _ = rule()(lambda self: None)
+    assert get_pretty_function_description(eval("lambda: None")) == "lambda: <unknown>"
+            sys.settrace(lambda frame, event, arg: None)
+    with temp_registered(UnknownType, lambda _: None):
+@pytest.mark.parametrize("f", [int, identity, lambda x: None])
+space_in_name = type("a name", (type,), {"__init__": lambda self: None})
+
+        lambda: None, ghost="", test_body="pass", except_=exceptions, style="pytest"
+    monkeypatch.setattr(tools, "create_tag", lambda *args, **kwargs: None)
+
+    monkeypatch.setattr(tools, "push_tag", lambda name: None)
+
+    monkeypatch.setattr(rm, "commit_pending_release", lambda p: None)
+
+    monkeypatch.setattr(project, "upload_distribution", lambda: None)
+                trainer = Engine(lambda engine, batch: None)
+
+                trainer = Engine(lambda engine, batch: None)
+
+            trainer = Engine(lambda engine, batch: None)
+        engine = Engine(lambda _, __: None)
+        engine = Engine(lambda e, b: None)
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+    engine = Engine(lambda engine, batch: None)
+
+    engine = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda b, e: None)
+    trainer = Engine(lambda e, b: None)
+
+        setup_common_training_handlers(trainer, to_save={}, output_path="abc", save_handler=lambda c, f, m: None)
+
+        trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+        evaluator = Engine(lambda e, b: None)
+    trainer = Engine(lambda e, b: None)
+        engine = Engine(lambda e, b: None)
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+        pbar.attach(Engine(lambda e, b: None), event_name=Namespace(name="abc"))
+        DeterministicEngine(lambda e, b: None)._setup_seed(iter_counter=0)
+
+    engine = DeterministicEngine(lambda e, b: None)
+
+    trainer = DeterministicEngine(lambda e, b: None)
+        Engine(lambda: None)
+
+        Engine(lambda batch: None)
+
+        Engine(lambda engine, batch, extra_arg: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+        engine = Engine(lambda e, b: None)
+        engine.add_event_handler("incorrect", lambda engine: None)
+
+    mock_fn_1 = create_autospec(spec=lambda x: None)
+
+    mock_fn_2 = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+    handler = create_autospec(spec=lambda x: None)
+
+        handler = create_autospec(spec=lambda e, x1, x2, x3, a, b: None)
+    trainer = Engine(lambda e, b: None)
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+        trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    h.save_handler = lambda x, y: None
+
+    h(Engine(lambda x, y: None), to_save)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+        evaluator = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+        trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+    trainer = Engine(lambda e, b: None)
+    engine = Engine(lambda e, b: None)
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+        trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+        trainer = Engine(lambda engine, batch: None)
+
+        trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    trainer = Engine(lambda engine, batch: None)
+
+    evaluator = Engine(lambda engine, batch: None)
+
+        evaluator = Engine(lambda engine, batch: None)
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+        trainer = Engine(lambda engine, batch: None)
+
+    engine1 = Engine(lambda e, b: None)
+
+    engine2 = Engine(lambda e, b: None)
+
+        trainer = Engine(lambda engine, batch: None)
+
+    engine_multiple_schedulers = Engine(lambda e, b: None)
+
+        engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    engine = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+
+    trainer = Engine(lambda e, b: None)
+    child_key = lambda s,p: None
+                                                      onerror=lambda x: None):
+        pt.import_pylab = lambda *a,**kw:None
+
+        backend_inline.configure_inline_support = lambda *a, **kw: None
+noop = lambda *a, **kw: None
+            self.load_config_file = lambda *a, **kw: None
+    warn.warn = lambda *a, **kw: None
+  return tuple(map(lambda d: None if shape_poly.is_poly_dim(d) else d,
+      local_out_parts_thunk = HashableFunction(lambda: None, closure=None)
+  cell = lambda: None
+  rhs = tree_map(lambda l, x: None if l else x, mask, tree)
+    type(None): _RegistryEntry(lambda z: ((), None), lambda _, xs: None),
+    testfunc = lambda e: None
+    api.xla_computation(lambda x: None, donate_argnums=(0,))(3)  # doesn't crash
+
+      api.vmap(lambda x, y, z: None, in_axes=(0, 1, 0))(X, U, X)
+
+    jaxpr = api.make_jaxpr(lambda: None)()
+      self.call_log_testing_stream(lambda x: None, arg,
+
+      x = hcb.call(lambda x: None, 2, result_shape=())
+            error = lambda m, i: None
+
+            complete = lambda: None
+                return lambda *args: None
+        (lambda x: None, "F", "G"),
+
+            node(lambda x: None, "input1", "output1", name="labeled_node")
+
+        assert "<lambda>([input1]) -> None" in str(node(lambda x: None, "input1", None))
+
+    return lambda x: None, ("A", "D"), "B"
+
+    return lambda x: None, "A", {"B", "C"}
+      self.on_epoch_begin = lambda epoch, logs: None
+
+      self.on_epoch_end = lambda epoch, logs: None
+
+      self.on_batch_begin = lambda batch, logs: None
+
+      self.on_batch_end = lambda batch, logs: None
+
+      self.on_train_begin = lambda logs: None
+
+      self.on_train_end = lambda logs: None
+                lambda d: None)
+      self._setter = lambda weights: None
+  _to_components = lambda self, value: None
+
+  _from_components = lambda self, components: None
+
+  _component_specs = property(lambda self: None)
+          lambda x: None if x is None else x.shape, inputs_spec)
+      state = tf.nest.map_structure(lambda _: None, self.cell.state_size)
+
+            tf.nest.map_structure(lambda _: None, inputs)) + additional_specs
+    initial_state = tf.nest.map_structure(lambda t: None, cell.state_size)
+            false_fn=lambda: None)
+        setter = lambda *args: None
+  _to_components = lambda self, value: None
+
+  _from_components = lambda self, components: None
+
+  _component_specs = property(lambda self: None)
+            hr = g.get('handle_result', lambda *a, **kw: None)
+
+    return {'start': getattr(m, 'main'), 'end': getattr(m, 'handle_result', lambda *a, **k: None)}
+        file_progress: Callable[[File, int], None] = lambda f, i: None,
+
+        file_done: Callable[[File], None] = lambda f: None,
+        self.first_window_callback = lambda window_handle: None
+        on_col_done: Callable[[List[int]], None] = lambda col_windows: None
+    ans.set_active_window_in_os_window = lambda idx: None
+
+    ans.swap_windows_in_os_window = lambda a, b: None
+    MTContactCallbackFunction = lambda x: None
+        Window.close = lambda *s: None
+        builder.trace = lambda *_, **__: None
+        mouse.scale_for_screen = lambda *_, **__: None
+        builder.trace = lambda *_, **__: None
+        win.on_close = lambda *args: None
+        builder.trace = lambda *_, **__: None
+            check_batching.side_effect = lambda input: None
+    null = lambda self, _: None
+    null = lambda self, _: None
+    null = lambda self, _: None
+    null = lambda self, _: None
+    null = lambda self, _: None
+        task.add_done_callback(lambda _: None if task not in self._running_pings else self._running_pings.remove(task))
+            lambda _: None if stream.sd_hash not in self.running_reflector_uploads else
+            lambda subscription: None if skip else subscription._add(event)
+        mock_sock.setsockopt = lambda *_: None
+
+        mock_sock.bind = lambda *_: None
+
+        mock_sock.setblocking = lambda *_: None
+
+        mock_sock.close = lambda: None
+        inputSpec = _getArgSpec(lambda *args, **kwargs: None)
+
+        outputSpec = _getArgSpec(lambda *args, **kwargs: None)
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+_sget_none = _sset_none = lambda *args: None
+    ip_address = lambda address: None
+        self.update_vars = update_vars or (lambda x: None)
+        self._uripar = load_object(uripar) if uripar else lambda x, y: None
+        dfd.addCallbacks(_onsuccess, lambda _: None)
+    _whenRunning            = attrib(default=lambda **_: None)
+
+    _reactorExited          = attrib(default=lambda **_: None)
+                negativeObserver=lambda event: None
+            Runner, "run", lambda self: None
+        return interfaces[0], a, lambda: None
+        return (IConchUser, avatar, lambda: None)
+        d.addErrback(lambda failure: None)
+
+        d.addErrback(lambda failure: None)
+        return defer.succeed((interfaces[0], None, lambda: None))
+
+        self.authClient.getPublicKey = lambda x: None
+
+        self.authClient.getPassword = lambda: None
+
+                lambda: None
+        proto.sendKexInit = lambda: None # don't send packets
+
+        proto.sendKexInit = lambda: None
+    _setCloseOnExec = _unsetCloseOnExec = lambda fd: None
+        fdesc.readFromFD(self.fileno(), lambda data: None)
+        self.doRead = lambda *args, **kwargs: None
+
+        self.doWrite = lambda *args, **kwargs: None
+                               lambda c: None,
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+        d.addErrback(lambda result: None)
+        wrappingFactory._onConnection.addErrback(lambda reason: None)
+
+        e._close = lambda fd: None
+
+        e._setNonBlocking = lambda fd: None
+        reactor.callLater(100, lambda: None)
+
+        reactor.callLater(100, lambda: None)
+
+        reactor.callLater(50, lambda: None)
+
+        reactor.callLater(10, lambda: None)
+
+        reactor.callLater(100, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+        signal.signal(signal.SIGCHLD, lambda *args: None)
+        return lambda *args, **kwargs: None
+        negativeObserver=lambda event: None
+        observer = FilteringLogObserver(lambda e: None, ())
+
+        oYes = lambda e: None
+
+        oNo = lambda e: None
+        o1 = lambda e: None
+        o1 = lambda e: None
+
+        o2 = lambda e: None
+
+        o1 = lambda e: None
+
+        o2 = lambda e: None
+
+        o3 = lambda e: None
+
+        o1 = lambda e: None
+
+        o2 = lambda e: None
+
+        o3 = lambda e: None
+
+        o1 = lambda e: None
+
+        o2 = lambda e: None
+
+        o3 = lambda e: None
+        legacyObserver = lambda e: None
+        chal = self.challengers.get(parts[0].upper(), lambda: None)()
+            return ("Not IAccount", "Not an account", lambda: None)
+
+        return imap4.IAccount, self._getAccount(), lambda: None
+        return smtp.IMessageDelivery, SimpleDelivery(None), lambda: None
+
+                return iface, self.avatar, lambda: None
+
+        d.callback((smtp.IMessageDeliveryFactory, None, lambda: None))
+        clock.callLater = lambda *args, **kwargs: None
+        return self.dtpFactory.deferred.addCallback(lambda ign: None)
+
+                        getattr(avatar, 'logout', lambda: None))
+
+            deferred.addErrback(lambda x: None)
+
+        d.addErrback(lambda x: None)
+        wrappedFactory.doStart = lambda: None
+
+        wrappedFactory.doStop = lambda: None
+        adapter = lambda o: None
+
+        adapter = lambda o: None
+        self.runWithWarningsSuppressed(filters, lambda: None)
+            self._localCleanup.pop(puid, lambda: None)()
+                return iface, DummyPerspective(avatarId), lambda: None
+
+            return pb.IPerspective, Echoer(), lambda: None
+                       lambda f: None)
+
+                       lambda f: None)
+
+                       lambda f: None)
+
+                       lambda f: None)
+
+                       lambda f: None)
+        otherReactor = FakeReactor(lambda: None,
+        d1.addErrback(lambda e: None)  # Swallow error
+
+        d1.addErrback(lambda e: None)  # Swallow error
+
+        d.addBoth(lambda ign: None)
+
+        d.addBoth(lambda ign: None)
+        self.trigger = lambda x: None
+
+            KeyError, self.addTrigger, 'xxx', eventType, lambda: None)
+
+        b = self.addTrigger('during', 'test', lambda: None)
+
+            call = reactor.callLater(5, lambda: None)
+
+            call = reactor.callLater(5, lambda: None)
+
+        call = reactor.callLater(0, lambda: None)
+
+        d = reactor.callLater(10, lambda: None)
+
+        dc = reactor.callLater(0, lambda x, y: None, 'x', y=10)
+
+        dc = reactor.callLater(0, lambda: None, x=[({'hello': u'world'}, 10j), reactor], *range(10))
+
+        dc = base.DelayedCall(5, lambda: None, (), {}, lambda dc: None,
+
+                              lambda dc: None, seconds)
+    def test_moveToSizeCache(self, hook=lambda : None):
+        return sip.IContact, None, lambda: None
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+
+                             serverContextSetup=lambda ctx: None,
+        getattr(obj, 'trap', lambda x: None)(error.ConnectionDone)
+                        reactor.callFromThread(lambda: None)
+
+        d = threads.deferToThread(lambda: None)
+        call = c.callLater(1, lambda a, b: None, 1, b=2)
+
+        call = c.callLater(1, lambda a, b: None, 1, b=2)
+
+        call1 = c.callLater(10, lambda a, b: None, 1, b=2)
+
+        call2 = c.callLater(1, lambda a, b: None, 3, b=4)
+
+        call = c.callLater(1, lambda x: None)
+
+        call2 = c.callLater(2, lambda x: None)
+
+        call = task.LoopingCall(lambda: None)
+
+        lc = task.LoopingCall(lambda: None)
+
+        loop = task.LoopingCall(lambda: None)
+        tp.callInThreadWithCallback(onResult, lambda: None)
+
+            helper.threadpool.callInThread(lambda: None)
+
+            helper.threadpool.callInThread(lambda: None)
+                   lambda *a, **kw: None)
+
+        self.patch(app, 'startApplication', lambda *a, **kw: None)
+
+        self.runner.startReactor = lambda *args: None
+        return threads.deferToThread(lambda : None)
+            deferred.addErrback(lambda _: None)
+        self.patch(trial.Options, "parseOptions", lambda self: None)
+        d = util._runSequentially([lambda: None])
+
+                                  cancelled.append, lambda x: None)
+
+        delayedCall = DelayedCall(300, lambda: None, (), {},
+
+                                  lambda x: None, lambda x: None,
+
+        delayedCall = DelayedCall(300, lambda: None, (), {},
+
+                                  lambda x: None, lambda x: None,
+
+        delayedCall = DelayedCall(300, lambda: None, (), {},
+
+                                  lambda x: None, lambda x: None,
+        _collectWarnings(lambda x: None, warnings.warn, "text")
+
+        result = _collectWarnings(lambda x: None, f, 1, 'a', b=2, c='d')
+        d.addErrback(lambda x: None)
+        d.addCallbacks(lambda ignored: None, maybeStopped)
+
+        return defer.gatherResults(results).addCallback(lambda ign: None)
+                self.write = lambda data: None
+
+                self.write = lambda data: None
+
+                self.dataReceived = self.lineReceived = lambda *args: None
+        return getattr(self._parsedURI, 'toBytes', lambda: None)()
+
+    def __init__(self, quiescentCallback=lambda c: None):
+HERE = (lambda: None).__code__.co_filename
+            lambda rest: None)
+
+            lambda rest: None)
+
+            lambda rest: None)
+
+            lambda rest: None)
+
+            lambda ign: None)
+
+            lambda ign: None)
+
+            lambda ign: None
+
+            lambda ign: None
+
+            lambda ign: None
+
+            lambda ign: None
+        p = http._ChunkedTransferDecoder(None, lambda bytes: None)
+
+        parser = http._ChunkedTransferDecoder(None, lambda bytes: None)
+
+        parser = http._ChunkedTransferDecoder(None, lambda bytes: None)
+        self.transport.close = lambda *a, **kw: None
+        return d.addErrback(lambda _: None)
+
+        return d.addErrback(lambda _: None)
+            lambda environ, startResponse: None)
+
+            request.write = lambda data: None
+            getattr(facet, 'logout', lambda: None)()
+    state_diff_cleaned = apply_to_collection(state_paths_cleaned, dtype=type(NotPresent), function=lambda x: None)
+    monkeypatch.setattr(atexit, "register", lambda _: None)
+        lightning_module.on_train_batch_end = lambda *_: None  # override to trigger the deprecation message
+        return lambda *args, **kwargs: None
+            handler=lambda *args: None,
+        t1 = lambda l: None
+
+        t2 = lambda l: None
+
+        t1 = lambda l: None
+
+        t2 = lambda l: None
+@pytest.mark.parametrize("complete", [123, None, lambda: None])
+    logger.configure(patcher=lambda r: None)
+    monkeypatch.setattr(sysconfig, "get_path", lambda *a, **k: None)
+@pytest.mark.parametrize("compression", [None, lambda _: None])
+    logger.add(lambda m: None)
+    logger_ = logger.patch(lambda r: None)
+        process = fork_context.Process(target=lambda: None)
+
+    logger.add(lambda _: None, enqueue=True, catch=False)
+    function = Wrapper(lambda _: None, repr="<FunctionWithout>", name=None)
+
+    function = Wrapper(lambda _: None, repr="<FunctionEmpty>", name="")
+
+    async_function = Wrapper(lambda _: None, repr="<AsyncFunctionWithout>", name=None)
+
+    async_function = Wrapper(lambda _: None, repr="<AsyncFunctionEmpty>", name="")
+            signal.signal(signal.SIGINT, lambda _sig, _frame: None)
+        self.mobject.add_updater(lambda mob: None)
+
+        self.add_updater(lambda mob: None)
+        self.manticore._publish = lambda *args, **kwargs: None
+            "Transaction failed", expression=self._failed, setstate=lambda a, b: None, policy="ALL"
+            callback = lambda *args, **kwargs: None
+        field = fields.Function(lambda x: None)
+
+        field = fields.Function(lambda x: None, deserialize=lambda val: val.upper())
+
+            lambda x: None,
+
+            fields.Function(lambda x: None, deserialize="notvalid")
+
+        field = fields.String(validate=lambda s: None)
+        field = fields.Function(deserialize=lambda obj: None)
+selector = PolygonSelector(ax, lambda *args: None)
+
+selector2 = PolygonSelector(ax2, lambda *args: None)
+            meth_name: lambda *args, **kwargs: None
+    init=lambda functions, vmin=None, vmax=None, clip=False: None)
+
+    init=lambda linear_width=1, vmin=None, vmax=None, clip=False: None)
+    baseline = _api.deprecated("3.5")(property(lambda self: None))
+        lambda self, marker, fillstyle=None: None)
+                                      onselect=lambda *args, **kwargs: None,
+        ax.apply_aspect = lambda pos=None: None
+        self._draw_rect_callback = lambda painter: None
+            _application.connect('activate', lambda *args, **kwargs: None)
+            with cbook._setattr_cm(FigureManagerBase, show=lambda self: None):
+    with mock.patch("matplotlib.backends.qt_compat._exec", lambda obj: None):
+
+    with mock.patch("matplotlib.backends.qt_compat._exec", lambda obj: None):
+
+    with mock.patch("matplotlib.backends.qt_compat._exec", lambda obj: None):
+            property(lambda self: 0.00001, lambda self, value: None))
+
+            property(lambda self: 0.00001, lambda self, value: None))
+    _get_windows_console_stream = lambda *x: None
+
+    _wrap_std_stream = lambda *x: None
+    wrapper.cache_clear = lambda: None
+                'none': lambda name: None }
+        self.error_handler = lambda code: None
+        self.out_file.close = lambda: None
+
+def testing_server(root, builder=lambda: None, mount_path="/"):
+    "return none": lambda x, *args, **kwargs: None,
+        ("from_dict", lambda df: {"data": None}),
+        send = lambda *a, **kw: None  # noqa
+        self.set_console_color = lambda x: None
+            SIG_IGN: lambda a, b: None
+        self._watchdog = watchdog or (lambda: None)
+                                             onerror=lambda r: None)
+            flush_errors=lambda msgs, serious: None,
+        self.height = defaultdict(lambda: None)
+
+        self.parent_edge = defaultdict(lambda: None)
+
+        self.ref = defaultdict(lambda: None)
+
+        old_ref = defaultdict(lambda: None)
+            ('initial', lambda: None),
+
+            ('meta', lambda: None),  # Alias for nlp
+        SCons.Tool.MSCommon.vc.msvc_setup_env = lambda *args: None
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+            log_function = lambda x: None
+            log_function = lambda x: None
+            do_append = lambda x: None
+
+                self.add_strip = lambda x: None
+    def will_not_build(self, nodes, node_func=lambda n: None):
+    debug = lambda x: None
+                self.add_strip = lambda x: None
+    def will_not_build(self, nodes, node_func=lambda n: None):
+    debug = lambda x: None
+            self.add_strip = lambda x: None
+    def will_not_build(self, nodes, node_func=lambda n: None):
+        fp_flush = getattr(fp, 'flush', lambda: None)  # pragma: no cover
+
+                self._ema_dt = lambda: None
+
+            return defaultdict(lambda: None, {
+            self.disp = lambda *_, **__: None
+_sget_none = _sset_none = lambda *args: None
+_sget_none = _sset_none = lambda *args: None
+kivy.core.core_select_lib=(lambda *args, **kwargs: None)
+__import__("multiprocessing.spawn").spawn._fixup_main_from_path = lambda mod_name : None
+        __builtins__["print"] = lambda *args, **kwargs: None
+weakref.finalize(lambda: None, lambda: None)
+                **{attr: lambda self: None for attr in attr_names},
+    onerror_ignore = lambda _: None
+        mock_init = lambda self: None
+        dummy_getitem_impl = lambda obj, idx: None
+
+        dummy_getitem_impl = lambda obj, idx: None
+            return lambda x: None
+
+                return lambda : None
+                func=lambda a, b, c, d: None,
+
+                func=lambda: None,
+
+                func=lambda a: None,
+
+                func=lambda a: None,
+                      lambda: None)
+                return lambda : None
+    flag_vars = fc.flag_vars.clone(lambda *args, **kwargs: None)
+                    assert_no_gc_cycles(lambda: None)
+        lambda: {"count": 0, "size": None, "bytes": 0, "date": None, "timestamp": None}
+        self.on_plugin_loaded = lambda *args, **kwargs: None
+
+        self.on_plugin_unloaded = lambda *args, **kwargs: None
+
+        self.on_plugin_enabled = lambda *args, **kwargs: None
+
+        self.on_plugin_disabled = lambda *args, **kwargs: None
+
+        self.on_plugin_implementations_initialized = lambda *args, **kwargs: None
+
+        self.on_plugins_loaded = lambda *args, **kwargs: None
+
+        self.on_plugins_enabled = lambda *args, **kwargs: None
+        lambda: {"identifier": None, "display": None, "languages": []}
+                        app(builder.get_environ(), lambda *a, **kw: None)
+        self.on_log_call = lambda *args, **kwargs: None
+
+        self.on_log_stdout = lambda *args, **kwargs: None
+
+        self.on_log_stderr = lambda *args, **kwargs: None
+        self.on_log_call = lambda *args, **kwargs: None
+
+        self.on_log_stdout = lambda *args, **kwargs: None
+
+        self.on_log_stderr = lambda *args, **kwargs: None
+                            ["mime_detect_no"], lambda x: None
+    @ddt.data("0", "no", "false", ["some", "list"], {"a": "dictionary"}, lambda: None)
+            self.processed_size_callback = lambda _: None
+            beam_job_services, 'run_beam_job', lambda **_: None,
+
+            beam_job_services, 'run_beam_job', lambda **_: None,
+
+            beam_job_services, 'run_beam_job', lambda **_: None,
+
+            beam_job_services, 'run_beam_job', lambda **_: None,
+            user_services, 'record_user_logged_in', lambda *args: None)
+
+            user_services, 'record_user_logged_in', lambda *args: None)
+            lambda queue_name, url, payload=None, scheduled_for=None: None,
+            lambda *_: None,
+            lambda _, __: None,
+
+            lambda _, __: None,
+
+            lambda _, __: None,
+
+            lambda _, __: None,
+            lambda x, y: None,
+
+            lambda x, y: None,
+
+            lambda x, y: None,
+
+            lambda x, y: None,
+
+            lambda x, y: None,
+        with self.swap(os, 'getenv', lambda _: None):
+            page.get_next_page = lambda: None
+        obj.func = lambda: None
+            lambda _, __: None,
+
+            lambda _, __: None,
+            sys, 'exit', lambda _: None))
+
+            sys, 'exit', lambda _: None, called=False))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            install_third_party_libs, 'main', lambda *_, **__: None))
+
+            install_third_party_libs, 'main', lambda *_, **__: None,
+
+            build, 'main', lambda *_, **__: None,
+
+            sys, 'exit', lambda _: None, called=False))
+
+            build, 'main', lambda *_, **__: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(return_code,)]))
+
+            common, 'run_cmd', lambda *_: None, called=False))
+
+            build, 'main', lambda *_, **__: None,
+
+            common, 'run_cmd', lambda *_: None, called=False))
+
+            build, 'main', lambda *_, **__: None,
+
+            common, 'run_cmd', lambda *_: None, called=False))
+
+            build, 'main', lambda *_, **__: None,
+
+            run_e2e_tests, 'run_webpack_compilation', lambda **_: None,
+
+            run_e2e_tests, 'install_third_party_libraries', lambda _: None,
+
+            run_e2e_tests, 'build_js_files', lambda *_, **__: None,
+
+            flake_checker, 'report_pass', lambda _: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(0,)]))
+
+            run_e2e_tests, 'install_third_party_libraries', lambda _: None,
+
+            run_e2e_tests, 'build_js_files', lambda *_, **__: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(1,)]))
+
+            sys, 'exit', lambda _: None, expected_args=[(0,)]))
+
+            run_e2e_tests, 'install_third_party_libraries', lambda _: None,
+
+            build, 'modify_constants', lambda *_, **__: None,
+
+            build, 'set_constants_to_default', lambda: None))
+
+            flake_checker, 'report_pass', lambda _: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(0,)]))
+
+            run_e2e_tests, 'install_third_party_libraries', lambda _: None,
+
+            run_e2e_tests, 'build_js_files', lambda *_, **__: None,
+
+            flake_checker, 'report_pass', lambda _: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(0,)]))
+
+            run_e2e_tests, 'install_third_party_libraries', lambda _: None,
+
+            run_e2e_tests, 'build_js_files', lambda *_, **__: None,
+
+            flake_checker, 'report_pass', lambda _: None,
+
+            sys, 'exit', lambda _: None, expected_args=[(0,)]))
+            lambda p, **kw: None if is_data_dir(p) else old_rmtree(p, **kw))
+
+            lambda p, **kw: None if is_data_dir(p) else old_makedirs(p, **kw))
+
+            subprocess, 'check_call', lambda _: None, expected_args=[
+
+            common, 'wait_for_port_to_be_in_use', lambda _: None,
+
+            common, 'wait_for_port_to_be_in_use', lambda _: None,
+
+            common, 'wait_for_port_to_be_in_use', lambda _: None,
+
+            common, 'wait_for_port_to_be_in_use', lambda _: None, called=False))
+
+            common, 'wait_for_port_to_be_in_use', lambda _: None,
+            lambda *x: None,
+        frozen_trial = _optimize._run_trial(study, lambda _: None, catch=())  # type: ignore[arg-type,return-value] # noqa: E501
+    initialize_options = finalize_options = lambda self: None
+
+    initialize_options = finalize_options = lambda self: None
+        callback_wrapped = lambda part: None
+
+        callback_wrapped = lambda part: None
+        callback_wrapped = lambda part: None
+        callback_wrapped = lambda part: None
+
+        callback_wrapped = lambda part: None
+                patch.object(OUserSettingsDialog, "show", lambda self: None):
+            stream.close = lambda: None  # HACK: Prevent closing of streams
+        onerror=lambda x: None)
+        onerror=lambda x: None)
+            onfinished = lambda status: None
+                   lambda *_: None,
+            Options[42].function = lambda *_: None
+        delegate.cachedData = lambda *_: None
+
+        delegate.cachedData = lambda *_: None
+                [ContinuousVariable(name, compute_value=lambda _: None)
+                         lambda: default_value, lambda x: None)
+        graph._orthonormal_line = lambda *_: None
+
+        widget.get_color_data = lambda: None
+            self.master.get_subset_mask = lambda: None
+
+        self.master.get_color_data = lambda: None
+
+            self.master.get_colors = lambda: None
+
+            self.master.get_subset_mask = lambda: None
+
+            self.master.get_colors = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph.master.get_subset_mask = lambda: None
+
+        graph._label_mask = lambda *_: None
+
+        master.get_color_labels = lambda: None
+        CreateInteractiveSession, "_collateral", lambda *args, **kwargs: None
+
+        RestartMemoryServer, "_collateral", lambda *args, **kwargs: None
+
+    monkeypatch.setattr(AbortPipelineRun, "_collateral", lambda *args, **kwargs: None)
+
+        StopInteractiveSession, "_collateral", lambda *args, **kwargs: None
+
+        StopInteractiveSession, "_collateral", lambda *args, **kwargs: None
+
+    monkeypatch.setattr(AbortPipelineRun, "_collateral", lambda *args, **kwargs: None)
+    monkeypatch.setattr(app.utils, "remove_if_dangling", lambda *args, **kwargs: None)
+
+        lambda *args, **kwargs: None,
+
+        app.core.sessions.InteractiveSession, "launch", lambda *args, **kwargs: None
+        self.assertEqual(orjson.dumps(Custom(), default=lambda x: None), b"null")
+g_enable_legacy_dygraph = _enable_legacy_dygraph if g_is_in_eager else lambda: None
+
+g_disable_legacy_dygraph = _disable_legacy_dygraph if g_is_in_eager else lambda: None
+        self.clip_gradient = lambda x: None
+        prof = profiler.Profiler(on_trace_ready=lambda prof: None)
+
+        prof = profiler.Profiler(on_trace_ready=lambda prof: None)
+            _conv_to_x = getattr(cls, f"_convert_to_{k}", lambda x: None)
+    result = parser.read_csv(bad_sio, on_bad_lines=lambda x: None)
+    sys.setprofile(lambda *a, **k: None)
+        gen = _gen_two_subplots(f=lambda **kwargs: None, fig=fig, ax="test")
+    "repl", [lambda: None, lambda m, x: None, lambda m, x, y=None: None]
+    def __init__(self, parents=lambda term: [], children=lambda term: [], value=lambda term: None):
+    def traverse(self, visit=lambda cluster: None):
+    def traverse(self, visit=lambda node: None):
+            fk_filter_fn = lambda column_def: None
+
+        return self._update_column(table, column_name, lambda a, b: None)
+    src = "lambda _mock_self, %s: None" % signature
+
+    src = "lambda %s: None" % signature
+@click.argument("dbname", default=lambda: None, envvar="PGDATABASE", nargs=1)
+
+@click.argument("username", default=lambda: None, envvar="PGUSER", nargs=1)
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+_sget_none = _sset_none = lambda *args: None
+        monkeypatch.setattr(cmd, "get_name", lambda *a: None)
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+_sget_none = _sset_none = lambda *args: None
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+    wrapper.cache_clear = lambda: None
+        _get_windows_console_stream = lambda *args: None  # noqa
+
+        _wrap_std_stream = lambda *args: None  # noqa
+        self.on_message: Callable[[ParsedMessagePayload], None] = lambda _: None
+    await context.expose_function("foo", lambda: None)
+
+    await context.expose_function("bar", lambda: None)
+
+        await context.expose_function("foo", lambda: None)
+
+        await page.expose_function("foo", lambda: None)
+
+    await page.expose_function("baz", lambda: None)
+
+        await context.expose_function("baz", lambda: None)
+        await support_post_data(lambda: None, None)
+    server.set_route("/empty.html", lambda req: None)
+    await page.route(server.PREFIX + "/unused", lambda route, req: None)
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/empty.html", lambda request: None)
+
+    server.set_route("/frames/style.css", lambda _: None)
+
+    await page.route("**/empty.html", lambda route, request: None)
+
+    server.set_route("/frames/script.js", lambda _: None)
+
+    server.set_route("/empty.html", lambda _: None)
+    server.set_route(img_path, lambda request: None)
+
+    await page.route(img_path, lambda route, request: None)
+        support_post_data(lambda: None, None)
+    server.set_route("/empty.html", lambda req: None)
+        self.bot.event_manager.emit = lambda *args, **kwargs: None
+	vim_get_func = lambda *args, **kwargs: None
+
+			lambda _: None,
+		with replace_attr(self.module, 'guess', get_dummy_guess(status=lambda: None, directory='/tmp/tests')):
+
+			with replace_attr(self.module, 'tree_status', lambda repo, pl: None):
+
+		with replace_attr(self.module, 'guess', lambda path, create_watcher: None):
+
+			with replace_attr(self.vcs, 'guess', get_dummy_guess(status=lambda: None)):
+
+				with replace_attr(self.vcs, 'tree_status', lambda repo, pl: None):
+
+			with replace_attr(self.vim, 'guess', get_dummy_guess(status=lambda file: None)):
+        (lambda *_, **__: None)
+        run = methods.get("run", lambda: None)
+        t = Task(on_failure=lambda *args: None)
+        flow_handler = MagicMock(side_effect=lambda t, o, n: None)
+        f = Flow(name="test", on_failure=lambda *args: None)
+        task_handler = MagicMock(side_effect=lambda t, o, n: None)
+            secret = PrefectSecret(name="test", result=lambda x: None)
+@pytest.mark.parametrize("obj", [5, "string", lambda x, y, z: None, bool])
+            lambda *args: None,
+    fn = lambda obj, state: None
+noop = lambda x, *a, **k: None
+    def _async_request(self, handler, args=(), callback=(lambda a, b: None)):
+    def _async_request(self, handler, args = (), callback = (lambda a, b: None)):
+            ctypes.util._findLib_gcc = lambda name: None
+            op.int = self.op_handlers.get(op.type, lambda *a: None)(instruction, op)
+
+            op.str = self.op_names.get(op.type, lambda *a: None)(instruction, op)
+            >>> l = MemLeak(lambda a: None)
+
+            >>> l = MemLeak(lambda a: None)
+
+            >>> l = MemLeak(lambda a: None)
+            >>> t.recv_raw = lambda *a: None
+
+            >>> t.settimeout_raw = lambda t: None
+    preprocessor = kwargs.pop('preprocessor', lambda x: None)
+lambda a, /: None
+    monkeypatch.setattr(mg, '_process_imports', lambda m: None)
+    # _IsolatedEnvBuilder.__exit__ = lambda *args: None
+    lambda: None, {"x": MyFunc(lambda f: f("a"))}
+        f: Callable[[int], None] = lambda a: None
+
+        g: Callable[[int], None] = lambda a: None
+
+        d: Callable[[int], None] = lambda a: None
+
+        e: Callable[[int], None] = lambda a: None
+ClassA.func3 = lambda self: None
+
+ClassA.func4 = lambda cls: None
+
+ClassA._func5 = lambda self: None
+m1.x(lambda y: None)
+        post_layer_fct=lambda layer_ix, total_layers, layer: None,
+
+        post_act_fct=lambda layer_ix, total_layers, layer: None,
+        expected_loss = (-elbo.differentiable_loss(enum_model, lambda: None)).exp()
+
+        actual_loss = (-tmc.differentiable_loss(tmc_model, lambda: None)).exp()
+
+            else lambda *args: None
+        guide = lambda **kwargs: None  # noqa: E731
+    expected_loss = (-elbo.differentiable_loss(enum_model, lambda: None)).exp()
+
+    actual_loss = (-tmc.differentiable_loss(tmc_model, lambda: None)).exp()
+
+        else lambda *args: None
+        return lambda new_exc, old_exc: None
+    __init__ = start = done = suspend = resume = lambda *args: None
+        cleanup = getattr(obj, cleanup_name, lambda *args: None)
+
+                setattr(self._testcase, "tearDown", lambda *args: None)
+    source: Path, pyc: Path, trace: Callable[[str], None] = lambda x: None
+    "stop", [None, _is_mocked, lambda f: None, lambda f: False, lambda f: True]
+                        pdb.Pdb.do_continue = lambda self, arg: None
+            importlib.util, "spec_from_file_location", lambda *args: None
+        return lambda *k: None
+
+    tmp_factory = TempPathFactory(None, lambda *args: None, _ispytest=True)
+
+    tmp_factory = TempPathFactory(None, lambda *args: None, _ispytest=True)
+
+    tmp_factory = TempPathFactory(None, lambda *args: None, _ispytest=True)
+            m.setattr(_pytest._code.Code, "fullsource", property(lambda self: None))
+        metafunc = self.Metafunc(lambda x: None)
+
+        metafunc = self.Metafunc(lambda x: None)
+
+        metafunc = self.Metafunc(lambda x, y: None)
+        on_message_listeners = [lambda message: None]
+
+            on_message_listeners=[lambda message: None],
+            on_message_listeners=[lambda msg: None],
+                super().__init__(lambda x: None)
+    SetConsoleTextAttribute = lambda *_: None
+    open_function = lambda _: None
+            pyglet.clock.schedule(lambda dt: None)
+
+            pyglet.clock.schedule_interval(lambda dt: None, 1.0 / fps)
+            pyglet.clock.schedule(lambda dt: None)
+
+            pyglet.clock.schedule_interval(lambda dt: None, 1.0 / fps)
+            pyglet.clock.schedule(lambda dt: None)
+
+            pyglet.clock.schedule_interval(lambda dt: None, 1.0 / fps)
+            pyglet.clock.schedule(lambda dt: None)
+
+            pyglet.clock.schedule_interval(lambda dt: None, 1.0 / fps)
+            pyglet.clock.schedule(lambda dt: None)
+
+            pyglet.clock.schedule_interval(lambda dt: None, 1.0 / fps)
+            self.on_send(lambda *args: None)
+        pc = ioloop.PeriodicCallback(lambda: None, 10)
+        self.stream.on_send(lambda *args: None)
+
+        self.stream.on_recv(lambda *args: None)
+        wrap_method(Dummy, "method", before=lambda self: None)
+
+            wrap_method(Dummy, "bad", before=lambda self: None)
+    'none': lambda arg: None,
+    def to_printer(self, printer, callback=lambda ok: None):
+        self.find_css('#' + elem_id, find_id_cb, error_cb=lambda exc: None)
+        monkeypatch.setattr(item1, '_after_set_filename', lambda: None)
+                        lambda _code: None)
+    monkeypatch.setattr(hostblock.HostBlocker, "update_files", lambda _self: None)
+    monkeypatch.setattr(checkpyver.sys, 'exit', lambda status: None)
+
+    monkeypatch.setattr(checkpyver.sys, 'exit', lambda status: None)
+    monkeypatch.setattr(standarddir.QApplication, 'instance', lambda: None)
+        monkeypatch.setattr(elf, 'parse_webenginecore', lambda: None)
+
+        patches['distribution'] = lambda: None
+    event_dict.get(e['event'], lambda *args: None)(e)
+    lambda: None,  # No-op training loop.
+
+    lambda: None,  # No-op training loop.
+        lambda *args, **kwargs: None,
+
+        lambda *args, **kwargs: None,
+        grouped.map_groups(lambda x: None if x == [1] else x)
+        server.install_signal_handlers = lambda: None
+            "name", "name", True, mock_long_poll, lambda: None
+    monitor.event_summarizer.clear = lambda *a: None
+        register_env("foo", lambda: None)
+            delete_fn=lambda c: None,
+            config={"callbacks": {"on_episode_start": lambda x: None}},
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+
+    @patch("time.sleep", lambda *a, **kw: None)
+@patch("ray_release.glue.reinstall_anyscale_dependencies", lambda: None)
+    @patch("time.sleep", lambda *a, **kw: None)
+            return None, lambda env_config: None
+            queue_putter = lambda x: None
+
+            extra_batches_putter = lambda x: None
+
+            lambda: None,  # batch_builder_factory
+                        lambda: None,
+
+                        lambda x: None,
+    @patch('readthedocs.core.utils.trigger_build', lambda x: None)
+    no_action = lambda *args: None
+        self.monkeypatch.setattr(subprocess, "check_output", lambda script, shell: None)
+        country, region, metro = map(lambda val: None if val == "null" else val,
+        return self.retry.call_with_retry(self._connect_retry, lambda error: None)
+        await self._subscribe(p, foo=lambda x: None)
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+
+        self.AppClass.log_request = (lambda x,y:None)
+        ([hook, lambda x: None, hook], "ta"),
+        return lambda *args: None
+            self.run_keyword = lambda *args: None
+    kw = lambda x:None
+
+    kw = lambda x:None
+
+    no_def = lambda self: None
+            ArgInfo.POSITIONAL_ONLY_MARKER: lambda value: None,
+
+            ArgInfo.NAMED_ONLY_MARKER: lambda value: None,
+            ArgInfo.POSITIONAL_ONLY_MARKER: lambda value: None,
+
+            ArgInfo.NAMED_ONLY_MARKER: lambda value: None,
+        return args, lambda: None
+    _no_method = lambda *args: None
+        stream.write = lambda s: None
+
+        stream.flush = lambda: None
+    __init__ = start = content = element = end = close = lambda *args, **kwargs: None
+    error = warn = info = debug = trace = lambda self, *args, **kws: None
+        my_sigterm = lambda signum, frame: None
+        my_sigterm = lambda signum, frame: None
+        = get_instance = lambda *args: None
+
+            lib.run_keyword = lambda name, args, kwargs: None
+
+            lib.run_keyword = lambda name, args: None
+            spec=lambda *args, **kwargs: None,
+
+            spec=lambda *args, **kwargs: None,
+                return lambda: None
+
+                return lambda: None
+
+                return lambda: None
+
+            return lambda: None
+
+            return lambda: None
+
+            return lambda: None
+            lambda x: None, lambda ex: None, lambda: _raise("ex"), scheduler=scheduler
+                on_next, lambda e: None, scheduler=scheduler
+                .subscribe(lambda x: x, lambda ex: None, lambda: _raise("ex"))
+            lambda x: None, lambda ex: _raise("ex"), lambda: None, scheduler=scheduler
+                return lambda: None
+        item = ScheduledItem(scheduler, None, lambda s, t: None, default_now())
+
+        item1 = ScheduledItem(scheduler, None, lambda s, t: None, duetime1)
+
+        item2 = ScheduledItem(scheduler, None, lambda s, t: None, duetime2)
+
+        item3 = ScheduledItem(scheduler, None, lambda s, t: None, duetime1)
+    ex.main(lambda: None)
+
+    ex.main(lambda: None)
+
+    ex.main(lambda a: None)
+
+    ex.main(lambda: None)
+        "saleor.plugins.openid_connect.utils.decode_access_token", lambda x, y: None
+
+        "saleor.plugins.openid_connect.utils.decode_access_token", lambda x, y: None
+
+        "saleor.plugins.openid_connect.utils.get_user_info", lambda x, z: None
+        migrations.RunPython(create_default_site, lambda app, schema_editor: None)
+            lambda app, schema_editor: None,
+    lambda x, y: None,
+        gen = RSA.gen_key(keysize, 65537, lambda: None)
+                self._send_req_async(load, timeout, callback=lambda f: None)
+
+                    load, timeout=timeout, callback=lambda f: None
+
+                    load, timeout=timeout, callback=lambda f: None
+
+                callback=lambda _: None,
+        super(SSLIOStream, self).connect(address, callback=lambda: None)
+            io_loop, None, request, lambda: None, self._on_http_response,
+            self.io_loop.add_handler(sock.fileno(), lambda fd, events: None,
+
+                              sock.fileno(), lambda fd, events: None,
+
+                other_ioloop.add_callback(lambda: None)
+
+                                               lambda: None)
+
+        handle = self.io_loop.add_timeout(self.io_loop.time(), lambda: None)
+
+        handle = self.io_loop.call_at(self.io_loop.time(), lambda: None)
+
+        handle = self.io_loop.call_later(0, lambda: None)
+
+        io_loop.add_handler(socket_wrapper, lambda fd, events: None,
+
+            self.io_loop.add_future(pool.submit(lambda: None),
+                server.read_bytes(1, lambda data: None)
+
+            server.read_bytes(1, lambda data: None)
+                          log_function=lambda x: None)
+
+                setattr(test_class, test_func, lambda self: None)
+        exclude = excludemod.parseExcludeFile(exclude_file, lambda x: None)
+
+    engine = search.DistfilesSearch(lambda x: None)
+            "set": lambda n, v: None,
+
+            "set": lambda n, v: None,
+    return getattr(obj, f_name, lambda *args, **kwargs: None)(*f_args, **f_kwargs)
+    with patch("salt.utils.path.which", lambda exe: None):
+
+        with patch("salt.utils.path.which", lambda exe: None):
+
+        with patch("salt.utils.path.which", lambda exe: None):
+
+        with patch("salt.utils.path.which", lambda exe: None):
+
+        with patch("salt.utils.path.which", lambda exe: None):
+
+        with patch("salt.utils.path.which", lambda exe: None):
+
+    with patch("salt.utils.path.which_bin", lambda exe: None):
+                    bind=lambda _: None
+
+                prepare=lambda _: MagicMock(bind=lambda _: None),
+            salt.states.loop.__salt__, {"foo.bar": lambda: None}
+            with patch("salt.utils.path.which", lambda exe: None):
+    @patch.object(ctypes.util, "find_library", lambda a: None)
+            thin.sys.exc_clear = lambda: None
+                            iter_callback=lambda x: None):
+
+                                          iter_callback=lambda x: None):
+            "callback": lambda x: None,
+        getattr(self, method, lambda x: None)(attrs)
+
+        getattr(self, method, lambda: None)()
+        X, None, reduce_func=lambda dist, start: None, working_memory=2**-16
+        path=sklearn.__path__, prefix="sklearn.", onerror=lambda _: None
+
+        path=sklearn.__path__, onerror=lambda _: None
+        result = gees(lambda x: None, a1, lwork=-1)
+
+        sfunction = lambda x: None
+        result = gges(lambda x: None, a1, b1, lwork=-1)
+
+    sfunction = lambda x: None
+    result = gges(lambda x: None, a, b, overwrite_a=False, overwrite_b=False)
+        cb = lambda res: None
+                           hess=lambda x: None,
+
+                           hess=lambda x: None,
+
+                           hess=lambda x: None,
+
+                           hess=lambda x: None,
+
+                                hess=lambda x: None,
+        self.update_vars = update_vars or (lambda x: None)
+        dfd.addCallbacks(_onsuccess, lambda _: None)
+            d.addErrback(lambda _: None)
+            d.addBoth(lambda _: None)
+        e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+        e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+
+            e = ExecutionEngine(get_crawler(TestSpider), lambda _: None)
+		service.send_remote_shutdown_command = lambda: None
+
+		self.perform(lambda _: None)
+        self.environment_func = environment_func if environment_func is not None else lambda: None
+    visit_comment = visit_empty = lambda *a: None
+    visit_comment = visit_empty = lambda *a: None
+            processor.reset_trigger_counts = lambda *arg, **kwargs: None
+    debug = staticmethod(lambda *a, **kw: None)
+
+    info = staticmethod(lambda *a, **kw: None)
+
+    warning = staticmethod(lambda *a, **kw: None)
+
+    error = staticmethod(lambda *a, **kw: None)
+
+    critical = staticmethod(lambda *a, **kw: None)
+
+    log = staticmethod(lambda *a, **kw: None)
+
+    exception = staticmethod(lambda *a, **kw: None)
+    visit_comment = visit_empty = lambda *a: None
+    empty_string_to_none: Callable[[Any], Optional[Any]] = lambda v: None if v == "" else v
+
+    return defaultdict(lambda: None, id_to_name)
+    filter_conditions_func: Callable[..., Optional[Function]] = lambda _: None
+    event_data: PathSearchable, consume_frame: Callable[[Any], None] = lambda _: None
+        "environment": (Environment, "name", lambda name: None if name == "" else name),
+        self.view = lambda x: None
+            processing_strategy = self.processing_factory().create(lambda x: None)
+
+            processing_strategy = self.processing_factory().create(lambda x: None)
+        fn = DiscoverFunction("fn", transform="", result_type_fn=lambda *_: None)
+
+        fn = DiscoverFunction("fn", transform="", result_type_fn=lambda *_: None, private=True)
+            return [remove_extra, lambda x: None]
+
+            return [lambda data: None]
+            return [remove_extra, lambda x: None]
+
+            return [lambda data: None]
+    cancelled_future = executor.submit(lambda: None, block=True, timeout=1, priority=5)
+
+    queue_full_future = executor.submit(lambda: None, block=False)
+    registry.callbacks(f"{name}_before1", func=lambda: lambda nlp: None)
+
+    registry.callbacks(f"{name}_after1", func=lambda: lambda nlp: None)
+        {"getter": None, "setter": lambda: None},
+
+        {"default": None, "method": lambda: None, "getter": lambda: None},
+
+        {"setter": lambda: None},
+
+        {"default": None, "method": lambda: None},
+
+        {"getter": lambda: None},
+
+        {"getter": lambda: None, "setter": lambda: None},
+
+        {"method": lambda: None},
+        self._result_funcs[tid] = result_func or (lambda arg, result: None)
+    curried1 = partial(lambda a, b, c: None, 'A')
+
+    curried2 = partial(lambda a, b, c=42: None, 'A')
+
+    curried3 = partial(lambda a, b, *c: None, 'A')
+
+    curried4 = partial(lambda a, b, c=42, *d, **e: None, 'A')
+                 'j=lambda x, y: None, k=None, l=object(), m=foo.bar.CONSTANT)')
+        timer.timeout.connect(lambda: None)
+            toggled = lambda value: None
+
+            toggled = lambda value: None
+        self._job = lambda x: None
+            _http_client.HTTPConnection._set_content_length = lambda self, *args, **kwargs: None
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+        self.repo_instance.commit.side_effect = lambda ref: None
+        callback = lambda x : None # placeholder until check_perfect_pred
+        pairs = defaultdict(lambda: defaultdict(lambda: None))
+    asarray_or_none = lambda x : None if x is None else np.asarray(x)
+           properties=lambda key: None, labelizer=None,
+        application.formatter.write = lambda line, source: None
+                "none": lambda: None
+        fake_enqueue = lambda msg: None
+
+        fake_enqueue = lambda msg: None
+
+        fake_enqueue = lambda msg: None
+
+        fake_enqueue = lambda msg: None
+        self._get_session_info = lambda x: None
+        cls.__getstate__ = lambda obj: None
+    eval = classmethod(lambda cls, t: None)
+            self.add_learned_clause = lambda x: None
+
+            self.compute_conflict = lambda: None
+    f.add((A, B), lambda x,y: None, ambiguity_register_error_ignore_dup)
+
+    f.add((B, A), lambda x,y: None, ambiguity_register_error_ignore_dup)
+
+    f.add((A, C), lambda x,y: None, ambiguity_register_error_ignore_dup)
+
+    f.add((C, A), lambda x,y: None, ambiguity_register_error_ignore_dup)
+tfn = defaultdict(lambda: None, {
+            lambda txn: None,
+        callback_mock = Mock(side_effect=user_may_join_room, spec=lambda *x: None)
+
+        callback_mock = Mock(side_effect=user_may_join_room, spec=lambda *x: None)
+
+        mock = Mock(return_value=make_awaitable(True), spec=lambda *x: None)
+
+            spec=lambda *x: None,
+        after_callback, exception_callback = self._run_interaction(lambda txn: None)
+            parser.DefaultHandler = lambda x: None
+            logger=lambda msg: None):
+                lambda body, method: None,
+    wrapper.cache_clear = lambda: None
+    wrapper.cache_clear = lambda: None  # type: ignore[attr-defined]
+
+def retry_call(func, cleanup=lambda: None, retries=0, trap=()):
+        send = lambda *a, **kw: None
+    ... lambda x: f'{sqrt(x):.2f}', lambda x: None))
+                                    object_hook=lambda x: None),
+                                    object_hook=lambda x: None),
+    widget.bind('<Control-c>', lambda e: None)
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+  zeroth_order_coeff_fn = zeroth_order_coeff_fn or (lambda *args: None)
+    zeroth_order_coeff_fn = zeroth_order_coeff_fn or (lambda *args: None)
+    owner = property(lambda self: None, __set_owner)
+    wrapper : lambda (i, i_node, i_thunk1, i_thunk2, ...) : None
+                          lambda: None, [], {'initial': self.A, 'taps': [-2]})
+                __exit__=lambda *args: None, __enter__=lambda *args: settings_file)))
+        return [CorrectedCommand('ls', lambda *_: None, 100),
+
+                CorrectedCommand('cd', lambda *_: None, 100)]
+            lambda: None,
+                sock.fileno(), lambda fd, events: None, IOLoop.READ
+
+                lambda fd, events: None,
+
+            other_ioloop.add_callback(lambda: None)
+
+            timeout = self.io_loop.add_timeout(self.io_loop.time() + 3600, lambda: None)
+
+        handle = self.io_loop.add_timeout(self.io_loop.time(), lambda: None)
+
+        handle = self.io_loop.call_at(self.io_loop.time(), lambda: None)
+
+        handle = self.io_loop.call_later(0, lambda: None)
+
+        io_loop.add_handler(socket_wrapper, lambda fd, events: None, IOLoop.READ)
+
+        pc = PeriodicCallback(lambda: None, datetime.timedelta(minutes=1, seconds=23))
+        df.groupby(0).progress_apply(lambda x: None)
+
+        dfs.groupby(['a']).progress_apply(lambda x: None)
+
+        dfs.groupby(dfs.index).progress_apply(lambda x: None)
+
+        dfs.groupby('d').progress_apply(lambda x: None)
+
+        dfs.groupby(dfs.columns, axis=1).progress_apply(lambda x: None)
+
+        dfs.groupby([2, 2, 1, 1], axis=1).progress_apply(lambda x: None)
+
+        df.groupby(0).progress_apply(lambda x: None)
+
+        df.progress_apply(lambda x: None, 1)  # 1 shall cause a warning
+
+        df.groupby(0).progress_apply(lambda x: None)
+
+        df.groupby(0).progress_apply(lambda x: None)
+            self.disp = lambda *_, **__: None
+               callback=lambda float: None, callback_len=True):
+
+                getattr(fout, 'flush', lambda: None)()
+
+            getattr(fout, 'flush', lambda: None)()
+        fp_flush = getattr(fp, 'flush', lambda: None)  # pragma: no cover
+
+            getattr(sys.stderr, 'flush', lambda: None)()
+
+            getattr(sys.stdout, 'flush', lambda: None)()
+
+                self._ema_dt = lambda: None
+
+        getattr(self.fp, 'flush', lambda: None)()
+
+            return defaultdict(lambda: None, {
+        torch.Tensor: (lambda _: None),
+
+        transformers.models.bart.tokenization_bart.BartTokenizer: (lambda _: None),
+    SetConsoleTextAttribute = lambda *_: None
+
+    winapi_test = lambda *_: None
+    mock_dlmgr.get_download = lambda _: None
+    gigachannel_manager.download_manager.get_download = lambda _: None
+
+    metadata_store.ChannelMetadata.consolidate_channel_torrent = lambda *_: None
+
+    with patch.object(TorrentDef, "__init__", lambda *_, **__: None):
+        alert_dict['category'] = lambda _: None
+    test_download.handle.rename_file = lambda *_: None
+
+    test_download.handle.torrent_file = lambda: None
+
+    test_download.handle.rename_file = lambda *_: None
+
+    test_download.handle.rename_file = lambda *_: None
+
+    test_download.handle.save_path = lambda: None
+
+    test_download.handle.prioritize_files = lambda _: None
+
+    test_download.handle.torrent_file = lambda: None
+    ds.get_peerlist = lambda: [{'id': '1234', 'have': '5678', 'extended_version': None}]
+
+    mock_dlmgr.get_download = lambda _: None
+
+    mock_dlmgr.get_download = lambda _: None
+
+    mock_dlmgr.get_download = lambda _: None
+
+    mock_dlmgr.get_download = lambda _: None
+
+    mock_dlmgr.get_download = lambda _: None
+
+    mock_dlmgr.get_download = lambda _: None
+    download_impl.tdef.get_metainfo = lambda: None
+
+    download_impl.tdef.get_metainfo = lambda: None
+
+    download_impl.tdef.get_metainfo = lambda: None
+
+    mock_error.value = lambda: None
+
+                                                           category=lambda _: None))()
+    mock_dlmgr.download_exists = lambda *args: None
+
+    mock_dlmgr.get_download = lambda _: None
+    resource_monitor.write_resource_logs = lambda: None
+
+    resource_monitor.process.cpu_percent = lambda interval: None
+        client = Socks5Client(self.proxy_addr, lambda *_: None)
+        mock_download.apply_ip_filter = lambda _: None
+
+        self.nodes[0].overlay.readd_bittorrent_peers = lambda: None
+    mock_tunnel_community.send_data = lambda *_: None
+
+    mock_circuit.tunnel_data = lambda *_: None
+
+    dispatcher.tunnels.create_circuit = lambda **_: None
+            TriblerNetworkRequest("shutdown", lambda _: None, method="PUT", priority=QNetworkRequest.HighPriority)
+            TriblerNetworkRequest("ipv8/asyncio/drift", lambda _: None, data={"enable": False}, method='PUT')
+            f"downloads/{self.current_download['infohash']}", lambda _: None, method='PATCH', data=post_data
+                    lambda _: None,
+    dialog.closeEvent = lambda _: None  # Otherwise, the application will stop
+
+    dialog.closeEvent = lambda _: None  # Otherwise, the application will stop
+    tooltip_filter: Callable[[str], str] = field(default_factory=lambda: (lambda tooltip: None))
+
+                TriblerNetworkRequest("metadata", lambda _: None, raw_data=json.dumps(data), method=method)
+        self.graph_view.wheelEvent = lambda evt: None
+                TriblerNetworkRequest("metadata", lambda _: None, raw_data=json.dumps(changes_list), method='PATCH')
+        from_thread_run_sync(lambda: None)  # pragma: no branch
+
+    await to_thread_run_sync(lambda: None, limiter=CustomLimiter())
+
+        await to_thread_run_sync(lambda: None, limiter=bs)
+
+        await to_thread_run_sync(lambda: None)  # pragma: no cover
+    monkeypatch.setattr(Process, "terminate", lambda *args: None)
+    with MultiError.catch(lambda _: None):
+            start_thread_soon(lambda: None, lambda _: deliver(n - 1, _))
+
+    start_thread_soon(lambda: None, lambda _: deliver(5, _))
+
+    start_thread_soon(lambda: None, lambda _: q.put(threading.current_thread()))
+
+        tc.start_thread_soon(lambda: None, lambda _: done.set())
+
+        tc.start_thread_soon(lambda: None, lambda _: sys.exit())
+        _core.run(lambda: None)
+
+        token.run_sync_soon(lambda: None)
+
+        token.run_sync_soon(lambda: None, idempotent=True)
+
+            await _core.wait_task_rescheduled(lambda _: None)
+
+        token.run_sync_soon(lambda: None)  # pragma: no branch
+
+        await target_nursery.start(sleeping_children, lambda: None)
+    d.addErrback(lambda x: None)
+    _whenRunning = attrib(type=Callable[..., None], default=lambda **_: None)
+
+    _reactorExited = attrib(type=Callable[..., None], default=lambda **_: None)
+                negativeObserver: ILogObserver = cast(ILogObserver, lambda event: None),
+        self.patch(Runner, "run", lambda self: None)
+        return interfaces[0], a, lambda: None
+        d.addErrback(lambda failure: None)
+
+        d.addErrback(lambda failure: None)
+        return (IConchUser, avatar, lambda: None)
+        proto.sendKexInit = lambda: None  # don't send packets
+
+        proto.sendKexInit = lambda: None
+        return defer.succeed((interfaces[0], None, lambda: None))
+
+        self.authClient.getPublicKey = lambda x: None
+
+        self.authClient.getPassword = lambda: None
+
+        server.transport.sendKexInit = client.transport.sendKexInit = lambda: None
+    _setCloseOnExec = _unsetCloseOnExec = lambda fd: None
+        fdesc.readFromFD(self.fileno(), lambda data: None)
+            lambda c: None,
+        self.doRead = lambda *args, **kwargs: None
+
+        self.doWrite = lambda *args, **kwargs: None
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+        d.addErrback(lambda result: None)
+        wrappingFactory._onConnection.addErrback(lambda reason: None)
+
+        e._close = lambda fd: None
+
+        e._setNonBlocking = lambda fd: None
+        reactor.callLater(100, lambda: None)
+
+        reactor.callLater(100, lambda: None)
+
+        reactor.callLater(50, lambda: None)
+
+        reactor.callLater(10, lambda: None)
+
+        reactor.callLater(100, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+
+        call = reactor.callLater(50, lambda: None)
+        return lambda *args, **kwargs: None
+        signal.signal(signal.SIGCHLD, lambda *args: None)
+        observer = FilteringLogObserver(cast(ILogObserver, lambda e: None), ())
+
+        oYes = cast(ILogObserver, lambda e: None)
+
+        oNo = cast(ILogObserver, lambda e: None)
+        legacyObserver = cast(legacyLog.ILogObserver, lambda e: None)
+        o1 = cast(ILogObserver, lambda e: None)
+
+        o2 = cast(ILogObserver, lambda e: None)
+
+        o1 = cast(ILogObserver, lambda e: None)
+
+        o2 = cast(ILogObserver, lambda e: None)
+
+        o3 = cast(ILogObserver, lambda e: None)
+
+        o1 = cast(ILogObserver, lambda e: None)
+
+        o2 = cast(ILogObserver, lambda e: None)
+
+        o3 = cast(ILogObserver, lambda e: None)
+
+        o1 = cast(ILogObserver, lambda e: None)
+
+        o2 = cast(ILogObserver, lambda e: None)
+
+        o3 = cast(ILogObserver, lambda e: None)
+        chal = self.challengers.get(parts[0].upper(), lambda: None)()
+            return ("Not IAccount", "Not an account", lambda: None)
+
+        return imap4.IAccount, self._getAccount(), lambda: None
+        return smtp.IMessageDelivery, SimpleDelivery(None), lambda: None
+
+                return iface, self.avatar, lambda: None
+
+        d.callback((smtp.IMessageDeliveryFactory, None, lambda: None))
+        clock.callLater = lambda *args, **kwargs: None
+        return self.dtpFactory.deferred.addCallback(lambda ign: None)
+
+                return (IFTPShell, avatar, getattr(avatar, "logout", lambda: None))
+
+            deferred.addErrback(lambda x: None)
+
+        d.addErrback(lambda x: None)
+        wrappedFactory.doStart = lambda: None
+
+        wrappedFactory.doStop = lambda: None
+        adapter = lambda o: None
+
+        adapter = lambda o: None
+        self.runWithWarningsSuppressed(filters, lambda: None)
+            self._localCleanup.pop(puid, lambda: None)()
+                return iface, DummyPerspective(avatarId), lambda: None
+
+            return pb.IPerspective, Echoer(), lambda: None
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+        self.trigger = lambda x: None
+
+        self.assertRaises(KeyError, self.addTrigger, "xxx", eventType, lambda: None)
+
+        b = self.addTrigger("during", "test", lambda: None)
+
+            call = reactor.callLater(5, lambda: None)
+
+            call = reactor.callLater(5, lambda: None)
+
+        call = reactor.callLater(0, lambda: None)
+
+        d = reactor.callLater(10, lambda: None)
+
+        dc = reactor.callLater(0, lambda x, y: None, "x", y=10)
+
+            0, lambda: None, x=[({"hello": "world"}, 10j), reactor], *range(10)
+
+            5, lambda: None, (), {}, lambda dc: None, lambda dc: None, seconds
+        d1.addErrback(lambda e: None)  # Swallow error
+
+        d1.addErrback(lambda e: None)  # Swallow error
+
+        d.addBoth(lambda ign: None)
+
+        d.addBoth(lambda ign: None)
+        otherReactor = FakeReactor(lambda: None, "otherreactor", package, description)
+        return sip.IContact, None, lambda: None
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)  # type: ignore[misc,arg-type]
+
+        serverContextSetup=lambda ctx: None,
+        call = c.callLater(1, lambda a, b: None, 1, b=2)
+
+        call = c.callLater(1, lambda a, b: None, 1, b=2)
+
+        call1 = c.callLater(10, lambda a, b: None, 1, b=2)
+
+        call2 = c.callLater(1, lambda a, b: None, 3, b=4)
+
+        call = c.callLater(1, lambda x: None)
+
+        call2 = c.callLater(2, lambda x: None)
+
+        call = task.LoopingCall(lambda: None)
+
+        lc = task.LoopingCall(lambda: None)
+
+        loop = task.LoopingCall(lambda: None)
+        tp.callInThreadWithCallback(onResult, lambda: None)
+
+            helper.threadpool.callInThread(lambda: None)
+
+            helper.threadpool.callInThread(lambda: None)
+                        reactor.callFromThread(lambda: None)
+
+        d = threads.deferToThread(lambda: None)
+        self.patch(UnixApplicationRunner, "shedPrivileges", lambda *a, **kw: None)
+
+        self.patch(app, "startApplication", lambda *a, **kw: None)
+
+        self.runner.startReactor = lambda *args: None
+        getattr(obj, "trap", lambda x: None)(error.ConnectionDone)
+            deferred.addErrback(lambda _: None)
+        self.patch(trial.Options, "parseOptions", lambda self: None)
+        _collectWarnings(lambda x: None, warnings.warn, "text")
+
+        result = _collectWarnings(lambda x: None, f, 1, "a", b=2, c="d")
+        delayedCall = DelayedCall(300, func, (), {}, cancelled.append, lambda x: None)
+
+            300, lambda: None, (), {}, lambda x: None, lambda x: None, seconds=lambda: 0
+
+            300, lambda: None, (), {}, lambda x: None, lambda x: None, seconds=lambda: 0
+
+            300, lambda: None, (), {}, lambda x: None, lambda x: None, seconds=lambda: 0
+        d.addErrback(lambda x: None)
+        d.addCallbacks(lambda ignored: None, maybeStopped)
+
+        return defer.gatherResults(results).addCallback(lambda ign: None)
+                self.write = lambda data: None
+
+                self.write = lambda data: None
+
+                self.dataReceived = self.lineReceived = lambda *args: None
+        return getattr(self._parsedURI, "toBytes", lambda: None)()
+
+    def __init__(self, quiescentCallback=lambda c: None):
+            return (succeed(v), lambda: None)
+
+HERE = (lambda: None).__code__.co_filename
+                lambda b: None,  # pragma: nocov
+
+                lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,
+
+            lambda b: None,  # pragma: nocov
+
+            lambda b: None,
+
+            lambda b: None,  # pragma: nocov
+
+        p = http._ChunkedTransferDecoder(None, lambda bytes: None)
+
+        parser = http._ChunkedTransferDecoder(None, lambda bytes: None)
+
+        parser = http._ChunkedTransferDecoder(None, lambda bytes: None)
+            Request(b"GET", b"/", _boringHeaders, None), lambda rest: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda rest: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda rest: None
+
+            Request(b"HEAD", b"/", _boringHeaders, None), lambda rest: None
+
+            Request(b"HEAD", b"/", _boringHeaders, None), lambda ign: None
+
+            Request(b"HEAD", b"/", _boringHeaders, None), lambda ign: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda ign: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda ign: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda ign: None
+
+            Request(b"GET", b"/", _boringHeaders, None), lambda ign: None
+        self.transport.close = lambda *a, **kw: None
+            lambda environ, startResponse: None,
+
+            request.write = lambda data: None
+            getattr(facet, "logout", lambda: None)()
+        self, duration, url, token, filepath, quiet=False, callback=lambda *x: None
+        callback=lambda *x: None,
+
+        self._callback = callback or (lambda x: None)
+            trigger = lambda: None
+            sync_ends = defaultdict(lambda: None)
+                df.map_reduce(assign, lambda *_: None, expression_to_evaluate, progress=progress, ignore_filter=False, selection=selection, pre_filter=use_filter, info=True, to_numpy=False, name="evaluate")
+    def __init__(self, name, default_delay, default_callable, pre=lambda: None):
+    def __init__(self, parent, label, options, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label, options, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label, value, placeholder, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label, values, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label_text, getter, setter, update=lambda: None):
+
+    def __init__(self, parent, label_text, value_min, value_max, value_steps, getter, setter, name=None, format="{0:<0.3f}", transform=lambda x: x, inverse=lambda x: x, update=lambda: None, uselog=False, numeric_type=float):
+    expr_translate = translate(expr, lambda x: None)
+
+    expr_translate = translate(expr, lambda x: None)
+        lambda xs: None if len(xs) == 0 else [xs, xs[-1]],
+
+        lambda xs: None if len(xs) == 0 else [xs[-1], xs[:-1]],
+
+        lambda xs: None if len(xs) > 5 else xs,
+
+        lambda xs: None,
+
+        lambda xs: None,
+
+        lambda x: None,
+
+        lambda x: None,
+        fn = attribute_rule({"foo": lambda x: None})
+                        lambda *args, **kwargs: None)
+            do_transact = do_commit = do_rollback = lambda self: None
+
+            ctx.db.commit = lambda: None
+
+            ctx.db.rollback = lambda: None
+        namespaces = collections.defaultdict(lambda: None)
+            parser.DefaultHandler = lambda x: None
+    completers_mock["a"] = lambda *a: None
+    obj = lambda: None
+    ptk_completer.reserve_space = lambda: None
+
+    ptk_completer.suggestion_completion = lambda _, __: None
+
+    ptk_completer.reserve_space = lambda: None
+
+    ptk_completer.suggestion_completion = lambda _, __: None
+        monkeypatch.setitem(xession.aliases, key, lambda *args, **kwargs: None)
+    "fields", [{"a_string": "cat", "none": (lambda: None), "f": (lambda: "wakka")}]
+
+            "none": (lambda: None),
+      lambda a, b: None
+        self.Bind(wx.EVT_KEY_DOWN, lambda event: None)
+        self.Bind(wx.EVT_MENU_HIGHLIGHT, lambda event: None)
+            ydl.report_warning = lambda *args, **kargs: None
+        error = report_network_error if fatal else lambda _: None
+    printer.print = lambda _: None
+def passthrough_module(parent, child, *, callback=lambda _: None):
+workaround_optparse_bug9161 = lambda: None
+        search_meta = ((lambda x: self._html_search_meta(x, webpage, default=None)) if webpage else (lambda x: None))
+                       if webpage else (lambda x: None))
+        register('test', lambda *args: None)
+        result = la.map(lambda x: None)
+
+            la.map(lambda x: None)
+            initialize=lambda context: None,
+
+            handle_data=lambda context, data: None,
+
+                    **{method: lambda *args, **kwargs: None}
+        self.register('bundle', lambda *args: None)
+            lambda s: None,
+                self.class_.f = lambda *args: None
+
+            s.__setattr__ = lambda a, b: None
+
+            s.__setattr__ = lambda a, b: None
+            self._initialize = initialize or (lambda self: None)
+    def __init__(self, cache=None, cleanup=lambda value_to_clean: None):
+        callback = callback or (lambda *args, **kwargs: None)
+        Invoice.create = lambda **args: None  # type: ignore[assignment] # cleaner than mocking
+
+        Invoice.finalize_invoice = lambda *args: None  # type: ignore[assignment] # cleaner than mocking
+    queue_json_publish("user_activity", event, lambda event: None)
+        return lambda email: None
+        queue_json_publish(queue_name, event, lambda x: None)
+        daemon = cast(bool, property(lambda self: False, lambda self, value: None))
+                return lambda *args, **kwargs: None
+            validator = CODE_VALIDATORS.get(self.lang, lambda text: None)
+                zset, lambda: client.zcount(zset, 0, now), lambda key, max_calls: None

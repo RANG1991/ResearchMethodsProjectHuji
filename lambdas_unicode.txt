@@ -1,0 +1,156 @@
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+StringIO = lambda x: BytesIO(x.encode('ascii'))  # noqa
+    """).accepts(String, lambda val: val.encode("utf-8"))
+content_md5 = lambda c: encodebytes(hashlib.md5(c).digest()).strip()
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+    typ = lambda self, x: x.encode('ascii')
+        with TestServer(lambda data:(data.path[0].encode('utf-8') + data.read()), allow_socket_preallocation=True) as server:
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+        return bool(lambda s: len(s) == len(s.encode()))
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+    typ = lambda self, x: x.encode('ascii')
+            H = lambda x: hashlib.md5(x.encode("ascii")).hexdigest()
+
+            H = lambda x: hashlib.sha1(x.encode("ascii")).hexdigest()
+    BYTES = bytes_from_str = lambda x: x.encode('ascii')
+            lambda pemfile: pemfile.read().encode(),
+
+            lambda pemfile: pemfile.read().encode(),
+            lambda pemfile: pemfile.read().encode(),
+
+            lambda pemfile: pemfile.read().encode(),
+
+            lambda pemfile: pemfile.read().encode(),
+        b_enc = b.str.strip().map(lambda x: x.encode("utf-8"))
+
+        c_enc = c.str.strip().map(lambda x: x.encode("utf-8"))
+        d = TransformDict(lambda s: s.encode('utf-8'))
+            ('/body', HelloResource('body'), lambda r: r.text.encode('utf-8')),
+            ('/body', HelloResource('body'), lambda r: r.text.encode('utf-8')),
+                value_serializer=lambda v: json.dumps(v).encode('utf-8'),
+        #     'postprocess': lambda x: base64.b64encode(x.json()[0]["mask"]).decode('utf-8'),
+        audio_naming_function: Callable = lambda text: hashlib.md5(text.encode("utf-8")).hexdigest(),
+        encode = lambda s: s if isinstance(s, bytes) else s.encode('utf8')
+
+        self.result_key = lambda k: rp + encode(k)
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+       lambda hash_obj: hash_obj.update(bytes(jax._src.lib.version_str.encode('utf-8')))),
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+    hash_function = lambda w: int(hashlib.md5(w.encode()).hexdigest(), 16)
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+    str2octs = lambda x: x.encode('iso-8859-1')
+        mapper = lambda x: x.encode("ascii")
+        self.test_mutabilityWithText(lambda x: x.encode("ascii"))
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+            return lambda is_text=self._is_text, encoding=self._encoding, value=value: Uploader.encode_url(
+
+                    lambda _, __, is_text=is_text, encoding=encoding, v=v: Uploader.encode_url(
+                lambda c: str(int(c.group(0).decode("utf-8")) - _skiprows).encode(
+                lambda s: hashlib.new("md5", str(tuple(s)).encode()).hexdigest(), axis=1
+        cls.__str__ = lambda x: x.__unicode__().encode('utf-8')
+        cls.__str__ = lambda x: x.__unicode__().encode('utf-8')
+    frozendict, lambda obj: class_encode("frozendict.frozendict", dict(obj))
+
+    bytes, lambda obj: class_encode("bytes", base64.b85encode(obj).decode("ascii"))
+
+    time.struct_time, lambda obj: class_encode("time.struct_time", list(obj))
+
+    datetime.datetime, lambda obj: class_encode("datetime.datetime", obj.isoformat())
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode('latin1'))
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode('latin1'))
+        f = lambda x: x.encode(encoding, errors=errors)
+    expected = ser.map(lambda x: x.encode("cp1252", "ignore"))
+    f = lambda s: s.replace("'", "\\'").encode("utf-8")
+            lambda m: _encode_space(m.group(0)), s)
+
+            lambda m: _encode_space(m.group(0)), s)
+
+                lambda m: _encode_space(m.group(0)), s)
+
+                lambda m: _encode_space(m.group(0)), s)
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode("utf-8")
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode("utf-8")
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+        klass.__str__ = lambda self: self.__unicode__().encode("utf-8")
+	int: (str if str is bytes else (lambda o: unicode(o).encode('ascii'))),
+		return lambda s: stream.write(s.encode(encoding, errors))
+
+		return lambda s: stream.buffer.write(s.encode(encoding, errors))
+		'~': lambda path: path.replace(os.environ['HOME'].encode('utf-8'), b'~') if path.startswith(os.environ['HOME'].encode('utf-8')) else path,
+
+		'.': lambda path: (lambda tpath: path if tpath[:3] == b'..' + os.sep.encode() else tpath)(os.path.relpath(path)),
+            best = sorted(results, key=lambda x: len(x.encoded))[0]
+        lambda x: baseconv.base62.encode(from_bytes(x)),
+
+        lambda x: baseconv.base36.encode(from_bytes(x)),
+
+        lambda x: baseconv.base62.encode(from_bytes(x)),
+
+        lambda x: baseconv.base62.encode(from_bytes(x)),
+
+        lambda x: baseconv.base62.encode(from_bytes(x)),
+
+        lambda x: baseconv.base62.encode(from_bytes(x)),
+        >>> flat([1, [2, 3]], preprocessor = lambda x: str(x+1).encode())
+            json_encoders = {datetime.datetime: lambda _: 'parent_encoder'}
+
+            json_encoders = {datetime.timedelta: lambda _: 'child_encoder'}
+
+            json_encoders = {datetime.datetime: lambda _: 'parent_encoder'}
+
+            json_encoders = {datetime.datetime: lambda _: 'child_encoder'}
+_b=sys.version_info[0]<3 and (lambda x:x) or (lambda x:x.encode('latin1'))
+    u2str = lambda x: x.encode('utf-8')
+            lambda m: textproto_format(*(m.groups() + (json_encoder,))), next_line
+            self._send = lambda data: connection.sendall(data.encode(fh.encoding))
+_b = lambda x: x.encode("utf-8")
+                conf.data = re.sub(r"\b(__\w+)=([^&]+)", lambda match: "%s=%s" % (match.group(1), urlencode(match.group(2), safe='%')), conf.data)
+            encoder = lambda x: x.encode(response.charset)
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+dta2["Treatment"] = dta2["Treatment"].map(lambda v: v.encode('utf-8'))
+
+    dta5[col] = dta5[col].map(lambda v: v.encode('utf-8'))
+        klass.__str__ = lambda self: self.__unicode__().encode('utf-8')
+    to_bytes = lambda s: s.encode('utf8')
+            H = lambda x: hashlib.md5(x.encode("ascii")).hexdigest()
+
+            H = lambda x: hashlib.sha1(x.encode("ascii")).hexdigest()
+        cls.__str__ = lambda self: self.__unicode__().encode('utf-8')
+            H = lambda x: hashlib.md5(self._encode_utf8(x)).hexdigest()
+
+            H = lambda x: hashlib.sha1(self._encode_utf8(x)).hexdigest()
+        klass.__str__ = lambda self: self.__unicode__().encode("utf-8")
+        cls.__str__ = lambda x: x.__unicode__().encode('utf-8')
+                lambda example: tokenizer.batch_encode_plus(
+
+                lambda example: tokenizer.batch_encode_plus(
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], do_phonemize=False), toks))
+        mapper = lambda x: x.encode("ascii")
+        self.test_mutabilityWithText(lambda x: x.encode("ascii"))
+    assert df_test.x.apply(lambda elem: label_encoder.labels_['x'][elem]).tolist() == df_test.mypref_x.tolist()
+
+    assert df_test.y.apply(lambda elem: label_encoder.labels_['y'][elem]).tolist() == df_test.mypref_y.tolist()
+_b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode("latin1"))
+        args = map(lambda x: x.encode().decode("unicode_escape"), args)
+md5 = lambda s: hashlib.md5(s.encode()).hexdigest()
+        make_newfilename = lambda old: decodeFilename(os.path.join(finaldir, os.path.basename(encodeFilename(old))))

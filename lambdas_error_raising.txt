@@ -1,0 +1,62 @@
+    return map(lambda error: error.split('_'), error_symbols)
+    for error in sorted(errors, key=lambda error: error.code):
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+        self._api = DigitalFactoryApiClient(application = CuraApplication.getInstance(), on_error = lambda error: Logger.log("e", str(error)))
+        self._api = DigitalFactoryApiClient(self._application, on_error = lambda error: Logger.log("e", str(error)), projects_limit_per_page = 20)
+        self._api = CloudApiClient(CuraApplication.getInstance(), on_error = lambda error: Logger.log("e", str(error)))
+        api_client = ClusterApiClient(address, lambda error: Logger.log("e", str(error)))
+            self._cluster_api = ClusterApiClient(self.address, on_error = lambda error: Logger.log("e", str(error)))
+                if self.in_lambda:
+                    error(node.pos, "Fused lambdas not allowed")
+        key=lambda error: error.msg,
+        self._errors.sort(key=lambda error: error.line_num)
+
+        self._errors.sort(key=lambda error: error.line_num)
+    @hug.call(on_invalid=lambda data: "error")
+    # Additional "Cannot infer type of lambda" errors
+            key=lambda error: error["index"])
+            portCmd.fail = lambda error: error
+            lambda error: 'formatMessage: wrong message',
+        if arn in region.lambdas:
+            return error_response(
+        full_result["writeErrors"].sort(key=lambda error: error["index"])
+    page.on("pageerror", lambda e: error_promise.set_result(e))
+    fmt = lambda ret: "NoReturn" if ret == "nothing" else ret
+    error_details = self._prepare_errorlog_details(bad)
+                    lambda d: True if d else False
+
+                This raises an assertion error for any unpartitioned file found:
+
+                ``lambda d: True if d else False``
+                This raises an assertion error for any unpartitioned file found:
+        return self.retry.call_with_retry(self._connect_retry, lambda error: None)
+                lambda: self._connect(), lambda error: self.disconnect(error)
+                lambda error: self._disconnect_raise(conn, error),
+
+            lambda error: self._disconnect_raise_connect(conn, error),
+
+            lambda error: self._disconnect_reset_raise(conn, error),
+
+                lambda error: self._disconnect_raise_reset(conn, error),
+                lambda error: self._disconnect_raise(conn, error),
+
+            lambda error: self._disconnect_raise_connect(conn, error),
+
+            lambda error: self._disconnect_reset_raise(conn, error),
+
+                lambda error: self._disconnect_raise_reset(conn, error),
+    assert "redirectUrl" in map(lambda error: error["field"], errors)
+            post_query_func=lambda errored_all, crashed_abnormal: max(
+        total_error_series, transaction_series, lambda errors, transactions: (errors, transactions)
+        lambda error: print(error))
+        connect(self.reply.error, lambda error: self.on_error(error, reschedule_on_err=reschedule_on_err))
+d.addErrback(lambda reason: "error: " + str(reason.value))
+    errback=lambda error: (println("an error occurred", error), reactor.stop()),
+    lambda error: (println("an error occurred", error), reactor.stop()),
+            portCmd.fail = lambda error: error
+            lambda error: "formatMessage: wrong message",
+        error_msg = try_get(videos_data, lambda x: x['error']['title'])
+                error = try_get(page, lambda x: x['errors'][0], dict)
+        error_massage = try_get(resp, lambda x: x['errors'][0]['message'])
+                                lambda x: x['error']['message'], compat_str)

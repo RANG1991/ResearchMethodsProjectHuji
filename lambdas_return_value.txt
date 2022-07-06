@@ -1,0 +1,1139 @@
+    return lambda fn: _IffHasAttrDescriptor(fn, delegate,
+    return lambda max_step: LaserBeamGenerator(min_laser_beam, max_laser_beam, max_step=max_step)
+            return lambda item: list_.append(item) if self._is_path_match(item, prefix, delimiter) else None
+        return lambda path: is_subdir(path, module_path) or is_subdir(path, module_utils_path)
+
+    return lambda path: not (is_subdir(path, module_path) or is_subdir(path, module_utils_path))
+        return lambda x: x+180*u.deg, operator.neg, operator.pos
+    return lambda left, right: CompoundModel(oper, left, right, **kwargs)
+    return lambda x: np.interp(x, b, c, 0, 1)
+    return lambda format_, val: (str(val) if val is np.ma.masked
+                return lambda val: scale * _condition_arg(val)
+
+                            return lambda v: b(self._get_converter(
+#         return lambda *args, **kwargs: None
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    return lambda client_name: session.client(client_name, config=get_boto_config_with_user_agent(**kwargs))
+
+    return lambda resource_name: session.resource(resource_name, config=get_boto_config_with_user_agent(**kwargs))
+                return lambda x: x._get_parameter(name)
+
+                return lambda x, value: x.set_parameter(name, value)
+
+                return lambda x: x._clear_parameter(name)
+            return lambda x: True
+
+    return lambda x: match_obj(x) and match_kwargs(x)
+	return lambda hit: substring in hit.Title
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: cls(loader(*args, **kwargs))
+        return lambda func: func
+            return lambda arg2: func(arg1, arg2)
+                return lambda obj: getattr(obj, des)
+        return lambda func: func
+    return lambda f: f
+        return lambda *args, **kwargs: None
+        return lambda *args, **kwargs: None
+        return lambda name: fxn(name) + 1
+                    return lambda x: None
+
+                    return lambda x: x
+    return lambda x=1:f(x)
+    return lambda method: CachedMethod(cache_name, method)
+            return lambda s: s.decode(cfg, 'replace')
+            return lambda book_id:bcmg(book_id, dk)
+
+        return lambda book_id:sk(bcmg(book_id, dk))
+
+            return lambda book_id:gv(book_id, get_metadata)
+
+        return lambda book_id:sk(gv(book_id, get_metadata))
+
+        return lambda book_id:sk_map(bcmg(book_id, None))
+
+        return lambda book_id: tuple(sorted(bcmg(book_id, dv)))
+        return lambda book_id:g(book_id, '')
+        return lambda x: ans(x) or _('Unknown')
+
+        return lambda x: ans(x) or ''
+
+        return lambda x: tuple(y.replace('|', ',') for y in ans(x)) or (_('Unknown'),)
+
+        return lambda x: ans(x) or UNDEFINED_DATE
+        return lambda elem: str(next(counter))
+        return lambda x: x in authors
+
+        return lambda x: x not in authors
+
+        return lambda x: pat.match(x) is not None
+
+        return lambda x: pat.match(x) is None
+
+        return lambda x: s in x
+
+    return lambda x: False
+        return lambda x: x in tags
+
+        return lambda x: x not in tags
+
+        return lambda x: pat.match(x) is not None
+
+        return lambda x: pat.match(x) is None
+
+        return lambda x: s in x
+
+    return lambda x: False
+        return lambda m: ans
+    return lambda obj: {attr: getattr(obj, attr, None) for attr in attrs}
+        return lambda f: f
+    return lambda x, y: f(y, x)
+        return lambda item: convert_optional(convert_inner_func, item)
+
+        return lambda items: convert_tuple(convert_inner_tuple_funcs, items)  # type: ignore[arg-type]
+
+        return lambda items: convert_list(convert_inner_func, items)  # type: ignore[arg-type]
+
+        return lambda item: dataclass_from_dict(f_type, item)
+
+        return lambda item: f_type.from_json_dict(item)
+
+        return lambda item: convert_byte_type(f_type, item)
+
+        return lambda item: convert_unhashable_type(f_type, item)
+
+        return lambda item: convert_primitive(f_type, item)
+
+        return lambda f: parse_optional(f, parse_inner_type_f)
+
+        return lambda f: parse_rust(f, f_type)
+
+        return lambda f: parse_list(f, parse_inner_type_f)
+
+        return lambda f: parse_tuple(f, list_parse_inner_type_f)
+
+        return lambda f: parse_size_hints(f, f_type, bytes_to_read, unchecked=True)
+
+        return lambda f: parse_size_hints(f, f_type, bytes_to_read, unchecked=False)
+
+        return lambda item, f: stream_optional(stream_inner_type_func, item, f)
+
+        return lambda item, f: stream_list(stream_inner_type_func, item, f)
+
+        return lambda item, f: stream_tuple(stream_inner_type_funcs, item, f)
+    return lambda *args: value
+        return lambda input_type: self._real_register(input_type, *x)
+        return lambda op: op.gate == category
+
+        return lambda op: op == category
+
+        return lambda op: isinstance(op.gate, category)
+
+        return lambda op: isinstance(op, category)
+
+        return lambda op: category(op)
+        return lambda deferred_cls_or_func: transformer(
+        return lambda deferred_cls: value_equality(
+        return lambda op: isinstance(op.untagged, cirq.CircuitOperation)
+            return lambda f: f
+        return lambda entity_id, key: True
+            return lambda object_id, key: True
+            return lambda value: value
+            return lambda _: True
+
+            return lambda _: True
+    return lambda topic: next(matcher.iter_match(topic), False)
+    return lambda x: (x * molecular_weight) / 24.45
+        return lambda entity_id: True
+
+    return lambda entity_id: entity_id in include_e
+        return lambda _: not invert
+
+        return lambda state: invert is not (state == parameter)
+
+    return lambda state: invert is not (state in parameter_set)
+        return lambda body, precision=None: v2_call(body, precision)
+
+    return lambda body, precision=None: call(body, time_precision=precision)
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: cls(loader(*args, **kwargs))
+                   return lambda async: await
+
+                   return lambda a: await
+        return lambda func: func
+            return lambda arg2: func(arg1, arg2)
+                return lambda obj: getattr(obj, des)
+        return lambda func: func
+    return lambda f: f
+        return lambda *args, **kwargs: None
+        return lambda name: fxn(name) + 1
+                    return lambda x: None
+
+                    return lambda x: x
+        return lambda *args, **kwargs: self(grid, block, args, **kwargs)
+        return lambda x: x[self.indices]
+
+        return lambda x: x[self.indices]
+
+        return lambda x, y, z: x + y[1]
+
+        return lambda x, y, z: x + z[0] + y
+
+        return lambda x, y, z: x + x[0] + x[1]
+
+        return lambda x, y, z: x + x[0, 1] + x[1] + x + x[2, 1]
+
+        return lambda x, y, z: x[0][1]
+
+        return lambda x, y, z: x[0][1] + x[1][0]
+
+        return lambda x, y, z: x[0][1] + x[1] + y[0] + x[1][0] + x
+        return lambda x, y: x // y
+
+        return lambda x: x.copy()
+
+        return lambda x: x.sum()
+
+        return lambda x: x.prod()
+
+        return lambda x: x.max()
+
+        return lambda x: x.min()
+
+        return lambda x: x.all()
+
+        return lambda x: x.any()
+
+        return lambda x: x.astype(dtype2)
+        return lambda x, y: x + y
+
+        return lambda x, y: xp.sum(x, axis=0)
+
+        return lambda x, y: xp.sum(x, axis=1)
+        return lambda x: xp.invert(x)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x: xp.logical_not(x)
+
+        return lambda x: xp.isfinite(x)
+
+        return lambda x: xp.isinf(x)
+
+        return lambda x: xp.isnan(x)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x, y: xp.ldexp(x, y)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x: xp.modf(x)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x, y: getattr(xp, self.func)(x, y)
+
+        return lambda x, y: xp.divmod(x, y)
+
+        return lambda x: xp.sqrt(x)
+
+        return lambda x: xp.cbrt(x)
+
+        return lambda x: xp.square(x)
+
+        return lambda x: xp.absolute(x)
+
+        return lambda x: xp.abs(x)
+
+        return lambda x: xp.sign(x)
+
+        return lambda x: xp.clip(x, dtype(2), dtype(4))
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda cond, x, y: xp.where(cond, x, y)
+
+        return lambda cond, x, y: xp.copyto(x, y)
+
+        return lambda cond, x, y: xp.copyto(x, y[None])
+
+        return lambda cond, x, y: xp.where(x, y, where=cond)
+
+        return lambda x: getattr(xp, self.func)(x)
+
+        return lambda x: getattr(xp, self.func)(x)
+        return lambda x: cupy.sum(x, self.axis)
+
+        return lambda x: cupy.sum(x, axis=self.axis)
+
+        return lambda x: cupy.sum(x, self.axis)
+
+        return lambda x: cupy.sum(x, axis=self.axis)
+
+        return lambda x: cupy.sum(x, axis=self.axis)
+
+        return lambda x: x.sum(axis=0, dtype=dtype2)
+
+        return lambda x, y: xp.sum(x * 3, self.axis)
+
+        return lambda x, y: xp.sum(x + y, self.axis)
+
+        return lambda x, y: xp.sum(x, self.axis) + 3
+
+        return lambda x, y: xp.sum(x, self.axis) + y
+
+        return lambda x, y: xp.sum(xp.sqrt(x) + y, self.axis) * 2 + y
+
+        return lambda x, y: (x.sum(self.axis1), y.sum(self.axis2))
+
+        return lambda x, y: x.sum(self.axis1) + y.sum(self.axis2)
+
+        return lambda x: x.prod(axis=1).sum(axis=1)
+
+        return lambda x: (xp.sqrt(x).prod(axis=0) + x).sum(axis=1) * 2
+
+        return lambda x: x.prod(axis=(-1, 1)).sum(axis=(0, 1))
+        return lambda x, y: x + y
+
+        return lambda x, y: x + y
+
+        return lambda x: x + x
+
+        return lambda x: xp.add(x)
+
+        return lambda x: xp.add(x, x, x, x)
+
+        return lambda x: x + None
+
+        return lambda x: x + object()
+
+        return lambda x: xp.divmod(x, x)
+    return lambda pos, **kwds: DecrementIncrementNode(pos, is_prefix=is_prefix, operator=operator, **kwds)
+    return lambda output, model: HelmTemplate(
+            return lambda d: pendulum.instance(d).subtract(hours=self.offset, minutes=d.minute)
+                return lambda x: x + init_context.resource_config
+    return lambda func: _create_output_materializer_for_decorator(
+    return lambda context, arg_dict: {name: "input_set"}
+        return lambda x: x + init_context.resource_config
+
+        return lambda x: x * init_context.resource_config
+    return lambda x: x + init_context.resource_config
+
+    return lambda x: x * init_context.resource_config
+        return lambda *args, **kwargs: method(*args, **kwargs)
+        return lambda x: x
+        return lambda self, other: _scalar_binary(op, self, other, inv=inv)
+
+        return lambda self: elemwise(op, self)
+
+            return lambda self, other: elemwise(op, other, self)
+
+            return lambda self, other: elemwise(op, self, other)
+        return lambda f: insert_meta_param_description(f, **kwargs)
+    return lambda x: x + 1
+        return lambda x: x
+        return lambda x: x
+    return lambda preds, labels: evaluator.eval({
+        return lambda view: _non_atomic_requests(view, using)
+        return lambda v: decimal.Decimal(v).quantize(quantize_value, context=context)
+    return lambda s: conv_func(s.decode())
+    return lambda text: colorize(text, opts, **kwargs)
+    return lambda func: func
+            return lambda app: self.register(app, discovering_apps)
+        return lambda x: func1(func2(x))
+    return lambda X_train:  X_train[:,0] + 2*X_train[:,1] + 3
+    return lambda *args, **kw_args: do_profile(args, kw_args)
+            return lambda *args, **kwargs: f(method,
+    return lambda event, fun=fun, kwds=kwds: fun(event, **kwds)
+        return lambda x: x
+        return lambda *args: None
+        return lambda array: array.rank(pct=True)
+            return lambda x: x.sum()
+
+            return lambda x: x.max()
+    return lambda path: router.dispatch(path, ctx)
+        return lambda obj: self.datamodel.get_related_interface(col_name).get_pk_value(
+	return lambda s: "".join("\\" + c if c in esc_chars else c for c in s)
+        return lambda self: self._test(j)
+        return lambda *args, **kwargs: self._call_process(name, *args, **kwargs)
+            return lambda *args, **kwargs: self._call_config(attr, *args, **kwargs)
+        return lambda worker, req, env, _r: val(worker, req, env)
+
+        return lambda worker, req, _e, _r: val(worker, req)
+    return lambda fn: install_macro(name, fn, fn)
+        return lambda self, _: seq_type(self.parse_forms_until(closer))
+        return lambda data, function: old_school(lambda: function(data))
+        return lambda filepath: False
+            return lambda f: f
+    return lambda self, *args, **kwargs: page_func(*args, **kwargs)
+            return lambda : key
+        return lambda x:x
+def swap(f): return lambda x, y: f(y, x)
+
+  return lambda x: jvp_v1(f, (x,), (1.,))[1]
+
+  return lambda *args: eval_jaxpr(jaxpr, args)
+
+  return lambda x: jvp(f, (x,), (1.,))[1]
+  return lambda aval: Var(next(counter), suffix, aval)
+  return lambda *args: f(*args)[ind]
+  return lambda bufs: GlobalDeviceArray(
+    return lambda name: self.axis_subst_dict.get(name, (name,))
+  return lambda bufs: make_sharded_device_array(aval, sharding_spec, bufs,
+  ...     return lambda x: f1(f2(x))
+
+  ...     return lambda x: f1(jax.checkpoint(f2)(x))
+  ...     return lambda x: f1(f2(x))
+
+  ...     return lambda x: f1(jax.checkpoint(f2)(x))
+    return lambda *args, **kw: compiled(*args, **kw)[0]
+
+    return lambda _: np.zeros(aval.shape, dtypes.float0)
+
+    return lambda _: np.zeros(aval.shape, dtypes.float0)  # type: ignore
+  return lambda dtype: np.asarray(op.identity, dtype=dtype)
+  return lambda *args, **kwargs: with_mesh(kwargs['mesh'])(f)(*args, **kwargs)
+  return lambda f: HashableFunction(f, closure)
+  return lambda *args, **_: all(args[i].weak_type for i in argnums)
+    return lambda x: f(x, *args, **kw).astype(dtype)
+
+    return lambda x: array(v, dtype=dtype)
+
+  return lambda x, y: f(y, x)
+      return lambda i, x: lax.cond(i > 0, f, lambda x: x, x,
+
+      return lambda i, x: lax.cond(i > 0, f, lambda x: x, x,
+  return lambda x, y: (x,y), t1
+
+  return lambda *xs: (f(*xs),)
+      return lambda x, *args: jax.linearize(lambda x: f(x, *args), x)[1](1.0)
+      return lambda x: jax.jvp(f, (x,), (1.,))[1]
+    return lambda _: x
+
+    return lambda i: lax.index_in_dim(x, i, bdim, keepdims=False)
+
+  return lambda i: [sl(i) for sl in slicers]
+    return lambda _: x
+
+    return lambda i: lax.index_in_dim(x, i, bdim, keepdims=False)
+
+  return lambda i: [sl(i) for sl in slicers]
+      return lambda *a, **kw: func(*a, **kw)[idx]
+
+      return lambda *a, **kw: func(*a, **kw)[idx]
+    return lambda item: modfunc(func(transfunc(item)))
+        return lambda *args, **kwargs: self.executor.submit(
+            return lambda config, now: self.value(config, now,
+                return lambda *args: None
+    return lambda x: x
+    return lambda x: None, ("A", "D"), "B"
+
+    return lambda x: None, "A", {"B", "C"}
+  return lambda op: op.device
+    return lambda grads_and_vars: grads_and_vars
+
+    return lambda grads_and_vars: grads_and_vars
+
+    return lambda grads_and_vars: grads_and_vars
+                return lambda a, b: (self, a, b)
+        return lambda shape: np.arange(np.prod(shape)).reshape(shape)
+        return lambda shape: np.arange(np.prod(shape)).reshape(shape)
+
+        return lambda shape: np.arange(np.prod(shape)).reshape(shape)
+
+        return lambda shape: floatX((np.arange(
+        return lambda number: number + delta
+        #~ return lambda s,l,t: func(t)
+
+        return lambda s,l,t: func(t)
+
+    return lambda s,l,t: [replStr]
+        return lambda *args: self._db.eval(Code("function() { "
+        return lambda *args, **kwargs: None
+    return lambda result, f=f: f()
+        return lambda name, *arg, **kw: (name, type(*arg, **kw))
+    return lambda result, f=f: f()
+        return lambda **kw: self.add(name, **kw)
+                return lambda ign, node: node('world')
+        return lambda *args, **kwargs: None
+    return lambda params, **kwargs: common.keys_to_lower(params.get(key) if key else params)
+
+    return lambda params, **kwargs: common.merge_dicts(
+
+    return lambda params, **kwargs: select_attributes(params, param_names)
+    return lambda _pattern, _log_event: True
+    return lambda params, **kwargs: params
+    return lambda instance: min_wait + random.random() * (max_wait - min_wait)
+
+    return lambda instance: wait_time
+        return lambda *args, **kwargs: _create_and_init(initializer_registry[parameters], {}, *args, **kwargs)
+
+        return lambda *args, **kwargs: _create_and_init(initializer_fun, {}, *args, **kwargs)
+
+        return lambda *args, **kwargs: _create_and_init(initializer_fun, init_kwargs, *args, **kwargs)
+        return lambda x, y: x < y
+
+        return lambda x, y: x > y
+        return lambda p: self.homotopy(*p, t)
+    return lambda value: vectorized_func([value])[0]
+        return lambda point: np.dot(point, transposed_matrix)
+    return lambda p: complex_to_R3(complex_func(R3_to_complex(p)))
+    return lambda self: (
+        return lambda pdffile, pngfile, dpi: subprocess.check_output(
+
+        return lambda pdffile, pngfile, dpi: subprocess.check_output(
+            return lambda is_text=self._is_text, encoding=self._encoding, value=value, ctx=parameters.context_proto: LocalFile(
+
+            return lambda f=file_type, ctx=parameters.context_proto: f(ctx)
+
+            return lambda is_text=self._is_text, encoding=self._encoding, value=value: Uploader.encode_url(
+    return lambda cls_or_func: cls_or_func
+                return lambda df, *args, **kwargs: getattr(df, name)(*args, **kwargs)
+
+        return lambda *args, **kwargs: cls.caller(
+
+        return lambda grp: grp.agg(partition_dict)
+                return lambda df: df
+
+                return lambda df: df._reindex_with_indexers(
+
+            return lambda df: df.reindex(joined_index, axis=axis)
+
+                return lambda label: label_dict.get(label, label)
+        return lambda self: self._modin_frame.index
+
+        return lambda self: self._modin_frame.columns
+    return lambda *args, **kw: signature(teardown_cluster).bind(*args, **kw)
+
+    return lambda *args, **kw: signature(create_or_update_cluster).bind(*args, **kw)
+        return lambda table: table.num_rows
+
+        return lambda table: table.num_columns - (1 if "index" in table.columns else 0)
+        return lambda cls_or_func: cls_or_func
+    return lambda x: not predicate(x)
+    return lambda t: screenpos + 400 * d(t) * rotMatrix(0.5 * d(t) * a).dot(v)
+
+    return lambda t: screenpos + v * 400 * d(t - 0.15 * i)
+
+    return lambda t: screenpos - 400 * v * d(t - 0.2 * i)
+
+    return lambda t: screenpos + 400 * d(t - 0.1 * i) * rotMatrix(-0.2 * d(t) * a).dot(
+    return lambda t, duration: np.minimum(t / duration, 1)
+    return lambda t, duration: np.minimum(1.0 * (clip_duration - t) / duration, 1)
+    return lambda testcase: perform_test(func, path, testcase)
+        return lambda u, v, d: min(attr.get(weight, 1) for attr in d.values())
+
+    return lambda u, v, data: data.get(weight, 1)
+    return lambda node: node not in nodes
+
+    return lambda u, v: (u, v) not in edges
+
+    return lambda u, v: (u, v) not in alledges
+
+    return lambda u, v, k: (u, v, k) not in edges
+
+    return lambda u, v, k: (u, v, k) not in alledges
+
+    return lambda u, v: (u, v) in edges
+
+    return lambda u, v: (u, v) in alledges
+
+    return lambda u, v, k: (u, v, k) in edges
+
+    return lambda u, v, k: (u, v, k) in alledges
+            return lambda n, m=None, l=None: True
+
+        return lambda n, m=None, l=None: tokens[0](n, None, {})
+    return lambda x, y: 1.0 * ((label in x) == (label in y))
+
+    return lambda x, y: data[frozenset([x, y])]
+        return lambda sent_index, word_indices: BoxerWhq(
+
+        return lambda sent_index, word_indices: BoxerNamed(
+
+        return lambda sent_index, word_indices: BoxerRel(
+
+        return lambda sent_index, word_indices: BoxerCard(
+
+        return lambda sent_index, word_indices: BoxerProp(
+
+        return lambda sent_index, word_indices: make_callback(
+
+        return lambda sent_index, word_indices: make_callback(
+
+        return lambda sent_index, word_indices: BoxerEq(
+
+        return lambda sent_index, word_indices: BoxerWhq(
+            return lambda first, second: DrtConcatenation(first, second, None)
+        return lambda self: self.__dict__['_nni_' + x]
+            return lambda x: x[active_sample]
+        return lambda x: False
+        return lambda s: s
+        return lambda T: T
+
+        return lambda T: newT(T)
+    return lambda lst: l
+        return lambda a: _gettyperecord_impl(_Py_UCS4(a))
+        return lambda x, y: False
+        return lambda s: s
+
+        return lambda b: "True" if b else "False"
+        return lambda obj: obj
+        return lambda *args: ()
+        return lambda x: np.isnat(x)
+
+        return lambda x: x == nat
+
+        return lambda x: np.asarray(x).imag != 0
+
+        return lambda x: np.asarray(x).imag == 0
+
+        return lambda a: np.cumprod(a)
+
+        return lambda a: np.cumsum(a)
+
+        return lambda arr: np.array(())
+
+        return lambda arr: _asarray(arr).ravel()
+
+        return lambda a, shift: np.asarray(a)
+
+        return lambda x: x
+
+        return lambda x: np.array(x)
+
+        return lambda x: np.array([x], dtype=ty)
+        return lambda func_ir, typemap: self.assertTrue(
+
+        return lambda func_ir, typemap: self.assertFalse(
+
+        return lambda equiv_set: self.assertTrue(check(equiv_set))
+
+        return lambda equiv_set: self.assertTrue(check(equiv_set))
+
+        return lambda func_ir, s: self.assertTrue(self._has_shapecall(func_ir, x))
+
+        return lambda func_ir, s: self.assertFalse(self._has_shapecall(func_ir, x))
+            return lambda : pyfunc(shape, dtype)
+
+            return lambda : np.full(shape, value)
+                return lambda d: literally(d)
+
+            return lambda d: d
+
+            return lambda d: d
+
+            return lambda d: d
+
+                return lambda d: literally(d)
+
+            return lambda d: d
+
+            return lambda x: ...
+                return lambda x: x
+            return lambda a, b: a + b
+
+            return lambda a, *b: a + b[0]
+
+                return lambda A: 10
+            return lambda x, y: x + y
+
+                return lambda x, y: hidden(x, y)
+            return lambda array, func: func(array)
+                return lambda l: literally(l)
+
+            return lambda l: l
+
+            return lambda l: l
+
+                return lambda d: literally(d)
+
+            return lambda d: d
+
+            return lambda x: x
+
+            return lambda x: x
+
+            return lambda x: ...
+            return lambda x: None
+
+                return lambda : None
+                    return lambda a : True
+
+                    return lambda a : False
+
+                        return lambda a : True
+
+                        return lambda a : False
+
+                    return lambda a, b: "RAN CUSTOM EQ OVERLOAD"
+
+                    return lambda a, b: "RAN CUSTOM NE OVERLOAD"
+
+            return lambda a: a
+
+            return lambda a: type(a)(a + 1.23)
+            return lambda x: ok
+                    return lambda x: literally(x) # Force literal dispatch
+
+                return lambda x: literally(x)
+
+                    return lambda x: literally(x) # Force literal dispatch
+
+                return lambda x: x
+                        return lambda x, n: x * x
+
+                        return lambda x, n: x * x * x
+
+                    return lambda x, n: numba.literally(n)
+
+                return lambda x, n: x ** n
+    return lambda d: l
+        return lambda this, other: False
+
+        return lambda this, other: False
+                    return lambda func=self._try_call,attr=attr : func(attr)
+
+                return lambda : None
+        return lambda cmd: subprocess.check_output(cmd)
+
+        return lambda cmd: subprocess.check_output(cmd, shell=True)
+        return lambda input: [_.strip() for _ in method(input)]
+        return lambda version: get_comparable_version(version, base=force_base)
+
+        return lambda version: _get_comparable_version_semantic(
+
+        return lambda version: version
+
+        return lambda a, b: a >= b
+
+        return lambda a, b: a == b
+        return lambda text: PRETRANSLATE.sub(lambda m: convert_dict[m.group(1)], text)
+                return lambda *fargs, **fkwargs: functools.partial(self._on_callback, cb)(
+            return lambda study, trial: callback(
+                    return lambda table: mapping(table.get_column_view(sourceindex)[0])
+            return lambda value: "" if isnan(value) else value
+
+            return lambda value: "" if isnan(value) else var.values[int(value)]
+
+            return lambda value: value
+        return lambda i: self.callback and self.callback(base + i * step)
+            return lambda x=ex: self.Error.unknown(str(x))
+
+                return lambda x=ex: self.Error.unknown(str(x))
+        return lambda g: data_without_commit(g, sparse=sparse)
+            return lambda val: gui_element.setValue(val)
+        return lambda value: float(value.replace(decimalsep, "."))
+
+        return lambda value: float(value.translate(table))
+    return lambda *args, **kwargs: f(g(*args, **kwargs))
+
+    return lambda x: isinstance(x.value, t)
+
+        return lambda lhs, rhs: Div(lhs, rhs)
+            return lambda axis, vals: ~axis.isin(vals)
+
+            return lambda axis, vals: axis.isin(vals)
+    return lambda tipo: issubclass(tipo, klasses)
+
+    return lambda tipo: (
+                return lambda key: Timestamp(key)
+
+                return lambda key: Timestamp(key).asm8
+
+                return lambda key: key
+        return lambda x: f"'{formatter(x)}'"
+        return lambda x: np.asarray(x, dtype="M8[ns]")
+
+        return lambda x: _unconvert_string_array(
+        return lambda x: _format_datetime64_dateonly(
+
+        return lambda x: _format_datetime64(x, nat_rep=nat_rep)
+        return lambda x: na_rep if isna(x) else func_3(x)
+    return lambda x, y: x is pd.NA and y is pd.NA
+    return lambda x, y: x is pd.NA and y is pd.NA
+    return lambda x, y: x is pd.NA and y is pd.NA
+    return lambda left, right: pd.isna(left) and pd.isna(right)
+    return lambda x, y: x.is_nan() and y.is_nan()
+                return lambda x, **kwargs: frame_or_series(
+
+                return lambda x, **kwargs: frame_or_series({"A": x}, **extra, **kwargs)
+
+                return lambda x, **kwargs: frame_or_series([x, x], **extra, **kwargs)
+
+                return lambda x, **kwargs: frame_or_series(
+        return lambda *args, **kwargs: SubclassedSeries(*args, **kwargs)
+
+        return lambda *args, **kwargs: SubclassedDataFrame(*args, **kwargs)
+
+        return lambda *args, **kwargs: SubclassedDataFrame(*args, **kwargs)
+
+        return lambda *args, **kwargs: SubclassedSeries(*args, **kwargs)
+    return lambda e: str(e)
+    return lambda s, l, t: [repl_str]
+        return lambda s, l, t: func(t)
+    return lambda s, l, t: [repl_str]
+        return lambda s, l, t: func(t)
+    return lambda s, l, t: [repl_str]
+        return lambda s, l, t: func(t)
+            return lambda val: str(Path(val))
+
+        return lambda val: val
+			return lambda idx: (
+			return lambda pl, shutdown_event: func(pl=pl, shutdown_event=shutdown_event, **args)
+
+				return lambda pl, segment_info, mode: (
+
+				return lambda pl, segment_info, mode: mode in modes
+
+				return lambda pl, segment_info, mode: (
+
+				return lambda *args: (
+
+				return lambda *args: not exclude_function(*args)
+	return lambda *args: _find_config_files(config_paths, *args)
+		return lambda s: stream.write(s.encode(encoding, errors))
+
+		return lambda s: stream.buffer.write(s.encode(encoding, errors))
+		return lambda *args, **kwargs: self._add_msg(attr, *args, **kwargs)
+    return lambda e: execs[e]
+        return lambda fn: prefect.tasks.core.function.FunctionTask(
+    return lambda self, *pos, **kw: self._savedmethods[name](*pos, **kw)
+                return lambda *args, **kwargs: self.obtain_call(remote_function, *args, **kwargs)
+
+                return lambda *args, **kwargs: obtain(remote_function(*args, **kwargs))
+        return lambda page: module_name in page.objfile
+
+        return lambda page: addr in page
+        return lambda number: pack(number, word_size, endianness, sign)
+
+        return lambda number: unpack(number, word_size, endianness, sign)
+        return lambda cls, v, values, field, config: validator(cls, v, values=values, field=field, config=config)
+
+        return lambda cls, v, values, field, config: validator(cls, v)
+
+        return lambda cls, v, values, field, config: validator(cls, v, values=values)
+
+        return lambda cls, v, values, field, config: validator(cls, v, field=field)
+
+        return lambda cls, v, values, field, config: validator(cls, v, config=config)
+
+        return lambda cls, v, values, field, config: validator(cls, v, values=values, field=field)
+
+        return lambda cls, v, values, field, config: validator(cls, v, values=values, config=config)
+
+        return lambda cls, v, values, field, config: validator(cls, v, field=field, config=config)
+
+        return lambda cls, v, values, field, config: validator(cls, v, values=values, field=field, config=config)
+
+        return lambda cls, v, values, field, config: validator(v, values=values, field=field, config=config)
+
+        return lambda cls, v, values, field, config: validator(v)
+
+        return lambda cls, v, values, field, config: validator(v, values=values)
+
+        return lambda cls, v, values, field, config: validator(v, field=field)
+
+        return lambda cls, v, values, field, config: validator(v, config=config)
+
+        return lambda cls, v, values, field, config: validator(v, values=values, field=field)
+
+        return lambda cls, v, values, field, config: validator(v, values=values, config=config)
+
+        return lambda cls, v, values, field, config: validator(v, field=field, config=config)
+
+        return lambda cls, v, values, field, config: validator(v, values=values, field=field, config=config)
+    return lambda a: a
+        return lambda requester, obj, frame: self.doCheckFrame(obj, frame)
+        'if func is None: return lambda func:  _decorate_(func, _call, (%s))\n'
+    return lambda self: functools.partial(
+
+    return lambda self: functools.partial(
+    return lambda a: a
+    return lambda a: a
+        return lambda **kwargs: self.func(instance, wrapped=True, **kwargs)
+    return lambda x: x + 2
+
+    return lambda x: x + 2
+        return lambda a: a
+
+        return lambda x: x
+            return lambda _: 0
+    return lambda t: trial_probs[t]
+        return lambda _fn: memoize(_fn, **kwargs)
+        return lambda _fn: Marginal(_fn, **kwargs)
+
+        return lambda obj: obj.blond
+
+        return lambda obj: obj.nice
+
+        return lambda obj: obj.tall
+
+    return lambda w: f(w)(a(w))
+        return lambda xnew: sample_next(xnew, outside_vars)
+            return lambda fn: cls._register_log_prob(dim, fn)
+        return lambda guide: config_enumerate(
+        return lambda fn: trace(
+            return lambda x: cls.register(x, type=type, post=post)
+        return lambda fn: p(fn, **kwargs)
+        return lambda _fn: memoize(_fn, **kwargs)
+        return lambda new_exc, old_exc: None
+        return lambda item: runner.runtestprotocol(item, log=False)
+        return lambda *k: None
+        return lambda cls: Typed(expected_type, cls)
+        return lambda qty: str(qty) + " " + order + "s"
+    return lambda ctx: make_fn(ctx, cls._MODULE_NAME)
+  return lambda ctx: builder(name, ctx)
+  return lambda ctx: ctx.convert.bool_values[ctx.python_version[0] == major]
+  return lambda ctx: not_supported_yet(name, ctx, ast=ast)
+        return lambda x: x
+        return lambda c: f(c)
+
+        return lambda c: f(c)
+        return lambda x: x.upper()
+            return lambda x: x
+
+                return lambda bitstr: bitstr in self._is_good_state
+
+                return lambda bitstr: all(
+
+        return lambda bitstr: bitstr in self._is_good_state.probabilities_dict()
+            return lambda x: x
+
+            return lambda x: all(bit == "1" for bit in x)
+            return lambda other: other == value
+        return lambda *args, info: FakeCompletionModel(name, *args, info=info)
+                return lambda y: y
+        return lambda r: r
+
+        return lambda r: r[on]
+        return lambda *args, **kwargs: ray.get(actor_method.remote(*args, **kwargs))
+        return lambda _: random.choice(self.choices)
+
+        return lambda _: random.uniform(self.start, self.end)
+                return lambda *a, **kw: mocked
+            return lambda *a, **kw: result
+        return lambda t: int(t[self.offset - 1])
+
+        return lambda r: e(r, t(r))
+
+        return lambda r: e(r, t)
+        return lambda rel : cls(rel, editable=self.editable)
+            return lambda x: ungettext(rval[0], rval[1], x)
+                return lambda x: self.model.predict_proba_one(x)[True]
+        return lambda *args: None
+        return lambda *args, **kwargs: method(self, *args, **kwargs)
+    return lambda x: x
+    return lambda p, q: np.sum(Y ** p * X ** q * img)
+
+    return lambda p, q, r: np.sum(Z ** p * Y ** q * X ** r * img)
+
+    return lambda p, q: np.sum((Y - cY) ** p * (X - cX) ** q * img)
+        #~ return lambda s,l,t: func(t)
+
+        return lambda s,l,t: func(t)
+
+    return lambda s,l,t: [replStr]
+        return lambda doc: list(number_normalizer(tokenize(doc)))
+    return lambda estimator: (
+    return lambda self: (
+    return lambda self: (
+    return lambda self: (
+    return lambda self: (
+    return lambda self: (
+            return lambda x: x["text"]
+    return lambda self: (
+    return lambda fn: _AvailableIfDescriptor(fn, check, attribute_name=fn.__name__)
+
+    return lambda fn: _IffHasAttrDescriptor(fn, delegate, attribute_name=fn.__name__)
+            return lambda *a, **kw: func(*a, **kw)[idx]
+            return lambda x: logical_and(less_equal(x, val1),
+
+            return lambda x: less_equal(x, val2)
+
+            return lambda x: logical_and(less(x, val1),
+    return lambda v: v * d[:, np.newaxis] - m @ v
+
+    return lambda v: nd[:, np.newaxis] * laplace(v * nd[:, np.newaxis])
+
+    return lambda v: nd[:, np.newaxis] * laplace_sym(v * nd[:, np.newaxis])
+        return lambda *args, **kwds: rvs_in(*args, random_state=rs, **kwds)
+    return lambda cmd, ext: _blas_ilp64_pre_build_hook(cmd, ext, blas_info)
+        return lambda x: _network(x, url=url)
+        return lambda events_results: self.handle_results_with_meta(
+            return lambda bool_iter: not any(bool_iter)
+        return lambda span: fn(span) if span.get("op") == op_name else None
+    return lambda x: x if x in metric_names else mri_func(x)
+    return lambda x: x if x in metric_mris else mri_func(x)
+        return lambda x: x
+        return lambda doc: doc
+
+        return lambda doc: doc
+        return lambda doc: doc
+        return lambda x: x
+    return lambda a: a
+    return lambda x : np.percentile(x, 100 *q)
+        return lambda x : X.__class__(x, index=index, columns=names)
+
+        return lambda x : X.__class__(x, index=index, name=names)
+            return lambda f: create_cache_wrapper(
+            return lambda f: create_cache_wrapper(
+        return lambda f: cache(
+        return lambda expr: isinstance(expr, query)
+
+        return lambda expr: expr.match(query) is not None
+        return lambda rule, **_: rule.get(self, self)
+
+            return lambda : sage.function(ins.__class__.__name__)(*args)
+                    return lambda expr: Integral(expr, var) + Dummy('C')
+    return lambda expr: min(tuple(allresults(tree, **kwargs)(expr)),
+        return lambda x: x
+        return lambda x: x
+
+    return lambda string: pattern.sub(D, string)
+            return lambda x, y, z: (x, y, z)
+
+            return lambda x, y, z: (
+
+            return lambda x, y, z: (
+
+                return lambda x, y, z: (S.One, S.One, S.One)
+
+                return lambda r, theta, phi: (S.One, r, r*sin(theta))
+
+                return lambda r, theta, h: (S.One, r, S.One)
+
+        return lambda x1, x2, x3: (
+
+                return lambda x, y, z: (x, y, z)
+
+                return lambda r, theta, phi: (
+
+                return lambda r, theta, h: (
+
+        return lambda x, y, z: t(*r(x, y, z))
+    return lambda instance_name: current_token()
+    return lambda f: f
+        return lambda f: f
+        return lambda *args, **kwargs: f1(f2(*args, **kwargs))
+    return lambda s: s.replace(old, new)
+        return lambda string: highlight(
+
+    return lambda string: highlight(
+    return lambda s, l, t: [repl_str]
+        return lambda s, l, t: func(t)
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+
+            return lambda _, name=None: None
+            return lambda x: tf.nn.leaky_relu(x, alpha=alpha)
+
+            return lambda x: tf.nn.leaky_relu(x, alpha=alpha)
+    return lambda t: tf.convert_to_tensor(x, dtype, name=name)
+    return lambda *args: func_or_y
+    return lambda t, x: self._drift_fn(t)
+
+    return lambda t, x: self._volatility_fn(t)
+  return lambda t: outer_multiply(tf.ones_like(t), drift_const)
+        return lambda a, b: tensordot(a, b, axes)
+    return lambda value: results.update({'value': value})
+        return lambda *args, **kwargs: method(self, *args, **kwargs)
+            return lambda x: x
+
+            return lambda x: x
+
+            return lambda x: x
+    return lambda _frame, _event, _args: trace_exceptions(file_handler, _frame, _event, _args)
+            return lambda t: _start < t.rowid and t.rowid <= _end and \
+        return lambda *args, **kwargs: None
+    return lambda result, f=f: f()
+    return lambda result, f=f: f()
+        return lambda **kw: self.add(name, **kw)
+                return lambda ign, node: node("world")
+        return lambda x: x
+
+            return lambda x: x
+
+            # return lambda x: x
+        return lambda x: -1
+            return lambda model: self.register(model, **kwargs)
+    return lambda *args, **kwargs: draw.assert_pixels(
+
+    return lambda *args, **kwargs: draw.assert_same_renderings(
+
+    return lambda *args, **kwargs: draw.assert_different_renderings(
+
+    return lambda *args, **kwargs: draw.assert_pixels_equal(
+            return lambda *_: self.json_rpc_method
+        return lambda text: pattern.sub(
+    return lambda *a, **kw: _TestResult(tmpl(*a, **kw))
+        ...     return lambda *a, **kw: TestResult(tmpl(*a, **kw))
+        return lambda x: x
+        return lambda x: (os.path.basename(filename), self._opener(filename))
+        return lambda args, stdin=None: (
+        return lambda cmd1: predictor_cmd0(first_args[::-1] + cmd1)
+            return lambda n: min(float(start) * (float(step or 2) ** n), float(limit or 'inf'))
+
+            return lambda n: min(float(start) + float(step or default_step) * n, float(limit or 'inf'))
+            return lambda s: ''.join(s[i] for i in cache_spec)
+
+        return lambda s: initial_function([s])
+
+        return lambda s: jsi.extract_function_from_code(*func_code)([s])
+        return lambda *args, **kargs: self(method, *args, **kargs)
+
+        return lambda *args: self(method, *args)
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+
+    return lambda kwargs: SQL(
+        return lambda email: None
+                return lambda *args, **kwargs: None

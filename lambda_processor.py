@@ -16,15 +16,16 @@ UNICODE_PATTERN = "((.*?)lambda (.*?):(.*?).encode(.*?)\n)"
 EXCEPTION_PATTERN = "((.*?)lambda (.*?): future.set_exception(.*?)\n)"
 ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
 ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
-CALLBACK_PATTERN = r"[c|C]allback(.*?)lambda"
-STRING_FORMATTING_PATTERN = r"lambda([^\(]*?)str\("
-ERROR_RAISING_PATTERN = r"(lambda(.*?):(.*?)error)"
-IN_OPERATOR_PATTERN = r"(lambda(.*?):(.*?)in)"
-INDEXING_PATTERN = r"(lambda([^\(]*?)\[)"
-NONE_PATTERN = r"(lambda(.*?):(.*?)None)"
-ARITHMETIC_OPERATIONS_PATTERN = r"(lambda([^\(]*?):([^\(]*?)[\+|\/|\*|\-])"
-NONAME_VAR_PATTERN = r"(lambda _:)"
-BOOL_COND_PATTERN = r"(lambda([^\(]*?):([^\(,\)]*?)(<|==|!=|>|<=|=<|=>|>=))"
+CALLBACK_PATTERN = r"((.*?)[c|C]allback(.*?)lambda(.*?)\n)"
+STRING_FORMATTING_PATTERN = "((.*?)lambda([^\\(#\\,\\=\\[\\)]*?)str\\((.*?)\n)"
+ERROR_RAISING_PATTERN = "((.*?)lambda([^#\\(\\)\\.\\_\\,]*?)error(.*?)\n)"
+IN_OPERATOR_PATTERN = "((.*?)lambda\\s(\\w+):\\s+(in|isin)\\s(.*?)\n)"
+INNER_LAMBDA_PATTERN = "((.*?)lambda(.*?):(.*?)in lambda(.*?):(.*?)\n)"
+INDEXING_PATTERN = "((.*?)lambda\\s(\\w+):\\s?\\[(.*?)\n)"
+NONE_PATTERN = "((.*?)lambda(.*?):\\s?None(.*?)\n)"
+ARITHMETIC_OPERATIONS_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
+NONAME_VAR_PATTERN = "((.*?)lambda [\\*\\_]?_:(.*?)\n)"
+BOOL_COND_PATTERN = "((.*?)lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=))(.*?)\n)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -61,54 +62,54 @@ def count_usages_of_lambda_expressions(python_file_text, python_file_name):
     exception_find_all = [x[0] for x in re.findall(EXCEPTION_PATTERN, python_file_text)]
     async_find_all = [x[0] for x in re.findall(ASYNC_TASKS_PATTERN, python_file_text)]
     iterators_find_all = [x[0] for x in re.findall(ITER_PATTERN, python_file_text)]
-    callbacks = [x[0] for x in re.findall(CALLBACK_PATTERN, python_file_text)]
-    string_formatting = [x[0] for x in re.findall(STRING_FORMATTING_PATTERN, python_file_text)]
-    error_raising = [x[0] for x in re.findall(ERROR_RAISING_PATTERN, python_file_text)]
-    in_operator = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
-    indexing = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
-    none_ptrn = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
-    arithmetic_operators = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
-    noname_vars = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
-    boolean_conditions = [x[0] for x in re.findall(BOOL_COND_PATTERN, python_file_text)]
-    dict_types = {
-        "map reduce filter": len(map_filter_reduce_find_all),
-        "function arguments": len(function_arguments_find_all),
-        "return value": len(return_value_find_all),
-        "unicode": len(unicode_find_all),
-        "exception": len(exception_find_all),
-        "async": len(async_find_all),
-        "iterators": len(iterators_find_all),
-        "callbacks": len(callbacks),
-        "string_formatting": len(string_formatting),
-        "error_raising": len(error_raising),
-        "in_operator": len(in_operator),
-        "indexing": len(indexing),
-        "none_ptrn": len(none_ptrn),
-        "arithmetic_operators": len(arithmetic_operators),
-        "noname_vars": len(noname_vars),
-        "boolean_conditions": len(boolean_conditions)
+    callbacks_find_all = [x[0] for x in re.findall(CALLBACK_PATTERN, python_file_text)]
+    string_formatting_find_all = [x[0] for x in re.findall(STRING_FORMATTING_PATTERN, python_file_text)]
+    error_raising_find_all = [x[0] for x in re.findall(ERROR_RAISING_PATTERN, python_file_text)]
+    in_operator_find_all = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
+    indexing_find_all = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
+    none_ptrn_find_all = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
+    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
+    noname_vars_find_all = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
+    boolean_conditions_find_all = [x[0] for x in re.findall(BOOL_COND_PATTERN, python_file_text)]
+    dict_types_to_find_all_res = {
+        "map_reduce_filter": map_filter_reduce_find_all,
+        "function_arguments": function_arguments_find_all,
+        "return_value": return_value_find_all,
+        "unicode": unicode_find_all,
+        "exception": exception_find_all,
+        "async": async_find_all,
+        "iterators": iterators_find_all,
+        "callbacks": callbacks_find_all,
+        "string_formatting": string_formatting_find_all,
+        "error_raising": error_raising_find_all,
+        "in_operator": in_operator_find_all,
+        "indexing": indexing_find_all,
+        "none_ptrn": none_ptrn_find_all,
+        "arithmetic_operators": arithmetic_operators_find_all,
+        "noname_vars": noname_vars_find_all,
+        "boolean_conditions": boolean_conditions_find_all
     }
+    dict_types_to_counts = {k: len(v) for k,v in dict_types_to_find_all_res.items()}
     all_lambdas_find_all = re.findall(ALL_PATTERN, python_file_text)[0]
     all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
                                                     return_value_find_all, unicode_find_all, exception_find_all,
                                                     async_find_all, iterators_find_all,
-                                                    callbacks,
-                                                    string_formatting,
-                                                    error_raising,
-                                                    in_operator,
-                                                    indexing,
-                                                    none_ptrn,
-                                                    arithmetic_operators,
-                                                    noname_vars,
-                                                    boolean_conditions)
+                                                    callbacks_find_all,
+                                                    string_formatting_find_all,
+                                                    error_raising_find_all,
+                                                    in_operator_find_all,
+                                                    indexing_find_all,
+                                                    none_ptrn_find_all,
+                                                    arithmetic_operators_find_all,
+                                                    noname_vars_find_all,
+                                                    boolean_conditions_find_all)
     all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
-    with open("./lambdas_in_operator.txt", "a") as f:
-        f.writelines("\n".join(in_operator))
-    with open("./lambdas_arithmetic_operators.txt", "a") as f:
-        f.writelines("\n".join(arithmetic_operators))
-    all_lambdas_types_count = sum(dict_types.values())
-    dict_types["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
-    return dict_types
+    for key in dict_types_to_find_all_res.keys():
+        with open(f"./lambdas_{key}.txt", "a") as f:
+            f.writelines("\n".join(dict_types_to_find_all_res[key]))
+    all_lambdas_types_count = sum(dict_types_to_counts.values())
+    dict_types_to_counts["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
+    return dict_types_to_counts
 
 
 def calc_average_num_lambda_per_file(all_files_dict_types):

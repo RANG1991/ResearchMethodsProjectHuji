@@ -1,0 +1,1577 @@
+            child_processes, timeout=timeout, callback=lambda x: log.info("Terminated PID %s", x.pid)
+    task_d = EmptyOperator(task_id="test_task_on_execute", on_execute_callback=lambda *args, **kwargs: None)
+
+    task_e = EmptyOperator(task_id="test_task_on_success", on_success_callback=lambda *args, **kwargs: None)
+            task1 = EmptyOperator(task_id=task_id_1, on_failure_callback=lambda x: print("hi"))
+
+            task1 = EmptyOperator(task_id=task_id_1, on_failure_callback=lambda x: print("hi"))
+
+            on_success_callback=lambda x: print("success"),
+
+            on_failure_callback=lambda x: print("failed"),
+
+            on_failure_callback=lambda: True,
+
+            on_success_callback=lambda: True,
+            job.heartbeat_callback = lambda session: heartbeat_records.append(job.latest_heartbeat)
+            ({"on_success_callback": lambda x: print("hi")}, True),
+
+            ({"on_failure_callback": lambda x: print("hi")}, True),
+    with mock.patch('awx.main.queue.CallbackQueueDispatcher.dispatch', lambda self, obj: None):
+        with mock.patch('awx.main.queue.CallbackQueueDispatcher.dispatch', lambda self, obj: None):
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+            self._change_callbacks[receiver] = lambda event: event.dispatch(receiver)
+        s1 = SessionCallback(lambda: None, callback_id=ID("1"))
+
+        s2 = SessionCallback(lambda: None, callback_id=ID("2"))
+
+        cm._change_callbacks["foo"] = lambda x: None
+        self.callback = callback if callback else lambda r, e: None
+                buffer_callback = lambda pb: buffers.append(pb.raw())
+
+                buffer_callback = lambda _: True
+                stack.callback(lambda: None)
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        callback = lambda ref: None
+
+        callback = lambda ref: None
+
+            ref1.__callback__ = lambda ref: None
+                fut.add_done_callback(lambda *args: handle.cancel())
+        d.addCallback(lambda _: None)
+            d.addCallback(lambda res: remote.broker.transport.loseConnection())
+            d.addCallback(lambda _: self.get_prefix())
+        d.addCallback(lambda pair: pair[0])
+        d.addCallback(lambda res: reactor.stop())
+        d.addCallback(lambda _: True)
+        d.addCallback(lambda _: True)
+        d.addCallback(lambda objdict: objdict['id'])
+            d.addCallback(lambda args:
+
+            d.addCallback(lambda res:
+            d.addCallback(lambda _: self.recordChange(change))
+
+        return (defer.succeed((None, {})), d.addCallback(lambda _: buildstep.SUCCESS))
+        d.addCallback(lambda res: commandComplete(cmd))
+                df.addCallback(lambda _: self._clobber())
+
+                df.addCallback(lambda _: self.doCheckout(self.workdir))
+        d.addCallback(lambda _: self._dovccmd(command))
+
+        d.addCallback(lambda _: self._dovccmd(command))
+
+                df.addCallback(lambda _: self._clobber())
+
+                df.addCallback(lambda _: self._doFull())
+                df.addCallback(lambda _: self.runRmdir(self.workdir))
+
+                df.addCallback(lambda _: self._checkout())
+                df.addCallback(lambda _: self._retryPull())
+                df.addCallback(lambda _: self._doClobber())
+
+                df.addCallback(lambda _: self._clone(shallowClone))
+                df.addCallback(lambda _: self._clobber())
+
+                df.addCallback(lambda _: self._clone())
+                df.addCallback(lambda _: self.runRmdir(self.workdir, timeout=self.timeout))
+
+                df.addCallback(lambda _: self._checkout())
+        d.addCallback(lambda pair: pair[0])
+        d.addCallback(lambda _: workerworker)
+        callback = mock.Mock(side_effect=lambda *a, **kw: d.callback(None))
+
+        callback = mock.Mock(side_effect=lambda *a, **kw: d.callback(None))
+        d.addCallback(lambda _: self.assert_all_commands_ran())
+
+        d.addCallback(lambda _: self.assert_all_commands_ran())
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+        d2.addCallback(lambda _:
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+        d.addCallback(lambda brdict:
+            stop_d.addCallback(lambda _:
+
+            d.addCallback(lambda _:
+
+            long_d.addCallback(lambda _: res_d)
+        function.callback(lambda x, y: x + '|' + y)
+        d.addCallback(lambda res_brids: self.assertEqual(res_brids[0], 11)
+
+        d.addCallback(lambda res_brids1: self.assertEqual(res_brids1[0], 22)
+        d1.addCallback(lambda _: d1_waited)
+        d.addCallback(lambda res: None)
+
+            d.addCallback(lambda res: None)
+        d.addCallback(lambda result: tunnel._onConnection)
+        d.addCallback(lambda res: False)
+
+            d1.addCallback(lambda ignored: res)
+
+            d1.addCallback(lambda ignored: res)
+        d1.addCallback(lambda _: d1_waited)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+                 restore_all_prefs=False, progress_callback=lambda x, y:True,
+
+            callback = lambda x: x
+
+            progress_callback = lambda book_id, old_sz, new_sz: None
+        progress_callback=lambda x, y:True, restore_all_prefs=False,
+
+            progress_callback = lambda x, y:True
+    def __init__(self, library_path, default_prefs=None, restore_all_prefs=False, progress_callback=lambda x, y:True):
+
+            self.progress_callback = lambda x, y: x
+        filename_callback=lambda x, y:x,
+              pre_load_callback=lambda x:None, path_is_html=False,
+def compress_images(container, report=None, names=None, jpeg_quality=None, progress_callback=lambda n, t, name:True):
+def check_external_links(container, progress_callback=(lambda num, total:None), check_anchors=True):
+             action_callback=lambda *args: args, action_label=action_label or 'An action')
+        self.restorer.progress_callback = lambda x, y: x
+
+            self.restorer.progress_callback = lambda x, y: x
+    def speak_marked_text(self, marked_text, callback=lambda ev: None):
+    def __init__(self, result_callback=lambda x:x, worker_entry_point='main'):
+        follow_links=False, cancel_callback=lambda : False):
+
+        cancel_callback=lambda : False):
+
+def hash_merge_format_collections(collections, cancel_callback=lambda:False):
+                progress_callback = lambda x, y: True
+            self.progress_callback = lambda x, y: x
+        u('a:url(  "(/*)"  )', 'a:url(  "(/*)"  )', url_callback=lambda x: x)
+              callback=lambda ctx, _, value: value or ctx.obj.app.conf.beat_schedule_filename,
+
+              callback=lambda ctx, _, value: value or ctx.obj.app.conf.beat_scheduler,
+              callback=lambda _, __, wd: os.chdir(wd) if wd else None,
+    puzzle_hash_created_callbacks: Dict = defaultdict(lambda *x: None)
+        callback=lambda **kwargs: kwargs,
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+                    setter_callback=lambda value, preset_mode=preset_mode: self.set_preset_mode(
+                setter_callback=lambda value, option=option: self.select_option(option),
+        callback(lambda entity, call: entity.async_select_index(0)),
+
+        callback(lambda entity, call: entity.async_select_index(-1)),
+            event_callback=lambda _: None,
+    rfx_object.event_callback = lambda event: hass.add_job(async_handle_receive, event)
+    discovery.add_callback(lambda devices: async_trigger_discovery(hass, devices))
+                EVENT_HOMEASSISTANT_START, callback(lambda _: result.async_refresh())
+    bulb.set_discovery_callback(lambda bulb: async_trigger_discovery(hass, [bulb]))
+        "binary_sensor.test_binary", callback(lambda event: events.append(event))
+
+        "binary_sensor.test_binary", callback(lambda event: events.append(event))
+            callback=lambda _: None,
+        callback(lambda event: events.append(event)),
+
+        callback(lambda event: events.append(event)),
+        hass, "update.update_available", callback(lambda event: events.append(event))
+
+        hass, "update.update_available", callback(lambda event: events.append(event))
+        "media_player.tv", callback(lambda event: events.append(event))
+        hass, callback(lambda x: runs.append(x)), birthday_paulus
+
+        hass, callback(lambda x: runs.append(x)), birthday_paulus
+
+        hass, callback(lambda x: runs.append(x)), birthday_paulus
+
+        callback(lambda x: specific_runs.append(x)),
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+        hass, [], ha.callback(lambda event: None)
+
+            ha.callback(lambda event, updates: None),
+
+        callback(lambda _, _2, to_s: to_s.state == "on"),
+
+        hass, callback(lambda x: specific_runs.append(x)), timedelta(seconds=10)
+
+        unsub = async_track_sunrise(hass, callback(lambda: runs.append(1)))
+
+            hass, callback(lambda: offset_runs.append(1)), offset
+
+        async_track_sunrise(hass, callback(lambda: runs.append(1)))
+
+        unsub = async_track_sunset(hass, callback(lambda: runs.append(1)))
+
+            hass, callback(lambda: offset_runs.append(1)), offset
+
+            hass, callback(lambda x: wildcard_runs.append(x))
+
+            hass, callback(lambda x: specific_runs.append(x)), second=[0, 30]
+
+            hass, callback(lambda x: specific_runs.append(x)), minute="/5", second=0
+
+            callback(lambda x: specific_runs.append(x)),
+
+            hass, callback(lambda x: specific_runs.append(x)), hour="/two"
+
+            callback(lambda x: specific_runs.append(x)),
+
+            callback(lambda x: specific_runs.append(x)),
+
+        callback(lambda x: specific_runs.append(x)),
+
+        callback(lambda x: specific_runs.append(x)),
+
+        callback(lambda x: specific_runs.append(x)),
+
+        callback(lambda x: specific_runs.append(x)),
+
+        [], ha.callback(lambda event: None)
+
+        [], ha.callback(lambda event: None)
+        callback_wrapper = lambda payload: callback(*payload)
+                buffer_callback = lambda pb: buffers.append(pb.raw())
+
+                buffer_callback = lambda _: True
+            t.add_done_callback(lambda f: loop.stop())
+                stack.callback(lambda: None)
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        callback = lambda ref: None
+
+        callback = lambda ref: None
+
+            ref1.__callback__ = lambda ref: None
+            fut.add_done_callback(lambda fut: self.loop.stop())
+
+            fut.add_done_callback(lambda fut: self.loop.stop())
+
+            fut.add_done_callback(lambda *args: self.loop.stop())
+            fut.add_done_callback(lambda f: None)
+
+            fut.remove_done_callback(lambda f: None)
+        cx.set_trace_callback(lambda stmt: self.traced.append(stmt))
+
+        self.cx.set_trace_callback(lambda stmt: self.traced.append(stmt))
+        SAM = SAMHashes(self.output_filename + ".sam", bootKey, isRemote=None, perSecretCallback=lambda secret: self.logger.highlight(secret))
+
+        LSA = LSASecrets(self.output_filename + ".security", bootKey, None, isRemote=None, perSecretCallback=lambda secretType, secret: self.logger.highlight(secret))
+            SAM = SAMHashes(SAMFileName, self.bootkey, isRemote=True, perSecretCallback=lambda secret: add_sam_hash(secret, host_id))
+
+                             perSecretCallback=lambda secretType, secret: add_lsa_secret(secret))
+
+                        perSecretCallback = lambda secretType, secret : add_ntds_hash(secret, host_id))
+            callback = lambda response: self.parseTokenResponse(response, callback),
+
+            error_callback = lambda response, _: self.parseTokenResponse(response, callback)
+
+            callback = lambda response: self.parseTokenResponse(response, callback),
+
+            error_callback = lambda response, _: self.parseTokenResponse(response, callback)
+
+            callback = lambda reply: self._parseUserProfile(reply, success_callback, failed_callback),
+
+            error_callback = lambda _, _2: failed_callback() if failed_callback is not None else None
+                                       state_setup_callback = lambda gl: gl.glDepthFunc(gl.GL_ALWAYS),
+
+                                       state_teardown_callback = lambda gl: gl.glDepthFunc(gl.GL_LESS)
+        task.add_done_callback(lambda _: disposable.dispose())
+                        user_callback_output=map_grouping(lambda x: no_update, output),
+
+                        user_callback_output=map_grouping(lambda x: no_update, output),
+
+                    user_callback_output=map_grouping(lambda x: no_update, output),
+    with Callback(pretask=lambda key, *args: keys.append(key)):
+
+    with Callback(pretask=lambda key, *args: keys.append(key)):
+    with Callback(pretask=lambda key, *args: keys.append(key)):
+        f_false = CallbackFilter(lambda r: False)
+
+        f_true = CallbackFilter(lambda r: True)
+        callback = lambda: self._claim_swap(swap)
+                    touch_callback: lambda: app.show_transaction(root.funding_txid)
+
+                    touch_callback: lambda: app.show_transaction(root.closing_txid)
+
+                    touch_callback: lambda: app.show_transaction(root.funding_txid)
+
+                    touch_callback: lambda: app.show_transaction(root.closing_txid)
+            callback=lambda: self.console.set_json(True))
+            trigger_callback = lambda *args: None
+
+            register_callback = lambda *args: None
+    long_task.add_done_callback(lambda f: spinner.cancel())
+        The callback may be a traditional function, lambda function,
+        # self._mpv.register_event_callback(lambda event: self._on_event(event))
+    _callback = lambda: None
+    watcher.callback = lambda: None
+        future.add_done_callback(lambda f: calledback.append(True))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+        self.client.storbinary('stor', f, callback=lambda x: flag.append(None))
+
+        self.client.storlines('stor foo', f, callback=lambda x: flag.append(None))
+    request_body_read_callback=lambda chunk: chunk
+        progress_callback: Callable[[int, bool], None] = lambda *_: None,
+    def __init__(self, samFile, bootKey, isRemote = False, perSecretCallback = lambda secret: _print_helper(secret)):
+
+                 perSecretCallback=lambda secretType, secret: _print_helper(secret)):
+
+                 perSecretCallback = lambda secretType, secret : _print_helper(secret),
+    hcb.callback_extra = lambda dev: time.sleep(1)
+
+    hcb.callback_extra = lambda dev: time.sleep(2)
+
+    self.helper_check_callback_errors(lambda: fun(3.),
+
+    self.helper_check_callback_errors(lambda: fun(3.),
+
+    self.helper_check_callback_errors(lambda: self.assertAllClose(arg, fun(arg)),
+            "callback": lambda x, **_: x,
+            io_loop.add_callback(lambda: evt.set())
+        'default_offset_commit_callback': lambda offsets, response: True,
+            future.add_callback(lambda r: functools.partial(self._do_commit_offsets_async, offsets, callback)())
+        'state_change_callback': lambda node_id, sock, conn: True,
+      cbks = [keras.callbacks.LearningRateScheduler(lambda x, lr: lr / 2)]
+        callbacks.LearningRateScheduler(schedule=lambda epoch: 0.001)
+        self.first_window_callback = lambda window_handle: None
+            self._texture_cb = Callback(lambda instr:
+    MTContactCallbackFunction = lambda x: None
+                    callback: lambda __: setattr(self, 'callback_test', 'TEST')
+                self.callback[type_] = CallChain(self.callback[type_], f, lambda t: t.type == type_)
+        self.task.add_done_callback(lambda _: log.info("Stopping blob cleanup service."))
+        self.finished.add_done_callback(lambda *_: self.close_handle())
+                task.add_done_callback(lambda _: self.blob_completed_callback(self))
+        task.add_done_callback(lambda _: None if task not in self._running_pings else self._running_pings.remove(task))
+    return execute_command(conf, method, kwargs, callback=lambda data: data)
+        self.storage.content_claim_callbacks[source.stream_hash] = lambda: self._update_content_claim(source)
+
+        self.storage.content_claim_callbacks[stream.stream_hash] = lambda: self._update_content_claim(stream)
+            f.add_done_callback(lambda _: self.transport.write(remaining[:self.chunk_size]))
+
+                f.add_done_callback(lambda _: self.loop.call_soon(chunk_response, remaining[self.chunk_size:]))
+            task.add_done_callback(lambda *_: self.tasks.pop(info_hash, None))
+        self.task.add_done_callback(lambda _: log.info("Stopping wallet server payments."))
+        t3.add_done_callback(lambda _: t2.cancel())
+        d.addCallback(lambda x: (x, spider))
+        d.addCallback(lambda _: logger.info(logfmt % "Stored", log_args,
+        cb = request.callback or (lambda _: _)
+        dfd.addCallbacks(_onsuccess, lambda _: None)
+    d.addCallbacks(lambda r: [x[1] for x in r], lambda f: f.value.subFailure)
+    d.addCallback(lambda out: [x[1] for x in out])
+        self._loopFinished.addCallback(lambda _:
+
+                    .addCallback(lambda _: protocol))
+        d.addCallback(lambda ignored: ready)
+        d.addCallback(lambda x:
+        #d.addCallback(lambda x:defer.succeed(1))
+        d.addCallback(lambda ignored: self.getPassword(prompt))
+        d.addCallback(lambda _: self.processProtocol.clearBuffer())
+
+        d.addCallback(lambda _: self.processProtocol.killProcess())
+
+        d.addCallback(lambda xs: [x.split(b'\n') for x in xs])
+
+        d.addCallback(lambda _: self.assertFalse(
+
+        d.addCallback(lambda _: self.assertFalse(
+
+        d.addCallback(lambda _: self.runCommand('rmdir testLocalDirectory'))
+
+        d.addCallback(lambda res: res[0])
+
+        d.addCallback(lambda args: getProcessOutputAndValue('sftp', args))
+        d.addCallback(lambda _:  self._enabledHelper(h, eR=[b'\x42']))
+
+        d.addCallback(lambda ignored: self._enabledHelper(self.p.protocol))
+
+        d.addCallback(lambda ignored: self._enabledHelper(self.p.protocol))
+
+        d.addCallback(lambda _: self._enabledHelper(self.p.protocol,
+
+            d.addCallback(lambda _: self._enabledHelper(self.p.protocol,
+        d.addCallback(lambda x: [a.original.name for i, a, l in x])
+            d.addCallback(lambda result: result[0][self._GAI_ADDRESS]
+
+        ).addCallback(lambda protocol: protocol.wrappedProtocol)
+            d.addCallback(lambda n: (n,) + self.addr[1:])
+                result.addCallbacks(lambda result: self.resume(),
+
+        d.addCallback(lambda ignored: callable(*args, **kw))
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+    d.addCallback(lambda _: disconnected)
+
+    d.addCallback(lambda _: needsRunningReactor(reactor, reactor.stop))
+
+            portDeferred.addCallback(lambda ignored: reactor.stop())
+
+        finished.addCallback(lambda ign: reactor.stop())
+
+        finished.addCallback(lambda ign: reactor.stop())
+            callbacks=[lambda *args: notified.callback(args)])
+        d.addCallback(lambda e: self.assertEqual(
+            lambda: d.addCallback(lambda ignored: reactor.stop()))
+
+            lambda: d.addCallback(lambda ignored: reactor.stop()))
+        reactor.iterationTimeout.addCallback(lambda ignored: reactor.stop())
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        exited.addCallback(lambda ign: reactor.stop())
+
+            return lost[2].addCallback(lambda ign: transport)
+
+            return lost[1].addCallback(lambda ign: transport)
+
+        ended.addCallback(lambda ign: reactor.stop())
+
+        exited.addCallback(lambda ign: reactor.stop())
+
+            d.addCallback(lambda dummy: utils.getProcessOutputAndValue(
+        d.addCallback(lambda ignored: reactor.stop())
+
+        defer.addCallback(lambda ignored: reactor.stop())
+                           .addCallback(lambda ign: reactor.stop()))
+        finished.addCallback(lambda ign: reactor.stop())
+        finished.addCallback(lambda ignored: reactor.stop())
+                d.addCallback(lambda result: cmbx.close())
+
+                ).addCallback(lambda _: self.__cbFetch(results, tag, query, uid)
+
+                    ).addCallback(lambda _, b=buffer, f=flags, d=date: mbox.addMessage(rewind(b), f, d)
+
+        d.addCallback(lambda _: self.getCapabilities())
+
+            d.addCallback(lambda _: self.getCapabilities())
+
+                ).addCallback(lambda _: self
+        d.addCallback(lambda _: self.capabilities())
+
+        return self.user(username).addCallback(lambda r: self.password(password))
+
+            return self.sendLong(cmd, args, consumer, xform).addCallback(lambda r: L)
+
+            return self.sendLong(cmd, args, consumer, xform).addCallback(lambda r: L)
+        result.addCallback(lambda ign: self.sendCode(235,
+        d.addCallback(lambda ign: self.setTimeout(timeOut))
+
+            fileDeferred.addCallback(lambda fObj: (size, fObj))
+        return d.addCallback(lambda _: self.assertEqual(expected, caps))
+
+        return d.addCallback(lambda _: self.assertEqual(expCap, caps))
+
+        return d.addCallback(lambda _: self.assertEqual(self.loggedOut, 1))
+
+        return d.addCallback(lambda _: self.assertEqual(self.responses, []))
+
+        d.addCallback(lambda _: self.namespaceArgs)
+
+        d.addCallback(lambda _: self.assertTrue(isinstance(self.stashed,
+
+        d.addCallback(lambda _: self.assertEqual(str(self.failure.value),
+
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+
+        d.addCallback(lambda _:
+
+        return defer.gatherResults([d1, d2]).addCallback(lambda _: self.listed)
+
+        d.addCallback(lambda _: self.assertEqual(
+
+        self.connected.addCallback(lambda _: self.function(self.messages, uid)
+
+        d.addCallback(lambda x : self.assertEqual(self.result, self.expected))
+
+        d.addCallback(lambda ign: self.assertEqual(self.result, self.expected))
+
+        d.addCallback(lambda ign: self.assertEqual(self.result, self.expected))
+
+        d.addCallback(lambda x : self.assertEqual(len(success), 1))
+
+        d.addCallback(lambda x : self.assertTrue(success))
+
+        self.connected.addCallback(lambda ign: self.client.startTLS())
+        d.addCallback(lambda x :
+
+        d.addCallback(lambda x: self.assertEqual(server.authenticated, 1))
+
+        d.addCallback(lambda x: self.assertTrue(server.authenticated))
+
+        d.addCallback(lambda x: self.assertTrue(server.authenticated))
+
+        d.callback((smtp.IMessageDeliveryFactory, None, lambda: None))
+
+        onDone.addCallback(lambda e: self.assertEqual(
+            d.addCallback(lambda x, self=self: self._reallyConnect())
+        deferred.addCallback(lambda r: getattr(r, name)(*args, **kw))
+        d.addCallback(lambda x: self.assertEqual(x[0][0].payload.dottedQuad(),
+            self.resolver.lookupZone('test-domain.com').addCallback(lambda r: (r[0][:-1],)),
+        d.addCallback(lambda results: results[0]) # Get the answer section
+
+        d.addCallback(lambda results: results[0]) # Get the answer section
+    d.addCallback(lambda x: serverWrapper.deferred)
+
+    d.addCallback(lambda x: serverPort.stopListening())
+
+    d.addCallback(lambda x: serverWrapper.deferred)
+
+    d.addCallback(lambda x: serverPort.stopListening())
+        return self.dtpFactory.deferred.addCallback(lambda ign: None)
+
+            d.addCallback(lambda ignored: file.close())
+
+        return self.shell.makeDirectory(newsegs).addCallback(lambda ign: (MKD_REPLY, path))
+
+        return self.shell.removeDirectory(newsegs).addCallback(lambda ign: (REQ_FILE_ACTN_COMPLETED_OK,))
+
+        return self.shell.removeFile(newsegs).addCallback(lambda ign: (REQ_FILE_ACTN_COMPLETED_OK,))
+
+        return self.shell.rename(fromsegs, tosegs).addCallback(lambda ign: (REQ_FILE_ACTN_COMPLETED_OK,))
+
+            return self.list(path, keys).addCallback(lambda res: res[0][1])
+
+        result.addCallback(lambda toResponse: (fromResponse, toResponse))
+            d.addCallback(lambda x,
+        return d.addCallback(lambda ign: self.assertEqual(result, [True]))
+
+        clientDataReceived.addCallback(lambda ignored: serverDataReceived)
+
+        clientDataReceived.addCallback(lambda ignored: serverDataReceived)
+
+        clientDataReceived.addCallback(lambda ignored: serverDataReceived)
+
+        clientDataReceived.addCallback(lambda ignored: serverDataReceived)
+     |     defr.addCallbacks(lambda x, self=self: ViewPoint(self, x), log.msg)
+            object.addCallbacks(self.serialize, lambda x: x,
+        d.addCallback(lambda p: p.callRemote('ANYTHING', 'here', bar='baz'))
+
+        d.addCallbacks(lambda res: self.fail("supposed to fail"), eb)
+        d.addCallback(lambda ign: self.transport.loseConnection())
+        d.addCallback(lambda res: self.dbpool.close())
+
+        d.addCallback(lambda res: self.stopDB())
+
+            d.addCallback(lambda res: self.flushLoggedErrors())
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+
+        d.addCallback(lambda res: self.assertEqual(res, "done"))
+
+        d.addCallback(lambda res: self.assertEqual(res, "done"))
+
+        d.addCallback(lambda res: self.dbpool.close())
+
+        d.addCallback(lambda res: self.stopDB())
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+
+        d.addCallbacks(lambda res: self.fail('no exception'),
+        factory.d.addCallback(lambda x : s.stopService())
+
+        factory.d.addCallback(lambda x : TestEcho.d)
+
+        factory.d.addCallback(lambda x : c.stopService())
+
+        factory.d.addCallback(lambda x : t.stopService())
+
+        factory.d.addCallback(lambda x : TestEcho.d)
+
+        factory.d.addCallback(lambda x : s.stopService())
+
+        factory.d.addCallback(lambda x : TestEcho.d)
+
+        factory.d.addCallback(lambda x : s.stopService())
+
+        factory.d.addCallback(lambda x : TestEcho.d)
+
+        d.addCallback(lambda x : t.stopService)
+
+        d.addCallback(lambda x : self.assertEqual(
+
+        d.addCallback(lambda x : self.t.stopService())
+
+        d.addCallback(lambda x : self.assertFalse(self.t.running))
+
+        d.addCallback(lambda x : self.t.stopService())
+            SingleUseFactory(p), name=name).addCallback(lambda ign: p)
+
+        callResult.addCallback(lambda result: 1 // 0)
+            return d.addCallback(lambda result:
+
+        return testwith(None).addCallback(lambda ign: testwith(defer.Deferred()))
+        d = defer.Deferred().addCallback(lambda _: 1 // 0).addErrback(l.append)
+
+        d.addCallback(lambda r, d2=d2: d2)
+
+        chained.addCallback(lambda ignored: paused)
+
+        first.addCallback(lambda ignored: second)
+
+        outer.addCallback(lambda x: results.append('final'))
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign, first=first: first)
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign: first)
+
+        third.addCallback(lambda ign: second)
+
+                return inner.addCallback(lambda x: [x])
+
+        a.addCallback(lambda ignored: b)
+
+            top.addCallback(lambda ign, inner=inner: inner)
+
+                inner.addCallback(lambda ign, inner=newInner: inner)
+
+            inner.addCallback(lambda ign: last)
+
+        first.addCallback(lambda ignored: second)
+
+        second.addCallback(lambda ignored: third)
+
+        a.addCallback(lambda data: b)
+
+        defer.Deferred().addCallback(lambda x: 1 // 0).callback(1)
+
+            d.addCallback(lambda x: 1 // 0)
+
+            d.addCallback(lambda x, d=d: 1 // 0)
+
+        defer.Deferred().addCallback(lambda x: 1 // 0).callback(1)
+
+            d.addCallback(lambda x: 1 // 0)
+
+        d.addCallback(lambda ign: defer.fail(RuntimeError("zoop")))
+
+        resultDeferred.addCallback(lambda x: setattr(self, 'result', x))
+
+        d = defer.Deferred().addTimeout(5, Clock()).addCallback(lambda _: "done")
+        d.addCallback(lambda _: self.client.queueStringCommand('PASV'))
+
+        d.addCallback(lambda _: self.serverProtocol.transport.loseConnection())
+
+            d.addCallback(lambda _: portNum)
+
+        d.addCallback(lambda _: (fileList.files, fileList.other))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+        self.deferred.addCallback(lambda x : self.checkTimers())
+        d.addCallback(lambda x : self.assertFalse(p.failed, p.failed))
+        d.addCallback(lambda desturl : (desturl.host, desturl.port))
+        # p.onConnection.addCallback(lambda ign: __import__('time').sleep(5))
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+        d.addCallback(lambda ign: threads.deferToThread(lambda: 1//0))
+            result.addCallback(lambda ign: passthrough)
+
+        d.addCallback(lambda _: self.cf.connectTCP(p.getHost().host,
+
+        d.addCallback(lambda ign: self.clientProtoConnectionLost)
+
+        d.addCallback(lambda x:self.assertEqual(self.f.protocol.closed, 1))
+
+        d.addCallback(lambda _: self.assertEqual(
+
+        d.addCallback(lambda x:
+
+        d.addCallback(lambda x: self.assertTrue(self.f.protocol.closed))
+
+        d.addCallback(lambda x:
+
+                .addCallback(lambda proto: self.addCleanup(
+            d.addCallback(lambda _: lc.stop())
+        tp.callInThreadWithCallback(onResult, lambda: "test")
+
+        tp.callInThreadWithCallback(onResult, lambda: None)
+        d.addCallback(lambda r: self.transport.loseConnection())
+
+        d.addCallback(lambda x : self.assertEqual(s.buffer, testStr))
+            result.addCallback(lambda ign: passthrough)
+
+            result.addCallback(lambda ign: passthrough)
+        d.addCallbacks(lambda x: self.fail('Should have failed'),
+
+        d.addCallbacks(lambda x: self.fail('Should have failed'),
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+
+        d.addCallback(lambda result: results.append(result['success']))
+        self._disconnectedDeferred.addCallback(lambda ignored: passthrough)
+
+        d.addCallbacks(lambda ignored: None, maybeStopped)
+
+        return defer.gatherResults(results).addCallback(lambda ign: None)
+        yield root.addCallback(lambda result: (result, keepGoing(result)))
+
+        yield d.addCallback(lambda result: (result, keepGoing(result)))
+
+    d.addCallback(lambda _: io.getvalue())
+    return client.readBody(response).addCallback(lambda _: response)
+    def __init__(self, quiescentCallback=lambda c: None):
+            d.addCallback(lambda _: (protocol, response))
+        producerComplete.addCallback(lambda x: request.finish())
+        d.addCallback(lambda exc: self.assertEqual(exc.response, b"abc"))
+
+            d.addCallback(lambda exc, code=code: self.assertEqual(exc.args[0], code))
+
+            ).addCallback(lambda dummy: d1)
+
+        return factory.deferred.addCallback(lambda _: checkHeaders(factory))
+        d.addCallback(lambda s: self.assertEqual(s, target))
+
+        d.addCallback(lambda exc: self.assertIsInstance(exc._exception, exn))
+            d.addCallback(lambda exc, code=code:
+            target = self.realm.lookupUser(targetName).addCallback(lambda user: user.mind)
+
+            groups.addCallback(lambda gs: [r for (s, r) in gs if s])
+
+            d.addCallback(lambda results: self.list([r for (s, r) in results if s]))
+        self.init._deferred.addCallback(lambda e:
+        d.addCallback(lambda ign: self.clientFactory.login(creds, mind))
+Create a simple callback on the fly using lambda functions.
+
+    Create a simple callback on the fly using lambda functions.
+
+        >>> trainer = Trainer(callbacks=[LambdaCallback(setup=lambda *args: print('setup'))])
+            trainer.callback_metrics, Tensor, lambda x: x.cpu().numpy()
+
+        trainer.callback_metrics.update(apply_to_collection(callback_metrics, np.ndarray, lambda x: torch.tensor(x)))
+    model_summary_callback = list(filter(lambda cb: isinstance(cb, ModelSummary), trainer.callbacks))[0]
+        self.callback(lambda c: c.on_eval_start(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_validation_start(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_validation_end(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_test_start(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_test_end(self, progress_tracker, save_path))
+
+        self.callback(lambda c: c.on_eval_end(self, progress_tracker, save_path))
+
+                    self.callback(lambda c: c.on_epoch_start(self, progress_tracker, save_path))
+
+                    self.callback(lambda c: c.on_epoch_end(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_batch_start(self, progress_tracker, save_path))
+
+            self.callback(lambda c: c.on_batch_end(self, progress_tracker, save_path))
+    def download(self, path, chunksize=None, chunk_callback=lambda _: False):
+            callback = lambda *args, **kwargs: None
+    callbacks = property(lambda self: self.figure._canvas_callbacks)
+        return self._callbacks.connect("pchanged", lambda: func(self))
+        self._draw_rect_callback = lambda painter: None
+        callback = lambda client: client.db.collection.find_one()
+
+        callback = lambda client: client.db.collection.insert_one({})
+
+        callback = lambda client: client.db.collection.update_one({}, {"$unset": "x"})
+
+        callback = lambda client: client.db.collection.replace_one({}, {})
+
+        callback = lambda client: client.db.collection.delete_many({})
+            arguments["callback"] = lambda _: with_txn_callback(copy.deepcopy(callback_ops))
+    >>> early_stopping = ng.callbacks.EarlyStopping(lambda opt: opt.num_ask > 3)
+
+    >>> early_stopping = ng.callbacks.EarlyStopping(lambda opt: opt.recommend().loss < 12)
+
+    >>> early_stopping = ng.callbacks.EarlyStopping(lambda opt: opt.current_bests["minimum"].mean < 12)
+    early_stopping = ng.callbacks.EarlyStopping(lambda opt: opt.num_ask > 3)
+    >>> callback = lambda img: "foobar"
+        processed_size_callback=lambda _: "custom_callback",
+            self.processed_size_callback = lambda _: None
+    callbacks = [with_lock(lambda study, trial: values.append(trial.value))]
+
+    callbacks = [with_lock(lambda study, trial: states.append(trial.state))]
+
+    callbacks = [with_lock(lambda study, trial: states.append(trial.state))]
+            callback=lambda: self._invalidate_results()
+
+        callback_wrapped = lambda part: lambda value: callback(
+
+        callback_wrapped = lambda part: None
+
+        callback_wrapped = lambda part: lambda value: callback(
+
+        callback_wrapped = lambda part: None
+            callback=lambda: self._invalidate_results()
+
+        callback_wrapped = lambda part: lambda value: callback(
+
+        callback_wrapped = lambda part: None
+            callback=lambda: self._invalidate_results()
+
+        callback_wrapped = lambda part: lambda value: callback(
+
+        callback_wrapped = lambda part: None
+
+        callback_wrapped = lambda part: lambda value: callback(
+
+        callback_wrapped = lambda part: None
+        callback = lambda x: x
+
+        callback = lambda x: x
+
+        callback = self.callback or (lambda x: x)
+
+        callback = self.callback or (lambda x: x)
+        self.assertRaises(ValueError, Validation, callback=lambda x: x)
+                callback = lambda pr=pr: pr.advance.emit()
+            callback=lambda: self.browse_file(True), autoDefault=False)
+                                callback=lambda x: x)
+            callback=self.switch_sampling, commit=lambda: self.add_data(1))
+                callback=lambda: sio_client.disconnect(),
+        refresh_callback = lambda: self.refresh_completions(persist_priorities="all")
+                5, channels=2, callback=lambda r, g, b: (r, g, b)
+
+                5, channels=4, callback=lambda r, g, b: (r, g, b)
+
+            5, channels=4, callback=lambda r, g, b: (b, r, g, (r + g + b) / 2)
+        self._future.add_done_callback(lambda _: g_self.switch())
+
+        task.add_done_callback(lambda _: g_self.switch())
+                callback_factory(on_failure, check=lambda s: s.is_failed())
+                callback_factory(on_failure, check=lambda s: s.is_failed())
+        callback=lambda c, p, v: partial(spawn, v),
+    def _async_request(self, handler, args=(), callback=(lambda a, b: None)):
+    def _async_request(self, handler, args = (), callback = (lambda a, b: None)):
+    def read(self, path, filesize=0, callback=lambda *a: True):
+        callback = lambda bars: get_last_value(dataSeries)
+
+        self.addCallback(label, lambda x: level)
+        plt.getOrCreateSubplot("cash").addCallback("Cash", lambda x: strat.getBroker().getCash())
+        callback = lambda stock: download_files_for_symbol(stock.getTicker(), fromYear, toYear)
+        stockCallback = lambda stock: process_symbol(stock.getTicker(), fromYear, toYear, missingDataVerifierClass)
+m = Foo(callback=lambda x: x)
+    m = Model(callback=lambda x: x)
+    tracker = pm.callbacks.Tracker(bad=lambda t: t)  # bad signature
+lambda2: MyCallback = lambda y, a=0: a == y
+    future.add_done_callback(lambda x: print(x.result()))
+        r.add_done_callback(lambda r: self._complete(callback, r))
+
+        pool.run(fib, (n,), callback=lambda r: self.respond(r, addr))
+            self.io_loop.add_callback(lambda: self._handle_events(self.socket, 0))
+        pc = ioloop.PeriodicCallback(lambda: None, 10)
+        self.loop.add_callback(lambda: sleep_timeout())
+
+        self.loop.add_callback(lambda: self.push.send_multipart(sent))
+    def to_printer(self, printer, callback=lambda ok: None):
+            config={"callbacks": {"on_episode_start": lambda x: None}},
+            task.add_done_callback(lambda _: self._creating_task.pop(hash, None))
+        r.set_response_callback("GET", lambda x: "static")
+        r.set_response_callback("GET", lambda x: "static")
+        CallbackResponse(responses.GET, "url", lambda x: x, stream=False)
+
+        CallbackResponse(responses.GET, "url", lambda x: x, match_querystring=False)
+
+            callback=lambda x: (
+        future.add_done_callback(lambda _: dis.dispose())
+        res = reactivex.from_callback(lambda cb: cb(True))()
+
+        res = reactivex.from_callback(lambda file, cb: cb(file))("file.txt")
+
+        res = reactivex.from_callback(lambda f, s, t, cb: cb(f, s, t), lambda r: r[0])(
+                    callback=lambda x: salt.utils.stringutils.to_bytes(passphrase),
+                self._send_req_async(load, timeout, callback=lambda f: None)
+
+                    load, timeout=timeout, callback=lambda f: None
+
+                    load, timeout=timeout, callback=lambda f: None
+
+                callback=lambda _: None,
+       ``f.add_done_callback(lambda f: f.exception())``.
+                future.add_done_callback(lambda f: f.exception())
+
+                future.add_done_callback(lambda f: f.exception())
+
+                future.add_done_callback(lambda f: f.exception())
+
+                future.add_done_callback(lambda f: f.exception())
+
+            future.add_done_callback(lambda f: f.exception())
+
+        ssl_stream._ssl_connect_callback = lambda: future.set_result(ssl_stream)
+
+        super(SSLIOStream, self).connect(address, callback=lambda: None)
+                   callback=lambda path: parse_config_file(path, final=False))
+                                  prepare_curl_callback=lambda curl: 1 / 0)
+        self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.sync_future(callback=lambda future: 1 / 0)
+
+        future = self.no_result_future(callback=lambda: self.stop())
+        stream.set_close_callback(lambda: self.stop("closed"))
+        loop.add_callback(lambda: {})
+
+        loop.add_callback(lambda: [])
+
+                other_ioloop.add_callback(lambda: None)
+
+            self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.io_loop.add_callback(lambda: self.io_loop.add_callback(self.stop))
+
+            self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.io_loop.spawn_callback(lambda: 1 / 0)
+        futures[1].add_done_callback(lambda _: c.notify())
+                    server.read_bytes(1, callback=lambda data: 1 / 0)
+
+        client.set_close_callback(lambda: self.stop("closed"))
+
+        client.set_close_callback(lambda: self.stop("closed"))
+
+        client.set_close_callback(lambda: self.stop("closed"))
+
+        client.set_close_callback(lambda: self.stop("closed"))
+
+        client.set_close_callback(lambda: self.stop("closed"))
+
+        client.set_close_callback(lambda: self.stop("closed"))
+           callback=lambda s: AsyncHTTPClient.configure(
+
+           callback=lambda values: gc.set_debug(
+
+           callback=lambda x: locale.setlocale(locale.LC_ALL, x))
+        self.close_future.add_done_callback(lambda f: self.stop())
+    If the callback is None or is not callable, return a lambda that returns
+                cipher="des_ede3_cbc", callback=lambda x: bytes(password)
+            self.presence_callback = lambda subscriber, msg: msg
+
+            self.remove_presence_callback = lambda subscriber: subscriber
+                self.remotecallbacks.certificate_check = lambda *args, **kwargs: True
+            "callback": lambda x: None,
+                            iter_callback=lambda x: None):
+
+                                          iter_callback=lambda x: None):
+        callback = lambda r:store_residual(r, rvec)
+        d.addCallback(lambda x: (x, spider))
+        d.addCallback(lambda conn: conn.request(request, spider))
+        dfd.addCallbacks(_onsuccess, lambda _: None)
+        cb = request.callback or (lambda _: _)
+    d.addCallbacks(lambda r: [x[1] for x in r], lambda f: f.value.subFailure)
+    d.addCallback(lambda out: [x[1] for x in out])
+        d.addCallback(lambda _: self.assertNotIgnored(Request('http://site.local/allowed'), middleware))
+
+        deferred.addCallback(lambda _: self.assertTrue(middleware._logerror.called))
+
+        d.addCallback(lambda _: self.assertFalse(mw_module_logger.error.called))
+        d.addCallback(lambda r: r.protocol)
+
+        d1.addCallback(lambda r: r.body)
+
+        d2.addCallback(lambda r: r.headers['Content-Length'])
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.text)
+
+        d.addCallback(lambda r: r.text)
+
+        d.addCallback(lambda r: json.loads(r.text)['headers'][header])
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.status)
+
+        d.addCallback(lambda r: r.status)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.headers[b'content-length'])
+
+        d.addCallback(lambda r: r.protocol)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda _: self.fail("No DataLoss exception"))
+
+        d.addCallback(lambda r: r.flags)
+
+        d.addCallback(lambda r: r.flags)
+
+        d.addCallback(lambda r: r.protocol)
+
+                d.addCallback(lambda r: r.body)
+
+        d.addCallback(lambda r: r.body)
+        r = Request("http://www.example.com", callback=lambda x: x)
+        f.deferred.addCallback(response_transform or (lambda r: r.body))
+            "status": QCallbackCondition(lambda statuses: Q(status__in=statuses)),
+    callback = lambda future: callback_results.append((future.result(), future.get_timing()))
+
+    callback = lambda future: callback_timings.append(future.get_timing())
+        mock_callback = Mock(side_effect=lambda *a, **k: consumer.shutdown())
+
+        mock_callback = Mock(side_effect=lambda *a, **k: consumer.shutdown())
+    registry.callbacks(f"{name}_before1", func=lambda: lambda nlp: None)
+
+    registry.callbacks(f"{name}_before2", func=lambda: lambda nlp: nlp())
+
+    registry.callbacks(f"{name}_after1", func=lambda: lambda nlp: None)
+
+    registry.callbacks(f"{name}_after1", func=lambda: lambda nlp: English)
+                            apply_callback=lambda:
+    model.learn(500, callback=lambda _locals, _globals: True)
+            callback = lambda *x: x
+        callback = lambda x : None # placeholder until check_perfect_pred
+
+            callback = lambda *x: x
+
+            callback = lambda *x: x
+
+            callback = lambda *x: x
+            callback=lambda x: x,
+
+            callback=lambda x: x,
+
+            full_output=full_output, callback=lambda x: x,
+
+            full_output=full_output, callback=lambda x: x,
+        check_callback_rules(None, lambda x: x)
+
+            check_callback_rules(None, lambda x: x)
+        d.addCallback(lambda conn: f.on_connection)
+            d.addCallback(lambda _: ensureDeferred(main(reactor, loops)))
+        d.addCallback(lambda x: function(*args, **kwargs))
+
+            d.addCallback(lambda x: self._reactor.callLater(0.1, _produce))
+        callback_mock = Mock(side_effect=user_may_join_room, spec=lambda *x: None)
+
+        callback_mock = Mock(side_effect=user_may_join_room, spec=lambda *x: None)
+        after_callback, exception_callback = self._run_interaction(lambda txn: None)
+        cache: LruCache[str, List[int]] = LruCache(5, size_callback=lambda x: 0)
+                 item_callback=lambda *args: True,
+            for i in sorted(iteritems(callbacks_time), key=lambda a: -a[1]):
+
+            for i in sorted(iteritems(callbacks_time), key=lambda a: a[1]):
+            waiter.add_done_callback(lambda _: io_loop.remove_timeout(timeout_handle))
+
+        fut.add_done_callback(lambda fut: self._waiters.remove(fut))
+                   callback=lambda path: parse_config_file(path, final=False))
+            future.add_done_callback(lambda f: f.exception())
+
+            future.add_done_callback(lambda f: f.exception())
+
+            future.add_done_callback(lambda f: f.exception())
+
+            future.add_done_callback(lambda f: f.exception())
+
+            future.add_done_callback(lambda f: f.exception())
+
+        future.add_done_callback(lambda f: f.exception())
+
+        fut.add_done_callback(lambda f: f.exception())
+                    future.add_done_callback(lambda _: runner)
+        future.add_done_callback(lambda _: io_loop.remove_timeout(timeout_handle))
+            fut.add_done_callback(lambda f: final_callback(f.result()))
+        fut.add_done_callback(lambda f: f.result())
+        loop.add_callback(lambda: {})  # type: ignore
+
+        loop.add_callback(lambda: [])  # type: ignore
+
+            other_ioloop.add_callback(lambda: None)
+
+        self.io_loop.add_callback(lambda: self.io_loop.add_callback(self.stop))
+
+        self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.io_loop.add_callback(lambda: 1 / 0)
+
+        self.io_loop.spawn_callback(lambda: 1 / 0)
+
+        pc = PeriodicCallback(lambda: None, datetime.timedelta(minutes=1, seconds=23))
+        futures[1].add_done_callback(lambda _: c.notify())
+            fut.add_done_callback(lambda f: self.stop())  # type: ignore
+        callback=lambda s: AsyncHTTPClient.configure(
+
+        callback=lambda values: gc.set_debug(
+
+    add_parse_callback(lambda: logging.getLogger().handlers[0].addFilter(log_counter))
+        fut.add_done_callback(lambda f: self.request.connection.stream.close())
+        self.close_future.add_done_callback(lambda f: self.stop())
+               callback=lambda float: None, callback_len=True):
+    def bar2callback(bar, pop=None, delta=(lambda logs: 1)):
+        task.add_done_callback(lambda result: TinyTriblerService._graceful_shutdown(self))
+        task.add_done_callback(lambda result: TinyTriblerService._graceful_shutdown(self))
+            circuit.ready.add_done_callback(lambda f, c=connection.udp_connection, r=request:
+                                    callback=lambda addr, ih=info_hash: self.on_e2e_finished(addr, ih))
+        task.add_done_callback(lambda result: asyncio.get_running_loop().stop())
+        task.add_done_callback(lambda _: done_evt.set())
+    d.addCallback(lambda work: cooperate(work).whenDone())
+
+    d.addCallback(lambda ignored: gatherResults(done))
+    d.addCallback(lambda proto: proto.finished)
+    d.addCallback(lambda result: reactor.stop())
+d.addCallbacks(EchoClient, lambda _: reactor.stop())
+d.addCallback(lambda object: object.callRemote("echo", "hello network"))
+
+d.addCallback(lambda echo: "server echoed: " + echo)
+
+d.addCallback(lambda _: reactor.stop())
+    ).addCallback(lambda protocol: protocol.complete)
+    ).addCallback(lambda protocol: protocol.done)
+            d.addCallback(lambda m: f"Status of {msg}: {m}")
+
+            d.addCallback(lambda m: self.msg(user, m))
+            d.addCallback(lambda m: f"Status of {msg}: {m}")
+
+            d.addCallback(lambda m: self.msg(user, m))
+        .addCallback(lambda result: ", ".join(result.asList()))
+    callback=lambda value: (println(value), reactor.stop()),
+        return self.deferred.addCallback(lambda aValue: tag("A value: " + repr(aValue)))
+    d.addCallback(lambda ignored: reactor.stop())
+    d.addCallback(lambda ignored: reactor.stop())
+        self._loopFinished.addCallback(lambda _: service.Service.stopService(self))
+        d.addCallback(lambda ignored: ready)
+        # d.addCallback(lambda x:defer.succeed(1))
+        d.addCallback(lambda ignored: self.getPassword(prompt))
+        d.addCallback(lambda _: self.processProtocol.clearBuffer())
+
+        d.addCallback(lambda _: self.processProtocol.killProcess())
+
+        d.addCallback(lambda xs: [x.split(b"\n") for x in xs])
+
+        d.addCallback(lambda _: self.runCommand("rmdir testLocalDirectory"))
+
+        d.addCallback(lambda res: res[0])
+
+        d.addCallback(lambda args: getProcessOutputAndValue("sftp", args, env))
+        d.addCallback(lambda _: self._enabledHelper(h, eR=[b"\x42"]))
+
+        d.addCallback(lambda ignored: self._enabledHelper(self.p.protocol))
+
+        d.addCallback(lambda ignored: self.assertFalse(s.him.negotiating))
+
+        d.addCallback(lambda ignored: self._enabledHelper(self.p.protocol))
+
+        d.addCallback(lambda ignored: self.assertFalse(s.us.negotiating))
+
+        d.addCallback(lambda _: self._enabledHelper(self.p.protocol, dR=[b"\x42"]))
+        d.addCallback(lambda x: [a.original.name for i, a, l in x])
+        ).addCallback(lambda protocol: protocol.wrappedProtocol)
+                result.addCallbacks(lambda result: self.resume(), failLater)
+            d.addCallback(lambda n: (n,) + self.addr[1:])
+    d.addCallback(lambda _: disconnected)
+
+    d.addCallback(lambda _: needsRunningReactor(reactor, reactor.stop))
+
+            portDeferred.addCallback(lambda ignored: reactor.stop())
+
+        finished.addCallback(lambda ign: reactor.stop())
+
+        finished.addCallback(lambda ign: reactor.stop())
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)
+            d.addCallback(lambda ignored: d2)
+            d.addCallback(lambda ignored: d2)
+            self.dirname, mask=mask, callbacks=[lambda *args: notified.callback(args)]
+
+            self.dirname, mask=0x0, callbacks=[lambda *args: d.callback(args)]
+
+                callbacks=[lambda *args: notified.callback(args)],
+        reactor.iterationTimeout.addCallback(lambda ignored: reactor.stop())
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        ended.addCallback(lambda ignored: reactor.stop())
+
+        exited.addCallback(lambda ign: reactor.stop())
+
+            return lost[2].addCallback(lambda ign: transport)
+
+            return lost[1].addCallback(lambda ign: transport)
+
+        ended.addCallback(lambda ign: reactor.stop())
+
+        exited.addCallback(lambda ign: reactor.stop())
+            reactor, lambda: d.addCallback(lambda ignored: reactor.stop())
+
+            reactor, lambda: d.addCallback(lambda ignored: reactor.stop())
+        d.addCallback(lambda ignored: reactor.stop())
+
+        defer.addCallback(lambda ignored: reactor.stop())
+        finished.addCallback(lambda ign: reactor.stop())
+        finished.addCallback(lambda ignored: reactor.stop())
+        d.addCallback(lambda ign: self.setTimeout(timeOut))
+
+            fileDeferred.addCallback(lambda fObj: (size, fObj))
+            connectSetupDeferred.addCallback(lambda mx: str(mx.name))
+        d.addCallback(lambda _: self.capabilities())
+
+        return self.user(username).addCallback(lambda r: self.password(password))
+
+            return self.sendLong(cmd, args, consumer, xform).addCallback(lambda r: L)
+
+            return self.sendLong(cmd, args, consumer, xform).addCallback(lambda r: L)
+        d.addCallback(lambda ignored: results)
+                d.addCallback(lambda result: cmbx.close())
+
+        d.addCallback(lambda _: self.getCapabilities())
+
+            d.addCallback(lambda _: self.getCapabilities())
+        return d.addCallback(lambda _: self.assertEqual(expected, caps))
+
+        return d.addCallback(lambda _: self.assertEqual(expCap, caps))
+
+        return d.addCallback(lambda _: self.assertEqual(self.loggedOut, 1))
+
+        return d.addCallback(lambda _: self.assertEqual(self.responses, []))
+
+        d.addCallback(lambda _: self.namespaceArgs)
+
+        d.addCallback(lambda _: self.assertEqual(str(self.failure.value), expected))
+
+        return defer.gatherResults([d1, d2]).addCallback(lambda _: self.listed)
+
+        d.addCallback(lambda x: self.assertEqual(self.result, self.expected))
+
+        d.addCallback(lambda ign: self.assertEqual(self.result, self.expected))
+
+        d.addCallback(lambda ign: self.assertEqual(self.result, self.expected))
+
+        ).addCallback(lambda _: self.client.logout()).addCallback(
+
+        d.addCallback(lambda x: self.assertEqual(len(success), 1))
+
+        d.addCallback(lambda x: self.assertTrue(success))
+
+        self.connected.addCallback(lambda ign: self.client.startTLS())
+        deferred.addCallback(lambda r: getattr(r, name)(*args, **kw))
+            d.addCallback(lambda x, self=self: self._reallyConnect())
+        d.addCallback(lambda x: self.assertEqual(server.buffer, self.expected_output))
+
+        d.addCallback(lambda x: self.assertEqual(server.authenticated, 1))
+
+        d.addCallback(lambda x: self.assertTrue(server.authenticated))
+
+        d.addCallback(lambda x: self.assertTrue(server.authenticated))
+
+        d.callback((smtp.IMessageDeliveryFactory, None, lambda: None))
+        d.addCallback(lambda results: results[0])  # Get the answer section
+
+        d.addCallback(lambda results: results[0])  # Get the answer section
+            d.addCallback(lambda x, self=self: self.makeReply(90, 0, x[1], x[0]))
+        return self.dtpFactory.deferred.addCallback(lambda ign: None)
+
+            d.addCallback(lambda ignored: file.close())
+
+            return self.list(path, keys).addCallback(lambda res: res[0][1])
+
+        result.addCallback(lambda toResponse: (fromResponse, toResponse))
+    d.addCallback(lambda x: serverWrapper.deferred)
+
+    d.addCallback(lambda x: serverPort.stopListening())
+
+    d.addCallback(lambda x: serverWrapper.deferred)
+
+    d.addCallback(lambda x: serverPort.stopListening())
+        return d.addCallback(lambda ign: self.assertEqual(result, [True]))
+     |     defr.addCallbacks(lambda x, self=self: ViewPoint(self, x), log.msg)
+        d.addCallback(lambda p: p.callRemote("ANYTHING", "here", bar="baz"))
+
+        d.addCallbacks(lambda res: self.fail("supposed to fail"), eb)
+        d.addCallback(lambda ign: self.transport.loseConnection())
+        d.addCallback(lambda res: self.dbpool.close())
+
+        d.addCallback(lambda res: self.stopDB())
+
+            d.addCallback(lambda res: self.flushLoggedErrors())
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+
+        d.addCallback(lambda res: self.assertEqual(res, "done"))
+
+        d.addCallback(lambda res: self.assertEqual(res, "done"))
+
+        d.addCallback(lambda res: self.dbpool.close())
+
+        d.addCallback(lambda res: self.stopDB())
+
+        d.addCallbacks(lambda res: self.fail("no exception"), lambda f: None)
+        ).addCallback(lambda ign: p)
+
+        callResult.addCallback(lambda result: 1 // 0)
+            return d.addCallback(lambda result: self.assertEqual(result, self.RESULT))
+
+        return testwith(None).addCallback(lambda ign: testwith(defer.Deferred()))
+
+        return d.addCallback(lambda result: self.assertEqual(result, self.RESULT))
+        self.deferred.addCallback(lambda x: self.checkTimers())
+        d = Deferred().addCallback(lambda _: 1 // 0).addErrback(l.append)
+
+            .addCallback(lambda _: Failure(ZeroDivisionError()))
+
+        d1.addCallback(lambda r, d2=d2: cast(int, d2))
+
+        chained.addCallback(lambda ignored: paused)
+
+        first.addCallback(lambda ignored: second)
+
+        outer.addCallback(lambda x: results.append(("final", None)))
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign: first)
+
+        second.addCallback(lambda ign: first)
+
+        third.addCallback(lambda ign: second)
+
+        a.addCallback(lambda ignored: b)
+
+            inner.addCallback(lambda ign: last)
+
+        first.addCallback(lambda ignored: second)
+
+        second.addCallback(lambda ignored: third)
+
+        a.addCallback(lambda data: b)
+
+        Deferred().addCallback(lambda x: 1 // 0).callback(1)
+
+            d.addCallback(lambda x: 1 // 0)
+
+            d.addCallback(lambda x, d=d: 1 // 0)
+
+        Deferred().addCallback(lambda x: 1 // 0).callback(1)
+
+            d.addCallback(lambda x: 1 // 0)
+
+        d.addCallback(lambda ign: defer.fail(RuntimeError("zoop")))
+
+        d.addCallback(lambda _: "done")
+
+        mutatingDeferred.addCallback(lambda _: var.set(3))
+
+        mutatingDeferredThatFails.addCallback(lambda _: var.set(4))
+
+        mutatingDeferredThatFails.addCallback(lambda _: 1 / 0)
+
+            d.addCallback(lambda _: lock.release())
+
+            d1.addCallback(lambda _: sem.release())
+
+            d2.addCallback(lambda _: sem.release())
+
+        mutatingDeferred.addCallback(lambda _: var.set(3))
+
+        mutatingDeferredThatFails.addCallback(lambda _: var.set(4))
+
+        mutatingDeferredThatFails.addCallback(lambda _: 1 / 0)
+        factory.d.addCallback(lambda x: s.stopService())
+
+        factory.d.addCallback(lambda x: TestEcho.d)
+
+        factory.d.addCallback(lambda x: c.stopService())
+
+        factory.d.addCallback(lambda x: t.stopService())
+
+        factory.d.addCallback(lambda x: TestEcho.d)
+
+        factory.d.addCallback(lambda x: s.stopService())
+
+        factory.d.addCallback(lambda x: TestEcho.d)
+
+        factory.d.addCallback(lambda x: s.stopService())
+
+        factory.d.addCallback(lambda x: TestEcho.d)
+
+        d.addCallback(lambda x: t.stopService)
+
+        d.addCallback(lambda x: self.t.stopService())
+
+        d.addCallback(lambda x: self.assertFalse(self.t.running))
+
+        d.addCallback(lambda x: self.t.stopService())
+        d.addCallback(lambda _: self.client.queueStringCommand("PASV"))
+
+        d.addCallback(lambda _: self.serverProtocol.transport.loseConnection())
+
+            d.addCallback(lambda _: portNum)
+
+        d.addCallback(lambda _: (fileList.files, fileList.other))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+
+        d.addCallback(lambda exc: self.assertEqual(exc.args, ([response],)))
+        d.addCallback(lambda x: self.assertFalse(p.failed, p.failed))
+        d.addCallback(lambda desturl: (desturl.host, desturl.port))
+        ctx.set_npn_advertise_callback(lambda c: None)
+
+        ctx.set_alpn_select_callback(lambda c: None)  # type: ignore[misc,arg-type]
+        # p.onConnection.addCallback(lambda ign: __import__('time').sleep(5))
+        tp.callInThreadWithCallback(onResult, lambda: "test")
+
+        tp.callInThreadWithCallback(onResult, lambda: None)
+        d.addCallback(lambda ign: threads.deferToThread(lambda: 1 // 0))
+            d.addCallback(lambda _: lc.stop())
+        d.addCallback(lambda r: self.transport.loseConnection())
+
+        d.addCallback(lambda x: self.assertEqual(s.buffer, testStr))
+            result.addCallback(lambda ign: passthrough)
+
+        d.addCallback(lambda _: self.cf.connectTCP(p.getHost().host, p.getHost().port))
+
+        d.addCallback(lambda ign: self.clientProtoConnectionLost)
+
+        d.addCallback(lambda x: self.assertEqual(self.f.protocol.closed, 1))
+
+        d.addCallback(lambda _: self.assertEqual(f.protocol.readHalfClosed, False))
+
+        d.addCallback(lambda x: self.assertEqual(self.f.protocol.data, b"hello"))
+
+        d.addCallback(lambda x: self.assertTrue(self.f.protocol.closed))
+
+        d.addCallback(lambda x: self.assertTrue(self.f.protocol.closed))
+            result.addCallback(lambda ign: passthrough)
+
+            result.addCallback(lambda ign: passthrough)
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+
+        d.addCallback(lambda result: results.append(result["success"]))
+        d.addCallbacks(lambda ignored: None, maybeStopped)
+
+        return defer.gatherResults(results).addCallback(lambda ign: None)
+    d.addCallback(lambda _: io.getvalue())
+            d.addCallback(lambda _: (protocol, response))
+    return client.readBody(response).addCallback(lambda _: response)
+    def __init__(self, quiescentCallback=lambda c: None):
+        producerComplete.addCallback(lambda x: request.finish())
+            return whenFinished.addCallback(lambda ign: (response, p.data))
+
+            return whenFinished.addCallback(lambda ign: (response, p.data))
+        d.addCallback(lambda result: result._asdict())
+            d.addCallback(lambda exc, code=code: self.assertEqual(exc.faultCode, code))
+            groups.addCallback(lambda gs: [r for (s, r) in gs if s])
+
+            d.addCallback(lambda results: self.list([r for (s, r) in results if s]))
+        d.addCallback(lambda ign: self.clientFactory.login(creds, mind))
+        self, duration, url, token, filepath, quiet=False, callback=lambda *x: None
+        callback=lambda *x: None,
+
+        self._callback = callback or (lambda x: None)
+            # callback = self.df.signal_selection_changed.connect(lambda df: update_image())
+
+            callback = self.df.signal_selection_changed.connect(lambda df: updater.update_direct_safe())
+        callback = self.dataset.signal_selection_changed.connect(lambda *x: self.update_grid())
+    #     callback = self.dataset.signal_selection_changed.connect(lambda *x: self.update_grid())
+                    callback=lambda store: store_post_load.send(
+                 item_callback=lambda *args: True,
+              d.addCallback(lambda _: self.aaaaaa.bbbbbbbbbbbbbbbb.cccccccccccccccccccccccccccccccc(dddddddddddddd))
+
+              d.addCallback(lambda _: self.aaaaaa.bbbbbbbbbbbbbbbb.
+        callback=lambda option, _, __, parser: setattr(
+def passthrough_module(parent, child, *, callback=lambda _: None):
+    passthrough_module(__name__, '._legacy', callback=lambda attr: warnings.warn(
+    return CallbackManager(lambda it=it: it)
+        callback = callback or (lambda *args, **kwargs: None)

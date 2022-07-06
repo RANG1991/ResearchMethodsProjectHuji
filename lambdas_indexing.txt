@@ -1,0 +1,992 @@
+        self.select_score_func = lambda metrics: [metrics.win_rate, metrics.algorithm_period_returns,
+
+        self.select_score_func = lambda metrics: [metrics.win_rate, metrics.algorithm_period_returns,
+            gradient_transformers=[lambda grads_and_vars: [(tf.sign(g), v) for (g, v) in grads_and_vars]]
+            execution_date_fn=lambda dt: [dt + timedelta(seconds=i) for i in range(2)],
+
+            execution_date_fn=lambda dt: [dt + timedelta(seconds=i) for i in range(2)],
+            am.selinux_context = lambda path: ['foo_u', 'foo_r', 'foo_t', 's0']
+
+        am.selinux_context = lambda path: ['bar_u', 'bar_r', None, None]
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+    for wrap in (lambda x: x, lambda x: [x]):
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+        host_counts = sorted(host_counts.items(), key=lambda item: [e.total_seconds() for e in item[1]], reverse=True)
+            'get_extra_credentials': lambda x: [],
+
+            'get_extra_credentials': lambda x: [],
+
+            'get_extra_credentials': lambda x: [],
+
+            'get_extra_credentials': lambda x: [],
+        serializer._summary_field_labels = lambda self: []
+
+        serializer._recent_jobs = lambda self: []
+@mock.patch('awx.main.models.workflow.WorkflowNodeBase.get_parent_nodes', lambda self: [])
+                        default=['%fus']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%3Nms', '%S.%3Ns']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%Ss']).accepts(String, lambda fmt: [fmt])
+
+                        default=[':%M:%S']).accepts(String, lambda fmt: [fmt])
+
+                        default=[':%M', '%Mm']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%H:%M']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%Hh', '%H:%M']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%m/%d', '%a%d']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%m/%Y', '%b %Y']).accepts(String, lambda fmt: [fmt])
+
+                        default=['%Y']).accepts(String, lambda fmt: [fmt])
+                 lambda items: [ Panel(title=title, child=child) for (title, child) in items ])
+    """).accepts(List(Tuple(String, List(Instance(GlyphRenderer)))), lambda items: [LegendItem(label=item[0], renderers=item[1]) for item in items])
+    """).accepts(List(Either(Null, String)), lambda v: [ "" if item is None else item for item in v ])
+                lambda x: [],
+          ('b', lambda ex: [x-256 if x > 127 else x for x in list(ex.tobytes())]),
+
+          ('c', lambda ex: [bytes(chr(x), 'latin-1') for x in list(ex.tobytes())]),
+        instance.converters['list'] = lambda v: [e.strip() for e in v.split()
+        self.assertEqual([(lambda a:[a**i for i in range(a+1)])(j) for j in range(5)],
+        os.listdir = lambda _: [fakefile]
+
+        os.listdir = lambda _: ['test_this_does_not_exist.py']
+    ('all', lambda v: ['--all'] if v else None),
+
+    ('always', lambda v: ['--always'] if v else None),
+
+    ('contains', lambda v: ['--contains'] if v else None),
+
+    ('debug', lambda v: ['--debug'] if v else None),
+
+    ('long', lambda v: ['--long'] if v else None),
+
+    ('exact-match', lambda v: ['--exact-match'] if v else None),
+
+    ('tags', lambda v: ['--tags'] if v else None),
+
+    ('match', lambda v: ['--match', v] if v else None),
+
+    ('abbrev', lambda v: [f'--abbrev={v}']
+
+    ('candidates', lambda v: [f'--candidates={v}'] if isTrueOrIsExactlyZero(v) else None),
+
+    ('dirty', lambda v: ['--dirty'] if (v is True or v == '') else None),
+
+    ('dirty', lambda v: [f'--dirty={v}'] if (v and v is not True) else None),
+        self.bot.getChannelOps = lambda channel: ['channelop']
+
+        self.bot.getChannelOps = lambda channel: [self.USER]
+
+        self.bot.getChannelOps = lambda channel: ['channelop']
+
+        self.bot.getChannelOps = lambda channel: [self.USER]
+
+        self.bot.getChannelOps = lambda channel: []
+
+        self.bot.getChannelOps = lambda channel: [self.USER]
+
+        self.bot.getChannelOps = lambda channel: []
+
+        self.bot.getChannelOps = lambda channel: [self.USER]
+
+        self.bot.getChannelOps = lambda channel: [self.USER]
+
+        self.bot.getChannelOps = lambda channel: []
+LibraryDatabase.get_authors_with_ids = lambda self: [[aid, adata['name'], adata['sort'], adata['link']] for aid, adata in iteritems(self.new_api.author_data())]
+        stops = list(map(lambda x: [x[0], x[1].getRgbF()], gradient.stops()))
+                self.host_args = lambda host: ["Host=" + host]
+
+                self.host_args = lambda host: ["Host", host]
+        self.assertEqual([(lambda a:[a**i for i in range(a+1)])(j) for j in range(5)],
+        self.assertEqual([(lambda a:[a**i for i in range(a+1)])(j) for j in range(5)],
+                lambda x: [],
+          ('b', lambda ex: [x-256 if x > 127 else x for x in list(ex.tobytes())]),
+
+          ('c', lambda ex: [bytes(chr(x), 'latin-1') for x in list(ex.tobytes())]),
+        instance.converters['list'] = lambda v: [e.strip() for e in v.split()
+        self.assertEqual([(lambda a:[a**i for i in range(a+1)])(j) for j in range(5)],
+        os.listdir = lambda _: [fakefile]
+
+        os.listdir = lambda _: ['test_this_does_not_exist.py']
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    result.findContainersMetadata = lambda id: [{"id": id}] if id in {"machine_1", "machine_2"} else []
+    return [ (lambda x: [(x := y) + x for y in range(4)])(x) for x in range(5) ]
+
+    return [ (lambda z: [(x := y) + z for y in range(4)])(x) for x in range(5) ]
+        self.assertEqual([(lambda a:[a**i for i in range(a+1)])(j) for j in range(5)],
+        (lambda _current_time: [Partition("a_partition")],),
+
+        (lambda _current_time: [Partition(x) for x in range(10)],),
+
+        (lambda _current_time: ["a_partition"],),
+
+        (lambda _current_time: [str(x) for x in range(10)],),
+
+    dynamic_fn = lambda _current_time: ["a_partition"]
+        gen_daemons = lambda instance: [SensorDaemon()]
+            "BadDF", event_metadata_fn=lambda _: ["ksjdkfsd"]
+
+        lambda value: [MetadataEntry("qux", value="baz")],
+
+            lambda value: [MetadataEntry("qux", value="baz"), "rofl"],
+                "list": ResourceDefinition(lambda _: []),
+        mode_def=ModeDefinition(resource_defs={"list": ResourceDefinition(lambda _: [])})
+        ["range", lambda x: [x.min(), x.max()], False],
+
+        ["range2", lambda x: [[x.min(), x.max()], [x.max(), x.min()]], False],
+
+        lambda x: [np.asarray(a) for a in x],
+
+        lambda x: [da.asarray(a) for a in x],
+        lambda df: ["a"],
+
+        lambda df: ["a", "b"],
+
+        lambda df: [df["a"], df["b"]],
+
+            lambda df: [df["a"] > 2, df["b"] > 1],
+
+        lambda df: ["AA", "AB"],
+
+        lambda df: [df["AA"], df["AB"]],
+
+            lambda df: [df["AA"] + 1, df["AB"] + 1],
+
+        lambda df: ["a"],
+
+        lambda df: ["a", "b"],
+
+        lambda df: [df["a"], df["b"]],
+
+        lambda df: [df["a"] > 2, df["b"] > 1],
+
+        lambda df: [df["a"], df["b"]],
+
+        lambda df: [df["a"] > 2, df["b"] > 1],
+
+        lambda df: [df["a"], df["b"]],
+
+        lambda df: [df["a"] > 2],
+
+            lambda df: [df["a"] > 2, df["b"] > 1],
+
+        lambda s: s.apply(lambda s: [s.value_counts()]),
+                               preprocessing=lambda seq: [self.INIT_TOKEN] + seq + [self.EOS_TOKEN],
+    to_cat = lambda key: [frames[i][key] for i in ids if frames[i].num_rows > 0]
+    deprecation_value = property(lambda self: [])
+            connection.introspection.table_names = lambda c: [
+            lambda labels: [label.to_dict() for label in labels]
+            "choices": lambda x: [
+            "preprocess": lambda x: [x],
+
+            "preprocess": lambda x: [x],
+
+            "preprocess": lambda x: [x],
+        custom = lambda text: [(char, 1) for char in text]
+                    lambda row: [calculate_em_str(gold_answer, row["answer"]) for gold_answer in gold_answers]
+
+                    lambda row: [calculate_f1_str(gold_answer, row["answer"]) for gold_answer in gold_answers]
+
+                    lambda row: [
+
+                    lambda row: [1.0 if row["document_id"] == gold_id else 0.0 for gold_id in gold_document_ids]
+
+                        lambda row: [
+
+                    lambda row: [
+
+                    lambda row: [1.0 if row["document_id"] == gold_id else 0.0 for gold_id in gold_document_ids]
+
+                        lambda row: [
+
+                    lambda row: [
+        return finished >> (lambda x: [])
+        | brackets(FORM >> (lambda x: [(Symbol("_"), x)])),
+        lambda data: [data.draw_bits(1) for _ in range(2)],
+        default=attr.Factory(lambda _: [], takes_self=True)
+            st.booleans(), st.tuples(literals, literals), literals.map(lambda x: [x])
+    flags = minimal(STRAT, lambda x: [x.is_enabled(i) for i in features])
+    lambda right: [].map(
+
+        == "lambda right: [].map(lambda length: ())"
+        lambda x: ["a", "b"] in x,
+
+        lambda x: [list(reversed(t)) for t in x] > x and len(x) > 3,
+    _test_setup_common_training_handlers(dirname, device="cpu", output_transform=lambda loss: [loss])
+    acc_metric = RunningAverage(Accuracy(output_transform=lambda x: [x[1], x[2]]), alpha=alpha)
+
+    acc_metric = RunningAverage(Accuracy(output_transform=lambda x: [x[1], x[2]]), alpha=alpha, epoch_bound=False)
+
+            Accuracy(output_transform=lambda x: [x[0], x[1]], device=metric_device), alpha=alpha, epoch_bound=False
+    com = map(lambda x: [x[0]] * x[1], com)
+    pmap_fn = pmap(lambda x: [x + i for i in range(nouts)])
+impl_rules[neg_p] = lambda x: [np.negative(x)]
+
+impl_rules[sin_p] = lambda x: [np.sin(x)]
+
+impl_rules[cos_p] = lambda x: [np.cos(x)]
+    attr_types['TENSORS']: lambda a: [_asarray(x) for x in a.tensors],
+
+    'Constant': lambda value: [value],
+
+    'Relu': lambda x: [jnp.maximum(x, 0)],
+ir_type_handlers[core.AbstractToken] = lambda _: [mhlo.TokenType.get()]
+  if not lst: return jnp.array([], jnp.float32), lambda _: []
+ad.deflinear(copy_p, lambda t: [copy_p.bind(t)])
+                  lambda tup: [GetitemKeyPathEntry(i) for i in range(len(tup))])
+
+                  lambda lst: [GetitemKeyPathEntry(i) for i in range(len(lst))])
+
+                  lambda dct: [GetitemKeyPathEntry(k) for k in sorted(dct)])
+      lax.custom_linear_solve(lambda x: [x], 1.0, solve, solve)
+    transpose_fun = api.linear_transpose(lambda x: [x, x], 1.0)
+  return lambda i: [sl(i) for sl in slicers]
+      shapecheck(['n'], ('n', 'n'))(lambda x: [x, x])
+  return lambda i: [sl(i) for sl in slicers]
+    nested = tree_util.tree_map(lambda x: [x, x, x], tree)
+        YAML.official_plug_ins = lambda a: []
+        YAML.official_plug_ins = lambda a: []
+        infos = sorted(infos, key=lambda i: [int(i) for i in i.key.split(':')])
+        sort_key = lambda k: [int(i) for i in k.split(':')]
+
+        sort_key_func = lambda n: [int(i) for i in n.key.split(':')]
+      on_train_end=lambda logs: [
+              outputs = tf.nest.map_structure(lambda batch_output: [batch_output],
+        extract_authors = lambda file_list: [f['metadata']['author'] for f in file_list]
+        for unsupported_type in [lambda x: (x, ), lambda x: [x], lambda x: {x}]:
+    newlist_hint = lambda size: []
+    octs2ints = lambda s: [oct2int(x) for x in s]
+        _start_requests = lambda s: [self.prepare_request(s, request, opts)]
+    d.addCallbacks(lambda r: [x[1] for x in r], lambda f: f.value.subFailure)
+    d.addCallback(lambda out: [x[1] for x in out])
+        self.keydb = _KeyDB(lambda _: [
+        d.addCallback(lambda xs: [x.split(b'\n') for x in xs])
+        d.addCallback(lambda x: [a.original.name for i, a, l in x])
+        1: lambda e: [b''.join([i[0] for i in e])]
+                return inner.addCallback(lambda x: [x])
+        self.patch(base64, 'decodestring', lambda x: [])
+            groups.addCallback(lambda gs: [r for (s, r) in gs if s])
+        (lambda x: [x, (x, x)], lambda x: x[1][0]),
+                    predictions[top_k_col], lambda pred_top_k: [metadata["idx2str"][pred] for pred in pred_top_k]
+                lambda p: [
+m.collatz(lambda s: [I32(1337)])
+    get_traces = lambda dir: [
+    def invoke(self, name="main", argv_generator=lambda s: []):
+        m.collatz(lambda s: [I32(1337)])
+
+        m.collatz(lambda s: [I32(1338)])
+        m.collatz(lambda s: [I32(1337)])
+
+        m.collatz(lambda s: [I32(1337)])
+    _accentprefixed = (lambda am: [
+        pytest.param(lambda idx: [idx[0], idx[2], idx[-1]], id="list_of_labels"),
+
+            lambda idx: [True if i % 2 else False for i in range(len(idx))],
+
+            lambda idx_len: [chr(x) for x in range(ord("a"), ord("a") + idx_len)],
+
+    modin_series_lists = modin_series.map(lambda s: [s, s, s])
+
+    pandas_series_lists = pandas_series.map(lambda s: [s, s, s])
+    modin_df.iloc[1][lambda df: ["col2"]] = 22
+
+    modin_df.iloc[lambda df: 2][lambda df: ["col2"]] = 32
+
+    pandas_df.iloc[1][lambda df: ["col2"]] = 22
+
+    pandas_df.iloc[lambda df: 2][lambda df: ["col2"]] = 32
+        lambda df: [*df.columns[0:2], *df.columns[-7:-4]],
+
+        lambda df: [
+
+        lambda df: [df.columns[0], df.columns[len(df.columns) // 2 - 1]],
+
+        lambda df: [
+            lambda t: [np.sin(frequency * 2 * np.pi * t)], duration=duration, fps=fps
+
+            lambda t: [np.sin(frequency * 2 * np.pi * t)], duration=duration, fps=fps
+    make_frame_440 = lambda t: [np.sin(440 * 2 * np.pi * t)]
+
+                    lambda t: [np.sin(880 * 2 * np.pi * t)], duration=0.01, fps=44100
+        make_frame = lambda t: [np.sin(440 * 2 * np.pi * t)]
+
+    sinus_wave = lambda t: [np.sin(440 * 2 * np.pi * t)]
+    'mypy_path': lambda s: [expand_path(p.strip()) for p in re.split('[,:]', s)],
+
+    'plugins': lambda s: [p.strip() for p in s.split(',')],
+
+    'always_true': lambda s: [p.strip() for p in s.split(',')],
+
+    'always_false': lambda s: [p.strip() for p in s.split(',')],
+
+    'disable_error_code': lambda s: [p.strip() for p in s.split(',')],
+
+    'enable_error_code': lambda s: [p.strip() for p in s.split(',')],
+
+    'package_root': lambda s: [p.strip() for p in s.split(',')],
+
+    'exclude': lambda s: [s.strip()],
+
+    'mypy_path': lambda s: [expand_path(p) for p in try_split(s, '[,:]')],
+        key=lambda ct2: [
+                references = list(map(lambda x: [x.split()], ref_fin))
+                references = list(map(lambda x: [x.split()], ref_fin))
+        hypothesis.untranslated_spans = lambda _: [(0, 2), (5, 8)]  # mock
+
+        hypothesis.untranslated_spans = lambda _: [(0, 2), (3, 6)]
+        python_to_api=lambda x: [[x]],
+    l = lambda x: [z for z in range(x)]
+        return lambda input: [_.strip() for _ in method(input)]
+        f = np.vectorize(lambda x: [x], signature='()->(n)', otypes='i')
+                     lambda x: [(i, i) for i in x],
+                     lambda x: [(i, i) for i in x],
+                     lambda x: [(i, i) for i in x],
+            "custom_add_order": lambda missing: ["section_plugins"] + missing,
+        "plugin": lambda payload: []
+            type=lambda s: [str(item) for item in s.split(",")],
+
+        type=lambda s: [str(item) for item in s.split(",")],
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [
+
+            type=lambda s: [float(item) for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [float(item) for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [float(item) for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+            type=lambda s: [str(item) for item in s.split(",")],
+            lambda x: ["Buy", "Sell"][x == "Buy"]
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+
+            type=lambda s: [str(item).upper() for item in s.split(",")],
+                lambda models: [
+
+                lambda models: [
+
+                lambda models: [
+
+                lambda models: [
+    study.optimize(lambda t: [2, 2], n_trials=1)
+
+    study.optimize(lambda t: [1, 1], n_trials=1)
+
+    study.optimize(lambda t: [3, 1], n_trials=1)
+
+    study.optimize(lambda t: [3, 2], n_trials=1)
+
+    study.optimize(lambda t: [1, 3], n_trials=1)
+
+    study.optimize(lambda t: [1, 3], n_trials=1)  # The trial result is the same as the above one.
+
+    study.optimize(lambda t: [2, 2, 2], n_trials=1)
+
+    study.optimize(lambda t: [1, 1, 1], n_trials=1)
+
+    study.optimize(lambda t: [3, 1, 3], n_trials=1)
+
+    study.optimize(lambda t: [3, 2, 3], n_trials=1)
+
+    study.optimize(lambda t: [1, 3, 1], n_trials=1)
+
+        lambda t: [1, 3, 1], n_trials=1
+        lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)], n_trials=n_trials
+
+        lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)], n_trials=n_trials
+
+            lambda t: [t.suggest_float("x0", 0, 1), t.suggest_float("x1", 0, 1)], n_trials=3
+    study.optimize(lambda t: [t.suggest_int("x", 0, 1), t.suggest_int("y", 0, 1)], n_trials=3)
+
+        lambda t: [t.suggest_int("x", 0, 1), t.suggest_int("y", 0, 1), t.suggest_int("z", 0, 1)],
+
+        study.optimize(lambda t: [0], n_trials=1)
+
+    study.optimize(lambda t: [0, 0], n_trials=1)
+
+    study.optimize(lambda t: [0, 0, 0], n_trials=1)
+
+        study.optimize(lambda t: [0, 0, 0, 0], n_trials=1)
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=40)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=40)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=10)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=1)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=10)
+    study.optimize(lambda t: [2, 2], n_trials=1)
+
+    study.optimize(lambda t: [1, 1], n_trials=1)
+
+    study.optimize(lambda t: [3, 1], n_trials=1)
+
+    study.optimize(lambda t: [1, 3], n_trials=1)
+
+    study.optimize(lambda t: [1, 3], n_trials=1)  # The trial result is the same as the above one.
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=40)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=40)
+
+        lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)], n_trials=n_trials
+
+        lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)], n_trials=n_trials
+
+        sampler = NSGAIISampler(constraints_func=lambda _: [0])
+
+        sampler = NSGAIISampler(constraints_func=lambda _: [0])
+
+        sampler = NSGAIISampler(constraints_func=lambda _: [0])
+
+        sampler = NSGAIISampler(constraints_func=lambda _: [0])
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=10)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=1)
+
+    study.optimize(lambda t: [t.suggest_float("x", 0, 9)], n_trials=10)
+
+        NSGAIISampler(constraints_func=lambda _: [0])
+
+        lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)], n_trials=n_trials
+
+            lambda t: [t.suggest_float(f"x{i}", 0, 1) for i in range(n_objectives)],
+    study.optimize(lambda t: [t.suggest_float("y", -3, 3), t.suggest_int("x", 0, 10)], n_trials=3)
+        frozen_trial = _optimize._run_trial(study, lambda _: [0, 1], catch=())
+    study.optimize(lambda t: [2, 2], n_trials=1)
+
+    study.optimize(lambda t: [1, 1], n_trials=1)
+
+    study.optimize(lambda t: [3, 1], n_trials=1)
+    study.optimize(lambda t: [t.suggest_int("x", 0, 2), t.suggest_int("y", 0, 2)], n_trials=4)
+
+        lambda t: [t.suggest_int("x", 0, 1), t.suggest_int("y", 0, 2), t.suggest_int("z", 0, 2)],
+
+    constraints_func = (lambda _: [-1.0]) if use_constraints_func else None
+
+        study.optimize(lambda _: [0], n_trials=1)
+
+        study.optimize(lambda _: [0], n_trials=1)
+
+        study.optimize(lambda _: [0, 0, 0, 0], n_trials=1)
+
+    constraints_func = (lambda _: [-1.0]) if use_constraints_func else None
+
+    study.optimize(lambda _: [0, 0, 0, 0], n_trials=3)
+
+    study.optimize(lambda _: [0, 0, 0, 0], n_trials=3)
+    study.optimize(lambda t: [t.suggest_int("x", 0, 2), t.suggest_int("y", 0, 2)], n_trials=4)
+
+        lambda t: [t.suggest_int("x", 0, 1), t.suggest_int("y", 0, 2), t.suggest_int("z", 0, 2)],
+
+    constraints_func = (lambda _: [-1.0]) if use_constraints_func else None
+
+        study.optimize(lambda _: [0], n_trials=1)
+
+        study.optimize(lambda _: [0], n_trials=1)
+
+        study.optimize(lambda _: [0, 0, 0, 0], n_trials=1)
+
+    study.optimize(lambda _: [0] * dimension, n_trials=1)
+
+    constraints_func = (lambda _: [-1.0]) if use_constraints_func else None
+
+        study.optimize(lambda _: [0] * 2, n_trials=1)
+
+    study.optimize(lambda _: [0, 0, 0, 0], n_trials=3)
+
+    study.optimize(lambda _: [0, 0, 0, 0], n_trials=3)
+                           key=lambda i: [i[0], i[1]]))
+
+                    sorted(arr.reshape((-1, 6)), key=lambda i: [i[0], i[1]]))
+        >>> df.apply(lambda x: [1, 2], axis=1)
+
+        >>> df.apply(lambda x: [1, 2], axis=1, result_type='expand')
+
+        >>> df.apply(lambda x: [1, 2], axis=1, result_type='broadcast')
+        >>> df.iloc[:, lambda df: [0, 2]]
+        df.apply(lambda x: [1, 2, 3], axis=1, result_type=result_type)
+
+        lambda x: [1, 2],
+
+    "op_wrapper", [lambda x: x, lambda x: [x], lambda x: {"A": x}, lambda x: {"A": [x]}]
+    result = df.apply(lambda x: [1, 2, 3], axis=1, result_type="broadcast")
+
+    result = df.apply(lambda row: [el for el in row["x"] if el in row["y"]], axis=1)
+
+    result = df.apply(lambda x: [1, 2, 3], axis=1)
+
+    result = df.apply(lambda x: [1, 2], axis=1)
+
+    result = df.apply(lambda x: [1, 2, 3], axis=1, result_type="expand")
+
+    result = df.apply(lambda x: [1, 2], axis=1, result_type="expand")
+
+    result = df.apply(lambda x: [1, 2, 3], axis=1, result_type="broadcast")
+
+    result = df.apply(lambda x: [], result_type="reduce")
+        lambda x: [1] * len(x),
+        result = df.apply(lambda x: [1, 2, 3], axis=1, result_type="expand")
+
+        result = df.apply(lambda x: [1, 2, 3], axis=1)
+        result = float_frame[lambda x: ["A", "B"]]
+
+        result = df[lambda x: [True, False, True]]
+            lambda x: [list(x)],
+        f = lambda x: [np.inf, np.nan][np.random.rand() < 0.5]
+            lambda x: [{n: i} for (n, i) in enumerate(x.index.to_list())],
+            (lambda idx: ["a", "b"] - idx, "__rsub__"),
+
+            (lambda idx: ["a", "b"] + idx, "__radd__"),
+        result = df.iloc[:, lambda df: [0, 2]]
+
+        res = df.iloc[lambda x: [1, 3]]
+
+        res = df.iloc[lambda x: [1, 3], :]
+
+        res = df.iloc[lambda x: [1, 3], lambda x: 0]
+
+        res = df.iloc[lambda x: [1, 3], lambda x: [0]]
+
+        res = df.iloc[[1, 3], lambda x: [0]]
+
+        res = df.iloc[lambda x: [1, 3], 0]
+
+        res = df.iloc[lambda x: [1, 3], [0]]
+
+        res.iloc[lambda x: [1, 3]] = 0
+
+        res.iloc[lambda x: [1, 3], :] = -1
+
+        res.iloc[lambda x: [1, 3], lambda x: 0] = 5
+
+        res.iloc[lambda x: [1, 3], lambda x: [0]] = 25
+
+        res.iloc[[1, 3], lambda x: [0]] = -5
+
+        res.iloc[lambda x: [1, 3], 0] = 10
+
+        res.iloc[lambda x: [1, 3], [0]] = [-5, -5]
+        res = df.loc[lambda x: x.A > 2, lambda x: ["A", "B"]]
+
+        res = df.loc[lambda x: x.A == 2, lambda x: ["A", "B"]]
+
+        res = df.loc[[2, 3], lambda x: ["A", "B"]]
+
+        res = df.loc[3, lambda x: ["A", "B"]]
+
+        res = df.loc[lambda x: ["A", "C"]]
+
+        res = df.loc[lambda x: ["A", "C"], :]
+
+        res = df.loc[lambda x: ["A", "C"], lambda x: "X"]
+
+        res = df.loc[lambda x: ["A", "C"], lambda x: ["X"]]
+
+        res = df.loc[["A", "C"], lambda x: ["X"]]
+
+        res = df.loc[lambda x: ["A", "C"], "X"]
+
+        res = df.loc[lambda x: ["A", "C"], ["X"]]
+
+        res.loc[lambda x: ["A", "C"]] = -20
+
+        res.loc[lambda x: ["A", "C"], :] = 20
+
+        res.loc[lambda x: ["A", "C"], lambda x: "X"] = -1
+
+        res.loc[lambda x: ["A", "C"], lambda x: ["X"]] = [5, 10]
+
+        res.loc[["A", "C"], lambda x: ["X"]] = 10
+
+        res.loc[lambda x: ["A", "C"], "X"] = -2
+
+        res.loc[lambda x: ["A", "C"], ["X"]] = -4
+        op = lambda s: ["color: red;"] * len(s)
+        "apply": lambda s: ["attr: val" if ("A" in v or "C" in v) else "" for v in s],
+
+        "apply": lambda s: ["attr: val;" if "b" in v else "" for v in s],
+
+        f = lambda x: [f"val: {x.max()}" for v in x]
+
+            df.style._apply(lambda x: [""])
+
+            df.style._apply(lambda x: ["", "", "", ""])
+
+            df.style._apply(lambda x: ["", "", ""], axis=1)
+
+    mi_styler.apply(lambda s: ["a:v;"] * 2, subset=[False, False])
+@pytest.mark.parametrize("bad_line_func", [lambda x: ["2", "3"], lambda x: x[:2]])
+
+@pytest.mark.parametrize("bad_line_func", [lambda x: ["foo", "bar"], lambda x: x[:2]])
+
+    result = parser.read_csv(bad_sio, on_bad_lines=lambda x: ["99", "99"])
+        result = ser[lambda x: ["A", "B"]]
+
+        result = ser[lambda x: [True, False, True, True]]
+    "box", [lambda x: np.array([x]), lambda x: [x], lambda x: (x,)]
+    "box", [lambda x: np.array([x]), lambda x: [x], lambda x: (x,)]
+    def __init__(self, parents=lambda term: [], children=lambda term: [], value=lambda term: None):
+                   .python_value(lambda x: [int(i) for i in x.split(',')]))
+        names = lambda i: [int(obj.username) for obj in i]
+    newlist_hint = lambda size: []
+            lambda self: [f],
+
+            lambda self: [f],
+            candidates_from_page=lambda link: [
+            pip._internal.utils.appdirs, "site_config_dirs", lambda _: ["/a/place"]
+    assert [1, 2, 4, 1, 3, 9] == list(flat_map(lambda x: [1, x, x * x], [2, 3]))
+    newlist_hint = lambda size: []
+		hl_groups = lambda hlgs: [highlight_group_prefix + ':' + hlg for hlg in hlgs] + hlgs
+			lambda value: [_vim_to_python(item) for item in value],
+
+		list: (lambda value: [_vim_to_python(i) for i in value]),
+		type=lambda s: [int_or_sig(status) for status in s.split()],
+    expand_fn: Callable[[TensorVariable], Iterable[TensorVariable]] = lambda var: [],
+            map(lambda x: [word_dict["<s>"]] + list(x), batch_y))
+        ('                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+        lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+    fig.canvas.mpl_connect('key_release_event', lambda event: [
+        lambda event: [exit(0) if event.key == 'escape' else None])
+        lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                                             lambda event: [exit(
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                        lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                                         lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [sys.exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                                     lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+            lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+                    lambda event: [exit(0) if event.key == 'escape' else None])
+                lambda event: [exit(0) if event.key == 'escape' else None])
+        lambda event: [exit(0) if event.key == 'escape' else None])
+    ids = lambda xs: [x.id for x in xs]
+            self.prog_graph.weighted_edge_list(), key=lambda x: [x[2], -x[0], -x[1]], reverse=True
+        self.combo_fn = lambda x: [x_i**2 for x_i in x]
+            msg_proc_func=lambda response_content: [pd.Timestamp(c) for c in response_content],
+    .map_batches(lambda imgs: [img.mean() > 0.5 for img in imgs])
+        pipe = self.map_batches(lambda batch: [len(batch)])
+
+        pipe = self.map_batches(lambda batch: [batch.sum()[0]], batch_format="pandas")
+            ...     init=lambda k: [], # doctest: +SKIP
+
+            ...     lambda x: [np.median(x)])
+            init=_null_wrap_init(lambda k: [0, 0]),
+
+            init=_null_wrap_init(lambda k: [0, 0, 0]),
+        >>> ds.map_batches(lambda batch: [v * 2 for v in batch]) # doctest: +SKIP
+
+            >>> ds.map_batches(lambda batch: [v * 2 for v in batch]) # doctest: +SKIP
+
+            >>> ds = ds.map_batches(lambda batch: [x for x in batch if x % 2 == 0])  # doctest: +SKIP  # noqa: #501
+
+            >>> ds.flat_map(lambda x: [x, x ** 2, x ** 3]) # doctest: +SKIP
+        ds_take_transform_fn=lambda taken: [[s["one"], s["two"]] for s in taken],
+    ds = ray.data.range(1).flat_map(lambda x: [DatasetContext.get_current().foo])
+
+    ds = ray.data.range(1).map_batches(lambda x: [DatasetContext.get_current().foo])
+    ds = ray.data.range(10).flat_map(lambda _: [np.ones((4, 4)), np.ones((4, 4))])
+
+        lambda x: [{"b": x["value"] + 2}, {"b": x["value"] + 20}]
+
+    ds2 = ds.map_batches(lambda df: [1], batch_size=1)
+
+    ds2 = ds.map_batches(lambda df: [1], batch_size=1, batch_format="pyarrow")
+
+            init=lambda k: [0, 0],
+
+            init=lambda k: [0, 0],
+
+    mapped = ds.groupby(lambda x: x % 3).map_groups(lambda x: [min(x) * min(x)])
+
+    mapped = ds.groupby(lambda x: x).map_groups(lambda x: [] if x == [1] else x)
+
+        ds.repartition(num_parts).groupby(None).map_groups(lambda x: [min(x) + max(x)])
+
+        .map_groups(lambda x: [])
+
+        .map_groups(lambda x: [min(x) * min(x)])
+            ds_take_transform_fn=lambda taken: [taken],
+    nblocks = len(ds1.flat_map(lambda x: [x]).get_internal_block_refs())
+
+    nblocks = len(ds1.flat_map(lambda x: [x]).get_internal_block_refs())
+
+    nblocks = len(ds2.flat_map(lambda x: [x]).get_internal_block_refs())
+
+    nblocks = len(ds2.flat_map(lambda x: [x]).get_internal_block_refs())
+    it = from_range(4, 1).combine(lambda x: [x, x])
+        with patch("urllib.request.urlopen", lambda _: []), self.assertRaises(
+                via `tune.register_env([name], lambda env_ctx: [env object])`,
+   tune.register('[name]', lambda cfg: [return env obj from here using cfg])`.
+                lambda c: [int(c[0]), int(c[1]), float(c[2]), int(c[3])][: len(schema)]
+        "MODULE LIST": lambda r: [pairs_to_dict(m) for m in r],
+        m.setattr("os.listdir", lambda _: [])
+            lambda menu_items: [
+
+            lambda menus: [
+            lambda methods: [method for method in methods if method.active]
+            lambda x: [],
+
+            lambda x: [],
+    [(lambda s: [ExcludedShippingMethod(s.id, "")], 0), (lambda s: [], 1)],
+        return [(lambda x: [x[0], A(x[1], nameserver)[0]])(x) for x in stdout]
+    get_version = lambda x: [
+        lambda string: [x.strip() for x in string[1:-1].split(",")]
+    flt = lambda data: [el for el in data if el.strip()]
+    flt = lambda data: [el for el in data if el.strip()]
+
+    flt = lambda data: [el for el in data if el.strip()]
+            ("flags", lambda flag: ["critical"] if int(flag) > 0 else []),
+    with patch("glob.glob", lambda pathname: [pathname]):
+
+    with patch("glob.glob", lambda pathname: [pathname]):
+
+    with patch("glob.glob", lambda pathname: [pathname]):
+
+    with patch("glob.glob", lambda pathname: [pathname]):
+    @patch.object(glob, "glob", lambda _: [])
+
+        with patch.object(glob, "glob", lambda _: []):
+
+    @patch.object(glob, "glob", lambda a: [])
+                with patch.object(glob, "glob", MagicMock(side_effect=lambda x: [x])):
+    "sequences": lambda y: [list(np.flatnonzero(s)) for s in y],
+        [("trans", "passthrough", lambda x: [1])], remainder="passthrough"
+
+    [[], np.array([], dtype=int), lambda x: []],
+
+        lambda x: [1],
+
+        lambda x: ["col2"],
+
+        lambda x: [False, True],
+
+    "selector", [[1], lambda x: [1], [False, True], lambda x: [False, True]]
+    clf.decision_function = lambda X: [p[:, 1] for p in clf._predict_proba(X)]
+        mult3.get_feature_names_out = lambda input_features: ["x3"]
+
+        mult2.get_feature_names_out = lambda input_features: ["x2"]
+
+        mult5.get_feature_names_out = lambda input_features: ["x5"]
+
+        mult2.get_feature_names_out = lambda input_features: ["x2"]
+
+        mult3.get_feature_names_out = lambda input_features: ["x3"]
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+                    lambda x: [x[0] - x[1], x[1] - x[2]],
+
+        cons = NonlinearConstraint(lambda x: [x[0]**2 - x[1], x[1] - x[2]],
+                       f_ieqcons=lambda z: [z[0] - 1],
+
+            fmin_slsqp(lambda x: [0, 1], [1, 2, 3])
+
+        fmin_slsqp(lambda x: [0], [1, 2, 3], iprint=0)
+        min_rank = lambda a: [1 + sum(i < j for i in a) for j in a]
+
+        max_rank = lambda a: [sum(i <= j for i in a) for j in a]
+    (lambda x: [], TypeError, r"must be real number, not list"),
+
+    (lambda x: [], TypeError, r"must be real number, not list"),
+
+        (lambda x: [], ValueError,
+    d.addCallbacks(lambda r: [x[1] for x in r], lambda f: f.value.subFailure)
+    d.addCallback(lambda out: [x[1] for x in out])
+                lambda aggregate_filter: [
+
+                lambda aggregate_filter: [
+
+                lambda aggregate_filter: [
+
+                lambda aggregate_filter: [
+            on_results=lambda x: [
+    scopes = Param(Iterable, default=lambda self: [])
+
+    events = Param(Iterable, default=lambda self: [])
+
+    allowed_origins = Param(Iterable, default=lambda self: [])
+    return Ragged(ops.alloc2f(0, nO), ops.alloc1i(0)), lambda d_ragged: []
+    backprop: Callable[[List[Ints2d]], List] = lambda d_features: []
+    return outputs, lambda x: []
+        return outputs, lambda dX: []
+    doc.user_span_hooks["sents"] = lambda x: [x]
+    ('value2', lambda _: [], None, 123, True),                  # lambda with wrong type
+
+    ('value3', lambda _: [], None, [], False),                  # lambda with correct type
+        composite_func = lambda x: [f(x) for f in funcs]
+DEP_PROCESS_FUNC = lambda x: [t.text.lower() for t in x.tokens]
+
+DEP_ID_FUNC = lambda x: [c for c in x.comments if c.startswith("# sent_id")][0].split()[-1]
+
+CON_PROCESS_FUNC = lambda x: [y.lower() for y in x.leaf_labels()]
+        format_str = lambda array: [  # noqa:E731
+                format_str = lambda array: [  # noqa:E731
+                        validate.transform(lambda x: [urls["url"] for y in x for urls in y["streams"]])
+        lambda m: [m.__file__],
+
+        lambda m: [m.__spec__.origin],
+
+        lambda m: [p for p in m.__path__._path],
+    prop_fix_points = lambda x: [x(point) for point in points] == points
+        (PREFIX, None, {"{": lambda x: ["List", *x], "(": lambda x: x[0]}),
+
+            "_": lambda x: ["Pattern", x, ["Blank"]],
+
+            "_.": lambda x: ["Optional", ["Pattern", x, ["Blank"]]],
+
+            "__": lambda x: ["Pattern", x, ["BlankSequence"]],
+
+            "___": lambda x: ["Pattern", x, ["BlankNullSequence"]],
+    >>> test = lambda R: [f in R for f in L]
+        lambda self: [_fld.name for _fld in self.header.fields])
+    lambda v: [v],
+
+    lambda v: [{'key': v}],
+        gen_params = lambda my_dict: [x + " = ?" for x in my_dict]
+                'photoalbums': lambda o: [self.export_obj(e) for e in getattr(o, 'albums')()],
+        lambda o: [inp.owner for inp in o.inputs
+        y, updates = theano.scan(lambda x: [x],
+
+            lambda x: [x*x, tensor.constant(0).copy().copy()],
+
+        [y1, y2], updates = theano.scan(lambda y: [y, y],
+
+        (bv_t, bh_t), _ = theano.scan(lambda _: [bv, bh], sequences=v,
+                  get_new_command=lambda x: [x.script + '@', x.script + ';'],
+        rule = Rule(get_new_command=lambda x: [x.script + '!', x.script + '@'],
+    flatten_list = lambda list_: [item for sublist in list_ for item in sublist]
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+                lambda t: [t[0]]
+                lambda t: [t[0]]
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], add_special_tokens=False), toks))
+        toks = list(filter(lambda t: [t[0]] == tokenizer.encode(t[1], do_phonemize=False), toks))
+        self.nodes[2].overlay.get_random_peers = lambda _: []
+    mock_download.dlmgr.tunnel_community.get_candidates = lambda _: []
+            "recent_download_locations": lambda val: [unhexlify(url).decode('utf-8') for url in val.split(",")],
+    SLEEP = lambda seconds: ["/bin/sleep", str(seconds)]
+        self.keydb = _KeyDB(lambda _: [keys.Key.fromString(keydata.publicRSA_openssh)])
+        d.addCallback(lambda xs: [x.split(b"\n") for x in xs])
+        d.addCallback(lambda x: [a.original.name for i, a, l in x])
+        1: lambda e: [b"".join([i[0] for i in e])],
+        self.patch(base64, "b64decode", lambda x: [])
+            groups.addCallback(lambda gs: [r for (s, r) in gs if s])
+        lambda xs: [],
+
+        lambda xs: [],
+
+        lambda x: [x],
+
+        lambda x: [[x], x],
+
+        lambda x: [x, []],
+    {"address": apply_formatter_if(is_string, lambda x: [x])}
+    parity = property(lambda self: ["odd", "even"][self.even])
+    __dir__ = _ProxyLookup(dir, fallback=lambda self: [])  # type: ignore
+                    'musicResponsiveListItemRenderer': lambda x: [self._music_reponsive_list_entry(x)],
+
+                    'videoRenderer': lambda x: [self._video_entry(x)],
+
+                    'hashtagTileRenderer': lambda x: [self._hashtag_tile_entry(x)]
+                lambda orders: [toolz.dissoc(o, 'id') for o in orders]
+
+                lambda txns: [toolz.dissoc(txn, 'order_id') for txn in txns]
