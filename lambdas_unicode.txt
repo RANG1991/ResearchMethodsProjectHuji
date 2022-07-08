@@ -154,3 +154,15 @@ _b = sys.version_info[0] < 3 and (lambda x: x) or (lambda x: x.encode("latin1"))
         args = map(lambda x: x.encode().decode("unicode_escape"), args)
 md5 = lambda s: hashlib.md5(s.encode()).hexdigest()
         make_newfilename = lambda old: decodeFilename(os.path.join(finaldir, os.path.basename(encodeFilename(old))))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))

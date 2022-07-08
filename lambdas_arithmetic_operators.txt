@@ -4620,3 +4620,603 @@ _tb_to_b = lambda x: 1024 * _tb_to_b(x)  # type: ignore
     >>> @preprocess(x=call(lambda x: x + 1))
             key=lambda x: -x["max_message_id"],
     return sorted(history, key=lambda x: -x["max_id"])
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        f=lambda x: -x ** 2,
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        f=lambda x: -x ** 2,
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        f=lambda x: -x ** 2,
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        f=lambda x: -x ** 2,
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        f=lambda x: -x ** 2,
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+_norm = lambda arr: arr / np.sqrt(np.sum(arr ** 2, axis=1))[:, None]
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        'url_resolver': lambda url: github_doc_root + url,
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            0: lambda x: x,
+            Screen.A_BOLD: lambda x: x | win32console.FOREGROUND_INTENSITY,
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                    init=init, default=val, converter=lambda v: v + 1
+
+                            converter=lambda v: v + 1,
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+        line = 'a = lambda x: x * 2\n'
+
+        line = 'a = lambda x: x * 2\n'
+        res = minimize(lambda x: -ac(x.reshape(1, -1), gp=gp, y_max=y_max),
+        f=lambda x: -x ** 2,
+        self.qresult._hit_key_function = lambda hit: hit.id + "_custom"  # noqa: E731
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+    _default_priority_key = staticmethod(lambda p: -float(p or 0))
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    example, lambda i: 0 would get the first word on the line, while
+    lambda i: i - 1 would get the word preceding the keyword.
+
+        mac = _find_mac_near_keyword('ifconfig', args, keywords, lambda i: i+1)
+
+    mac = _find_mac_near_keyword('ip', 'link', [b'link/ether'], lambda i: i+1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: -1)
+
+    mac = _find_mac_near_keyword('arp', '-an', [os.fsencode(ip_addr)], lambda i: i+1)
+
+                    lambda i: i+2)
+    height_weight_pairs.sort(key=lambda x: -x[1])
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+sigmoid = npx.sigmoid
+batch_matmul = npx.batch_dot
+
+ones_like = np.ones_like
+ones = np.ones
+zeros_like = np.zeros_like
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+expand_dims = np.expand_dims
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+int64 = np.int64
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)
+size = lambda a: a.size
+transpose = lambda a: a.T
+nn_Module = nn.Block
+
+ones = np.ones
+zeros = np.zeros
+arange = np.arange
+meshgrid = np.meshgrid
+sin = np.sin
+sinh = np.sinh
+cos = np.cos
+cosh = np.cosh
+tanh = np.tanh
+linspace = np.linspace
+exp = np.exp
+log = np.log
+tensor = np.array
+normal = np.random.normal
+randn = np.random.randn
+rand = np.random.rand
+matmul = np.dot
+int32 = np.int32
+float32 = np.float32
+concat = np.concatenate
+stack = np.stack
+abs = np.abs
+eye = np.eye
+numpy = lambda x, *args, **kwargs: x.asnumpy(*args, **kwargs)

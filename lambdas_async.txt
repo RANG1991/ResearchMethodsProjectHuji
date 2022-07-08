@@ -91,3 +91,15 @@
         lambda route: asyncio.create_task(route.continue_(post_data="    'fetch': lambda x: tornado_fetcher.Fetcher(None, None, async_mode=False).fetch(x),
         task.add_done_callback(lambda result: asyncio.get_running_loop().stop())
                 data, (lambda x: x['responseContext']['mainAppWebResponseContext']['datasyncId'],
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)

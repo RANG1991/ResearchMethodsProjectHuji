@@ -1137,3 +1137,93 @@ def swap(f): return lambda x, y: f(y, x)
     return lambda kwargs: SQL(
         return lambda email: None
                 return lambda *args, **kwargs: None
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+#         return lambda *args, **kwargs: None
+    return lambda *args: value
+                return lambda f: register(cls, f)
+            return lambda text: tempfilepager(plain(text), use_pager)
+
+            return lambda text: pipepager(plain(text), use_pager)
+
+            return lambda text: pipepager(text, use_pager)
+
+        return lambda text: tempfilepager(plain(text), 'more <')
+
+        return lambda text: pipepager(text, 'less')
+
+            return lambda text: pipepager(text, 'more')

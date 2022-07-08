@@ -60,3 +60,15 @@ d.addErrback(lambda reason: "error: " + str(reason.value))
                 error = try_get(page, lambda x: x['errors'][0], dict)
         error_massage = try_get(resp, lambda x: x['errors'][0]['message'])
                                 lambda x: x['error']['message'], compat_str)
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError

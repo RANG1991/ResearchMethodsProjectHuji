@@ -1,3 +1,4 @@
+import math
 import re
 import concurrent.futures
 import glob
@@ -293,7 +294,7 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
     plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1,
-                         max(dict_types_accumulated_sum.values()) / 10),
+                         (10 ** int(math.log10(max(dict_types_accumulated_sum.values()))))),
                rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)

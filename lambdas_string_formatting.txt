@@ -612,3 +612,69 @@ stats = {"minimum": lambda x: str(np.nanmin(x)), "maximum": lambda x: str(np.nan
             lambda s: str(len([c for c in s if c == 'a'])),
             item_show_func=lambda e: e if e is None else str(e[0]),
         get_user_key = lambda row: str(row["user_profile_id"])
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+            results['schemas'], key=lambda i: str(i['service_name']))
+short_ts = lambda ts: str(parse_date(ts).timestamp()).split('.')[0]
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+		'$d' : (lambda json: str(json['md5'] if 'md5' in json else '')),
+
+		'$s' : (lambda json: str(json['size'])),
+
+		'$i' : (lambda json: str(json['fs_id'])),
+
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:

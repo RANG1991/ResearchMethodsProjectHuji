@@ -6669,3 +6669,1293 @@ IGNORED_PHRASES.sort(key=lambda regex: len(regex), reverse=True)
 
     matches = sorted(matches, key=lambda k: k["index"])
             lang_list.sort(key=lambda lang: collator.sort_key(lang["name"]))
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+    results.sort(key=lambda pair: pair[0])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        menus = sorted(result, key=lambda x: x['sort'])
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+            answer.features.sort(key=lambda x: x.location.start.position)
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+    res.sort(key=lambda item: item.file)
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+                    modes[char] = max(items, key=lambda x: x[1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+    results.sort(key=lambda pair: pair[0])
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        menus = sorted(result, key=lambda x: x['sort'])
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+            answer.features.sort(key=lambda x: x.location.start.position)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+    res.sort(key=lambda item: item.file)
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+                    modes[char] = max(items, key=lambda x: x[1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+    results.sort(key=lambda pair: pair[0])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+        menus = sorted(result, key=lambda x: x['sort'])
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+            answer.features.sort(key=lambda x: x.location.start.position)
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+    res.sort(key=lambda item: item.file)
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+                    modes[char] = max(items, key=lambda x: x[1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+    results.sort(key=lambda pair: pair[0])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+        menus = sorted(result, key=lambda x: x['sort'])
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+            answer.features.sort(key=lambda x: x.location.start.position)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+    res.sort(key=lambda item: item.file)
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+                    modes[char] = max(items, key=lambda x: x[1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+    results.sort(key=lambda pair: pair[0])
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        menus = sorted(result, key=lambda x: x['sort'])
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+            answer.features.sort(key=lambda x: x.location.start.position)
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+    res.sort(key=lambda item: item.file)
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+                    modes[char] = max(items, key=lambda x: x[1])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)
+        labels_and_scores.sort(key=lambda x: x[1], reverse=True)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+    fps = sorted(fps, key=lambda x: int(x.split('/')[-1].replace('.jpg', '')))
+    sorted_scores = sorted(result, key=lambda p_x: p_x[1][1], reverse=True)
+        checkpoint = torch.load(ckpt_path, map_location=lambda storage, loc: storage)
+        for package_name in sorted(packages_names, key=lambda k: k or '')
+        tables = sorted(metastore.get_tables(db=db), key=lambda x: x.tableName)
+        config["options"] = sorted(config["options"], key=lambda o: o["name"])
+
+    configs = sorted(configs, key=lambda l: l["name"])
+
+        section.sort(key=lambda i: i["name"])  # type: ignore
+    # pruned_indices = sorted(pruned_indices, key=lambda i: -np.max(results[attrib_idx][i]))
+    transforms = [Mock(p=1, side_effect=lambda **kw: {"image": kw["image"]}) for _ in range(10)]
+
+    transforms = [Mock(side_effect=lambda **kw: kw) for _ in range(10)]
+    for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0]):
+
+        "- " + info["docs_link"] for transform, info in sorted(transforms_info.items(), key=lambda kv: kv[0])
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    return sorted(tests, key=lambda test: test.name)
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+
+        fake_uniform.configure_mock(side_effect=lambda a, b: jitter)
+            edges = sorted(edges, key=lambda e: e.x)
+
+            edges = sorted(new_edges, key=lambda e: e.x)
+            for x, y, z, tile, satellite in sorted(self._tiles.values(), key=lambda k: k[0]):
+EqCSameType = cmp_using(eq=lambda a, b: a == b, class_name="EqCSameType")
+
+    cls = cmp_using(eq=lambda a, b: a == b)
+
+            cmp_using(lt=lambda a, b: a < b)
+
+        C = cmp_using(eq=lambda a, b: NotImplemented if a == 1 else a == b)
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+    c: str = attr.ib(repr=lambda value: "c is for cookie")
+
+    c: str = attrs.field(repr=lambda value: "c is for cookie")
+            "C", {"x": attr.ib(converter=lambda v: v + 1), "y": attr.ib()}
+
+                "x": attr.ib(validator=validator, converter=lambda v: 1 / 0),
+
+            "C", {"x": attr.ib(converter=lambda v: int(v))}, frozen=True
+
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    results.sort(key=lambda pair: pair[0])
+                result_list = sorted(result_list, key=lambda x: x.index)
+
+                val = sorted(val, key=lambda x: x.index)
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        networkList = sorted(networkList, key=lambda x : x['status'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['memory_percent'], reverse=True)
+
+        processList = sorted(processList, key=lambda x : x['cpu_times'], reverse=True)
+        data['apps'] = sorted(data['apps'],key=lambda x: x['time'],reverse=True)
+
+        data['binds'] = sorted(data['binds'],key=lambda x: x['time'],reverse=True)
+
+                binds = sorted(binds,key=lambda x: x['time'],reverse=True)
+            tmp_files = sorted(tmp_files, key=lambda x: x[sort_key], reverse=reverse)
+
+        return sorted(v_data,key=lambda x:x['name'])
+        menus = sorted(result, key=lambda x: x['sort'])
+            OOO0000O0OO00O00O .sort (key =lambda O000O00OOOOOOOO0O :O000O00OOOOOOOO0O ["time"])#line:638
+
+            O000O000OOOOO000O .sort (key =lambda O000OOOO0000O00O0 :O000OOOO0000O00O0 ["time"])#line:654
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+        data['risk'] = sorted(data['risk'],key=lambda x: x['level'],reverse=True)
+
+        data['security'] = sorted(data['security'],key=lambda x: x['level'],reverse=True)
+
+        data['ignore'] = sorted(data['ignore'],key=lambda x: x['level'],reverse=True)
+        host_list = sorted(host_list,key=lambda x: x['sort'],reverse=False)
+        new_node_list = sorted(node_list,key=lambda x: x['ping'],reverse=False)
+
+    menus = sorted(data, key=lambda x: x['sort'])
+        sortedParameters = sorted(parameters.items(), key=lambda parameters: parameters[0])
+            [item[1] for item in sorted(pbounds.items(), key=lambda x: x[0])],
+    spans.sort(key=lambda x: x['from'])
+        matches.sort(key=lambda x: x['likes'], reverse=True)
+        for i in sorted(task.items, key=lambda i: i.track):
+        release = Bag(data={}, refresh=lambda *args: None)
+        displayed_nodes.sort(key=lambda elem: elem[0].col_offset)
+
+        values.sort(key=lambda e: e[1])
+        right_rows = sorted(right_rows, key=lambda x: x[0], reverse=True)
+
+        left_rows = sorted(left_rows, key=lambda x: x[0], reverse=True)
+            answer.features.sort(key=lambda x: x.location.start.position)
+        alignment.sort(key=lambda record: GC(record.seq))
+
+        alignment.sort(key=lambda record: GC(record.seq), reverse=True)
+        rxs.sort(key=lambda x: str(x))  # noqa: E731
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+
+        records.sort(key=lambda rec: rec.id)  # noqa: E731
+                points1.sort(key=lambda point: point.index)  # noqa: E731
+        self.assertEqual(max(w, key=lambda x: x[1]), (16.75, 313.0))  # noqa: E731
+
+        self.assertEqual(min(w, key=lambda x: x[1]), (0.25, 29.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (18.25, 357.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (0.25, 55.0))  # noqa: E731
+
+        self.assertEqual(max(w2, key=lambda x: x[1]), (15.75, 274.0))  # noqa: E731
+
+        self.assertEqual(min(w2, key=lambda x: x[1]), (3.25, -20.0))  # noqa: E731
+for name, palettes in sorted(all_palettes.items(), key=lambda arg: arg[0]):
+        for _, cls in sorted(Model.model_class_reverse_map.items(), key=lambda arg: arg[0]):
+
+    result = Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+
+    return Urls(urls=lambda components, kind: [mk_url(component, kind) for component in components])
+            tmp.items(), key=lambda item: StrictVersion(item[0]), reverse=True
+        ret = sorted(self.iteritems(), key=lambda x: x[1], reverse=True)
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    >>> bucketize(range(5), value_transform=lambda x: x*x)
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> list(unique_iter(pleasantries, key=lambda x: len(x)))
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+
+def research(root, query=lambda p, k, v: True, reraise=False):
+
+    >>> res = research(root, query=lambda p, k, v: isinstance(v, int))
+
+        first = sorted([x for x in seq if key(x) in first], key=lambda x: first.index(key(x)))
+
+        last = sorted([x for x in seq if key(x) in last], key=lambda x: last.index(key(x)))
+        >>> omd.sorted(key=lambda i: i[1])  # i[0] is the key, i[1] is the val
+    bc = LRI(cache_size, on_miss=lambda k: k.upper())
+    def default_non_roundtrippable_repr(x=lambda y: y + 1):
+    def kwonly_non_roundtrippable_repr(*, x=lambda y: y + 1):
+    res = research(root, query=lambda p, k, v: v == 'a')
+for cls in sorted(classes, key=lambda cls: (cls.__module__, cls.__qualname__)):
+        keys.sort(key=lambda x: x.lower())
+
+        keys.sort(cmp=lambda x, y: cmp(x.lower(), y.lower()))
+
+        keys.sort(key=lambda x: x.lower())
+            qsa.sort(key=lambda x: x[0])
+    for pl in sorted(input_format_plugins(), key=lambda x: x.name):
+
+    for pl in sorted(output_format_plugins(), key=lambda x: x.name):
+
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+
+    documented_cmds.sort(key=lambda x: x[0])
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+    for x in sorted(files, key=lambda x: os.stat(x).st_size, reverse=True):
+    inits.sort(key=lambda x:x.count('/'))
+
+    pstats = list(map(plugin_stats, sorted(stats.items(), reverse=True, key=lambda x:x[1])))
+        for x in sorted(entries, key=lambda x:name_getter(x).lower()):
+    return sorted(found_array, key=lambda match: match and match[2][0])
+            sorted(new_dict.items(), key=lambda x: x[1], reverse=True)
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+
+                    for required_iters, proof_of_space in sorted(qualified_proofs, key=lambda t: t[0]):
+CONTEXT_SETTINGS = dict(token_normalize_func=lambda x: x.lower())
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+        with click.progressbar(range(3), item_show_func=lambda x: str(x)) as progress:
+    sorted_timing_info = sorted(_timing_info[0].items(), key=lambda kv: kv[1])
+    other_contributors = sorted(other_contributors, key=lambda c: c["name"].lower())
+        reqs[key] = sorted(reqs[key], key=lambda name: (len(name.split(".")), name))
+
+    for pkg, requirements in sorted(reqs.items(), key=lambda item: item[0]):
+    res.sort(key=lambda item: item.file)
+                setup_time.items(), key=lambda item: item[1].total_seconds()
+        hass, MockModule("test", async_setup_entry=lambda *args: mock_coro(True))
+    mock_integration(hass, MockModule("comp", setup=lambda hass, config: False))
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+
+        MockModule("disabled_component", setup=lambda hass, config: False),
+
+        hass, MockModule("disabled_component", setup=lambda hass, config: True)
+        videos.sort(key=lambda video: video.resolution, reverse=True)
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+                    modes[char] = max(items, key=lambda x: x[1])
+            members.sort(key=lambda t: (t[1], t[0]))
+
+            members.sort(key=lambda t: t[0])
+
+        members.sort(key=lambda t: (t[1], t[0]))
+
+        members.sort(key=lambda t: t[0])
+    results.sort(key=lambda pair: pair[0])
+        directories.sort(key=lambda a: a.name)
+        L.sort(key=lambda item:item[1].index)
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+    height_weight_pairs.sort(key=lambda x: -x[1])
+            train_list.extend(sorted(train_items[u], key=lambda k: k[3]))
+
+        ranked_list[u] = sorted(item_scores, key=lambda t: t[1], reverse=True)

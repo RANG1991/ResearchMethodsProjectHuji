@@ -1575,3 +1575,57 @@ def passthrough_module(parent, child, *, callback=lambda _: None):
     passthrough_module(__name__, '._legacy', callback=lambda attr: warnings.warn(
     return CallbackManager(lambda it=it: it)
         callback = callback or (lambda *args, **kwargs: None)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback=lambda **kwargs: kwargs,
+        callback_wrapper = lambda payload: callback(*payload)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback=lambda **kwargs: kwargs,
+        callback_wrapper = lambda payload: callback(*payload)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback=lambda **kwargs: kwargs,
+        callback_wrapper = lambda payload: callback(*payload)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+        callback=lambda **kwargs: kwargs,
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback_wrapper = lambda payload: callback(*payload)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback=lambda **kwargs: kwargs,
+        callback_wrapper = lambda payload: callback(*payload)
+                    callback=lambda task: task.store(write)
+
+                callback=lambda task: task.store(write)
+        ioloop.add_callback(lambda x: x.stop(), ioloop)
+    cli = click.Command("cli", params=[param], callback=lambda a: a)
+
+        callback=lambda p: p,
+        callback=lambda **kwargs: kwargs,
+        callback_wrapper = lambda payload: callback(*payload)

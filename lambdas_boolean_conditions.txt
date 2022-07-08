@@ -4714,3 +4714,717 @@ if PY3 and PYMINOR >= 7:
         daemon = cast(bool, property(lambda self: False, lambda self, value: None))
     botocore.utils.should_bypass_proxies = lambda url: True
         found_imgs = walk_tree(root, lambda e: e if e.tag == "img" else None)
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+        self.clear(lambda x: False)
+    sut.clear(lambda x: False)
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda _: True
+        mock_os.path.exists = lambda p: True
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+        self.clear(lambda x: False)
+    sut.clear(lambda x: False)
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda p: True
+        mock_os.path.exists = lambda _: True
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+        self.clear(lambda x: False)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+    sut.clear(lambda x: False)
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda p: True
+        mock_os.path.exists = lambda _: True
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+        self.clear(lambda x: False)
+    sut.clear(lambda x: False)
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda p: True
+        mock_os.path.exists = lambda _: True
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+        self.clear(lambda x: False)
+    sut.clear(lambda x: False)
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda p: True
+        mock_os.path.exists = lambda _: True
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False
+        filter_func = (lambda p_day: p_day.change > 0) if want_up else (
+
+            lambda p_day: p_day.change < 0)
+        self.clear(lambda x: False)
+    data["children"] = data["children"].apply(lambda x: 4 if x == "more" else x)
+    sut.clear(lambda x: False)
+            lambda n: 1.0 if n < num_samples / 2 else -1.0, num_samples, 0
+        preferences = list(filter(lambda x: x.name == "PCMA", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "PCMU", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "VP8", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+
+        preferences = list(filter(lambda x: x.name == "H264", capabilities.codecs))
+
+        preferences += list(filter(lambda x: x.name == "rtx", capabilities.codecs))
+without_trailing_slash = lambda url: url[:-1] if url[-1] == '/' else url.replace('/?', '?')
+            return image.point(lambda x: 0 if x < self.threshold else 255, '1')
+                  formatreturns=lambda text: ' -> ' + text,
+    _getrecurse = classmethod(lambda cls: False)
+                values = map(lambda x: x if x == x else '', values)
+        mock_os.path.exists = lambda p: True
+        mock_os.path.exists = lambda _: True
+        label_colors_dollo = lambda label: "r" if label == "f_50" else "k"  # noqa: E731
+        tree.collapse_all(lambda c: c.branch_length < 0.1)  # noqa: E731
+    _inspect_iscoroutinefunction = lambda func: False
+
+            formatreturns=lambda text: ' -> ' + text,
+    >>> falsy_sep = lambda x: not x
+    >>> list(split_iter(['hi', 'hello', None, '', 'sup', False], falsy_sep))
+
+        sep_func = lambda x: x in sep
+    else:
+        sep_func = lambda x: x == sep
+
+            sep_func = lambda x: False
+
+    >>> is_odd = lambda x: x % 2 == 1
+
+    >>> bucketize(range(10), key=lambda x: x % 3, key_filter=lambda k: k % 3 != 1)
+
+    >>> is_digit = lambda x: x in string.digits
+    >>> decimal_digits, hexletters = partition(string.hexdigits, is_digit)
+
+    >>> one((10, 20, 30, 42), key=lambda i: i > 40)
+
+    >>> first([1, 1, 3, 4, 5], key=lambda x: x % 2 == 0)
+is_meaning_of_life = lambda x: x == 42
+		errors = list(filter(lambda x: x != const.ENoError, results))
+    def add_tree(self, base, prefix, ignore=lambda n:False):
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+                should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+
+            should_retry=lambda x: True,
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda x: True)
+
+    monkeypatch.setattr(click.termui, "isatty", lambda x: True)
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+        "click.shell_completion.BashComplete._check_version", lambda self: True
+                     'PipRequirement.is_installed', lambda self: True)
+
+                     'PipRequirement.is_installed', lambda self: False)
+logger.verbose = property(lambda self: True, lambda self, value: print("WARNING: ignoring attempt to set logger.verbose = {value}".format(value=value)))
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    >>> s = SequenceMatcher(lambda x: x == " ",
+
+        >>> s = SequenceMatcher(lambda x: x==" ", " abcd", "abcd abcd")
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+
+                          lambda t: t[1] == 'method')
+
+                          lambda t: t[1] == 'class method')
+
+                          lambda t: t[1] == 'static method')
+
+                                     lambda t: t[1] == 'readonly property')
+
+                                     lambda t: t[1] == 'data descriptor')
+
+                              lambda t: t[1] == 'data')
+            yield textwrap.indent(text_gen, indent_str, lambda line: True)
+
+                yield textwrap.indent(text, indent_str, lambda line: True)
+        kwargs={"only_if": lambda backend: False, "skip_message": "Nope"}
+
+        kwargs={"only_if": lambda backend: True, "skip_message": "Nope"}
+                message = list(filter(lambda m: m.msgctxt == msgctxt and m.msgid == msgid, messages))
+            line_is_excluded = lambda line: False

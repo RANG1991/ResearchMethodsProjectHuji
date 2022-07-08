@@ -3212,3 +3212,213 @@ workaround_optparse_bug9161 = lambda: None
                 return lambda *args, **kwargs: None
             validator = CODE_VALIDATORS.get(self.lang, lambda text: None)
                 zset, lambda: client.zcount(zset, 0, now), lambda key, max_calls: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+    manager._store._async_ensure_stop_listener = lambda: None
+        code_line_at = lambda _: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+    manager._store._async_ensure_stop_listener = lambda: None
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        code_line_at = lambda _: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+    manager._store._async_ensure_stop_listener = lambda: None
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        code_line_at = lambda _: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+asyncio.set_event_loop_policy = lambda policy: None
+    manager._store._async_ensure_stop_listener = lambda: None
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        code_line_at = lambda _: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+    manager._store._async_ensure_stop_listener = lambda: None
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        code_line_at = lambda _: None
+    loop.set_exception_handler(lambda loop, ctx: None)
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+    abspath = lambda path: None if path is None else Path(path).resolve()
+    def __init__(self, func=lambda: None):
+            self._excepthook_orig = lambda etype, evalue, tb: None
+            "C", {"x": attr.ib(validator=lambda *a: None), "y": attr.ib()}
+    x = attr.ib(on_setattr=lambda *args: None)
+
+                x = attr.ib(on_setattr=lambda *args: None)
+_sget_none = _sset_none = lambda *args: None
+#         return lambda *args, **kwargs: None
+        release = Bag(data={}, refresh=lambda *args: None)
+            method = lambda x: None  # noqa: E731
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None}
+
+                             'varargs': lambda: None,
+
+                             'varkw': lambda: None,
+
+                             'defaults': lambda: None,
+
+                 'module': lambda: None,
+    app.add_node(checkbox, html=(visit_checkbox, lambda *x: None))
+    hass.config_entries._store._async_ensure_stop_listener = lambda: None
+    manager._store._async_ensure_stop_listener = lambda: None
+asyncio.set_event_loop_policy = lambda policy: None
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+
+    hass.services.async_register("test_domain", "test_service", lambda call: None)
+        hass, MockModule("disabled_component", setup=lambda hass, config: None)
+        code_line_at = lambda _: None

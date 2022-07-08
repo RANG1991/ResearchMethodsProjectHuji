@@ -990,3 +990,57 @@ CON_PROCESS_FUNC = lambda x: [y.lower() for y in x.leaf_labels()]
                 lambda orders: [toolz.dissoc(o, 'id') for o in orders]
 
                 lambda txns: [toolz.dissoc(txn, 'order_id') for txn in txns]
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])
+        'BIND_ADDR':                {'type': str,   'default': lambda c: ['127.0.0.1:8000', '0.0.0.0:8000'][c['IN_DOCKER']]},
+
+        'YOUTUBEDL_ARGS':           {'type': list,  'default': lambda c: [
+
+    find_section = lambda key: [name for name, opts in CONFIG_SCHEMA.items() if key in opts][0]
+        "wrap", [lambda v: v, lambda v: [v], lambda v: and_(v)]
+    node = pretend.stub(iter_markers=lambda x: [supported])
+
+    node = pretend.stub(iter_markers=lambda x: [supported])

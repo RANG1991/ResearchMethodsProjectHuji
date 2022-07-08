@@ -2008,3 +2008,87 @@ MARKER_ITEM.setParseAction(lambda s, l, t: tuple(t[0]))
     return sorted(exports_dict.values(), key=lambda export_dict: export_dict["id"])
     return sorted(group_dicts.values(), key=lambda group_dict: group_dict["id"])
             key=lambda x: min(x.messages.all().values_list("id")[0]),
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    checkpoint = torch.load(checkpoint_fp, map_location=lambda storage, loc: storage)['state_dict']
+            lambda p_x: estimator.predict(p_x), x, y)
+    nav_entries.sort(key=lambda x: list(x)[0], reverse=False)
+    'CHROME_USER_DATA_DIR':     {'default': lambda c: find_chrome_data_dir() if c['CHROME_USER_DATA_DIR'] is None else (Path(c['CHROME_USER_DATA_DIR']).resolve() if c['CHROME_USER_DATA_DIR'] else None)},   # None means unset, so we autodetect it with find_chrome_Data_dir(), but emptystring '' means user manually set it to '', and we should store it as None
+        @attr.s(auto_attribs=True, field_transformer=lambda c, a: list(a))
+            key = lambda x: tuple(getattr(x, k) for k in tiebreak[kind])
+    >>> is_digit = lambda x: x in string.digits
+		'$b' : (lambda json: str(json['block_list'] if 'block_list' in json else '')),
+        for opt in sorted(options, key=lambda x: x.get_opt_string()):
+    _all_args = (lambda *args, **kwargs: args + tuple(kwargs.values()))({call_args})
+            possible_quotes.sort(key=lambda q: q[0] == escaped_string[-1])
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
+    predict = lambda prefix: predict_ch8(prefix, 50, net, vocab, device)
