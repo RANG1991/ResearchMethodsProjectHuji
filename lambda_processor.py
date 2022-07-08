@@ -43,15 +43,14 @@ def process_lambda_exp_single_file(python_filename):
         num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
         dict_types = {}
         if num_lambda_in_file > 0:
-            dict_types = count_usages_of_lambda_expressions(python_file_text, os.path.basename(python_filename))
+            dict_types = count_usages_of_lambda_expressions(python_file_text)
         num_of_code_lines = calc_number_of_code_line_python_file(python_file_text)
         return dict_types, num_lambda_in_file, num_of_code_lines
 
 
-def count_usages_of_lambda_expressions(python_file_text, python_file_name):
+def count_usages_of_lambda_expressions(python_file_text):
     """
     count the number of the various usages of lambda expressions in a single python file
-    :param python_file_name:
     :param python_file_text: the python file as string (text)
     :return: dict_type - a dictionary containing the type of each lambda expression as key, and it's number in this
     python file as value
@@ -109,6 +108,8 @@ def count_usages_of_lambda_expressions(python_file_text, python_file_name):
         with open(f"./lambdas_{key}.txt", "a") as f:
             f.writelines("\n".join(dict_types_to_find_all_res[key]))
     all_lambdas_types_count = sum(dict_types_to_counts.values())
+    with open(f"./lambdas_other.txt", "a") as f:
+        f.writelines("\n".join(all_lambdas_other))
     dict_types_to_counts["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
     return dict_types_to_counts
 

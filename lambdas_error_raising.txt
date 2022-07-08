@@ -72,3 +72,5 @@ d.addErrback(lambda reason: "error: " + str(reason.value))
                 error_cls = DeploymentPackageTooLargeError
                 # package sent to lambda is too large
                 error_cls = DeploymentPackageTooLargeError
+                # package sent to lambda is too large
+                error_cls = DeploymentPackageTooLargeError

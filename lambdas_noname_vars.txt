@@ -2506,3 +2506,32 @@ overflowcheck = lambda _: _EmptyDecoratorAndManager()
 
 binding = lambda _: _empty_decorator
         code_line_at = lambda _: None
+    coro = asyncio.start_server(lambda *_: None, port=PORT)
+        "albumentations.augmentations.geometric.ElasticTransform.get_params", lambda *_: {"random_state": 1111}
+        'IS_TTY':                   {'type': bool,  'default': lambda _: sys.stdout.isatty()},
+self.mock_group.modify_state.side_effect = lambda *_: defer.fail(NoSuchScalingGroupError(1, 2))
+
+self.mock_group.modify_state.side_effect = lambda *_: defer.fail(
+                getters[key] = lambda _: value
+gstplayer.GstPlayer = lambda _: gstplayer._GstPlayer
+        mock_os.path.exists = lambda _: True
+    monkeypatch.setattr("black.handle_ipynb_magics.TOKEN_HEX", lambda _: "foo")
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: False)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+
+    monkeypatch.setattr(click._termui_impl, "isatty", lambda _: True)
+        lambda _: _EmptyDecoratorAndManager()
+
+overflowcheck = lambda _: _EmptyDecoratorAndManager()
+
+binding = lambda _: _empty_decorator
+        code_line_at = lambda _: None

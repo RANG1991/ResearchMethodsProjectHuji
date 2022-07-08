@@ -166,3 +166,5 @@ hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).he
         return bool(lambda s: len(s) == len(s.encode()))
 hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
         return bool(lambda s: len(s) == len(s.encode()))
+hashurl = lambda url: base32_encode(int(sha256(base_url(url).encode('utf-8')).hexdigest(), 16))[:20]
+        return bool(lambda s: len(s) == len(s.encode()))

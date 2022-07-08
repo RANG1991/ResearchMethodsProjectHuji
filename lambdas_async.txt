@@ -103,3 +103,5 @@
         return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
     app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
         return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
+    app.on_startup.append(lambda a: asyncio.create_task(shutdown()))
+        return lambda *args, **kwargs: self._send_recv_async(attr, (args, kwargs), critical=is_critical)
