@@ -89,7 +89,7 @@ def count_usages_of_lambda_expressions(python_file_text, python_file_name):
         "noname_vars": noname_vars_find_all,
         "boolean_conditions": boolean_conditions_find_all
     }
-    dict_types_to_counts = {k: len(v) for k,v in dict_types_to_find_all_res.items()}
+    dict_types_to_counts = {k: len(v) for k, v in dict_types_to_find_all_res.items()}
     all_lambdas_find_all = re.findall(ALL_PATTERN, python_file_text)[0]
     all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
                                                     return_value_find_all, unicode_find_all, exception_find_all,
@@ -278,49 +278,6 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     plt.clf()
 
 
-def process_all_python_files_in_parallel(repos_parent_folder):
-    """
-    process all the python files in all the repositories in parallel to get the number of lambdas in each
-    python file. save the results into dictionary
-    :param repos_parent_folder: the parent folder of all the repositories downloaded after the scraping
-    :return: all_files_dict_types: a dictionary containing the following:
-    key = (filename, repository name, repository path)
-    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
-    the number of lambda appearances)
-    """
-    all_files_dict_types = {}
-    # get all the python files from all the repositories
-    files = [f for f in glob.glob(r'{}/**/*.py'.format(repos_parent_folder), recursive=True)]
-    # files = files[:50]
-    lambdas_counts_in_files = 0
-    # initialize a thread pool to do the calculation of the lambda statistics in each of the python
-    # files in parallel
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
-        # construct a dictionary of future to filename and repository name
-        future_to_filename = \
-            {
-                executor.submit(process_lambda_exp_single_file, filename):
-                    (filename,
-                     get_repository_dir_name(filename, 1, 1),
-                     get_repository_dir_name(filename, 0, 1)) for filename in files
-            }
-        # for each of the futures, check if it finished and then take
-        # the dictionary of lambdas statistics and merge it into the large dictionary
-        for future in concurrent.futures.as_completed(future_to_filename):
-            filename, repository_name, repository_path = future_to_filename[future]
-            try:
-                dict_types, num_lambda_in_file, num_of_code_lines = future.result()
-                all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
-                                                                                      num_of_code_lines)
-            except Exception as exc:
-                print('%r generated an exception: %s' % (filename, exc))
-        # terminate all the futures and shutdown the thread pool
-        for future in future_to_filename:
-            future.cancel()
-        executor.shutdown()
-    return all_files_dict_types
-
-
 def plot_bar_plots_lambdas_types(all_files_dict_types):
     """
     :param all_files_dict_types:
@@ -335,7 +292,8 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
                 dict_types_accumulated_sum[type_name] = 0
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
-    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1, 1000),
+    plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1,
+                         max(dict_types_accumulated_sum.values()) / 10),
                rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)
@@ -398,6 +356,50 @@ def calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types):
         num_total_lambdas += num_lambda_in_file
         num_total_lines_of_code += num_of_code_lines
     return num_total_lambdas / num_total_lines_of_code
+
+
+def process_all_python_files_in_parallel(repos_parent_folder):
+    """
+    process all the python files in all the repositories in parallel to get the number of lambdas in each
+    python file. save the results into dictionary
+    :param repos_parent_folder: the parent folder of all the repositories downloaded after the scraping
+    :return: all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    """
+    all_files_dict_types = {}
+    # get all the python files from all the repositories
+    repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
+    repos_folders = repos_folders[:100]
+    files = [f for repo_folder in repos_folders for f in glob.glob(r'{}/**/*.py'.format(repo_folder))]
+    lambdas_counts_in_files = 0
+    # initialize a thread pool to do the calculation of the lambda statistics in each of the python
+    # files in parallel
+    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+        # construct a dictionary of future to filename and repository name
+        future_to_filename = \
+            {
+                executor.submit(process_lambda_exp_single_file, filename):
+                    (filename,
+                     get_repository_dir_name(filename, 1, 1),
+                     get_repository_dir_name(filename, 0, 1)) for filename in files
+            }
+        # for each of the futures, check if it finished and then take
+        # the dictionary of lambdas statistics and merge it into the large dictionary
+        for future in concurrent.futures.as_completed(future_to_filename):
+            filename, repository_name, repository_path = future_to_filename[future]
+            try:
+                dict_types, num_lambda_in_file, num_of_code_lines = future.result()
+                all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
+                                                                                      num_of_code_lines)
+            except Exception as exc:
+                print('%r generated an exception: %s' % (filename, exc))
+        # terminate all the futures and shutdown the thread pool
+        for future in future_to_filename:
+            future.cancel()
+        executor.shutdown()
+    return all_files_dict_types
 
 
 def main():
