@@ -7,6 +7,7 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
 import itertools
+import traceback
 
 # regular expressions patterns for capturing lambdas' usages
 MAP_REDUCE_FILTER_PATTERN = "((.*?)(map|reduce|filter)(.*?)lambda (.*?):(.*?)\n)"
@@ -20,13 +21,15 @@ ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
 CALLBACK_PATTERN = r"((.*?)[c|C]allback(.*?)lambda(.*?)\n)"
 STRING_FORMATTING_PATTERN = "((.*?)lambda([^\\(#\\,\\=\\[\\)]*?)str\\((.*?)\n)"
 ERROR_RAISING_PATTERN = "((.*?)lambda([^#\\(\\)\\.\\_\\,]*?)error(.*?)\n)"
-IN_OPERATOR_PATTERN = "((.*?)lambda\\s(\\w+):\\s+(in|isin)\\s(.*?)\n)"
+IN_OPERATOR_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*\w*\s*in(.*?)\n)"
 INNER_LAMBDA_PATTERN = "((.*?)lambda(.*?):(.*?)in lambda(.*?):(.*?)\n)"
-INDEXING_PATTERN = "((.*?)lambda\\s(\\w+):\\s?\\[(.*?)\n)"
+INDEXING_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*([^(]*?|\2|\3)\[(.*?)\n)"
 NONE_PATTERN = "((.*?)lambda(.*?):\\s?None(.*?)\n)"
-ARITHMETIC_OPERATIONS_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
-NONAME_VAR_PATTERN = "((.*?)lambda [\\*\\_]?_:(.*?)\n)"
-BOOL_COND_PATTERN = "((.*?)lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=))(.*?)\n)"
+ARITHMETIC_OPERATIONS_1_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
+ARITHMETIC_OPERATIONS_2_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*(\2|\3|\w*)\s*[\+|\/|\*|\-]\s*(\2|\3|\w*)(.*?)\n)"
+NONAME_VAR_PATTERN = r"((.*?)lambda\s*_\n)"
+BOOL_COND_PATTERN = r"((.*?)lambda\s*(\w+)\s*(\,\s?\w+)*:(.*)(<|==|!=|>|<=|=<|=>|>=)(.*?)\n)"
+FUNCTION_CALL_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:(\s*\w*)[\(](.*?)\n)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -38,6 +41,7 @@ def process_lambda_exp_single_file(python_filename):
     num_lambdas_in_file - the total number of the lambda expressions in this file
     num_of_code_lines - the number of lines of code in this file
     """
+    print(f"processing file: {python_filename}")
     with open(python_filename, "r", encoding="utf-8") as f:
         python_file_text = f.read()
         num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
@@ -68,7 +72,8 @@ def count_usages_of_lambda_expressions(python_file_text):
     in_operator_find_all = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
     indexing_find_all = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
     none_ptrn_find_all = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
-    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
+    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_1_PATTERN, python_file_text)]
+    arithmetic_operators_find_all.extend([x[0] for x in re.findall(ARITHMETIC_OPERATIONS_2_PATTERN, python_file_text)])
     noname_vars_find_all = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
     boolean_conditions_find_all = [x[0] for x in re.findall(BOOL_COND_PATTERN, python_file_text)]
     dict_types_to_find_all_res = {
@@ -393,7 +398,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as executor:
+    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
         # construct a dictionary of future to filename and repository name
         future_to_filename = \
             {
@@ -411,6 +416,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
                 all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
                                                                                       num_of_code_lines)
             except Exception as exc:
+                traceback.print_exc()
                 print('%r generated an exception: %s' % (filename, exc))
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
