@@ -8,7 +8,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 import itertools
 
-# regular expressions for lambda usages patterns
+# regular expressions patterns for capturing lambdas' usages
 MAP_REDUCE_FILTER_PATTERN = "((.*?)(map|reduce|filter)(.*?)lambda (.*?):(.*?)\n)"
 FUNC_ARG_PATTERN = "((.*?)\\((.*?)=lambda (.*?):(.*?)\\)(.*?)\n)"
 RET_VALUE_PATTERN = "((.*?)return lambda (.*?):(.*?)\n)"
@@ -31,7 +31,7 @@ BOOL_COND_PATTERN = "((.*?)lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|=
 
 def process_lambda_exp_single_file(python_filename):
     """
-    count the number of lambda expressions appearances and usages in a single python file
+    count the number of lambda expressions occurrences and usages in a single python file
     :param python_filename: the path to the python file to be processed
     :return: dict_types - a dictionary containing the types of the lambda expressions
     as keys and their counts as values in this single file
@@ -50,10 +50,10 @@ def process_lambda_exp_single_file(python_filename):
 
 def count_usages_of_lambda_expressions(python_file_text):
     """
-    count the number of the various usages of lambda expressions in a single python file
+    count the number of the usages of lambda expressions in a single python file
     :param python_file_text: the python file as string (text)
-    :return: dict_type - a dictionary containing the type of each lambda expression as key, and it's number in this
-    python file as value
+    :return: dict_types_to_counts - a dictionary containing the type of each lambda expression as key,
+    and it's number in this python file as value
     """
     map_filter_reduce_find_all = [x[0] for x in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]
     function_arguments_find_all = [x[0] for x in re.findall(FUNC_ARG_PATTERN, python_file_text)]
@@ -103,6 +103,8 @@ def count_usages_of_lambda_expressions(python_file_text):
                                                     arithmetic_operators_find_all,
                                                     noname_vars_find_all,
                                                     boolean_conditions_find_all)
+    # compute the set minus of all the lambdas occurrences and the specific usages
+    # we defined earlier in the code, to find the "other" category
     all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
     for key in dict_types_to_find_all_res.keys():
         with open(f"./lambdas_{key}.txt", "a") as f:
@@ -120,8 +122,8 @@ def calc_average_num_lambda_per_file(all_files_dict_types):
     :param all_files_dict_types: a dictionary containing the following:
     key = (file_name, repository_name)
     value = (dictionary containing the counts of the various usages of lambda expression in this python file,
-    the number of lambda appearances)
-    :return: average number of lambda usages in a single file
+    the number of lambdas in this python file)
+    :return: average number of lambdas in a single file
     """
     lambda_count = 0
     for key in all_files_dict_types.keys():
@@ -136,18 +138,16 @@ def calc_average_num_lambdas_per_repository(all_files_dict_types):
     calculates the average number of lambda usages in a repository
     :param all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
-    value = (dictionary containing the counts of the various
-    usages of lambda expression in this python file,
-    the number of lambda appearances)
-    :return: average number of lambda usages in a repository
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambdas in this python file)
+    :return: average number of lambda usages in a repository and the total number of lambdas in all the
+    repositories together
     """
     total_number_of_lambdas = 0
     list_of_repositories = []
     for filename, repo_name, repo_path in all_files_dict_types.keys():
-        # if the repository name is not a key - add it with a count of zero
         num_lambdas_in_file = all_files_dict_types[(filename, repo_name, repo_path)][1]
         total_number_of_lambdas += num_lambdas_in_file
-        # divide the number of lambdas in each repository by the total number of repositories
         if repo_name not in list_of_repositories:
             list_of_repositories.append(repo_name)
     return total_number_of_lambdas / len(list_of_repositories), total_number_of_lambdas
@@ -168,13 +168,18 @@ def get_repository_dir_name(path, start_loc_path, end_loc_path):
 
 
 def calc_number_of_code_line_python_file(python_file_text):
+    """
+    calculate the number of code lines (non-empty and non comment lines) in a single python file
+    :param python_file_text: the python file as string (text)
+    :return: the number of lines of code in this python file
+    """
     lines_of_code = re.findall(r"[^#](.+?)\n", python_file_text)
     return len(lines_of_code)
 
 
 def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
     """
-    calculate the lambdas' ratio to the repository size in bytes
+    calculate ratio between the number of lambdas to the number of code lines in a repository
     :param all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
     value = (dictionary containing the counts of the various usages of lambda expression in this python file,
@@ -196,14 +201,14 @@ def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
     return dict_num_lambdas_num_code_lines_per_repo
 
 
-def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
-                                                         dict_num_lambdas_num_code_lines_per_repo):
+def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
+                                                        dict_num_lambdas_num_code_lines_per_repo):
     """
     calculate correlation measurements with respect to the lambdas number in each repository
     :param dict_num_lambdas_num_code_lines_per_repo: dictionary containing the following:
     key = (repository name)
     value = (ratio of the number of lambdas and the repository size, size of the repository in bytes)
-    :param df_repos_props: the data frame containing all the repositories properties extracted from the github
+    :param df_repos_props: the data frame containing all the repositories properties extracted from the GitHub
     crawling
     key = (filename, repository name, repository path)
     value = (dictionary containing the counts of the various usages of lambda expression in this python file,
@@ -261,7 +266,7 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
         x="#lambdas", y="#Forks of repo")
     plt.tight_layout()
     plt.savefig("./forks_lambdas.png")
-    # percentage
+    # percentage of python programming language
     print("the correlation between the Python percent and the number of lambdas is:\n"
           "{}".format(
         df_repos_props[["Python percent", "#lambdas"]].corr()))
@@ -282,8 +287,10 @@ def check_correlation_between_repos_props_and_lambda_exp(df_repos_props,
 
 def plot_bar_plots_lambdas_types(all_files_dict_types):
     """
-    :param all_files_dict_types:
-    :return:
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
     """
     dict_types_accumulated_sum = {}
     for filename, repository_name, repository_path in all_files_dict_types.keys():
@@ -326,6 +333,14 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
 
 
 def count_number_of_repos_containing_lambdas(all_files_dict_types):
+    """
+    count the number of repositories containing lambda expressions
+    :param all_files_dict_types: a dictionary containing the following:
+    key = (filename, repository name, repository path)
+    value = (dictionary containing the counts of the various usages of lambda expression in this python file,
+    the number of lambda appearances)
+    :return: the number of repositories containing lambda expressions
+    """
     list_repos_containing_lambdas = []
     for filename, repository_name, repository_path in all_files_dict_types:
         dict_types, num_lambda_in_file, num_of_code_lines = all_files_dict_types[
@@ -363,7 +378,7 @@ def calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types):
 def process_all_python_files_in_parallel(repos_parent_folder):
     """
     process all the python files in all the repositories in parallel to get the number of lambdas in each
-    python file. save the results into dictionary
+    python file. save the results into dictionary.
     :param repos_parent_folder: the parent folder of all the repositories downloaded after the scraping
     :return: all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
@@ -405,12 +420,14 @@ def process_all_python_files_in_parallel(repos_parent_folder):
 
 
 def main():
+    # read the containing the metadata of each repository
     df_repos_props = pd.read_csv("./repos_props.csv")
+    # process all the .py files in each repository
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
     num_of_repos_containing_lambdas = count_number_of_repos_containing_lambdas(all_files_dict_types)
     max_num_lambdas_in_file = count_maximum_number_of_lambdas_per_file(all_files_dict_types)
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
-    check_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
+    calc_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
     avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
     avg_num_lambda_per_repository, total_num_lambda_per_repository = calc_average_num_lambdas_per_repository(
         all_files_dict_types)
