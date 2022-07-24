@@ -6,8 +6,10 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
-
 config.json
 *.bak
-
+*.zip
+*.7z
 **/pythonReposForMethods
+lambdas_types_text_files/**
+

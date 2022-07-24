@@ -21,15 +21,13 @@ ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
 CALLBACK_PATTERN = r"((.*?)[c|C]allback(.*?)lambda(.*?)\n)"
 STRING_FORMATTING_PATTERN = "((.*?)lambda([^\\(#\\,\\=\\[\\)]*?)str\\((.*?)\n)"
 ERROR_RAISING_PATTERN = "((.*?)lambda([^#\\(\\)\\.\\_\\,]*?)error(.*?)\n)"
-IN_OPERATOR_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*\w*\s*in(.*?)\n)"
+IN_OPERATOR_PATTERN = "((.*?)lambda\\s(\\w+):\\s+(in|isin)\\s(.*?)\n)"
 INNER_LAMBDA_PATTERN = "((.*?)lambda(.*?):(.*?)in lambda(.*?):(.*?)\n)"
-INDEXING_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*([^(]*?|\2|\3)\[(.*?)\n)"
+INDEXING_PATTERN = "((.*?)lambda\\s(\\w+):\\s?\\[(.*?)\n)"
 NONE_PATTERN = "((.*?)lambda(.*?):\\s?None(.*?)\n)"
-ARITHMETIC_OPERATIONS_1_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
-ARITHMETIC_OPERATIONS_2_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:\s*(\2|\3|\w*)\s*[\+|\/|\*|\-]\s*(\2|\3|\w*)(.*?)\n)"
-NONAME_VAR_PATTERN = r"((.*?)lambda\s*_\n)"
-BOOL_COND_PATTERN = r"((.*?)lambda\s*(\w+)\s*(\,\s?\w+)*:(.*)(<|==|!=|>|<=|=<|=>|>=)(.*?)\n)"
-FUNCTION_CALL_PATTERN = r"((.*?)lambda\s*(\w+)\s?\,?\s?(\w+)*:(\s*\w*)[\(](.*?)\n)"
+ARITHMETIC_OPERATIONS_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
+NONAME_VAR_PATTERN = "((.*?)lambda [\\*\\_]?_:(.*?)\n)"
+BOOL_COND_PATTERN = "((.*?)lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=))(.*?)\n)"
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -44,7 +42,7 @@ def process_lambda_exp_single_file(python_filename):
     print(f"processing file: {python_filename}")
     with open(python_filename, "r", encoding="utf-8") as f:
         python_file_text = f.read()
-        num_lambda_in_file = len(re.findall(r"lambda (.*?):", python_file_text))
+        num_lambda_in_file = len(re.findall(ALL_PATTERN, python_file_text))
         dict_types = {}
         if num_lambda_in_file > 0:
             dict_types = count_usages_of_lambda_expressions(python_file_text)
@@ -72,10 +70,9 @@ def count_usages_of_lambda_expressions(python_file_text):
     in_operator_find_all = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
     indexing_find_all = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
     none_ptrn_find_all = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
-    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_1_PATTERN, python_file_text)]
-    arithmetic_operators_find_all.extend([x[0] for x in re.findall(ARITHMETIC_OPERATIONS_2_PATTERN, python_file_text)])
+    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
     noname_vars_find_all = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
-    boolean_conditions_find_all = [x[0] for x in re.findall(BOOL_COND_PATTERN, python_file_text)]
+    boolean_conditions_find_all = []
     dict_types_to_find_all_res = {
         "map_reduce_filter": map_filter_reduce_find_all,
         "function_arguments": function_arguments_find_all,
@@ -95,7 +92,7 @@ def count_usages_of_lambda_expressions(python_file_text):
         "boolean_conditions": boolean_conditions_find_all
     }
     dict_types_to_counts = {k: len(v) for k, v in dict_types_to_find_all_res.items()}
-    all_lambdas_find_all = re.findall(ALL_PATTERN, python_file_text)[0]
+    all_lambdas_find_all = [x[0] for x in re.findall(ALL_PATTERN, python_file_text)]
     all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
                                                     return_value_find_all, unicode_find_all, exception_find_all,
                                                     async_find_all, iterators_find_all,
@@ -110,12 +107,12 @@ def count_usages_of_lambda_expressions(python_file_text):
                                                     boolean_conditions_find_all)
     # compute the set minus of all the lambdas occurrences and the specific usages
     # we defined earlier in the code, to find the "other" category
-    all_lambdas_other = set(all_lambdas_find_all) - set(all_lambdas_types_occurrences)
+    all_lambdas_other = [x for x in all_lambdas_find_all if x not in all_lambdas_types_occurrences]
     for key in dict_types_to_find_all_res.keys():
-        with open(f"./lambdas_{key}.txt", "a") as f:
+        with open(f"./lambdas_types_text_files/lambdas_{key}.txt", "a") as f:
             f.writelines("\n".join(dict_types_to_find_all_res[key]))
     all_lambdas_types_count = sum(dict_types_to_counts.values())
-    with open(f"./lambdas_other.txt", "a") as f:
+    with open(f"./lambdas_types_text_files/lambdas_other.txt", "a") as f:
         f.writelines("\n".join(all_lambdas_other))
     dict_types_to_counts["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
     return dict_types_to_counts
@@ -394,7 +391,9 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     # get all the python files from all the repositories
     repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
     repos_folders = repos_folders[:100]
-    files = [f for repo_folder in repos_folders for f in glob.glob(r'{}/**/*.py'.format(repo_folder))]
+    files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
+             for repo_folder in repos_folders
+             for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
     lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
@@ -403,9 +402,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
         future_to_filename = \
             {
                 executor.submit(process_lambda_exp_single_file, filename):
-                    (filename,
-                     get_repository_dir_name(filename, 1, 1),
-                     get_repository_dir_name(filename, 0, 1)) for filename in files
+                    (filename, repository_name, repository_path) for filename, repository_name, repository_path in files
             }
         # for each of the futures, check if it finished and then take
         # the dictionary of lambdas statistics and merge it into the large dictionary
@@ -416,7 +413,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
                 all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
                                                                                       num_of_code_lines)
             except Exception as exc:
-                traceback.print_exc()
+                # traceback.print_exc()
                 print('%r generated an exception: %s' % (filename, exc))
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:
@@ -427,6 +424,10 @@ def process_all_python_files_in_parallel(repos_parent_folder):
 
 def main():
     # read the containing the metadata of each repository
+    text_files_lambdas = [text_file_lambdas for text_file_lambdas in glob.glob(r"./lambdas_types_text_files/*.txt")]
+    for text_file_lambdas in text_files_lambdas:
+        if os.path.exists(text_file_lambdas):
+            os.remove(text_file_lambdas)
     df_repos_props = pd.read_csv("./repos_props.csv")
     # process all the .py files in each repository
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
