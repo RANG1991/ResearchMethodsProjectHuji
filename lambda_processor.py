@@ -7,27 +7,37 @@ import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
 import itertools
-import traceback
+from enum import Enum
+
+PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALUE_PATTERN ITER_PATTERN UNICODE_PATTERN '
+                            'EXCEPTION_PATTERN ASYNC_TASKS_PATTERN ALL_PATTERN CALLBACK_PATTERN '
+                            'STRING_FORMATTING_PATTERN '
+                            'ERROR_RAISING_PATTERN IN_OPERATOR_PATTERN INNER_LAMBDA_PATTERN '
+                            'INDEXING_PATTERN NONE_PATTERN ARITHMETIC_OPERATIONS_PATTERN NONAME_VAR_PATTERN '
+                            'BOOL_COND_PATTERN FUNCTION_CALL')
 
 # regular expressions patterns for capturing lambdas' usages
-MAP_REDUCE_FILTER_PATTERN = "((.*?)(map|reduce|filter)(.*?)lambda (.*?):(.*?)\n)"
-FUNC_ARG_PATTERN = "((.*?)\\((.*?)=lambda (.*?):(.*?)\\)(.*?)\n)"
-RET_VALUE_PATTERN = "((.*?)return lambda (.*?):(.*?)\n)"
-ITER_PATTERN = "((.*?)lambda (.*?):(.*?)(list|tuple|string|dict)(.*?)\n)"
-UNICODE_PATTERN = "((.*?)lambda (.*?):(.*?).encode(.*?)\n)"
-EXCEPTION_PATTERN = "((.*?)lambda (.*?): future.set_exception(.*?)\n)"
-ASYNC_TASKS_PATTERN = "((.*?)lambda (.*?):(.*?)async(.*?)\n)"
-ALL_PATTERN = "((.*?)lambda (.*?):(.*?)\n)"
-CALLBACK_PATTERN = r"((.*?)[c|C]allback(.*?)lambda(.*?)\n)"
-STRING_FORMATTING_PATTERN = "((.*?)lambda([^\\(#\\,\\=\\[\\)]*?)str\\((.*?)\n)"
-ERROR_RAISING_PATTERN = "((.*?)lambda([^#\\(\\)\\.\\_\\,]*?)error(.*?)\n)"
-IN_OPERATOR_PATTERN = "((.*?)lambda\\s(\\w+):\\s+(in|isin)\\s(.*?)\n)"
-INNER_LAMBDA_PATTERN = "((.*?)lambda(.*?):(.*?)in lambda(.*?):(.*?)\n)"
-INDEXING_PATTERN = "((.*?)lambda\\s(\\w+):\\s?\\[(.*?)\n)"
-NONE_PATTERN = "((.*?)lambda(.*?):\\s?None(.*?)\n)"
-ARITHMETIC_OPERATIONS_PATTERN = "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)(.*?)\n)"
-NONAME_VAR_PATTERN = "((.*?)lambda [\\*\\_]?_:(.*?)\n)"
-BOOL_COND_PATTERN = "((.*?)lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=))(.*?)\n)"
+PATTERNS_DICT = {
+    PATTERNS.MAP_REDUCE_FILTER_PATTERN: "((map|reduce|filter)(.*?)lambda (.*?):)",
+    PATTERNS.FUNC_ARG_PATTERN: "(\\((.*?)=lambda (.*?):(.*?)\\))",
+    PATTERNS.RET_VALUE_PATTERN: "(return lambda (.*?):)",
+    PATTERNS.ITER_PATTERN: "(lambda (.*?):(.*?)(list|tuple|string|dict))",
+    PATTERNS.UNICODE_PATTERN: "(lambda (.*?):(.*?).encode)",
+    PATTERNS.EXCEPTION_PATTERN: "(lambda (.*?): future.set_exception)",
+    PATTERNS.ASYNC_TASKS_PATTERN: "(lambda (.*?):(.*?)async)",
+    PATTERNS.ALL_PATTERN: "(lambda (.*?):)",
+    PATTERNS.CALLBACK_PATTERN: r"([c|C]allback(.*?)lambda)",
+    PATTERNS.STRING_FORMATTING_PATTERN: "(lambda([^\\(#\\,\\=\\[\\)]*?)str\\()",
+    PATTERNS.ERROR_RAISING_PATTERN: "(lambda([^#\\(\\)\\.\\_\\,]*?)error)",
+    PATTERNS.IN_OPERATOR_PATTERN: "(lambda\\s(\\w+):\\s+(in|isin)\\s)",
+    PATTERNS.INNER_LAMBDA_PATTERN: "(lambda(.*?):(.*?)in lambda(.*?):)",
+    PATTERNS.INDEXING_PATTERN: "(lambda\\s(\\w+):\\s?\\[)",
+    PATTERNS.NONE_PATTERN: "(lambda(.*?):\\s?None)",
+    PATTERNS.ARITHMETIC_OPERATIONS_PATTERN: "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?))",
+    PATTERNS.NONAME_VAR_PATTERN: "(lambda [\\*\\_]?_:)",
+    PATTERNS.BOOL_COND_PATTERN: "(lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=)))",
+    PATTERNS.FUNCTION_CALL: r"(lambda\s*?(\w+)\s?\,?\s?(\w+)*?:(\s*?\w*?)[\(])"
+}
 
 
 def process_lambda_exp_single_file(python_filename):
@@ -42,7 +52,7 @@ def process_lambda_exp_single_file(python_filename):
     print(f"processing file: {python_filename}")
     with open(python_filename, "r", encoding="utf-8") as f:
         python_file_text = f.read()
-        num_lambda_in_file = len(re.findall(ALL_PATTERN, python_file_text))
+        num_lambda_in_file = len([x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ALL_PATTERN], python_file_text)])
         dict_types = {}
         if num_lambda_in_file > 0:
             dict_types = count_usages_of_lambda_expressions(python_file_text)
@@ -57,22 +67,25 @@ def count_usages_of_lambda_expressions(python_file_text):
     :return: dict_types_to_counts - a dictionary containing the type of each lambda expression as key,
     and it's number in this python file as value
     """
-    map_filter_reduce_find_all = [x[0] for x in re.findall(MAP_REDUCE_FILTER_PATTERN, python_file_text)]
-    function_arguments_find_all = [x[0] for x in re.findall(FUNC_ARG_PATTERN, python_file_text)]
-    return_value_find_all = [x[0] for x in re.findall(RET_VALUE_PATTERN, python_file_text)]
-    unicode_find_all = [x[0] for x in re.findall(UNICODE_PATTERN, python_file_text)]
-    exception_find_all = [x[0] for x in re.findall(EXCEPTION_PATTERN, python_file_text)]
-    async_find_all = [x[0] for x in re.findall(ASYNC_TASKS_PATTERN, python_file_text)]
-    iterators_find_all = [x[0] for x in re.findall(ITER_PATTERN, python_file_text)]
-    callbacks_find_all = [x[0] for x in re.findall(CALLBACK_PATTERN, python_file_text)]
-    string_formatting_find_all = [x[0] for x in re.findall(STRING_FORMATTING_PATTERN, python_file_text)]
-    error_raising_find_all = [x[0] for x in re.findall(ERROR_RAISING_PATTERN, python_file_text)]
-    in_operator_find_all = [x[0] for x in re.findall(IN_OPERATOR_PATTERN, python_file_text)]
-    indexing_find_all = [x[0] for x in re.findall(INDEXING_PATTERN, python_file_text)]
-    none_ptrn_find_all = [x[0] for x in re.findall(NONE_PATTERN, python_file_text)]
-    arithmetic_operators_find_all = [x[0] for x in re.findall(ARITHMETIC_OPERATIONS_PATTERN, python_file_text)]
-    noname_vars_find_all = [x[0] for x in re.findall(NONAME_VAR_PATTERN, python_file_text)]
-    boolean_conditions_find_all = []
+    map_filter_reduce_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.MAP_REDUCE_FILTER_PATTERN],
+                                                           python_file_text)]
+    function_arguments_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.FUNC_ARG_PATTERN], python_file_text)]
+    return_value_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.RET_VALUE_PATTERN], python_file_text)]
+    unicode_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.UNICODE_PATTERN], python_file_text)]
+    exception_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.EXCEPTION_PATTERN], python_file_text)]
+    async_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ASYNC_TASKS_PATTERN], python_file_text)]
+    iterators_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ITER_PATTERN], python_file_text)]
+    callbacks_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.CALLBACK_PATTERN], python_file_text)]
+    string_formatting_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.STRING_FORMATTING_PATTERN],
+                                                           python_file_text)]
+    error_raising_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ERROR_RAISING_PATTERN], python_file_text)]
+    in_operator_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.IN_OPERATOR_PATTERN], python_file_text)]
+    indexing_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.INDEXING_PATTERN], python_file_text)]
+    none_pattern_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.NONE_PATTERN], python_file_text)]
+    arithmetic_operators_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ARITHMETIC_OPERATIONS_PATTERN],
+                                                              python_file_text)]
+    noname_vars_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.NONAME_VAR_PATTERN], python_file_text)]
+    boolean_conditions_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.BOOL_COND_PATTERN], python_file_text)]
     dict_types_to_find_all_res = {
         "map_reduce_filter": map_filter_reduce_find_all,
         "function_arguments": function_arguments_find_all,
@@ -86,35 +99,32 @@ def count_usages_of_lambda_expressions(python_file_text):
         "error_raising": error_raising_find_all,
         "in_operator": in_operator_find_all,
         "indexing": indexing_find_all,
-        "none_ptrn": none_ptrn_find_all,
+        "none_ptrn": none_pattern_find_all,
         "arithmetic_operators": arithmetic_operators_find_all,
         "noname_vars": noname_vars_find_all,
         "boolean_conditions": boolean_conditions_find_all
     }
     dict_types_to_counts = {k: len(v) for k, v in dict_types_to_find_all_res.items()}
-    all_lambdas_find_all = [x[0] for x in re.findall(ALL_PATTERN, python_file_text)]
-    all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all, function_arguments_find_all,
-                                                    return_value_find_all, unicode_find_all, exception_find_all,
-                                                    async_find_all, iterators_find_all,
+    all_lambdas_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ALL_PATTERN], python_file_text)]
+    all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all,
+                                                    function_arguments_find_all,
+                                                    return_value_find_all,
+                                                    unicode_find_all,
+                                                    exception_find_all,
+                                                    async_find_all,
+                                                    iterators_find_all,
                                                     callbacks_find_all,
                                                     string_formatting_find_all,
                                                     error_raising_find_all,
                                                     in_operator_find_all,
                                                     indexing_find_all,
-                                                    none_ptrn_find_all,
+                                                    none_pattern_find_all,
                                                     arithmetic_operators_find_all,
                                                     noname_vars_find_all,
                                                     boolean_conditions_find_all)
-    # compute the set minus of all the lambdas occurrences and the specific usages
-    # we defined earlier in the code, to find the "other" category
-    all_lambdas_other = [x for x in all_lambdas_find_all if x not in all_lambdas_types_occurrences]
     for key in dict_types_to_find_all_res.keys():
         with open(f"./lambdas_types_text_files/lambdas_{key}.txt", "a") as f:
             f.writelines("\n".join(dict_types_to_find_all_res[key]))
-    all_lambdas_types_count = sum(dict_types_to_counts.values())
-    with open(f"./lambdas_types_text_files/lambdas_other.txt", "a") as f:
-        f.writelines("\n".join(all_lambdas_other))
-    dict_types_to_counts["other"] = len(all_lambdas_find_all) - all_lambdas_types_count
     return dict_types_to_counts
 
 
@@ -304,7 +314,7 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
     plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1,
-                         (10 ** int(math.log10(max(dict_types_accumulated_sum.values()))))),
+                         50),
                rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)
@@ -413,7 +423,6 @@ def process_all_python_files_in_parallel(repos_parent_folder):
                 all_files_dict_types[(filename, repository_name, repository_path)] = (dict_types, num_lambda_in_file,
                                                                                       num_of_code_lines)
             except Exception as exc:
-                # traceback.print_exc()
                 print('%r generated an exception: %s' % (filename, exc))
         # terminate all the futures and shutdown the thread pool
         for future in future_to_filename:

@@ -19,7 +19,7 @@
 17,crackmapexec,https://github.com/byt3bl33d3r/CrackMapExec,6000.0,13000.0,False,87.3,1009,0
 18,ctci-6th-edition-python,https://github.com/careercup/CtCI-6th-Edition-Python,4000.0,16000.0,False,100.0,5234,2
 19,cura,https://github.com/Ultimaker/Cura,39000.0,16000.0,False,70.0,7627,11
-20,abu,https://github.com/bbfamily/abu,91000.0,32000.0,False,100.0,5414,7
+20,abu,https://github.com/bbfamily/abu,91000.0,32000.0,False,100.0,6172,27
 21,adminset,https://github.com/guohongze/adminset,3000.0,14000.0,False,99.3,5942,0
 22,adversarial-robustness-toolbox,https://github.com/Trusted-AI/adversarial-robustness-toolbox,3000.0,835.0,False,99.7,9730,15
 23,aiohttp,https://github.com/aio-libs/aiohttp,125000.0,18000.0,False,97.4,44245,13
@@ -40,7 +40,7 @@
 38,arrow,https://github.com/arrow-py/arrow,79000.0,619.0,False,99.8,15414,1
 39,asciimatics,https://github.com/peterbrittain/asciimatics,31000.0,229.0,False,100.0,14666,35
 40,astropy,https://github.com/astropy/astropy,33000.0,15000.0,False,51.7,1171,1
-41,attrs,https://github.com/python-attrs/attrs,43000.0,305.0,False,100.0,8178,38
+41,attrs,https://github.com/python-attrs/attrs,43000.0,305.0,False,100.0,8178,40
 42,authlib,https://github.com/lepture/authlib,31000.0,322.0,False,100.0,165,0
 43,autojump,https://github.com/wting/autojump,138000.0,647.0,False,90.9,2434,11
 44,autokeras,https://github.com/keras-team/autokeras,85000.0,14000.0,False,99.3,4998,22
@@ -58,7 +58,7 @@
 56,biopython,https://github.com/biopython/biopython,31000.0,15000.0,False,88.2,201401,44
 57,black,https://github.com/psf/black,28000.0,18000.0,False,99.7,88404,18
 58,bokeh,https://github.com/bokeh/bokeh,164000.0,4000.0,False,56.5,7012,8
-59,boltons,https://github.com/mahmoud/boltons,58000.0,320.0,False,100.0,18565,79
+59,boltons,https://github.com/mahmoud/boltons,58000.0,320.0,False,100.0,18565,80
 60,borg,https://github.com/borgbackup/borg,84000.0,639.0,False,82.2,324,1
 61,boto,https://github.com/boto/boto,65000.0,23000.0,False,100.0,7058,5
 62,boto3,https://github.com/boto/boto3,73000.0,16000.0,False,100.0,818,0
@@ -76,7 +76,7 @@
 74,ckan,https://github.com/ckan/ckan,34000.0,18000.0,False,58.9,1224,1
 75,click,https://github.com/pallets/click,126000.0,13000.0,False,100.0,4525,18
 76,coala,https://github.com/coala/coala,33000.0,14000.0,False,94.8,1871,2
-77,coconut,https://github.com/evhub/coconut,35000.0,104.0,False,98.9,3338,11
+77,coconut,https://github.com/evhub/coconut,35000.0,104.0,False,98.9,3338,12
 78,commix,https://github.com/commixproject/commix,33000.0,700.0,False,100.0,11,0
 79,connexion,https://github.com/spec-first/connexion,4000.0,708.0,False,100.0,4082,0
 80,cookiecutter,https://github.com/cookiecutter/cookiecutter,174000.0,17000.0,False,98.7,5274,6
