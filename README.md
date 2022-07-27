@@ -1,4 +1,4 @@
-# 	Lambda-expressions in Python: Crawling & Analysis
+# 	Lambda-expressions in Python: Crawling & Processing
 
 This project crawls Python projects from github and analyze the usages of Lambda expressions among them: 
 Statistics, Types of usages and correlations with the repositories meta-data
