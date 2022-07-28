@@ -314,7 +314,7 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
             dict_types_accumulated_sum[type_name] += dict_types[type_name]
     plt.bar(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.values()), align='center')
     plt.yticks(np.arange(min(dict_types_accumulated_sum.values()), max(dict_types_accumulated_sum.values()) + 1,
-                         50),
+                         100),
                rotation=45)
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)
@@ -400,14 +400,14 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     all_files_dict_types = {}
     # get all the python files from all the repositories
     repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
-    repos_folders = repos_folders[:100]
+    repos_folders = repos_folders[:600]
     files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
              for repo_folder in repos_folders
              for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
     lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
-    with concurrent.futures.ThreadPoolExecutor(max_workers=5) as executor:
+    with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
         # construct a dictionary of future to filename and repository name
         future_to_filename = \
             {
