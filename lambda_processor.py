@@ -7,9 +7,8 @@ from matplotlib import pyplot as plt
 import numpy as np
 from enum import Enum
 from pathlib import Path
+from github_crawler import read_local_config_file
 
-
-NUM_REPOS_TO_PARSE = 600
 
 PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALUE_PATTERN ITER_PATTERN UNICODE_PATTERN '
                             'EXCEPTION_PATTERN ASYNC_TASKS_PATTERN ALL_PATTERN CALLBACK_PATTERN '
@@ -369,10 +368,11 @@ def calc_ratio_total_lambdas_total_lines_of_code(all_files_dict_types):
     return num_total_lambdas / num_total_lines_of_code
 
 
-def process_all_python_files_in_parallel(repos_parent_folder):
+def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse):
     """
     process all the python files in all the repositories in parallel to get the number of lambdas in each
     python file. save the results into dictionary.
+    :param num_repos_to_parse: number of repositories to parse
     :param repos_parent_folder: the parent folder of all the repositories downloaded after the scraping
     :return: all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
@@ -382,7 +382,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     all_files_dict_types = {}
     # get all the python files from all the repositories
     repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
-    repos_folders = repos_folders[:NUM_REPOS_TO_PARSE]
+    repos_folders = repos_folders[:num_repos_to_parse]
     files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
              for repo_folder in repos_folders
              for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
@@ -415,11 +415,12 @@ def process_all_python_files_in_parallel(repos_parent_folder):
 
 def main():
     # create the folder of the plots if it doesn't exist
+    _, _, _, _, _, num_repos_to_parse = read_local_config_file("./config.json")
     Path("./plots").mkdir(exist_ok=True)
     # read the containing the metadata of each repository
     df_repos_props = pd.read_csv("./repos_props.csv")
     # process all the .py files in each repository
-    all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")
+    all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods", num_repos_to_parse)
     num_of_repos_containing_lambdas = count_number_of_repos_containing_lambdas(all_files_dict_types)
     max_num_lambdas_in_file = count_maximum_number_of_lambdas_per_file(all_files_dict_types)
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
