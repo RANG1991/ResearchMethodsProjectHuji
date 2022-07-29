@@ -1,0 +1,5 @@
+{
+	"username": "Your GitHub email",
+	"password": "Your GitHub password",
+	"driver_p": "The location (full path) of the chromedriver of selenium (chromedriver.exe)"
+}
