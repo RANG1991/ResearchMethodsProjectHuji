@@ -9,7 +9,6 @@ django/django,https://github.com/django/django,65.4k,27.5k,False,97.2%
 pallets/flask,https://github.com/pallets/flask,60k,15.2k,False,99.9%
 521xueweihan/HelloGitHub,https://github.com/521xueweihan/HelloGitHub,57.8k,8k,False,100.0%
 keras-team/keras,https://github.com/keras-team/keras,55.8k,19.2k,False,97.5%
-home-assistant/core,https://github.com/home-assistant/core,54.2k,19k,False,100.0%
 ansible/ansible,https://github.com/ansible/ansible,54k,22.2k,False,88.1%
 scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,50.9k,23.3k,False,91.4%
 psf/requests,https://github.com/psf/requests,47.9k,8.8k,False,99.8%
@@ -19,3 +18,4 @@ python/cpython,https://github.com/python/cpython,46.6k,24.1k,False,65.5%
 ageitgey/face_recognition,https://github.com/ageitgey/face_recognition,45.3k,12.4k,False,79.1%
 scrapy/scrapy,https://github.com/scrapy/scrapy,44.1k,9.7k,False,99.7%
 localstack/localstack,https://github.com/localstack/localstack,42.4k,3.2k,False,99.1%
+fighting41love/funNLP,https://github.com/fighting41love/funNLP,42k,11.6k,False,100.0%
