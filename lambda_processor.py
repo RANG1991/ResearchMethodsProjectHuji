@@ -1,4 +1,3 @@
-import math
 import re
 import concurrent.futures
 import glob
@@ -6,8 +5,11 @@ import os
 import pandas as pd
 from matplotlib import pyplot as plt
 import numpy as np
-import itertools
 from enum import Enum
+from pathlib import Path
+
+
+NUM_REPOS_TO_PARSE = 600
 
 PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALUE_PATTERN ITER_PATTERN UNICODE_PATTERN '
                             'EXCEPTION_PATTERN ASYNC_TASKS_PATTERN ALL_PATTERN CALLBACK_PATTERN '
@@ -87,44 +89,24 @@ def count_usages_of_lambda_expressions(python_file_text):
     noname_vars_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.NONAME_VAR_PATTERN], python_file_text)]
     boolean_conditions_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.BOOL_COND_PATTERN], python_file_text)]
     dict_types_to_find_all_res = {
-        "map_reduce_filter": map_filter_reduce_find_all,
-        "function_arguments": function_arguments_find_all,
-        "return_value": return_value_find_all,
-        "unicode": unicode_find_all,
-        "exception": exception_find_all,
-        "async": async_find_all,
-        "iterators": iterators_find_all,
-        "callbacks": callbacks_find_all,
-        "string_formatting": string_formatting_find_all,
-        "error_raising": error_raising_find_all,
-        "in_operator": in_operator_find_all,
-        "indexing": indexing_find_all,
-        "none_ptrn": none_pattern_find_all,
-        "arithmetic_operators": arithmetic_operators_find_all,
-        "noname_vars": noname_vars_find_all,
-        "boolean_conditions": boolean_conditions_find_all
+        "Map Reduce Filter": map_filter_reduce_find_all,
+        "Function Arguments": function_arguments_find_all,
+        "Return Statements": return_value_find_all,
+        "Unicode Encoding Functions": unicode_find_all,
+        "Exception handling": exception_find_all,
+        "Asynchronous Functions": async_find_all,
+        "Iterator": iterators_find_all,
+        "Callbacks": callbacks_find_all,
+        "String Formatting": string_formatting_find_all,
+        "Error Raising": error_raising_find_all,
+        "In Operator": in_operator_find_all,
+        "Indexing": indexing_find_all,
+        "Initializing Default Values": none_pattern_find_all,
+        "Algebraic Operations": arithmetic_operators_find_all,
+        "No Name Variables": noname_vars_find_all,
+        "Boolean Conditions": boolean_conditions_find_all
     }
     dict_types_to_counts = {k: len(v) for k, v in dict_types_to_find_all_res.items()}
-    all_lambdas_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ALL_PATTERN], python_file_text)]
-    all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all,
-                                                    function_arguments_find_all,
-                                                    return_value_find_all,
-                                                    unicode_find_all,
-                                                    exception_find_all,
-                                                    async_find_all,
-                                                    iterators_find_all,
-                                                    callbacks_find_all,
-                                                    string_formatting_find_all,
-                                                    error_raising_find_all,
-                                                    in_operator_find_all,
-                                                    indexing_find_all,
-                                                    none_pattern_find_all,
-                                                    arithmetic_operators_find_all,
-                                                    noname_vars_find_all,
-                                                    boolean_conditions_find_all)
-    for key in dict_types_to_find_all_res.keys():
-        with open(f"./lambdas_types_text_files/lambdas_{key}.txt", "a") as f:
-            f.writelines("\n".join(dict_types_to_find_all_res[key]))
     return dict_types_to_counts
 
 
@@ -269,7 +251,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Stars of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Stars of repo")
     plt.tight_layout()
-    plt.savefig("./stars_lambdas.png")
+    plt.savefig("./plots/stars_lambdas.png")
     # number of forks
     print("the correlation between the number of forks and the number of lambdas is:\n"
           "{}".format(
@@ -277,7 +259,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Forks of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Forks of repo")
     plt.tight_layout()
-    plt.savefig("./forks_lambdas.png")
+    plt.savefig("./plots/forks_lambdas.png")
     # percentage of python programming language
     print("the correlation between the Python percent and the number of lambdas is:\n"
           "{}".format(
@@ -285,7 +267,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["Python percent", "#lambdas"]].plot.scatter(
         x="#lambdas", y="Python percent")
     plt.tight_layout()
-    plt.savefig("./python_perc_lambdas.png")
+    plt.savefig("./plots/python_perc_lambdas.png")
     # number of lines of code
     print("the correlation between the ratio of the repository size and the number of lambdas is:\n"
           "{}".format(
@@ -293,7 +275,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["# Code lines", "#lambdas"]].plot.scatter(
         x="#lambdas", y="# Code lines")
     plt.tight_layout()
-    plt.savefig("./code_lines_lambdas.png")
+    plt.savefig("./plots/code_lines_lambdas.png")
     plt.clf()
 
 
@@ -319,7 +301,7 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)
     plt.tight_layout()
-    plt.savefig("./bar_plot.png")
+    plt.savefig("./plots/bar_plot.png")
     plt.clf()
 
 
@@ -341,7 +323,7 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     plt.plot(base[:-1], cumulative, c='blue')
     plt.xlabel('Lambdas / Repo code lines')
     plt.grid()
-    plt.savefig("./CDF.png")
+    plt.savefig("./plots/CDF.png")
 
 
 def count_number_of_repos_containing_lambdas(all_files_dict_types):
@@ -400,7 +382,7 @@ def process_all_python_files_in_parallel(repos_parent_folder):
     all_files_dict_types = {}
     # get all the python files from all the repositories
     repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
-    repos_folders = repos_folders[:600]
+    repos_folders = repos_folders[:NUM_REPOS_TO_PARSE]
     files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
              for repo_folder in repos_folders
              for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
@@ -432,11 +414,9 @@ def process_all_python_files_in_parallel(repos_parent_folder):
 
 
 def main():
+    # create the folder of the plots if it doesn't exist
+    Path("./plots").mkdir(exist_ok=True)
     # read the containing the metadata of each repository
-    text_files_lambdas = [text_file_lambdas for text_file_lambdas in glob.glob(r"./lambdas_types_text_files/*.txt")]
-    for text_file_lambdas in text_files_lambdas:
-        if os.path.exists(text_file_lambdas):
-            os.remove(text_file_lambdas)
     df_repos_props = pd.read_csv("./repos_props.csv")
     # process all the .py files in each repository
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods")

@@ -6,8 +6,10 @@ from selenium.common.exceptions import NoSuchElementException
 from time import sleep
 import pandas as pd
 from subprocess import Popen
-import lambda_processor
+import pathlib
 import os
+
+import lambda_processor
 
 
 def read_local_config_file(filename):
@@ -120,7 +122,7 @@ def github_crawling():
     main_url = 'https://github.com/'
 
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 100
+    num_pages = 2
     try:
         # Iterates over all the result-pages
         for page_index in range(num_pages):
@@ -148,18 +150,19 @@ def github_crawling():
         df.to_csv("repos_props.csv")
 
 
-def create_cloning_script():
+def create_cloning_script(repos_folder_path):
     df_repos = pd.read_csv("./repos_props.csv")
     df_repos = df_repos[df_repos["repo_is_forked"] == False]
     df_repos["percentage_python_lang"] = df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", "")))
     df_repos_links = df_repos["repo_link"].tolist()
-    with open("./pythonReposForMethods/clone_all_python_repos.bat", "w") as f:
+    script_file_path = f"{repos_folder_path}/clone_all_python_repos.bat"
+    with open(script_file_path, "w") as f:
         for i in range(len(df_repos_links)):
             f.write("git clone {}\n".format(df_repos_links[i]))
 
 
-def remove_all_non_python_files():
-    for path, subdirs, files in os.walk(r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods"):
+def remove_all_non_python_files(repos_folder_path):
+    for path, subdirs, files in os.walk(repos_folder_path):
         for name in files:
             try:
                 file_ext = os.path.splitext(os.path.join(path, name))[1]
@@ -170,11 +173,15 @@ def remove_all_non_python_files():
 
 
 if __name__ == "__main__":
-    # github_crawling()
-    # create_cloning_script()
-    # Runs the scripts using subprocess module
-    # p = Popen(["./clone_all_python_repos.bat"], cwd=r"C:\Users\galun\PyCharmProjects\ResearchMethodsProjectHuji\pythonReposForMethods")
-    # stdout, stderr = p.communicate()
-    # p.wait()
-    remove_all_non_python_files()
+    github_crawling()
+    repos_folder_path = (pathlib.Path(__file__).parent / "pythonReposForMethods").resolve()
+    # create the folder for the repositories if it doesn't exist
+    pathlib.Path(repos_folder_path).mkdir(exist_ok=True)
+    create_cloning_script(repos_folder_path)
+    # run the scripts using subprocess module
+    script_file_path = f"{repos_folder_path}/clone_all_python_repos.bat"
+    p = Popen([script_file_path], cwd=repos_folder_path)
+    stdout, stderr = p.communicate()
+    p.wait()
+    remove_all_non_python_files(repos_folder_path)
     lambda_processor.main()

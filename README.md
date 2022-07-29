@@ -39,7 +39,7 @@ Background, The Research Question, Methodologies, Results, Discussion and Threat
 ```
 Run the following two commands in the anaconda prompt (after installing anaconda):
 
-1. conda create -n <env_name> python=3.7
+1. conda create -n <env_name> python=3.8
 (wait until the environment will be created successfully)
 
 2. conda activate <env_name>
