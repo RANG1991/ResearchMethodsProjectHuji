@@ -12,4 +12,5 @@ config.json
 *.7z
 **/pythonReposForMethods
 lambdas_types_text_files/**
+.idea/*
 
