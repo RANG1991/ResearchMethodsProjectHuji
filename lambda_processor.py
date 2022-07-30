@@ -302,7 +302,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
 
 def plot_bar_plots_lambdas_types(all_files_dict_types):
     """
-    :param all_files_dict_types: a dictionary containing the following:
+    param all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
     value = (dictionary containing the counts of the various usages of lambda expression in this python file,
     the number of lambda appearances)
@@ -343,6 +343,7 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     # plot the cumulative function
     plt.plot(base[:-1], cumulative, c='blue')
     plt.xlabel('Lambdas / Repo code lines')
+    plt.ylabel('Probability')
     plt.grid()
     plt.savefig("./plots/CDF.png")
 

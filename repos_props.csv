@@ -13,7 +13,7 @@ home-assistant/core,https://github.com/home-assistant/core,54.2k,19k,False,100.0
 ansible/ansible,https://github.com/ansible/ansible,54k,22.2k,False,88.1%
 scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,50.9k,23.3k,False,91.4%
 psf/requests,https://github.com/psf/requests,47.9k,8.8k,False,99.8%
-tiangolo/fastapi,https://github.com/tiangolo/fastapi,47.7k,3.8k,False,99.9%
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,47.8k,3.8k,False,99.9%
 python/cpython,https://github.com/python/cpython,46.6k,24.1k,False,65.5%
 3b1b/manim,https://github.com/3b1b/manim,46k,5k,False,94.8%
 ageitgey/face_recognition,https://github.com/ageitgey/face_recognition,45.3k,12.4k,False,79.1%
