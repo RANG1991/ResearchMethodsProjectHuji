@@ -1,4 +1,4 @@
-from
+from .github_crawler import read_local_config_file
 import re
 import concurrent.futures
 import glob
@@ -438,9 +438,9 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
 def main():
     # create the folder of the plots if it doesn't exist
     _, _, _, _, _, num_repos_to_parse, _ = read_local_config_file("./config.json")
-    Path("plots").mkdir(exist_ok=True)
+    Path("./plots").mkdir(exist_ok=True)
     # read the containing the metadata of each repository
-    df_repos_props = pd.read_csv("repos_props.csv")
+    df_repos_props = pd.read_csv("./repos_props.csv")
     # process all the .py files in each repository
     all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods", num_repos_to_parse)
     num_of_repos_containing_lambdas = count_number_of_repos_containing_lambdas(all_files_dict_types)

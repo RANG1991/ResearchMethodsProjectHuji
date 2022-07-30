@@ -121,7 +121,7 @@ def github_crawling():
     options.headless = True
 
     # get the credentials from the configuration file
-    username, password, driver_path, _, _, _, num_pages_to_crawl = read_local_config_file("config.json")
+    username, password, driver_path, _, _, _, num_pages_to_crawl = read_local_config_file("./config.json")
     driver = webdriver.Chrome(driver_path, chrome_options=options)
     github_login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
@@ -155,8 +155,8 @@ def github_crawling():
 
 
 def create_cloning_script(repos_folder_path):
-    df_repos = pd.read_csv("repos_props.csv")
-    _, _, _, python_perc, allow_forked, _, _ = read_local_config_file("config.json")
+    df_repos = pd.read_csv("./repos_props.csv")
+    _, _, _, python_perc, allow_forked, _, _ = read_local_config_file("./config.json")
     if not allow_forked:
         df_repos = df_repos[df_repos["repo_is_forked"] == False]
     df_repos["percentage_python_lang"] = df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", "")))
