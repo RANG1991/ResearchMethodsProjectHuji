@@ -128,13 +128,6 @@ def count_usages_of_lambda_expressions(python_file_text):
                                                     arithmetic_operators_find_all,
                                                     noname_vars_find_all,
                                                     boolean_conditions_find_all)
-    Path.mkdir(Path("./lambdas_types_text_files"), exist_ok=True)
-    all_lambdas_other = [x for x in all_lambdas_find_all if x not in all_lambdas_types_occurrences]
-    for key in dict_types_to_find_all_res.keys():
-        with open(f"./lambdas_types_text_files/lambdas_{key}.txt", "a") as f:
-            f.writelines("\n".join(dict_types_to_find_all_res[key]))
-    with open(f"./lambdas_types_text_files/lambdas_other.txt", "a") as f:
-        f.writelines("\n".join(all_lambdas_other))
     return dict_types_to_counts
 
 
@@ -442,10 +435,6 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
 
 
 def main():
-    text_files_lambdas = [text_file_lambdas for text_file_lambdas in glob.glob(r"./lambdas_types_text_files/*.txt")]
-    for text_file_lambdas in text_files_lambdas:
-        if os.path.exists(text_file_lambdas):
-            os.remove(text_file_lambdas)
     # create the folder of the plots if it doesn't exist
     _, _, _, _, _, num_repos_to_parse, _ = read_local_config_file("./config.json")
     Path("./plots").mkdir(exist_ok=True)
