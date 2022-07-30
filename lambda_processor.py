@@ -341,10 +341,10 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     cumulative = np.cumsum(values)
     cumulative = (cumulative - np.min(cumulative)) / np.max(cumulative)
     # plot the cumulative function
-    plt.plot(base[:-1], cumulative, c='blue')
     plt.xlabel('Lambdas / Repo code lines')
     plt.ylabel('Probability')
     plt.grid()
+    plt.plot(base[:-1], cumulative, c='blue')
     plt.savefig("./plots/CDF.png")
 
 
