@@ -169,20 +169,6 @@ def calc_average_num_lambdas_per_repository(all_files_dict_types):
     return total_number_of_lambdas / len(list_of_repositories), total_number_of_lambdas
 
 
-def get_repository_dir_name(path, start_loc_path, end_loc_path):
-    """
-    get the repository name (directory name) based on the full path of a python file inside it
-    :param start_loc_path: the start index of the repository name in the path
-    :param end_loc_path: the end index of the repository name in the path
-    :param path: full path of a python file
-    :return: the directory (repository) name
-    """
-    path = os.path.normpath(path)
-    split_path = path.split(os.sep)
-    # add 1 to get the full name
-    return "/".join(split_path[start_loc_path: end_loc_path + 1])
-
-
 def calc_number_of_code_line_python_file(python_file_text):
     """
     calculate the number of code lines (non-empty and non comment lines) in a single python file
@@ -233,7 +219,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     the number of lambda appearances)
     """
     # extract from the repository path in the data frame only the repository name
-    df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(func=get_repository_dir_name, args=(1, 1))
+    df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(func=lambda x: pathlib.Path(x).name)
     # remove the percentage sign and remain only with the number as float
     df_repos_props["percentage_python_lang"] = df_repos_props["percentage_python_lang"].apply(lambda x:
                                                                                               float(x.replace("%", "")))
@@ -262,7 +248,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(lambda x: x.lower())
     df_lambdas["repo_name"] = df_lambdas["repo_name"].apply(lambda x: x.lower())
     df_repos_props = df_repos_props.merge(df_lambdas, on="repo_name")
-    df_repos_props.to_csv(f"{root_path}df_repo_props_with_lambda_stat.csv")
+    df_repos_props.to_csv(f"{root_path}/df_repo_props_with_lambda_stat.csv")
     df_repos_props = df_repos_props.rename(columns={"repo_number_of_stars": "#Stars of repo",
                                                     "lambdas_number": "#lambdas",
                                                     "repo_number_of_forks": "#Forks of repo",
@@ -409,7 +395,7 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
     # get all the python files from all the repositories
     repos_folders = [folder for folder in glob.glob(r'{}/*'.format(repos_parent_folder))]
     repos_folders = repos_folders[:num_repos_to_parse]
-    files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
+    files = [(filename, pathlib.Path(repo_folder).name, repo_folder)
              for repo_folder in repos_folders
              for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python

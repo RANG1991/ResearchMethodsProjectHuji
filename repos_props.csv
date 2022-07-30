@@ -13,9 +13,9 @@ home-assistant/core,https://github.com/home-assistant/core,54.2k,19k,False,100.0
 ansible/ansible,https://github.com/ansible/ansible,54k,22.2k,False,88.1%
 scikit-learn/scikit-learn,https://github.com/scikit-learn/scikit-learn,50.9k,23.3k,False,91.4%
 psf/requests,https://github.com/psf/requests,47.9k,8.8k,False,99.8%
+tiangolo/fastapi,https://github.com/tiangolo/fastapi,47.8k,3.8k,False,99.9%
 python/cpython,https://github.com/python/cpython,46.6k,24.1k,False,65.5%
 3b1b/manim,https://github.com/3b1b/manim,46k,5k,False,94.8%
 ageitgey/face_recognition,https://github.com/ageitgey/face_recognition,45.3k,12.4k,False,79.1%
-localstack/localstack,https://github.com/localstack/localstack,42.4k,3.2k,False,99.1%
-fighting41love/funNLP,https://github.com/fighting41love/funNLP,42k,11.6k,False,100.0%
-Textualize/rich,https://github.com/Textualize/rich,38.8k,1.3k,False,99.9%
+scrapy/scrapy,https://github.com/scrapy/scrapy,44.1k,9.7k,False,99.7%
+localstack/localstack,https://github.com/localstack/localstack,42.5k,3.2k,False,99.1%
