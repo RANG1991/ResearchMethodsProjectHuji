@@ -1,4 +1,4 @@
-from .github_crawler import read_local_config_file
+import src
 import re
 import concurrent.futures
 import glob
@@ -9,7 +9,7 @@ import numpy as np
 from enum import Enum
 from pathlib import Path
 import itertools
-
+import pathlib
 
 PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALUE_PATTERN ITER_PATTERN UNICODE_PATTERN '
                             'EXCEPTION_PATTERN ASYNC_TASKS_PATTERN ALL_PATTERN CALLBACK_PATTERN '
@@ -91,7 +91,8 @@ def count_usages_of_lambda_expressions(python_file_text):
     arithmetic_operators_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ARITHMETIC_OPERATIONS_PATTERN],
                                                               python_file_text)]
     noname_vars_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.NONAME_VAR_PATTERN], python_file_text)]
-    boolean_conditions_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.BOOL_COND_PATTERN], python_file_text)]
+    boolean_conditions_find_all = [x[0] for x in
+                                   re.findall(PATTERNS_DICT[PATTERNS.BOOL_COND_PATTERN], python_file_text)]
     dict_types_to_find_all_res = {
         "Map Reduce Filter": map_filter_reduce_find_all,
         "Function Arguments": function_arguments_find_all,
@@ -217,9 +218,11 @@ def calc_ratio_num_lambdas_repo_size(all_files_dict_types):
 
 
 def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
-                                                        dict_num_lambdas_num_code_lines_per_repo):
+                                                        dict_num_lambdas_num_code_lines_per_repo,
+                                                        root_path):
     """
     calculate correlation measurements with respect to the lambdas number in each repository
+    :param root_path:
     :param dict_num_lambdas_num_code_lines_per_repo: dictionary containing the following:
     key = (repository name)
     value = (ratio of the number of lambdas and the repository size, size of the repository in bytes)
@@ -259,7 +262,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props["repo_name"] = df_repos_props["repo_name"].apply(lambda x: x.lower())
     df_lambdas["repo_name"] = df_lambdas["repo_name"].apply(lambda x: x.lower())
     df_repos_props = df_repos_props.merge(df_lambdas, on="repo_name")
-    df_repos_props.to_csv("df_repo_props_with_lambda_stat.csv")
+    df_repos_props.to_csv(f"{root_path}df_repo_props_with_lambda_stat.csv")
     df_repos_props = df_repos_props.rename(columns={"repo_number_of_stars": "#Stars of repo",
                                                     "lambdas_number": "#lambdas",
                                                     "repo_number_of_forks": "#Forks of repo",
@@ -272,7 +275,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Stars of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Stars of repo")
     plt.tight_layout()
-    plt.savefig("./plots/stars_lambdas.png")
+    plt.savefig(f"{root_path}/plots/stars_lambdas.png")
     # number of forks
     print("the correlation between the number of forks and the number of lambdas is:\n"
           "{}".format(
@@ -280,7 +283,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Forks of repo", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Forks of repo")
     plt.tight_layout()
-    plt.savefig("./plots/forks_lambdas.png")
+    plt.savefig(f"{root_path}/plots/forks_lambdas.png")
     # percentage of python programming language
     print("the correlation between the Python percent and the number of lambdas is:\n"
           "{}".format(
@@ -288,7 +291,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["Python percent", "#lambdas"]].plot.scatter(
         x="#lambdas", y="Python percent")
     plt.tight_layout()
-    plt.savefig("./plots/python_perc_lambdas.png")
+    plt.savefig(f"{root_path}/plots/python_perc_lambdas.png")
     # number of lines of code
     print("the correlation between the ratio of the repository size and the number of lambdas is:\n"
           "{}".format(
@@ -296,11 +299,11 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     df_repos_props[["#Code lines", "#lambdas"]].plot.scatter(
         x="#lambdas", y="#Code lines")
     plt.tight_layout()
-    plt.savefig("./plots/code_lines_lambdas.png")
+    plt.savefig(f"{root_path}/plots/code_lines_lambdas.png")
     plt.clf()
 
 
-def plot_bar_plots_lambdas_types(all_files_dict_types):
+def plot_bar_plots_lambdas_types(all_files_dict_types, root_path):
     """
     param all_files_dict_types: a dictionary containing the following:
     key = (filename, repository name, repository path)
@@ -322,11 +325,11 @@ def plot_bar_plots_lambdas_types(all_files_dict_types):
     plt.xticks(range(len(dict_types_accumulated_sum)), list(dict_types_accumulated_sum.keys()), rotation=80,
                fontsize=9)
     plt.tight_layout()
-    plt.savefig("./plots/bar_plot.png")
+    plt.savefig(f"{root_path}/plots/bar_plot.png")
     plt.clf()
 
 
-def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
+def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size, root_path):
     num_lambdas_ratio_list = []
     for repository_name in ratio_lambdas_repo_size.keys():
         num_lambdas_in_repo = ratio_lambdas_repo_size[repository_name][0]
@@ -345,7 +348,7 @@ def plot_CDF_number_of_lambdas_ratio(ratio_lambdas_repo_size):
     plt.ylabel('Probability')
     plt.grid()
     plt.plot(base[:-1], cumulative, c='blue')
-    plt.savefig("./plots/CDF.png")
+    plt.savefig(f"{root_path}/plots/CDF.png")
 
 
 def count_number_of_repos_containing_lambdas(all_files_dict_types):
@@ -436,17 +439,20 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
 
 
 def main():
+    root_path = pathlib.Path(__file__).parent.parent.resolve()
     # create the folder of the plots if it doesn't exist
-    _, _, _, _, _, num_repos_to_parse, _ = read_local_config_file("./config.json")
-    Path("./plots").mkdir(exist_ok=True)
+    _, _, _, _, _, num_repos_to_parse, _ = src.github_crawler.read_local_config_file(f"{root_path}/config.json")
+    Path(f"{root_path}/plots").mkdir(exist_ok=True)
     # read the containing the metadata of each repository
-    df_repos_props = pd.read_csv("./repos_props.csv")
+    df_repos_props = pd.read_csv(f"{root_path}/repos_props.csv")
     # process all the .py files in each repository
-    all_files_dict_types = process_all_python_files_in_parallel("./pythonReposForMethods", num_repos_to_parse)
+    all_files_dict_types = process_all_python_files_in_parallel(f"{root_path}/pythonReposForMethods",
+                                                                num_repos_to_parse)
     num_of_repos_containing_lambdas = count_number_of_repos_containing_lambdas(all_files_dict_types)
     max_num_lambdas_in_file = count_maximum_number_of_lambdas_per_file(all_files_dict_types)
     dict_num_lambdas_num_code_lines_per_repo = calc_ratio_num_lambdas_repo_size(all_files_dict_types)
-    calc_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo)
+    calc_correlation_between_repos_props_and_lambda_exp(df_repos_props, dict_num_lambdas_num_code_lines_per_repo,
+                                                        root_path)
     avg_num_lambda_per_file = calc_average_num_lambda_per_file(all_files_dict_types)
     avg_num_lambda_per_repository, total_num_lambda_per_repository = calc_average_num_lambdas_per_repository(
         all_files_dict_types)
@@ -459,8 +465,8 @@ def main():
     print("the total number of lambdas in all the repositories: {}".format(total_num_lambda_per_repository))
     print("the ration between the number of lambdas and the number of code lines is: {}".format(
         ration_total_lambdas_total_code_lines))
-    plot_bar_plots_lambdas_types(all_files_dict_types)
-    plot_CDF_number_of_lambdas_ratio(dict_num_lambdas_num_code_lines_per_repo)
+    plot_bar_plots_lambdas_types(all_files_dict_types, root_path)
+    plot_CDF_number_of_lambdas_ratio(dict_num_lambdas_num_code_lines_per_repo, root_path)
 
 
 if __name__ == '__main__':

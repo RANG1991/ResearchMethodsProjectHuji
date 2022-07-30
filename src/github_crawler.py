@@ -1,3 +1,4 @@
+import src
 import json
 from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
@@ -8,7 +9,6 @@ import pandas as pd
 from subprocess import Popen
 import pathlib
 import os
-import lambda_processor
 
 
 def read_local_config_file(filename):
@@ -113,7 +113,7 @@ def get_all_repositories_props_in_page(driver):
     return curr_page_repos_props
 
 
-def github_crawling():
+def github_crawling(root_path):
     # selenium configuration
     repos_props = {}
     options = Options()
@@ -121,7 +121,7 @@ def github_crawling():
     options.headless = True
 
     # get the credentials from the configuration file
-    username, password, driver_path, _, _, _, num_pages_to_crawl = read_local_config_file("./config.json")
+    username, password, driver_path, _, _, _, num_pages_to_crawl = read_local_config_file(f"{root_path}/config.json")
     driver = webdriver.Chrome(driver_path, chrome_options=options)
     github_login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
@@ -151,12 +151,12 @@ def github_crawling():
             dict_for_df["repo_is_forked"].append(repos_props[key][3])
             dict_for_df["percentage_python_lang"].append(repos_props[key][4])
         df = pd.DataFrame.from_dict(dict_for_df).set_index("repo_name")
-        df.to_csv("repos_props.csv")
+        df.to_csv(f"{root_path}/repos_props.csv")
 
 
-def create_cloning_script(repos_folder_path):
-    df_repos = pd.read_csv("./repos_props.csv")
-    _, _, _, python_perc, allow_forked, _, _ = read_local_config_file("./config.json")
+def create_cloning_script(repos_folder_path, root_path):
+    df_repos = pd.read_csv(f"{root_path}/repos_props.csv")
+    _, _, _, python_perc, allow_forked, _, _ = read_local_config_file(f"{root_path}/config.json")
     if not allow_forked:
         df_repos = df_repos[df_repos["repo_is_forked"] == False]
     df_repos["percentage_python_lang"] = df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", "")))
@@ -181,15 +181,16 @@ def remove_all_non_python_files(repos_folder_path):
 
 
 if __name__ == "__main__":
-    github_crawling()
-    repos_folder_path = (pathlib.Path(__file__).parent / "pythonReposForMethods").resolve()
+    root_path = pathlib.Path(__file__).parent.parent.resolve()
+    github_crawling(root_path)
+    repos_folder_path = f"{root_path}/pythonReposForMethods"
     # create the folder for the repositories if it doesn't exist
     pathlib.Path(repos_folder_path).mkdir(exist_ok=True)
-    create_cloning_script(repos_folder_path)
+    create_cloning_script(repos_folder_path, root_path)
     # run the scripts using subprocess module
     script_file_path = f"{repos_folder_path}/clone_all_python_repos.bat"
     p = Popen([script_file_path], cwd=repos_folder_path)
     stdout, stderr = p.communicate()
     p.wait()
     remove_all_non_python_files(repos_folder_path)
-    lambda_processor.main()
+    src.lambda_processor.main()
