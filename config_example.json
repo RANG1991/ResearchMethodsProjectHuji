@@ -1,0 +1,9 @@
+{
+	"username": "Your GitHub email",
+	"password": "Your GitHub password",
+	"driver_p": "The location (full path) of the chromedriver of selenium (chromedriver.exe)",
+	"requested_python_percentage": 60,
+	"allow_forked_repos": true,
+	"number_repositories_to_process": 600,
+	"number_pages_to_crawl": 2
+}
