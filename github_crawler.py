@@ -25,8 +25,8 @@ def read_local_config_file(filename):
         driver_path = json_file["driver_p"]
         python_perc = json_file["requested_python_percentage"]
         allow_forked = json_file["allow_forked_repos"]
-        num_repos_to_parse = json_file["number_repositories_to_parse"]
-        num_pages_to_crawl = json_file["num_pages_to_crawl"]
+        num_repos_to_parse = json_file["number_repositories_to_process"]
+        num_pages_to_crawl = json_file["number_pages_to_crawl"]
         return username, password, driver_path, python_perc, allow_forked, num_repos_to_parse, num_pages_to_crawl
 
 

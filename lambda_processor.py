@@ -1,3 +1,4 @@
+from github_crawler import read_local_config_file
 import re
 import concurrent.futures
 import glob
@@ -7,7 +8,7 @@ from matplotlib import pyplot as plt
 import numpy as np
 from enum import Enum
 from pathlib import Path
-from github_crawler import read_local_config_file
+import itertools
 
 
 PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALUE_PATTERN ITER_PATTERN UNICODE_PATTERN '
@@ -19,25 +20,25 @@ PATTERNS = Enum('PATTERNS', 'MAP_REDUCE_FILTER_PATTERN FUNC_ARG_PATTERN RET_VALU
 
 # regular expressions patterns for capturing lambdas' usages
 PATTERNS_DICT = {
-    PATTERNS.MAP_REDUCE_FILTER_PATTERN: "((map|reduce|filter)(.*?)lambda (.*?):)",
-    PATTERNS.FUNC_ARG_PATTERN: "(\\((.*?)=lambda (.*?):(.*?)\\))",
-    PATTERNS.RET_VALUE_PATTERN: "(return lambda (.*?):)",
-    PATTERNS.ITER_PATTERN: "(lambda (.*?):(.*?)(list|tuple|string|dict))",
-    PATTERNS.UNICODE_PATTERN: "(lambda (.*?):(.*?).encode)",
-    PATTERNS.EXCEPTION_PATTERN: "(lambda (.*?): future.set_exception)",
-    PATTERNS.ASYNC_TASKS_PATTERN: "(lambda (.*?):(.*?)async)",
-    PATTERNS.ALL_PATTERN: "(lambda (.*?):)",
-    PATTERNS.CALLBACK_PATTERN: r"([c|C]allback(.*?)lambda)",
-    PATTERNS.STRING_FORMATTING_PATTERN: "(lambda([^\\(#\\,\\=\\[\\)]*?)str\\()",
-    PATTERNS.ERROR_RAISING_PATTERN: "(lambda([^#\\(\\)\\.\\_\\,]*?)error)",
-    PATTERNS.IN_OPERATOR_PATTERN: "(lambda\\s(\\w+):\\s+(in|isin)\\s)",
-    PATTERNS.INNER_LAMBDA_PATTERN: "(lambda(.*?):(.*?)in lambda(.*?):)",
-    PATTERNS.INDEXING_PATTERN: "(lambda\\s(\\w+):\\s?\\[)",
-    PATTERNS.NONE_PATTERN: "(lambda(.*?):\\s?None)",
-    PATTERNS.ARITHMETIC_OPERATIONS_PATTERN: "((.*?)lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?))",
-    PATTERNS.NONAME_VAR_PATTERN: "(lambda [\\*\\_]?_:)",
-    PATTERNS.BOOL_COND_PATTERN: "(lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=)))",
-    PATTERNS.FUNCTION_CALL: r"(lambda\s*?(\w+)\s?\,?\s?(\w+)*?:(\s*?\w*?)[\(])"
+    PATTERNS.MAP_REDUCE_FILTER_PATTERN: "(map|reduce|filter)(.*?)lambda (.*?):",
+    PATTERNS.FUNC_ARG_PATTERN: "\\((.*?)=lambda (.*?):(.*?)\\)",
+    PATTERNS.RET_VALUE_PATTERN: "return lambda (.*?):",
+    PATTERNS.ITER_PATTERN: "lambda (.*?):(.*?)(list|tuple|string|[^pre]dict)",
+    PATTERNS.UNICODE_PATTERN: "lambda (.*?):(.*?).encode",
+    PATTERNS.EXCEPTION_PATTERN: "lambda (.*?): future.set_exception",
+    PATTERNS.ASYNC_TASKS_PATTERN: "lambda (.*?):(.*?)async",
+    PATTERNS.ALL_PATTERN: "lambda (.*?):",
+    PATTERNS.CALLBACK_PATTERN: r"[c|C]allback(.*?)lambda",
+    PATTERNS.STRING_FORMATTING_PATTERN: "lambda([^\\(#\\,\\=\\[\\)]*?)str\\(",
+    PATTERNS.ERROR_RAISING_PATTERN: "lambda([^#\\(\\)\\.\\_\\,\r\n]*?)error",
+    PATTERNS.IN_OPERATOR_PATTERN: "lambda\\s(\\w+):\\s+(in|isin)\\s",
+    PATTERNS.INNER_LAMBDA_PATTERN: "lambda(.*?):(.*?)in lambda(.*?):",
+    PATTERNS.INDEXING_PATTERN: "lambda\\s(\\w+):\\s?\\[",
+    PATTERNS.NONE_PATTERN: "lambda(.*?):\\s?None",
+    PATTERNS.ARITHMETIC_OPERATIONS_PATTERN: "lambda\\s(\\w+):([^\\(\'\"#\\)]*?)(\\w?)[\\+|\\/|\\*|\\-](\\w?)",
+    PATTERNS.NONAME_VAR_PATTERN: "lambda [\\*\\_]?_:",
+    PATTERNS.BOOL_COND_PATTERN: "lambda\\s(\\w+):(\\s?(True|False)|([^\\(,\\)#]*?)(<|==|!=|>|<=|=<|=>|>=))",
+    PATTERNS.FUNCTION_CALL: r"lambda\s*?(\w+)\s?\,?\s?(\w+)*?:(\s*?\w*?)[\(]"
 }
 
 
@@ -68,6 +69,10 @@ def count_usages_of_lambda_expressions(python_file_text):
     :return: dict_types_to_counts - a dictionary containing the type of each lambda expression as key,
     and it's number in this python file as value
     """
+    prefix = "("
+    suffix = ")"
+    for pattern in PATTERNS_DICT:
+        PATTERNS_DICT[pattern] = prefix + PATTERNS_DICT[pattern] + suffix
     map_filter_reduce_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.MAP_REDUCE_FILTER_PATTERN],
                                                            python_file_text)]
     function_arguments_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.FUNC_ARG_PATTERN], python_file_text)]
@@ -102,10 +107,34 @@ def count_usages_of_lambda_expressions(python_file_text):
         "Indexing": indexing_find_all,
         "Initializing Default Values": none_pattern_find_all,
         "Algebraic Operations": arithmetic_operators_find_all,
-        "No Name Variables": noname_vars_find_all,
+        "Creating Dummy Functions": noname_vars_find_all,
         "Boolean Conditions": boolean_conditions_find_all
     }
     dict_types_to_counts = {k: len(v) for k, v in dict_types_to_find_all_res.items()}
+    all_lambdas_find_all = [x[0] for x in re.findall(PATTERNS_DICT[PATTERNS.ALL_PATTERN], python_file_text)]
+    all_lambdas_types_occurrences = itertools.chain(map_filter_reduce_find_all,
+                                                    function_arguments_find_all,
+                                                    return_value_find_all,
+                                                    unicode_find_all,
+                                                    exception_find_all,
+                                                    async_find_all,
+                                                    iterators_find_all,
+                                                    callbacks_find_all,
+                                                    string_formatting_find_all,
+                                                    error_raising_find_all,
+                                                    in_operator_find_all,
+                                                    indexing_find_all,
+                                                    none_pattern_find_all,
+                                                    arithmetic_operators_find_all,
+                                                    noname_vars_find_all,
+                                                    boolean_conditions_find_all)
+    Path.mkdir(Path("./lambdas_types_text_files"), exist_ok=True)
+    all_lambdas_other = [x for x in all_lambdas_find_all if x not in all_lambdas_types_occurrences]
+    for key in dict_types_to_find_all_res.keys():
+        with open(f"./lambdas_types_text_files/lambdas_{key}.txt", "a") as f:
+            f.writelines("\n".join(dict_types_to_find_all_res[key]))
+    with open(f"./lambdas_types_text_files/lambdas_other.txt", "a") as f:
+        f.writelines("\n".join(all_lambdas_other))
     return dict_types_to_counts
 
 
@@ -242,7 +271,7 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
                                                     "lambdas_number": "#lambdas",
                                                     "repo_number_of_forks": "#Forks of repo",
                                                     "percentage_python_lang": "Python percent",
-                                                    "number_of_code_lines_in_repo": "# Code lines"})
+                                                    "number_of_code_lines_in_repo": "#Code lines"})
     # number of stars
     print("the correlation between the number of stars and the number of lambdas is:\n"
           "{}".format(
@@ -270,9 +299,9 @@ def calc_correlation_between_repos_props_and_lambda_exp(df_repos_props,
     # number of lines of code
     print("the correlation between the ratio of the repository size and the number of lambdas is:\n"
           "{}".format(
-        df_repos_props[["# Code lines", "#lambdas"]].corr()))
-    df_repos_props[["# Code lines", "#lambdas"]].plot.scatter(
-        x="#lambdas", y="# Code lines")
+        df_repos_props[["#Code lines", "#lambdas"]].corr()))
+    df_repos_props[["#Code lines", "#lambdas"]].plot.scatter(
+        x="#lambdas", y="#Code lines")
     plt.tight_layout()
     plt.savefig("./plots/code_lines_lambdas.png")
     plt.clf()
@@ -413,6 +442,10 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
 
 
 def main():
+    text_files_lambdas = [text_file_lambdas for text_file_lambdas in glob.glob(r"./lambdas_types_text_files/*.txt")]
+    for text_file_lambdas in text_files_lambdas:
+        if os.path.exists(text_file_lambdas):
+            os.remove(text_file_lambdas)
     # create the folder of the plots if it doesn't exist
     _, _, _, _, _, num_repos_to_parse, _ = read_local_config_file("./config.json")
     Path("./plots").mkdir(exist_ok=True)
