@@ -386,7 +386,6 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
     files = [(filename, get_repository_dir_name(filename, 1, 1), get_repository_dir_name(filename, 0, 1))
              for repo_folder in repos_folders
              for filename in glob.glob(r'{}/**/*.py'.format(repo_folder))]
-    lambdas_counts_in_files = 0
     # initialize a thread pool to do the calculation of the lambda statistics in each of the python
     # files in parallel
     with concurrent.futures.ProcessPoolExecutor(max_workers=5) as executor:
@@ -415,7 +414,7 @@ def process_all_python_files_in_parallel(repos_parent_folder, num_repos_to_parse
 
 def main():
     # create the folder of the plots if it doesn't exist
-    _, _, _, _, _, num_repos_to_parse = read_local_config_file("./config.json")
+    _, _, _, _, _, num_repos_to_parse, _ = read_local_config_file("./config.json")
     Path("./plots").mkdir(exist_ok=True)
     # read the containing the metadata of each repository
     df_repos_props = pd.read_csv("./repos_props.csv")

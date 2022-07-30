@@ -25,8 +25,9 @@ def read_local_config_file(filename):
         driver_path = json_file["driver_p"]
         python_perc = json_file["requested_python_percentage"]
         allow_forked = json_file["allow_forked_repos"]
-        num_repos_to_parse = ["number_repositories_to_parse"]
-        return username, password, driver_path, python_perc, allow_forked, num_repos_to_parse
+        num_repos_to_parse = json_file["number_repositories_to_parse"]
+        num_pages_to_crawl = json_file["num_pages_to_crawl"]
+        return username, password, driver_path, python_perc, allow_forked, num_repos_to_parse, num_pages_to_crawl
 
 
 def github_login(login_url, driver, username, password):
@@ -120,16 +121,15 @@ def github_crawling():
     options.headless = True
 
     # get the credentials from the configuration file
-    username, password, driver_path, _, _, _ = read_local_config_file("./config.json")
+    username, password, driver_path, _, _, _, num_pages_to_crawl = read_local_config_file("./config.json")
     driver = webdriver.Chrome(driver_path, chrome_options=options)
     github_login("https://github.com/login", driver, username, password)
     main_url = 'https://github.com/'
 
     # number of results' pages crawl (each page contains 10 repositories)
-    num_pages = 2
     try:
         # Iterates over all the result-pages
-        for page_index in range(num_pages):
+        for page_index in range(num_pages_to_crawl):
             # this is our query for GitHub's search - python a primary language,
             # the repositories with most stars (path parameters)
             driver.get(main_url + 'search?l=Python&o=desc&p=' + str(page_index + 1) +
@@ -156,7 +156,7 @@ def github_crawling():
 
 def create_cloning_script(repos_folder_path):
     df_repos = pd.read_csv("./repos_props.csv")
-    _, _, _, python_perc, allow_forked, _ = read_local_config_file("./config.json")
+    _, _, _, python_perc, allow_forked, _, _ = read_local_config_file("./config.json")
     if not allow_forked:
         df_repos = df_repos[df_repos["repo_is_forked"] == False]
     df_repos["percentage_python_lang"] = df_repos["percentage_python_lang"].apply(lambda x: float(x.replace("%", "")))
