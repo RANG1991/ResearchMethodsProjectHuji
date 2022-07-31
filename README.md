@@ -66,12 +66,12 @@ pip install -r <path_to_requirements>
 
 **Code Segments** 
 ```
-> github_crawler.py
+>github_crawler.py
 
 Logging in to Github using the credentials mentioned in the configuration file. In that file, there are additional 
 search parameters which define the repositories for minning 
 
-> lambda_processor.py
+>lambda_processor.py
 
 Analyzes the usages of Lambda-expressions in the mined repositories. Produces Statistical results
 
