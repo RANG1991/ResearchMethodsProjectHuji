@@ -1,18 +1,17 @@
 # 	Lambda-expressions in Python: Crawling & Processing
 
-This project crawls Python projects from github and analyze the usages of Lambda expressions among them: 
-Statistics, Types of usages and correlations with the repositories meta-data
+This project crawls the top Python projects from github and analyzes the usages of Lambda expressions among them: 
+Statistics, Types of usages and correlations with the repositories meta-data<br/>
+
 The project is composed of 2 components:
-  1. Github Crawler - Scrapes github top Python projects:<br/> 
-      a. **Python** projects, meaning projects which Python is the majority programming language of them. 
-        The major language is determined according to the largest total size of files with the 
-        corresponding extension - in our case
-        [Reference] (https://stackoverflow.com/questions/5318580/how-does-github-figure-out-a-projects-language)  
-        The minimum rate of the Python programming language as a part of the project as well as the 
-        number of the repositories are configured in file: config.json
-        **_Note_:** The Crawler won't scrape a repository which was forked from other repository.<br/>
+  1. **Github Crawler** - Scrapes github top Python projects:<br/> 
+      a. Python projects, meaning the projects which Python is the majority programming language of them. 
+        the primary language for each GitHub repository is determined according to the largest total size of files with the corresponding extension - in our case .py
+        [Reference](https://stackoverflow.com/questions/5318580/how-does-github-figure-out-a-projects-language)  
+        In addition, the crawling is performed according the the settings defined in the file: config.json (Minimum of Python percentage, Whether to consider forked repositories, Number of repositories to process etc.)<br/>
+        **_Note_:** As default, the Crawler won't scrape a repository which was forked from other repository.<br/>
       b. **Top** projects, meaning projects with highest rank of github-stars.<br/><br/>
-   2. Lambda-expressions Processor - Produces statistics about the frequency of Lambda-expressions appearance,
+   2. **Lambda-expressions Processor** - Produces statistics about the frequency of Lambda-expressions appearance,
                                       The different usages of them and the correlation to the repository's meta-data 
                                       such as size, number of github stars, number of forks, the percentage of Python 
                                       programming language etc.
@@ -22,7 +21,7 @@ The project is composed of 2 components:
 ```angular2html
 Please find the paper named "Lambda Functions - Project Report" which contains a review of our Project: 
 Background, The Research Question, Methodologies, Results, Discussion and Threats to validity
-[Link (requires permission)] (https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing) 
+[Link (requires permission)](https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing) 
 
 ```
 
@@ -31,6 +30,8 @@ Background, The Research Question, Methodologies, Results, Discussion and Threat
 >Previous Work: [https://github.com/muvvasandeep/empirical-lambda-python](https://github.com/muvvasandeep/empirical-lambda-python)
 
 >Selenium github repository: [https://github.com/SeleniumHQ/selenium](https://github.com/SeleniumHQ/selenium)
+
+>Selenium Downloads page: [https://chromedriver.chromium.org/downloads](https://chromedriver.chromium.org/downloads)
 
 
 **Installation:**
@@ -48,14 +49,14 @@ Run the following two commands in the anaconda prompt (after installing anaconda
 **Python packages requirements**
 
 
-Detailed in the file: requirements.txt.<br>
+Detailed in the file: *requirements.txt*<br>
 To install the required packages use the following command inside the environment you created:
 
 ```
 pip install -r <path_to_requirements>
 ```
 
-**Code Segments and Arguments** 
+**Code Segments** 
 ```
 > github_crawler.py
 
@@ -69,7 +70,7 @@ Analyzes the usages of Lambda-expressions in the mined repositories. Produces St
 ```
 
 **Run the code**
-<br>after installing all the requirements using pip and putting your username, password and the correct path of the selenium driver in the config.json file, you can run the script as follows:
+<br>After installing all the requirements using pip and putting your username, password and the correct path of the selenium driver in the config.json file, you can run the script as follows:
 ```
 python github_crawler.py
 ```
