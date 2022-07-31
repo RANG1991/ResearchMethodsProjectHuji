@@ -85,3 +85,6 @@ python github_crawler.py
 
 **Demo Recording:**
 https://drive.google.com/file/d/1sIXnxwydKS2LCG59CEegkbuSL2_laCZZ/view?usp=sharing
+
+**Contact Details**
+Ran.Galun@mail.huji.ac.il
