@@ -18,12 +18,12 @@ The project is composed of 2 components:
 
 
 **Project report**
-```angular2html
+
 Please find the paper named "Lambda Functions - Project Report" which contains a review of our Project: 
 Background, The Research Question, Methodologies, Results, Discussion and Threats to validity
-[Link (requires permission)](https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing) 
+[Link](https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing)  (requires permission)
 
-```
+
 
 **Github References**
 
