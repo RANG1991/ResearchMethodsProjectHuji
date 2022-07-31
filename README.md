@@ -25,13 +25,13 @@ Background, The Research Question, Methodologies, Results, Discussion and Threat
 
 **Configuration**<br/> 
 The configuration file influences the settings of the execution, it contains the following adjustable parameters:<br/> 
-  -*"username"* - Your GitHub email<br/> 
-  -*"password"* - Your GitHub password<br/> 
-  -*"driver_p"* - The location (full path) of the chromedriver of selenium (chromedriver.exe)<br/> 
-  -*"min_python_percentage"* - The minimum required percentage of python language in a repository<br/> 
-  -*"allow_forked_repos"* - True or False - whether you want to include forked repositories or not<br/> 
-  -*"number_repositories_to_process"* - The number of repositories you want to process<br/> 
-  -*"number_pages_to_crawl"* -  The number of GitHub search pages you want to crawl (currently in each page there are 10 repositories)<br/> 
+  - *"username"* - Your GitHub email<br/> 
+  - *"password"* - Your GitHub password<br/> 
+  - *"driver_p"* - The location (full path) of the chromedriver of selenium (chromedriver.exe)<br/> 
+  - *"min_python_percentage"* - The minimum required percentage of python language in a repository<br/> 
+  - *"allow_forked_repos"* - True or False - whether you want to include forked repositories or not<br/> 
+  - *"number_repositories_to_process"* - The number of repositories you want to process<br/> 
+  - *"number_pages_to_crawl"* -  The number of GitHub search pages you want to crawl (currently in each page there are 10 repositories)<br/> 
 
 **Github References**
 
