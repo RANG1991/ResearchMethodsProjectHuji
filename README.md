@@ -65,7 +65,7 @@ pip install -r <path_to_requirements>
 ```
 
 **Code Segments** 
-```
+
 >github_crawler.py
 
 Logging in to Github using the credentials mentioned in the configuration file. In that file, there are additional 
@@ -75,7 +75,7 @@ search parameters which define the repositories for minning
 
 Analyzes the usages of Lambda-expressions in the mined repositories. Produces Statistical results
 
-```
+
 
 **Run the code**
 <br>After installing all the requirements using pip and putting your username, password and the correct path of the selenium driver in the config.json file, you can run the script as follows:
