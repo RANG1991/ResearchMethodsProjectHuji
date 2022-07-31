@@ -23,7 +23,7 @@ def read_local_config_file(filename):
         username = json_file["username"]
         password = json_file["password"]
         driver_path = json_file["driver_p"]
-        python_perc = json_file["requested_python_percentage"]
+        python_perc = json_file["min_python_percentage"]
         allow_forked = json_file["allow_forked_repos"]
         num_repos_to_parse = json_file["number_repositories_to_process"]
         num_pages_to_crawl = json_file["number_pages_to_crawl"]
