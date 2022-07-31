@@ -21,17 +21,17 @@ The project is composed of 2 components:
 
 Please find the paper named "Lambda Functions - Project Report" which contains a review of our Project: 
 Background, The Research Question, Methodologies, Results, Discussion and Threats to validity
-[Link](https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing)  (requires permission)
+[Link](https://docs.google.com/document/d/1EvzsI9q-CPdfmiSDcerMIAtsMmOo_xp4CHxX99KSBhY/edit?usp=sharing)  (requires permission)<br/> 
 
-**Configuration**
-The configuration file influences the settings of the execution, it contains the following adjustable parameters:
-"username" - Your GitHub email.
-"password" - Your GitHub password.
-"driver_p" - The location (full path) of the chromedriver of selenium (chromedriver.exe).
-"min_python_percentage" - The minimum required percentage of python language in a repository.
-"allow_forked_repos" - True or False - whether you want to include forked repositories or not.
-"number_repositories_to_process" - The number of repositories you want to process.
-"number_pages_to_crawl" -  The number of GitHub search pages you want to crawl (currently in each page there are 10 repositories).
+**Configuration**<br/> 
+The configuration file influences the settings of the execution, it contains the following adjustable parameters:<br/> 
+"username" - Your GitHub email<br/> 
+"password" - Your GitHub password<br/> 
+"driver_p" - The location (full path) of the chromedriver of selenium (chromedriver.exe)<br/> 
+"min_python_percentage" - The minimum required percentage of python language in a repository<br/> 
+"allow_forked_repos" - True or False - whether you want to include forked repositories or not<br/> 
+"number_repositories_to_process" - The number of repositories you want to process<br/> 
+"number_pages_to_crawl" -  The number of GitHub search pages you want to crawl (currently in each page there are 10 repositories)<br/> 
 
 **Github References**
 
