@@ -1,4 +1,5 @@
 {
+	"_comment": "Please change the name of this configuration file to config.json after you put your secret GitHub credentials there!!!",
 	"username": "Your GitHub email",
 	"password": "Your GitHub password",
 	"driver_p": "The location (full path) of the chromedriver of selenium (chromedriver.exe)",
